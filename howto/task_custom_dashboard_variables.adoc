@@ -1,0 +1,53 @@
+---
+permalink: howto/task_custom_dashboard_variables.html
+sidebar: sidebar
+keywords: 
+summary: 'Dashboard variables allow you to filter data across multiple widgets on a dashboard quickly and easily.'
+---
+= Dashboard variables
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Dashboard variables allow you to filter data across multiple widgets on a dashboard quickly and easily.
+
+== Before you begin
+
+This example requires the *City* annotation (also called City attribute) to be set on multiple storage assets.
+
+For best results, set different cities on different storages.
+
+== About this task
+
+Variables provide a quick and simple way of filtering the data shown in some or all of the widgets on a custom dashboard. The following steps will guide you to creating widgets that use variables, and show you how to use them on your dashboard.
+
+== Steps
+
+. Log in to Insight as a user with administrative permissions
+. Click on *Dashboards* > *+New Dashboard*.
+. Before adding widgets, we want to define the variables we will use to filter the dashboard data. Click on the *Variable* button.
++
+The list of attributes is displayed.
+
+. Let's say we want to set the dashboard to filter based on City. Select the *City* attribute from the list.
++
+The $city variable field is created and added to the dashboard.
+
+. Next, we must tell our widgets to use this variable. The simplest way to illustrate this is to add a table widget showing the City column. Click on the *Widget* button and select the *Table* widget.
+. First, add the City field to the table by selecting it from the column picker image:../media/column_picker_button.gif[] button.
++
+City is a list-type attribute, so it contains a list of previously-defined choices. You may also choose text, boolean, or date-type attributes.
+
+. Next, click the *Filter by +* button and choose *City*.
+. Click *Any* to view the possible filter choices for City. Notice that the list now includes "`$city`" at the top, in addition to any previously-available choices. Select "`$city`" to use this dashboard variable.
++
+The "`$city`" choice only appears here if it was defined previously on the main dashboard page. If the variable was not previously defined, only the existing choices for the filter will be shown. Only variables that are applicable to the selected attribute type will be displayed in the drop-down for that filter.
++
+image::../media/customdash_variablecitydialog2.gif[]
+
+. *Save* the widget.
+. On the dashboard page, click on *Any* next to the $city variable, and select the city or cities you want to see.
++
+Your table widget updates to show only the cities you selected. You can change the values in the $city variable at will, and all widgets on your dashboard that are set to use the $city variable will refresh automatically to show only data for the values you selected.
+
+. Be sure to *Save* your dashboard when you have it configured as you want it.

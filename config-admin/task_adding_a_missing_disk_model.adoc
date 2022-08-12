@@ -1,0 +1,30 @@
+---
+permalink: config-admin/task_adding_a_missing_disk_model.html
+sidebar: sidebar
+keywords: 
+summary: 'If acquisition fails due to an unknown disk model, you can add the missing disk model to the new_disk_models.txt file and run acquisition again.'
+---
+= Adding a missing disk model
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If acquisition fails due to an unknown disk model, you can add the missing disk model to the `new_disk_models.txt` file and run acquisition again.
+
+== About this task
+
+As part of a poll of a storage device by OnCommand Insight acquisition, the disk models on the storage device are read. If a vendor has added new disk models to their array that Insight doesn't know about, or if there is a mismatch between the model number Insight looks for and the one returned by the storage device, acquisition of that data source will fail with an error. In order to prevent these errors, it is necessary to update the disk model information known to Insight. New disk models are added to Insight with updates, patches and maintenance releases. However, you may decide to update this information manually instead of waiting for a patch or update.
+
+Because OnCommand Insight reads the disk model file every five minutes, any new data model information you enter is updated automatically. You do not need to restart the server for the changes to take effect, but you can opt to restart the server and any remote acquisition units (RAUs) to have the changes take effect before the next update.
+
+Disk model updates are added to the `new_disk_models.txt` file located in the``<SANScreenInstallDir>\wildfly\standalone\deployments\datasources.war`` directory. Understand the information needed to describe your new disk model before updating the `new_disk_models.txt` file. Inaccurate information in the file produces incorrect system data and could result in failed acquisition.
+
+Follow these instructions to manually update Insight disk models:
+
+== Steps
+
+. Locate the proper information for your disk model.
+. Using a text editor, open the `new_disk_models.txt` file.
+. Add the required information for the new data source.
+. Save the file in the `<SANScreenInstallDir>\wildfly\standalone\deployments\datasources.war` directory on your server.
+. Back up the `new_disk_models.txt` file to a safe location. During any subsequent OnCommand Insight upgrade, this file will be overwritten. If your disk model information is not present in the upgraded file, you will need to re-enter it.

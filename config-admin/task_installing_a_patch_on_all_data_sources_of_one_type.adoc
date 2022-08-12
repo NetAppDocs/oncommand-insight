@@ -1,0 +1,27 @@
+---
+permalink: config-admin/task_installing_a_patch_on_all_data_sources_of_one_type.html
+sidebar: sidebar
+keywords: 
+summary: 'After uploading a data source patch, you can install it on all of the data sources of the same type.'
+---
+= Installing a patch on one type of data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After uploading a data source patch, you can install it on all of the data sources of the same type.
+
+== Before you begin
+
+You must have uploaded a patch file that you want to install on one type of data source.
+
+== Steps
+
+. On the Insight toolbar, click *Admin*.
+. Click *Patches*.
+. From the Actions button, select *Apply patch*.
+. In the *Apply data source patch* dialog box, click *Browse* to locate the uploaded patch file.
+. Check the *Patch name*, *Description*, and *Impacted data source types*.
+. If the selected patch is correct, click *Apply Patch*.
++
+All data sources of the same type are updated with this patch.

@@ -1,0 +1,34 @@
+---
+permalink: howto/task_reporting_on_cloud_cost_data_task.html
+sidebar: sidebar
+keywords: 
+summary: 'Cloud cost monthly data collected in Insight is sent to the data warehouse and is available in the Cloud Cost datamart for use in reports.'
+---
+= Reporting on Cloud Cost data in Insight
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Cloud cost monthly data collected in Insight is sent to the data warehouse and is available in the Cloud Cost datamart for use in reports.
+
+== Before you begin
+
+You must have data sources configured to collect cloud cost data from AWS. Each billable user/account must have a separate data source.
+
+Allow Insight at least 36 hours to begin collecting data.
+
+Allow ETL to run at least once after that time, to send the data to the data warehouse.
+
+== About this task
+
+After your data has been collected and sent to the data warehouse, you can view it in any of several pre-configured reports, or create custom reports. Insight stores the data in its own Cloud Cost datamart.
+
+To view your cloud cost data in one of the pre-configured reports:
+
+== Steps
+
+. Open Insight Reporting by one of these methods:
+ ** Click on the Reporting Portal icon image:../media/oci_reporting_portal_icon.gif[] in the Insight server web UI or in the Data Warehouse UI.
+ ** Launch Reporting directly by entering the following URL: `https://<dwh_server_name\>:9300/p2pd/servlet/dispatch` or `https://<dwh_server_name\>:9300/bi (7.3.3 and later)`
+. Once you are logged in to Reporting, click on *Public Folders* and select *Cloud Cost*.
+. You can view your AWS billing data in the available reports located in the *Cloud Cost* folder, or create your own custom report using the *Cloud Cost datamart* available from the *Packages* folder.

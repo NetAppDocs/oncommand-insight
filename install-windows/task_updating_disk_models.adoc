@@ -1,0 +1,24 @@
+---
+permalink: install-windows/task_updating_disk_models.html
+sidebar: sidebar
+keywords: 
+summary: 'After upgrading, you should have any updated disk models; however, if for some reason Insight failed to discover new disk models, you can manually update them.'
+---
+= Updating disk models
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After upgrading, you should have any updated disk models; however, if for some reason Insight failed to discover new disk models, you can manually update them.
+
+== Before you begin
+
+You must have obtained from technical support the `.zip` file that contains the latest data source patches.
+
+== Steps
+
+. Stop the SANscreen Acq service.
+. Navigate to the following directory: `<install directory>\SANscreen\wildfly\standalone\deployments\datasources.war`.
+. Move the current `diskmodels.jar` file to a different location.
+. Copy the new `diskmodels.jar` file into the `datasources.war` directory.
+. Start the SANscreen Acq service.

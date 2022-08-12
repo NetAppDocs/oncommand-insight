@@ -1,0 +1,23 @@
+---
+permalink: config-admin/task_designing_your_business_entities_hierarchy.html
+sidebar: sidebar
+keywords: 
+summary: 'You need to understand the elements of your corporate structure and what needs to be represented in the business entities because they become a fixed structure in your OnCommand Insight database. You can use the following information to set up your business entities. Remember you do not need to use all of the hierarchy levels to gather data in these categories.'
+---
+= Designing your business entities hierarchy
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You need to understand the elements of your corporate structure and what needs to be represented in the business entities because they become a fixed structure in your OnCommand Insight database. You can use the following information to set up your business entities. Remember you do not need to use all of the hierarchy levels to gather data in these categories.
+
+== Steps
+
+. Examine each level of the business entities hierarchy to determine if that level should be included in your business entity hierarchy for your company:
+ ** *Tenant* level is needed if your company is an ISP and you want to track customer usage of resources.
+ ** *Line of Business (LOB)* is needed in the hierarchy if the data for different product lines needs to be tracked.
+ ** *Business Unit* is required if you need to track data for different departments. This level of the hierarchy is often valuable in separating a resource that one department uses that other departments do not.
+ ** *Project* level can be used for specialized work within a department. This data might be useful to pinpoint, define, and monitor a separate project's technology needs compared to other projects in a company or department.
+. Create a chart showing each business entity with the names of all of the levels within the entity.
+. Check the names in the hierarchy to be certain they will be self-explanatory in OnCommand Insight views and reports.
+. Identify all applications that are associated with each business entity.

@@ -1,0 +1,143 @@
+---
+permalink: install-linux/reference_insight_server_requirements.html
+sidebar: sidebar
+keywords: redhat
+summary: 'A dedicated server is recommended. Do not install Insight on a server that has any other applications installed. Both physical and virtual servers are supported, provided that the product requirements are met.'
+---
+= Insight Server requirements
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+A dedicated server is recommended. Do not install Insight on a server that has any other applications installed. Both physical and virtual servers are supported, provided that the product requirements are met.
+
+You must have sudo permissions to install the OnCommand Insight Server software.
+
+Some Insight components may require dependent packages during installation. Ensure YUM repository is accessible prior to installing Insight.
+
+[NOTE]
+====
+Sizing for OnCommand Insight has multiple dependencies, such as data source type and size, number of assets in your environment, polling intervals, and more. The following sizing examples are guidelines only; they represent some of the environments in which Insight has been tested. Changing any of these or other factors in the environment can change the sizing requirements for Insight. These guidelines include disk space for up to 90 days of performance archive data.
+====
+
+It is recommended to contact your Sales Engineer for detailed sizing guidance before installing or upgrading Insight.
+
+*Examples:*
+
+|===
+| Environment factors:| Disk space, CPUs, and Memory tested:
+a|
+80 storage arrays4,000 Volumes
+
+4,000 VMs
+
+4,000 switch ports
+
+a|
+250 GB disk space8 cores
+
+32 GB RAM
+
+a|
+160 storage arrays40,000 Volumes
+
+8,000 VMs
+
+8,000 switch ports
+
+a|
+1 TB of disk space12 cores
+
+48 GB RAM
+
+|===
+*Requirements:*
+
+|===
+| Component| Required
+a|
+Operating system
+a|
+A computer running a licensed version of one of the following, that is running no other application-level software:
+
+* Red Hat Enterprise Linux 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, 8.5
+* CentOS 7.2, 7.5, 7.6, 7.7, 7.8, 7.9, CentOS 8 Stream
+* Oracle Enterprise Linux 7.5, 7.6, 7.7, 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, 8.5
+
+A licensed version ensures that dependencies required by the installation are resolved automatically by the operating system.
+
+You must uninstall MariaDB before installing Insight.
+
+[NOTE]
+====
+Uninstalling MariaDB also removes the Postfix Mail Transport Agent.
+====
+
+A dedicated server is recommended.
+
+a|
+Virtual machine (VM)
+a|
+This component can run in a virtual environment, provided that the CPU and memory resources for your instance are reserved.
+a|
+Memory and CPU
+a|
+24 - 256 GB RAM
+
+8 - 32 cores
+
+a|
+Available disk space
+a|
+100 GB - 3 TB install disk space
+
+50 GB - 1 TB performance archive disk space
+
+The following partition breakdowns are recommended for an example 500 GB environment:
+
+* /opt directory -- 50 GB
+* /var/log directory -- 100 GB
+* /var/lib directory -- 350 GB
+
+It is a best practice to mount `/opt` and `/var` on separate disks from the root file system (`/`).
+
+SSD disks are recommended for the Insight installation space.
+
+a|
+Network
+a|
+Ethernet connection and ports:
+
+* 100 Mbps or 1 Gbps Ethernet connection with dedicated (static) IP address and IP connectivity to all components in the SAN, including FC devices and remote acquisition units.
+* Port requirements for the OnCommand Insight Server process are 80, 443, 1090 through 1100, 3873, 8083, 4444 through 4446, 5445, 5455, 4712 through 4714, 5500, and 5501.
+* Port requirements for the acquisition process are 12123 and 5679.
+* Port requirement for MySQL is 3306.
+* Port requirements for Elasticsearch are 9200 and 9310
+
+Ports 443 and 3306 require external access through any firewall that is present.
+
+a|
+Permissions
+a|
+Sudo permissions are required on the OnCommand Insight Server.
+
+If any of the following folders are symbolic links, ensure that the destination directories have '755' permissions.
+
+* /opt/netapp
+* /var/lib/netapp
+* /var/log/netapp
+
+a|
+Remote connectivity
+a|
+Internet connectivity to allow WebEx access or a remote desktop connection to facilitate installation and post-installation support.
+a|
+Accessibility
+a|
+HTTPS access is required.
+a|
+HTTP or HTTPS servers
+a|
+Apache HTTP servers or other HTTPS servers should not compete for the same ports (443) as the OnCommand Insight server and should not start automatically. If they must listen to port 443, then you must configure the OnCommand Insight server to use other ports.
+
+|===

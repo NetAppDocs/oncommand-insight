@@ -1,0 +1,12 @@
+---
+permalink: howto/concept_preparing_assets_annotating.html
+sidebar: sidebar
+keywords: 
+summary: 'Annotating allows you to associate specific tags or labels to the assets you choose, which aids in managing and reporting on those assets.'
+---
+= Preparing assets: Annotating
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Annotating allows you to associate specific tags or labels to the assets you choose, which aids in managing and reporting on those assets.

@@ -1,0 +1,14 @@
+---
+permalink: config-admin/reference_vendor_specific_data_source_reference.html
+sidebar: sidebar
+keywords: 
+summary: 'The configuration details vary depending on the vendor and model of the data source being added.'
+---
+= Vendor-specific data source reference
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The configuration details vary depending on the vendor and model of the data source being added.
+
+If a vendor's data source requires advanced Insight configuration instructions, such as special requirements and specific commands, that information is included in this section.

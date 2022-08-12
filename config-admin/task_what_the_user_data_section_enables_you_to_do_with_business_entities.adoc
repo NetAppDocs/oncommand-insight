@@ -1,0 +1,28 @@
+---
+permalink: config-admin/task_what_the_user_data_section_enables_you_to_do_with_business_entities.html
+sidebar: sidebar
+keywords: 
+summary: 'You can define business entities to track and report on your environment data at a more granular level. The User Data section in an asset page enables you to change the business entity assigned to an asset or remove a business entity from an asset.'
+---
+= Using the User Data section to assign or modify business entities
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can define business entities to track and report on your environment data at a more granular level. The User Data section in an asset page enables you to change the business entity assigned to an asset or remove a business entity from an asset.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Locate an asset page by doing either of the following:
+ ** On the Insight toolbar, click image:../media/icon_sanscreen_magnifying_glass_gif.gif[], type in the name of the asset, and then select the asset from the list.
+ ** Click *Dashboards*, select *Assets Dashboard*, locate an asset name, and click it.
+The asset page displays.
+. You can do the following:
+ ** To change the entity assigned or to assign an entity, click image:../media/pencil_icon_landing_page_be.gif[] and select an entity from the list.
+ ** To remove a business entity, click image:../media/trash_can_query.gif[].
++
+[NOTE]
+====
+You cannot remove an entity that is derived from an application that is assigned to the asset.
+====

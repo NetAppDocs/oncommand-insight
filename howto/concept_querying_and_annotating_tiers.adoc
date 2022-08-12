@@ -1,0 +1,53 @@
+---
+permalink: howto/concept_querying_and_annotating_tiers.html
+sidebar: sidebar
+keywords: 
+summary: 'You use queries to associate your annotations with the appropriate assets in your environment. Here, we will associate those tiers with the appropriate assets.'
+---
+= Querying and annotating tiers
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You use queries to associate your annotations with the appropriate assets in your environment. Here, we will associate those tiers with the appropriate assets.
+
+Earlier, we set up annotations for your Tiers. For this example, we will associate tiers with storage pools, and will assume your tier annotations are configured as follows:
+
+|===
+| Value| Description| Cost per Gb
+a|
+Tier 1 SSD
+a|
+All Flash Array
+a|
+0.5
+a|
+Tier 2 SAS
+a|
+SAS
+a|
+0.25
+a|
+Tier 3 SATA
+a|
+SATA
+a|
+0.1
+|===
+Let's search for all SSD disks in your environment, and associate the "`Tier 1 SSD`" annotation with them.
+
+* Log in to Insight as a user with administrative permissions
+* Select *Queries* > *+New Query*
+* Drop down the *Search for...* field and select *Storage Pool*. A list of all of your storage pools is displayed.
+* The *Name* field may not be helpful this time, so let's use another field. Click the *More* drop-down and select "`Least performing disk type`". This field lists the disk types that we are interested in. Enter "`SSD`" in the field and click theimage:../media/check_box_ok.gif[] button. The query results list shows only your SSD storage pools.
+* You may filter further by clicking the *More* drop-down and selecting additional fields.
+* Select the storage pools you wish to associate with this tier. When all of your desired storage pools are selected, click the *Actions* button and select *Edit annotation*.
+* In the *Add Annotation* dialog, select the *Tier* annotation.
+* Choose the desired *Value* from the list. For this example, choose "`Tier 1 SSD`".
+* Click *Save*.
+* If the Tier column is not visible on the Query results page, select it by dropping down the *Columns* button and choosing *Tier*. You should see the appropriate annotation now associated with your assets.
+* Save the query by clicking the *Save* button in the upper right corner of the Query page and giving it a unique and explicit name. For example, "`Storage Pools - Tier 1 SSD`".
+
+If you wish to associate the "`Tier 1 SSD`" annotation with other assets, create a new query and follow these steps for each asset type you desire.
+
+Repeat these steps for the assets in each of your remaining tiers.

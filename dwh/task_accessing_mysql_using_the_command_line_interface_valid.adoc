@@ -1,0 +1,59 @@
+---
+permalink: dwh/task_accessing_mysql_using_the_command_line_interface_valid.html
+sidebar: sidebar
+keywords: 
+summary: 'In addition to accessing Data Warehouse data elements through the report authoring tools, you can obtain access to Data Warehouse data elements directly by connecting as a MySQL user. You might want to connect as a MySQL user to use the data elements in your own applications.'
+---
+= Accessing MySQL using the command-line interface
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+In addition to accessing Data Warehouse data elements through the report authoring tools, you can obtain access to Data Warehouse data elements directly by connecting as a MySQL user. You might want to connect as a MySQL user to use the data elements in your own applications.
+
+== About this task
+
+There are many ways to connect. The following steps show one way.
+
+When accessing MySQL, connect to the MySQL database on the machine where Data Warehouse is installed. The MySQL port is 3306 by default; however, you can change it during installation. The user name and password is dwhuser/netapp123.
+
+== Steps
+
+. On the machine where Data Warehouse is installed, open a command-line window.
+. Access the MySQL directory in the OnCommand Insight directory.
+. Type the following user name and password: `mysql -udwhuser -pnetapp123`
++
+The following is displayed, depending on where Data Warehouse is installed:
++
+----
+c:\Program Files\SANscreen\mysql\bin> mysql -udwhuser -pnetapp123
+----
++
+----
+Welcome to the MySQL monitor. Commands end with ; or \g.
+Your MySQL connection id is 882
+Server version: 5.1.28-rc-community MySQL Community Server (GPL)
+----
++
+----
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+----
+
+. Show the Data Warehouse databases: `show databases;`
++
+The following is displayed:
++
+----
+mysql> show databases;
++-------------------------+
+| Database                |
++-------------------------+
+| information_schema      |
+| dwh_capacity            |
+| dwh_capacity_efficiency |
+| dwh_fs_util             |
+| dwh_inventory           |
+| dwh_performance         |
+| dwh_ports               |
++-------------------------+
+----

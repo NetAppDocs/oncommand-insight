@@ -1,0 +1,16 @@
+---
+permalink: howto/concept_examining_the_server_volume.html
+sidebar: sidebar
+keywords: 
+summary: 'The volume landing page shows the same familiar IOPS spike seen in its correlated assets.'
+---
+= Examining the volume
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The volume landing page shows the same familiar IOPS spike seen in its correlated assets.
+
+image::../media/server_vol_lp.gif[]
+
+In the resources section the VM for the Travel Booking application is identified. Click on the VM link to view the VM landing page.

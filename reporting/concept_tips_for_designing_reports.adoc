@@ -1,0 +1,21 @@
+---
+permalink: reporting/concept_tips_for_designing_reports.html
+sidebar: sidebar
+keywords: 
+summary: 'Several tips might be helpful when you are designing reports.'
+---
+= Tips for designing reports
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Several tips might be helpful when you are designing reports.
+
+* Determine whether you need to use current or historical data.
++
+Most reports only need to report on the latest data available in the Data Warehouse.
+
+* Data Warehouse provides historical information on capacity and performance, but not on inventory.
+* Everybody sees all data; however, you might need to limit data to specific audiences.
++
+To segment the information for different users, you can create reports and set access permissions on them.

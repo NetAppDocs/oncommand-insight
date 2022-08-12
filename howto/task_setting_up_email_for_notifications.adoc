@@ -1,0 +1,33 @@
+---
+permalink: howto/task_setting_up_email_for_notifications.html
+sidebar: sidebar
+keywords: 
+summary: 'Insight can send email notifications on trigger events, such as performance policy violations.'
+---
+= Setting up email for notifications
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Insight can send email notifications on trigger events, such as performance policy violations.
+
+== About this task
+
+Follow these basic steps to configure email notifications:
+
+== Steps
+
+. Click *Admin* > *Notifications* and go to the *Email* section.
+. In the *Server* box, enter the name of your SMTP server. You can enter either a fully-qualified domain name or an IP address.
+. Enter your SMTP user name and (if required by your SMTP server) password.
+. In the *Sender email* box, enter the sender email account that will be identified as the sender on the notifications.
++
+This account must be a valid email account within your organization.
+
+. In the *Email signature* box, enter any text that you want to be inserted in every email that is sent.
+. In the *Recipients* box, click image:../media/add_email_recipient_icon.gif[]to enter an email address, and click *OK*.
+. Click *Save*.
++
+To edit or remove an email address, or to send a test email, select the address and click the appropriate button that appears.
++
+Note that you can configure Insight to send email notifications for specified performance policy violations to specific individuals or groups. For example, you might send cloud asset violations to one group, and physical host events to another. Go to *Manage* > *Performance policies* to configure individual policy notifications.

@@ -1,0 +1,69 @@
+---
+permalink: config-admin/reference_ibm_tivoli_monitoring_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'This data source is used solely for File System Utilization. It communicates directly with the Tivoli Monitoring Database, also known as the Tivoli Monitoring Data Warehouse. Oracle and DB2 databases are supported.'
+---
+= IBM Tivoli Monitoring data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This data source is used solely for File System Utilization. It communicates directly with the Tivoli Monitoring Database, also known as the Tivoli Monitoring Data Warehouse. Oracle and DB2 databases are supported.
+
+== Oracle error message
+
+[NOTE]
+====
+This data collector is no longer available starting with OnCommand Insight 7.3.11.
+====
+
+If the specified SID results in the error message containing "ORA-12154" on attempting to connect, double-check your Oracle DB network service configuration. If the access configuration specifies a fully qualified hostname (for example, "NAMES.DEFAULT_DOMAIN"), try inserting the fully qualified service name in the SID field. A simple example would be that the connection to SID `testdb` is failing and your Oracle configuration specifies a domain of``company.com``. The following string can be used instead of the base SID to try to connect: `testdb.company.com`.
+
+== Configuration
+
+|===
+| Field| Description
+a|
+Tivoli Monitoring Database IP
+a|
+IP address or fully-qualified domain name of the Tivoli Monitoring server
+a|
+User Name
+a|
+User name for the Tivoli Monitoring server
+a|
+Password
+a|
+Password for the Tivoli Monitoring server
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Tivoli Monitoring Database Port
+a|
+Port used for Tivoli monitoring database
+a|
+Oracle SID or DB2 Database Name
+a|
+Oracle listener service ID or DB2 database name
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 60 minutes)
+a|
+Database Driver to Use
+a|
+Choose Database Driver to use
+a|
+Protocol Used to Connect to the Database
+a|
+Protocol Used to Connect to the Database
+a|
+Database Schema
+a|
+Enter Database Schema
+|===

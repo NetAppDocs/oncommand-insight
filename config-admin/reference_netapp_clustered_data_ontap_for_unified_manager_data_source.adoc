@@ -1,0 +1,53 @@
+---
+permalink: config-admin/reference_netapp_clustered_data_ontap_for_unified_manager_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'This data source collects ONTAP 8.1.x data from the Unified Manager \(UM\) 6.0+ database. Using this data source, Insight discovers all clusters configured and populated in UM. For efficiency, Insight does not call ZAPIs on the cluster itself. Performance is not supported in this data source.'
+---
+= NetApp Clustered Data ONTAP for Unified Manager data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This data source collects ONTAP 8.1.x data from the Unified Manager (UM) 6.0+ database. Using this data source, Insight discovers all clusters configured and populated in UM. For efficiency, Insight does not call ZAPIs on the cluster itself. Performance is not supported in this data source.
+
+== Configuration
+
+[NOTE]
+====
+This data collector is no longer available starting with OnCommand Insight 7.3.11.
+====
+
+|===
+| *Field*| *Description*
+a|
+Unified Manager IP
+a|
+IP address or fully-qualified domain name of the Unified Manager
+a|
+User Name
+a|
+User name for the Unified Manager
+a|
+Password
+a|
+Password for the Unified Manager
+a|
+Port
+a|
+Port used for communication with the Unified Manager (default 3306)
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min) Interval
+a|
+Interval between inventory polls (default 15 minutes)
+a|
+Exclude Clusters
+a|
+Comma-separated list of cluster IPs to exclude
+|===

@@ -1,0 +1,119 @@
+---
+permalink: config-admin/concept_configuring_insight_for_ldap_s.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight must be configured with Lightweight Directory Access Protocol \(LDAP\) settings as they are configured in your corporate LDAP domain.'
+---
+= Configuring Insight for LDAP(s)
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight must be configured with Lightweight Directory Access Protocol (LDAP) settings as they are configured in your corporate LDAP domain.
+
+Before configuring Insight for use with LDAP or secure LDAP (LDAPs), make note of the Active Directory configuration in your corporate environment. Insight settings must match those in your organization's LDAP domain configuration. Review the concepts below before configuring Insight for use with LDAP, and check with your LDAP domain administrator for the proper attributes to use in your environment.
+
+For all Secure Active Directory (i.e. LDAPS) users, you must use the AD server name exactly as it is defined in the certificate. You can not use IP address for secure AD login.
+
+[NOTE]
+====
+OnCommand Insight supports LDAP and LDAPS via Microsoft Active Directory server or Azure AD. Additional LDAP implementations may work but have not been qualified with Insight. The procedures in these guides assume that you are using Microsoft Active Directory Version 2 or 3 LDAP (Lightweight Directory Access Protocol).
+====
+
+*User Principal Name attribute:*
+
+The LDAP User Principal Name attribute (userPrincipalName) is what Insight uses as the username attribute. User Principal Name is guaranteed to be globally unique in an Active Directory (AD) forest, but in many large organizations, a user's principal name may not be immediately obvious or known to them. Your organization might use an alternative to the User Principal Name attribute for primary user name.
+
+Following are some alternative values for the User Principal Name attribute field:
+
+* *sAMAccountName*
++
+This user attribute is the legacy pre-Windows 2000 NT username - this is what most users are accustomed to logging into their personal Windows machine. This is not guaranteed to be globally unique throughout an AD forest.
++
+NOTE: sAMAccountName is case-sensitive for the User Principal Name attribute.
+
+* *mail*
++
+In AD environments with MS Exchange, this attribute is the primary e-mail address for the end user. This should be globally unique throughout an AD forest, (and also familiar for end users), unlike their userPrincipalName attribute. The mail attribute will not exist in most non-MS Exchange environments.
+
+* *referral*
++
+An LDAP referral is a domain controller's way of indicating to a client application that it does not have a copy of a requested object (or, more precisely, that it does not hold the section of the directory tree where that object would be, if in fact it exists) and giving the client a location that is more likely to hold the object. The client in turn uses the referral as the basis for a DNS search for a domain controller. Ideally, referrals always reference a domain controller that indeed holds the object. However, it is possible for the referred-to domain controller to generate yet another referral, although it usually does not take long to discover that the object does not exist and to inform the client.
+
+TIP: sAMAccountName is generally preferred over User Principal Name. sAMAccountName is unique in the domain (though it may not be unique in the domain forest), but it is the string domain users typically use for login (For example,_netapp\username_).The Distinguished Name is the unique name in the forest, but is generally not known by the users.
+
+TIP: On the Windows system part of the same domain, you can always open a command prompt and type SET to find the proper domain name (USERDOMAIN=). The OCI login name will then be `USERDOMAIN\sAMAccountName`.
+
+For the domain name *mydomain.x.y.z.com*, use `DC=x,DC=y,DC=z,DC=com` in the Domain field in Insight.
+
+*Ports*:
+
+The default port for LDAP is 389, and the default port for LDAPs is 636
+
+Typical URL for LDAPs: `ldaps://<ldap_server_host_name>:636`
+
+Logs are at:``\\<install directory>\SANscreen\wildfly\standalone\log\ldap.log``
+
+By default, Insight expects the values noted in the following fields. If these change in your Active Directory environment, be sure to change them in the Insight LDAP configuration.
+
+|===
+a|
+Role attribute
+a|
+memberOf
+a|
+Mail attribute
+a|
+mail
+a|
+Distinguished Name attribute
+a|
+distinguishedName
+a|
+Referral
+a|
+follow
+|===
+*Groups:*
+
+To authenticate users with different access roles in the OnCommand Insight and DWH servers, you must create groups in Active Directory and enter those group names in OnCommand Insight and DWH servers. The group names below are examples only; the names you configure for LDAP in Insight must match the ones set up for your Active Directory environment.
+
+|===
+| Insight Group| Example
+a|
+Insight server administrator group
+a|
+insight.server.admins
+a|
+Insight administrators group
+a|
+insight.admins
+a|
+Insight users group
+a|
+insight.users
+a|
+Insight guests group
+a|
+insight.guests
+a|
+Reporting administrator group
+a|
+insight.report.admins
+a|
+Reporting pro authors group
+a|
+insight.report.proauthors
+a|
+Reporting authors group
+a|
+insight.report.business.authors
+a|
+Reporting consumers group
+a|
+insight.report.business.consumers
+a|
+Reporting recipients group
+a|
+insight.report.recipients
+|===

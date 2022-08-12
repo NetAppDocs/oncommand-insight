@@ -1,0 +1,114 @@
+---
+permalink: install-windows/reference_insight_upgrade_checklist.html
+sidebar: sidebar
+keywords: 6.4
+summary: 'You can use the provided checklists to record your progress as you prepare for the upgrade. These tasks are intended to help mitigate the risk for upgrade failures and to expedite recovery and restoration efforts.'
+---
+= OnCommand Insight upgrade checklist
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use the provided checklists to record your progress as you prepare for the upgrade. These tasks are intended to help mitigate the risk for upgrade failures and to expedite recovery and restoration efforts.
+
+== Checklist for preparing for the upgrade (required)
+
+|===
+| Condition| Complete?
+a|
+Ensure that you have Windows local administrator permissions, which are required to perform the upgrade process, on all Insight servers.
+a|
+ 
+a|
+If your Insight, Data Warehouse, or Remote Acquisition Unit servers reside on 32-bit platforms, you must upgrade your servers to 64-bit platforms. As of Insight 7.x, upgrades are only available for 64-bit platforms.
+
+a|
+ 
+a|
+Ensure that you have the necessary permissions to modify or disable the antivirus software on all the servers in your environment. To prevent an upgrade failure due to active virus scan software, you must exclude the Insight installation directory (`disk drive:\install directory\sanscreen` from access to antivirus scanning during the upgrade. After you upgrade all of the components, you can safely reactivate the antivirus software; however, ensure that you configure the scan to still exclude everything in the Insight installation directory.
+
+Additionally, you must also exclude the IBM/Db2 folder (for example _C:\Program Files\IBM\DB2_) from anti-virus scanning following installation.
+
+a|
+ 
+|===
+
+== Checklist for preparing for the upgrade (best practice)
+
+|===
+| Condition| Complete?
+a|
+Plan when you are going to upgrade, taking into consideration that most upgrades take a minimum of 4 to 8 hours; larger enterprises will take longer. Upgrade times might vary depending on your available resources (architecture, CPU, and memory), the size of your databases, and the number of objects monitored in your environment.
+
+a|
+ 
+a|
+Contact your account representative about your upgrade plans and provide the version of Insight you have installed and what version you would like to upgrade to.
+a|
+ 
+a|
+Ensure that your current resources allocated to the Insight, Data Warehouse, and Remote Acquisition Unit(s) still meet recommended specifications. See the recommend sizing guidelines for all servers.Alternatively, you can contact your account representative to discuss sizing guidelines.
+
+a|
+ 
+a|
+Ensure that you have enough disk space for the database backup and restore process. The backup and restore processes require approximately five times the disk space used by the backup file on the Insight and Data Warehouse servers. For example, a 50 GB backup requires 250 to 300 GB of free disk space.
+
+a|
+ 
+a|
+Ensure that you have access to Firefox® or the Chrome™ browser when you back up the Insight and Data Warehouse databases. Internet Explorer is not recommended, because it experiences some issues when uploading and downloading files larger than 4 GB.
+
+a|
+ 
+a|
+Delete the `.tmp` files on the Insight server, which you can find in the following location: `<install directory>\SANscreen\wildfly\standalone\tmp`.
+a|
+ 
+a|
+Remove duplicate data sources and decommissioned data sources from the Insight client. Removing decommissioned or duplicate data sources decreases the amount of time required to perform the upgrade and mitigates the opportunity for data corruption.
+
+a|
+ 
+a|
+If you have modified any of the default reports shipped with Insight, you should save the reports with a different name and then save them to the Customer Reports folder so that you do not lose your modified report when you upgrade or restore the system.
+a|
+ 
+a|
+If you have any custom or modified Data Warehouse reports created by you or professional services, create a backup of them by exporting them to XML and then moving them to the Customer Reports folder. Ensure that the backup is not located on the Data Warehouse server. If you do not move your reports to the recommended folders, these reports might not be backed up by the upgrade process. For earlier versions of Insight, failure to locate reports in the appropriate folders may result in the loss of custom and modified reports.
+
+a|
+ 
+a|
+Record all settings in the IBM Cognos Configuration utility, because these are not included in the Data Warehouse backup; you have to reconfigure these settings after the upgrade. The utility is located in the `disk drive:\install directory\SANscreen\cognos\c10_64\bin64` directory on the Data Warehouse server and you run it using the `cogconfigw` command.Alternatively, you can perform a complete backup of Cognos and then import all of your settings. Refer to the IBM Cognos documentation for more information.
+
+a|
+ 
+|===
+
+== Checklist for preparing for the upgrade (if applicable)
+
+|===
+| Condition| Complete?
+a|
+If you have replaced the self-signed certificates that the Insight installation created due to browser security warnings with certificates signed by your internal certificate authority, back up your keystore file, which is in the following location: `disk drive:\install directory\SANscreen\wildfly\standalone\configuration` and restore it after the upgrade. This replaces the self-signed certificates that Insight creates with your signed certificates.
+
+a|
+ 
+a|
+If any of your data sources were modified for your environment and you are unsure if these modifications are available in the Insight version to which you are upgrading, make a copy of the following directory, which will help you troubleshoot if there are recovery issues: `disk drive:\install directory\SANscreen\wildfly\standalone\deployments\datasources.war`.
+a|
+ 
+a|
+Back up all custom database tables and views using the `mysqldump` command line tool.Restoring custom database tables requires privileged database access. Contact technical support for assistance with restoring these tables.
+
+a|
+ 
+a|
+Ensure that no custom integration scripts, third-party components required for Insight data sources, backups, or any other required data is stored in the `disk drive:\install directory\sanscreen` directory, because the contents of this directory is deleted by the upgrade process.Ensure that you move any of these things from the `\sanscreen` directory to another location. For example, if your environment contains custom integration scripts, ensure that you copy the following file to a directory other than the `\sanscreen` directory:
+
+`\install_dir\SANscreen\wildfly\standalone\deployments\datasources.war\new_disk_models.txt`.
+
+a|
+ 
+|===

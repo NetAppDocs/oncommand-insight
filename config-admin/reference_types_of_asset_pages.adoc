@@ -1,0 +1,40 @@
+---
+permalink: config-admin/reference_types_of_asset_pages.html
+sidebar: sidebar
+keywords: 
+summary: 'Asset pages summarize the current status of an asset and contain links to additional information about the asset and its related assets.'
+---
+= Types of asset pages
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Asset pages summarize the current status of an asset and contain links to additional information about the asset and its related assets.
+
+OnCommand Insight provides asset pages for the following assets:
+
+* Virtual machine
+* Volume
+* Internal volume
+* Physical host
+* Storage pool
+* Storage
+* Datastore
+* Hypervisor
+* Application
+* Storage node
+* Qtree
+* Disk
+* VMDK
+* Port
+* Switch
+* Fabric
+* Object storage (for example, Atmos, Centera, Amazon S3)
+* Zone
+
+Mapping and Masking information can be viewed in tables on Zone, Volume, VM, and Host/Hypervisor asset pages.
+
+[NOTE]
+====
+Summary information is available for object storage assets; however, you can only access this information from the Data sources detail page.
+====

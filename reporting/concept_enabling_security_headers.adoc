@@ -1,0 +1,20 @@
+---
+permalink: reporting/concept_enabling_security_headers.html
+sidebar: sidebar
+keywords: 
+summary: 'HTTP headers can be configured to enhance the overall security of the Cognos Analytics web application.'
+---
+= Enabling Security Headers
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+HTTP headers can be configured to enhance the overall security of the Cognos Analytics web application.
+
+To add the response headers:
+
+* Log in to the Cognos Analytics UI and navigate to *Manage \-> Configuration \-> System \-> Advanced Settings*
+* Add the following Key/Value and apply:
+ ** Key: `BIHeaderFilter.responseHeaders`
+ ** Value: `[{"name":"X-FRAME-OPTIONS","value":"SAMEORIGIN"},{"name":"X-XSS-Protection","value":"1"},{"name":"X-Content-Type-Options","value":"nosniff"}]`
+* Refresh your browser to enable the headers.

@@ -1,0 +1,12 @@
+---
+permalink: howto/task_assigning_application_to_assets_how_to_chargeback.html
+sidebar: sidebar
+keywords: 
+summary: 'After defining your applications, you need to associate the applications with specific assets. You can use a simple ad hoc method to apply an applications to an asset. Users looking to apply applications in bulk should use a query method to identify the assets they want to assign to an application.'
+---
+= Assigning applications to assets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After defining your applications, you need to associate the applications with specific assets. You can use a simple ad hoc method to apply an applications to an asset. Users looking to apply applications in bulk should use a query method to identify the assets they want to assign to an application.

@@ -1,0 +1,67 @@
+---
+permalink: install-windows/task_installing_the_oncommand_insight_server.html
+sidebar: sidebar
+keywords: 
+summary: 'You can easily install the OnCommand Insight Server by using the OnCommand Insight Setup wizard.'
+---
+= Installing the OnCommand Insight Server
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can easily install the OnCommand Insight Server by using the OnCommand Insight Setup wizard.
+
+== Before you begin
+
+You must have completed all of the installation prerequisites.
+
+== Steps
+
+. Log in to the Insight server using an account with administrator privileges.
+. Open Windows Explorer and navigate to the directory where the installation files are located.
+. Double-click the `.MSI` file that you downloaded.
+. Click *Next* to continue.
+. Read the License Agreement, select *I accept the terms in the License Agreement* check box, and then click *Next*.
+. Enter the customer name and site name in the *Customer Information* window, and click *Next*.
++
+*Best Practice:* Use the customer name as a prefix for the site: for example, NetApp.
+
+. In the *Customer Information: Configure NetApp ASUP* window, do the following:
+ .. Select the database containing the data that you want to upload to ASUP by selecting one of the following options:
+  *** *No database backup*: A backup is not sent to ASUP.
+  *** *Backup without Performance data*: A backup is made and sent to ASUP but does not include performance data.
+  *** *Backup with Performance data*: A backup is made that includes performance data, but this could generate a huge `*.gz` file.
+
++
+[NOTE]
+====
+ASUP is delivered using HTTPS protocol.
+====
+ .. In *Logs*, select whether you want no logs, base logs, or extended logs, which contain a data source recording.
+ .. Click *Next*.
+. If you are using the Insight consumption licensing model, you must check the box to *Enable sending usage information to NetApp* in the *Send usage information* section.
+. Click *Next*
+. In the *Configure Server* window, select or set the appropriate configuration parameters to configure the OnCommand Insight Server:
++
+|===
+| Option| Description
+a|
+Portal Port (HTTP)
+a|
+Ports used by the OnCommand Insight Server to support user Web services, including a portal to perform administration tasks. Use the default (80); however, if the default port is in use, change this to another port.
+a|
+Portal Port (HTTPS)
+a|
+Port used by remote acquisition units to send SAN change information to the OnCommand Insight Server through a secure channel. Use the default (443); however, if the default port is in use, change this to another port. You specify this same port number when configuring RAUs.
+a|
+Internal Database Port (SQL)
+a|
+Port used internally by the PC where the OnCommand Insight Server is running, to serve as an access point to the database. Use the default (3306); however, if the default port is in use, change this to another port.
+|===
+
+. Click *Next*.
+. Click *Install* to proceed.
++
+The installation should take approximately 20 minutes, depending on the applications installed.
+
+. Click *Finish*.

@@ -1,0 +1,33 @@
+---
+permalink: config-admin/task_setting_up_business_entities.html
+sidebar: sidebar
+keywords: 
+summary: 'After designing the business entities hierarchy for your company, you can set up applications and then associate the business entities with the applications. This process creates the business entities structure in your OnCommand Insight database.'
+---
+= Creating business entities
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After designing the business entities hierarchy for your company, you can set up applications and then associate the business entities with the applications. This process creates the business entities structure in your OnCommand Insight database.
+
+== About this task
+
+Associating applications with business entities is optional; however, it is a best practice.
+
+== Steps
+
+. Log in to the Insight web UI.
+. Click *Manage* and select *Business entities*.
++
+The Business Entities page displays.
+
+. Click image:../media/add_annotation_icon.gif[] to begin building a new entity.
++
+The *Add Business Entity* dialog box displays.
+
+. For each entity level (Tenant, Line of Business, Business Unit, and Project), you can do any of the following:
+ ** Click the entity level list and select a value.
+ ** Type a new value and press Enter.
+ ** Leave the entity level value as N/A if you do not want to use the entity level for the business entity.
+. Click *Save*.

@@ -1,0 +1,129 @@
+---
+permalink: config-admin/reference_3par_inserv_firmware_ssh_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight uses the 3PAR InServ \(Firmware 2.2.2+, SSH\) data source to discover inventory for HP 3PAR StoreServ storage arrays.'
+---
+= 3PAR InServ data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight uses the 3PAR InServ (Firmware 2.2.2+, SSH) data source to discover inventory for HP 3PAR StoreServ storage arrays.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the 3PAR InServ data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Physical Disk
+a|
+Disk
+a|
+Storage System
+a|
+Storage
+a|
+Controller Node
+a|
+Storage Node
+a|
+Common Provisioning Group
+a|
+Storage Pool
+a|
+Virtual Volume
+a|
+Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* IP address or FQDN of the InServ cluster
+* For inventory, read-only user name and password to the InServ Server.
+* For performance, read-write user name and password to the InServ Server.
+* Port requirements: 22 (inventory collection), 5988 or 5989 (performance collection) [Note: 3PAR Performance is supported for InServ OS 3.x+]
+* For performance collection confirm that SMI-S is enabled by logging into the 3PAR array via SSH.
+
+== Configuration
+
+|===
+| Field| Description
+a|
+Cluster IP
+a|
+IP address or fully-qualified domain name of the InServ cluster
+a|
+User Name
+a|
+User name for the InServ Server
+a|
+Password
+a|
+Password used for the InServ Server
+a|
+SMI-S Host IP
+a|
+IP address of the SMI-S Provider Host
+a|
+SMI-S User Name
+a|
+User name for the SMI-S Provider Host
+a|
+SMI-S Password
+a|
+Password used for the SMI-S Provider Host
+|===
+
+== Advanced Configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 40 minutes)
+a|
+Exclude Devices
+a|
+Comma-separated list of device IPs to exclude
+a|
+SSH Process Wait Timeout (sec)
+a|
+SSH process timeout (default 60 seconds)
+a|
+Number of SSH Retries
+a|
+Number of SSH retry attempts
+a|
+SSH Banner Wait Timeout (sec)
+a|
+SSH banner wait timeout (default 20 seconds)
+a|
+SMI-S Port
+a|
+Port used by SMI-S Provider Host
+a|
+Protocol
+a|
+Protocol used to connect to the SMI-S provider
+a|
+SMI-S namespace
+a|
+SMI-S namespace
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+a|
+Number of SMI-S Connection Retries
+a|
+Number of SMI-S connection retry attempts
+|===

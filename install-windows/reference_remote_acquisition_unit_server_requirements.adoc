@@ -1,0 +1,47 @@
+---
+permalink: install-windows/reference_remote_acquisition_unit_server_requirements.html
+sidebar: sidebar
+keywords: redhat
+summary: 'You must install a Remote Acquisition Unit \(RAU\) to acquire information from SAN devices that are behind a firewall, at a remote site, on a private network, or in different network segments. Before you install the RAU, you should ensure that your environment meets RAU operating system, CPU, memory, and disk space requirements.'
+---
+= Remote Acquisition Unit server requirements
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must install a Remote Acquisition Unit (RAU) to acquire information from SAN devices that are behind a firewall, at a remote site, on a private network, or in different network segments. Before you install the RAU, you should ensure that your environment meets RAU operating system, CPU, memory, and disk space requirements.
+
+|===
+| Component| Requirement
+a|
+Operating system
+a|
+A computer running 64-bit Microsoft Windows Server 2012, 2012 R2, 2016, or 2019 with the latest service pack
+
+a|
+CPU
+a|
+4 CPU cores
+a|
+Memory
+a|
+16 GB RAM
+a|
+Available disk space
+a|
+40 GB
+a|
+Network
+a|
+100 Mbps /1 Gbps Ethernet connection, static IP address, IP connectivity to all FC devices, and a required port to the OnCommand Insight server (80 or 443).
+a|
+Permissions
+a|
+Local Administrator permissions on the RAU server
+
+a|
+Virus scan
+a|
+During the installation of this OnCommand Insight component, you must completely disable all virus scanners. Following installation, the paths used by the Insight component must be excluded from virus scanning. Additionally, you must also exclude the IBM/Db2 folder (for example _C:\Program Files\IBM\DB2_) from anti-virus scanning following installation.
+
+|===

@@ -1,0 +1,20 @@
+---
+permalink: config-admin/concept_capacity_as_time_series.html
+sidebar: sidebar
+keywords: 
+summary: 'With OnCommand Insight 7.3.1, capacity information is reported and charted as time series data.'
+---
+= Capacity as Time Series
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+With OnCommand Insight 7.3.1, capacity information is reported and charted as time series data.
+
+Previously, capacity information acquired from data sources has been exclusively "point-in-time" (PIT) data, meaning it could not be used in charts as time series data. Now, capacity values for assets can be used as time series data in the following ways:
+
+* Graphed in tables, widgets, expert views, and any place where time series data is displayed
+* Applied to performance thresholds with violations using existing semantics
+* Used in expressions with other performance counters where appropriate
+
+Note that if you upgrade from a previous version of Insight, previous PIT capacity values used in queries or in filters for custom dashboards will be replaced with time series capacity data. This may result in small changes in the way that capacity data is reported or filtered when compared to the equivalent data in previous Insight versions.

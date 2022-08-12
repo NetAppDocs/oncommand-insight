@@ -1,0 +1,15 @@
+---
+permalink: reporting/concept_colors_used_in_data_model_elements.html
+sidebar: sidebar
+keywords: 
+summary: 'Colors on data model elements have different indications.'
+---
+= Colors used in data model elements
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Colors on data model elements have different indications.
+
+* Yellow assets: Represent measurements.
+* Non-yellow assets: Represent attributes. These values do not aggregate.

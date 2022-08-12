@@ -1,0 +1,19 @@
+---
+permalink: howto/task_compare_metrics_a_against_metrics_b_to_show_categories_and_anomalies.html
+sidebar: sidebar
+keywords: 
+summary: 'You can use a scatter plot to show two sets of data for each object. For example, you can specify IOPS Read and Latency Total to be displayed for each object. Using this chart you can identify the object you consider troublesome based on both the IOPS and the Latency combined.'
+---
+= Compare metrics-A against metrics-B to show categories and anomalies
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use a scatter plot to show two sets of data for each object. For example, you can specify IOPS Read and Latency Total to be displayed for each object. Using this chart you can identify the object you consider troublesome based on both the IOPS and the Latency combined.
+
+== Steps
+
+. Add a widget with a scatter plot chart to the to the new dashboard: *Widget* > *Scatter Plot Chart*
+. Change the default device to Virtual machine: Click *Storage* > *Virtual machine* > *Latency total* > *IOPS Read*
++
+The system displays a scatter plot similar to the following: image:../media/guid_a2c666db_f53d_42b8_82ef_62743b8b0fe2.gif[]

@@ -1,0 +1,133 @@
+---
+permalink: install-windows/reference_insight_server_requirements.html
+sidebar: sidebar
+keywords: redhat
+summary: 'A dedicated server is recommended. Do not install Insight on a server that has any other applications installed. Both physical and virtual servers are supported, provided that the product requirements are met.'
+---
+= Insight Server requirements
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+A dedicated server is recommended. Do not install Insight on a server that has any other applications installed. Both physical and virtual servers are supported, provided that the product requirements are met.
+
+You must have local administrator permissions to install the OnCommand Insight Server software.
+
+[NOTE]
+====
+Sizing for OnCommand Insight has multiple dependencies, such as data source type and size, number of assets in your environment, polling intervals, and more. The following sizing examples are guidelines only; they represent some of the environments in which Insight has been tested. Changing any of these or other factors in the environment can change the sizing requirements for Insight. These guidelines include disk space for up to 90 days of performance archive data.
+====
+
+It is recommended to contact your Sales Engineer for detailed sizing guidance before installing or upgrading Insight.
+
+*Examples:*
+
+|===
+| Environment factors:| Disk space, CPUs, and Memory tested:
+a|
+80 storage arrays4,000 Volumes
+
+4,000 VMs
+
+4,000 switch ports
+
+a|
+250 GB disk space8 cores
+
+32 GB RAM
+
+a|
+160 storage arrays40,000 Volumes
+
+8,000 VMs
+
+8,000 switch ports
+
+a|
+1 TB of disk space12 cores
+
+48 GB RAM
+
+|===
+*Requirements:*
+
+|===
+| Component| Required
+a|
+Operating system
+a|
+A computer running 64-bit Microsoft Windows Server 2012, 2012 R2, 2016, or 2019 with the latest service pack.
+
+The Resilient File System (ReFS) introduced with Windows Server 2012 is not compatible with OnCommand Insight. Windows installation of OnCommand Insight is only supported on the NTFS file system.
+
+A dedicated server is recommended.
+
+a|
+Virtual machine (VM)
+a|
+This component can run in a virtual environment, provided that the CPU and memory resources for your instance are reserved.
+a|
+Memory and CPU
+a|
+24 - 256 GB RAM
+
+8 - 32 cores
+
+It is strongly recommended to set the paging file size to "`Windows managed`". Small, fixed-size paging files may interfere with the successful storage of Insight performance data.
+
+a|
+Available disk space
+a|
+100 GB - 3 TB install disk space
+
+50 GB - 1 TB performance archive disk space
+
+SSD disks are recommended for the Insight installation space.
+
+a|
+Network
+a|
+Ethernet connection and ports:
+
+* 100 Mbps or 1 Gbps Ethernet connection with dedicated (static) IP address and IP connectivity to all components in the SAN, including FC devices and remote acquisition units.
+* Port requirements for the OnCommand Insight Server process are 80, 443, 1090 through 1100, 3873, 8083, 4444 through 4446, 5445, 5455, 4712 through 4714, 5500, and 5501.
+* Port requirements for the acquisition process are 12123 and 5679.
+* Port requirement for MySQL is 3306.
+* Port requirements for Elasticsearch are 9200 and 9310
+* Dynamic port requirements on Win2008/2012 are 49152 through 65535
+
+Ports 443 and 3306 require external access through any firewall that is present.
+
+a|
+Permissions
+a|
+Local administrator permissions are required on the OnCommand Insight Server.
+
+If any of the following folders are symbolic links, ensure that the destination directories have '755' permissions.
+
+* /opt/netapp
+* /var/lib/netapp
+* /var/log/netapp
+
+a|
+Remote connectivity
+a|
+Internet connectivity to allow WebEx access or a remote desktop connection to facilitate installation and post-installation support.
+a|
+Accessibility
+a|
+HTTPS access is required.
+a|
+Virus scan
+
+a|
+During the installation of this OnCommand Insight component, you must completely disable all virus scanners. Following installation, the paths used by the Insight component (install, backup, and archiver paths) must be excluded from virus scanning.
+
+Additionally, you must also exclude the IBM/Db2 folder (for example _C:\Program Files\IBM\DB2_) from anti-virus scanning following installation.
+
+a|
+HTTP or HTTPS servers
+a|
+Microsoft Internet Information Services (IIS) or other HTTPS servers should not compete for the same ports (443) as the OnCommand Insight server, and should not start automatically. If they must listen to port 443, then you must configure the OnCommand Insight server to use other ports.
+
+|===

@@ -1,0 +1,20 @@
+---
+permalink: config-admin/concept_maintaining_insight.html
+sidebar: sidebar
+keywords: 
+summary: 'Whether you are new to Insight and have a new system to set up, or your system has been operating for some time, you must take steps to maintain smooth operation of Insight and your network. The key maintenance concept is that changes in your network usually need to be accommodated in Insight.'
+---
+= Maintaining Insight
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Whether you are new to Insight and have a new system to set up, or your system has been operating for some time, you must take steps to maintain smooth operation of Insight and your network. The key maintenance concept is that changes in your network usually need to be accommodated in Insight.
+
+These are the most common maintenance tasks:
+
+* Maintaining Insight backups
+* Updating expired Insight licenses
+* Coordinating data source patches
+* Updating the Insight version on all acquisition units
+* Deleting removed data sources from Insight

@@ -1,0 +1,23 @@
+---
+permalink: config-admin/task_balancing_network_resources.html
+sidebar: sidebar
+keywords: 
+summary: 'To resolve balancing issues, use the asset pages to find the problems and identify high capacity volumes that are underused.'
+---
+= Balancing network resources
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To resolve balancing issues, use the asset pages to find the problems and identify high capacity volumes that are underused.
+
+== Steps
+
+. Open the Assets Dashboard in your browser.
+. In the Virtual Machines IOPS heat map, you notice the name of a VM in very large print that often reports problems.
+. Click the VM name to display the asset page.
+. Check for error messages in the summary.
+. Check the performance charts and particularly the top correlated resources to locate any volumes that might be in contention.
+. Add volumes to the performance chart to compare the patterns of activity and display more asset pages for other resources involved in the problem.
+. Scroll to the bottom of the asset page to see lists of all of the resources associated with the VM. Note any VMDKs running at high capacity. This is likely causing the contention.
+. To resolve the balancing problem, identify a resource that is under-utilized to receive the load from an over-utilized resource or remove a less demanding application from the heavily used resource.

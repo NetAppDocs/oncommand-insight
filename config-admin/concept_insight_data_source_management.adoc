@@ -1,0 +1,25 @@
+---
+permalink: config-admin/concept_insight_data_source_management.html
+sidebar: sidebar
+keywords: 
+summary: 'Data sources are the most critical component used to maintain an OnCommand Insight environment. Because they are the primary source of information for Insight, it is imperative that you maintain data sources in a running state.'
+---
+= Insight data source management
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Data sources are the most critical component used to maintain an OnCommand Insight environment. Because they are the primary source of information for Insight, it is imperative that you maintain data sources in a running state.
+
+You can monitor the data sources in your network by selecting a data source to check the events related to its status and noting any changes that might have caused problems.
+
+In addition to examining an individual data source, you can perform these operations:
+
+* Clone a data source to create many similar data sources in Insight
+* Edit data source information
+* Change credentials
+* Control polling
+* Delete the data source
+* Install data source patches
+* Install a new data source from a patch
+* Prepare an error report for NetApp Customer Support

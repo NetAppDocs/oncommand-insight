@@ -1,0 +1,41 @@
+---
+permalink: install-windows/concept_overview_of_insight_upgrade_process.html
+sidebar: sidebar
+keywords: 
+summary: 'Before you begin upgrading Insight, it is important to understand the upgrade process. The upgrade process is the same for most versions of Insight.'
+---
+= Overview of the OnCommand Insight upgrade process
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you begin upgrading Insight, it is important to understand the upgrade process. The upgrade process is the same for most versions of Insight.
+
+The upgrade process for Insight includes the following high-level tasks:
+
+* Downloading the installation packages
+* Backing up the Data Warehouse database
++
+To avoid the possibility of misreporting data, you must back up the Data Warehouse database before you back up the Insight database.
+
+* Backing up the Insight database
++
+The Insight database is automatically backed up when you perform the in-place upgrade. It is a best practice to back up the database before the upgrade, and place the backup in a location other than on the Insight server. During the upgrade process, Insight does not collect new data. To minimize the amount of data that is not collected, you must start the database backup within an hour or two of your planned upgrade time.
+
+* Back up the Data Warehouse and Remote Acquisition Unit security configuration if the configuration has been changed from the default configuration.
++
+The non-default security configuration must be restored to the Data Warehouse and RAU server after the upgrade is complete and before the Data Warehouse database is restored to the system.
+
+* Backing up any custom Data Warehouse reports
++
+When you back up the Data Warehouse database, custom reports are included. The backup file is created on the Data Warehouse server. It is a recommended best practice to back up the custom reports to a location other than the Data Warehouse server.
+
+* Uninstalling the Data Warehouse and the Remote Acquisition Unit software, if applicable
++
+The Insight server has an in-place upgrade; you do not have to uninstall the software. The in-place upgrade backs up the database, uninstalls the software, installs the new version, and then restores the database.
+
+* Upgrading the software on the Insight server, Data Warehouse, and Remote Acquisition Unit(s)
++
+All previously applied licenses remain in the registry; you do not have to reapply these licenses.
+
+* Completing the post-upgrade tasks

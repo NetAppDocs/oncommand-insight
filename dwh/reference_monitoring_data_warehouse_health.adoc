@@ -1,0 +1,31 @@
+---
+permalink: dwh/reference_monitoring_data_warehouse_health.html
+sidebar: sidebar
+keywords: suppress
+summary: 'The Data Warehouse \(DWH\) includes a health monitor that displays information about the state of DWH. Alarm messages are displayed on the Connectors and Jobs pages of the DWH, as well as sent to the connected Insight server, where they are displayed on the Admin \> Health page.'
+---
+= Monitoring Data Warehouse health
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Data Warehouse (DWH) includes a health monitor that displays information about the state of DWH. Alarm messages are displayed on the *Connectors* and *Jobs* pages of the DWH, as well as sent to the connected Insight server, where they are displayed on the *Admin* > *Health* page.
+
+DWH collects metrics every ten minutes, and displays an alarm under the following conditions:
+
+* Connection to the Insight server is down
+* Disk utilization is greater than 90%
+* Reporting (Cognos) service is down
+* A query holds a lock on any table for a prolonged time
+* A maintenance job is disabled
+* Automatic backup is disabled
+* Security risk: default encryption keys detected
+
+Health monitor warnings in the Data Warehouse can be suppressed for up to 30 days.
+
+When email notification is enabled, these events are also reported by email. Note that the email does not contain any attachments.
+
+These events are logged in the `dwh_troubleshoot.log` file in the following locations:
+
+* Windows: `<install dir>\SANscreen\Wildfly\Standalone\Logs`
+* Linux: `/var/log/netapp/oci/wildfly/`

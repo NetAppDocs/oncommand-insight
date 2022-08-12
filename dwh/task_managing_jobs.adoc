@@ -1,0 +1,32 @@
+---
+permalink: dwh/task_managing_jobs.html
+sidebar: sidebar
+keywords: 
+summary: 'You can see a list of current jobs and their status. The first job in a build cycle is in bold type. The build that Data Warehouse performs for each connector and for each data mart is considered a job.'
+---
+= Managing jobs
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can see a list of current jobs and their status. The first job in a build cycle is in bold type. The build that Data Warehouse performs for each connector and for each data mart is considered a job.
+
+== About this task
+
+You can cancel any pending job you have scheduled or begun. You can also clear the history of previously executed jobs. You can clear history of jobs that are not pending, running, or in the process of aborting. You can clear all history or all history except the previous 24 hours to remove all but the last day's entries.
+
+You can see information about the following types of jobs: License, Pre Inventory, Inventory, Post Inventory, Dimensions, Datamarts Preparation, Capacity, Ports, Storage Efficiency, File System Utilization, Performance, Job Status Notification, History build, Dynamic annotations, Connector removal, Skipped build, Phone Home, and Maintenance.
+
+A maintenance job runs weekly and uses MySQL tools to optimize the database.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *Jobs*.
++
+image::../media/oci_dwh_admin_jobs_gif.gif[DWH Main Menu Jobs Link]
++
+If a Pending status appears, a cancel link appears.
+
+. To cancel a pending job, click *cancel*.
+. To remove the job history, click *All* or *All but last 24h*.

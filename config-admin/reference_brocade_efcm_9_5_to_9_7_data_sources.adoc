@@ -1,0 +1,89 @@
+---
+permalink: config-admin/reference_brocade_efcm_9_5_to_9_7_data_sources.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight uses the Brocade Enterprise Fabric Connectivity Manager \(EFCM\) data source to discover inventory for Brocade EFCM switches. Insight supports EFCM versions 9.5, 9.6, and 9.7.'
+---
+= Brocade Enterprise Fabric Connectivity Manager data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight uses the Brocade Enterprise Fabric Connectivity Manager (EFCM) data source to discover inventory for Brocade EFCM switches. Insight supports EFCM versions 9.5, 9.6, and 9.7.
+
+== Requirements
+
+[NOTE]
+====
+This data collector is not available starting with OnCommand Insight 7.3.11.
+====
+
+* Network address or fully-qualified domain name for the EFCM server
+* EFCM version must be 9.5, 9.6, or 9.7
+* IP address of the EFCM server
+* Read-only username and password for the EFCM server
+* Validated access to the Connectrix switch by Telnet from the Insight server, using the read-only username and password over port 51512
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+EFC server
+a|
+IP address or fully-qualified domain name of the EFC Server
+a|
+User Name
+a|
+User name for the switch
+a|
+Password
+a|
+Password used for the switch
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 15 minutes)
+a|
+Fabric Name
+a|
+Fabric name to be reported by the EFCM data source. Leave blank to report the fabric name as WWN.
+a|
+Communication Port
+a|
+Port used for communication with the switch
+a|
+Enable Trapping
+a|
+Select to enable acquisition upon receiving an SNMP trap from the device. If you select enable trapping, you must also activate SNMP.
+a|
+Minimum Time Between Traps (sec)
+a|
+Minimum time between acquisition attempts triggered by traps (default 15 seconds)
+a|
+Inactive Zonesets
+a|
+Comma-separated list of inactive Zonesets on which to perform acquisition, in addition to performing acquisition on the active zone sets
+a|
+NIC to Use
+a|
+Specify which network interface should be used on the RAU when reporting on SAN devices
+a|
+Exclude Devices
+a|
+Comma-separated list of unit names to include or exclude from polling
+a|
+Use the EFCM switch nickname as the Insight switch name
+a|
+Select to use the EFCM switch nickname as the Insight switch name
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+|===

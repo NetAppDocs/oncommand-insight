@@ -1,0 +1,19 @@
+---
+permalink: config-admin/task_cac_configuration_for_linux.html
+sidebar: sidebar
+keywords: 
+summary: 'Some modifications are required to enable CAC on a Linux OnCommand Insight server.'
+---
+= Enabling CAC on a Linux server
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Some modifications are required to enable CAC on a Linux OnCommand Insight server.
+
+== Steps
+
+. Navigate to `/opt/netapp/oci/conf/`
+. Edit `wildfly.properties` and change the value of `CLIENT_AUTH_ENABLED` to "True"
+. Import the "`root certificate`" that exists under `/opt/netapp/oci/wildfly/standalone/configuration/server.keystore`
+. Restart the server

@@ -1,0 +1,117 @@
+---
+permalink: config-admin/reference_ibm_xiv_cli_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'IBM XIV \(CLI\) data source inventory is performed by using the XIV command-line interface. XIV performance is accomplished by making SMI-S calls to the XIV array, which runs a SMI-S provider on port 5989.'
+---
+= IBM XIV data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+IBM XIV (CLI) data source inventory is performed by using the XIV command-line interface. XIV performance is accomplished by making SMI-S calls to the XIV array, which runs a SMI-S provider on port 5989.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the IBM XIV data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Disk
+a|
+Disk
+a|
+Storage System
+a|
+Storage
+a|
+Storage Pool
+a|
+Storage Pool
+a|
+Volume
+a|
+Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* Port requirement: TCP port 7778
+* IP address of the XIV management interface
+* Read-only user name and password
+* The XIV CLI must be installed on the Insight server or RAU
+* Access validation: Log in to the XIV user interface from the Insight server using the user name and password.
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+IP Address
+a|
+IP address or fully-qualified domain name for the XIV storage
+a|
+User Name
+a|
+User name for the XIV storage
+a|
+Password
+a|
+Password for the XIV storage
+a|
+Full path to XIV CLI directory
+a|
+Full path to the XIV CLI directory
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 40 minutes)
+a|
+CLI Process Wait Timeout (ms)
+a|
+CLI process timeout (default 7200000 ms)
+a|
+SMI-S Host IP
+a|
+IP address of the SMI-S Provider Host
+a|
+SMI-S Port
+a|
+Port used by SMI-S Provider Host
+a|
+SMI-S Protocol
+a|
+Protocol used to connect to the SMI-S provider
+a|
+SMI-S Namespace
+a|
+SMI-S namespace
+a|
+Username
+a|
+User name for the SMI-S Provider Host
+a|
+Password
+a|
+Password for the SMI-S Provider Host
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+a|
+Number of SMI-S Connection Retries
+a|
+Number of SMI-S connection retry attempts
+|===

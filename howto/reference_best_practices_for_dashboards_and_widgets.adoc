@@ -1,0 +1,12 @@
+---
+permalink: howto/reference_best_practices_for_dashboards_and_widgets.html
+sidebar: sidebar
+keywords: 
+summary: 'Tips and tricks to help you get the most out of the powerful features of dashboards and widgets.'
+---
+= Best Practices for Dashboards and Widgets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Tips and tricks to help you get the most out of the powerful features of dashboards and widgets.

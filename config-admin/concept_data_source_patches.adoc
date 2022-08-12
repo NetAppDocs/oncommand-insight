@@ -1,0 +1,21 @@
+---
+permalink: config-admin/concept_data_source_patches.html
+sidebar: sidebar
+keywords: 
+summary: 'Data source patches fix issues with existing patches and also enable you to easily add new data source types \(vendors and models\). For each data source type in your network, you can upload data source patches. You can also install, test, and manage the patching process. However, only one patch can be active for a data source type at a time.'
+---
+= What data source patches are
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Data source patches fix issues with existing patches and also enable you to easily add new data source types (vendors and models). For each data source type in your network, you can upload data source patches. You can also install, test, and manage the patching process. However, only one patch can be active for a data source type at a time.
+
+For each patch, you can perform these tasks:
+
+* Check the before and after comparison of each data source receiving the patch.
+* Write comments to explain decisions or summarize research.
+* Make changes to a data source that is not responding well to the patch.
+* Approve the patch to be committed to your Insight server.
+* Roll back a patch that is not operating as you intended.
+* Replace a failing patch with a different one.

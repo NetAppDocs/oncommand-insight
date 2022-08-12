@@ -9,3 +9,1497 @@ sidebar:
   entries:
   - title: Home
     url: "/index.html"
+  - title: config-admin
+    url: "/config-admin/index.html"
+    entries:
+    - title: OnCommand Insight overview
+      url: "/config-admin/concept_oncommand_insight_overview.html"
+      entries:
+      - title: Insight architecture
+        url: "/config-admin/concept_insight_architecture.html"
+      - title: How Insight is used by administrators, managers, and planners
+        url: "/config-admin/concept_insight_for_administrators_and_planners.html"
+    - title: Setting up Insight
+      url: "/config-admin/concept_setting_up_insight.html"
+      entries:
+      - title: Accessing the web UI
+        url: "/config-admin/task_opening_insight.html"
+      - title: Installing your Insight licenses
+        url: "/config-admin/task_installing_your_insight_licenses.html"
+        entries:
+        - title: OnCommand Insight licenses
+          url: "/config-admin/concept_oncommand_insight_licenses.html"
+      - title: Setting up and managing user accounts
+        url: "/config-admin/task_setting_up_and_managing_user_accounts.html"
+        entries:
+        - title: Insight user roles
+          url: "/config-admin/reference_insight_user_roles.html"
+        - title: Configuring Insight for LDAP(s)
+          url: "/config-admin/concept_configuring_insight_for_ldap_s.html"
+          entries:
+          - title: Configuring user definitions using LDAP
+            url: "/config-admin/task_configuring_user_definitions_using_ldap.html"
+        - title: Changing user passwords
+          url: "/config-admin/task_changing_user_passwords.html"
+        - title: Editing a user definition
+          url: "/config-admin/task_editing_a_user_definition.html"
+        - title: Deleting a user account
+          url: "/config-admin/task_deleting_a_user_account.html"
+        - title: Configuring Single Sign-On (SSO)
+          url: "/config-admin/reference_configuring_sso.html"
+      - title: Setting a Login Warning Message
+        url: "/config-admin/task_configuring_a_login_warning_message.html"
+      - title: Insight Security
+        url: "/config-admin/concept_security_management.html"
+        entries:
+        - title: Managing security on the Insight server
+          url: "/config-admin/task_managing_security_on_the_insight_server.html"
+        - title: Managing security on the local acquisition unit
+          url: "/config-admin/task_managing_security_on_the_local_acquisition_unit.html"
+        - title: Managing security on an RAU
+          url: "/config-admin/task_managing_security_on_an_rau.html"
+        - title: Managing security on the Data Warehouse
+          url: "/config-admin/task_managing_security_on_the_data_warehouse.html"
+        - title: Changing OnCommand Insight internal user passwords
+          url: "/config-admin/task_changing_oncommand_insight_internal_user_passwords.html"
+          entries:
+          - title: Changing the &#8220;inventory&#8221; and &#8220;dwh_internal&#8221;
+              passwords using the Server Connection Configuration UI
+            url: "/config-admin/task_changing_passwords_in_the_server_connection_confuguration_ui.html"
+          - title: Changing the dwh password using the ODBC Administration tool
+            url: "/config-admin/task_changing_the_dwh_password_using_the_odbc_administration_tool.html"
+      - title: Smart Card and certificate login support
+        url: "/config-admin/concept_certificate_login_support.html"
+        entries:
+        - title: Configuring hosts for Smart Card and certificate login
+          url: "/config-admin/task_host_configuration_for_smart_card_and_certificate_login.html"
+        - title: Configuring a client to support Smart Card and certificate login
+          url: "/config-admin/task_client_configuration_for_smart_card_and_certificate_login.html"
+        - title: Enabling CAC on a Linux server
+          url: "/config-admin/task_cac_configuration_for_linux.html"
+        - title: Configuring Data Warehouse for Smart Card and certificate login
+          url: "/config-admin/task_host_configuration_for_smart_card_and_certificate_login_dwh.html"
+        - title: Configuring Cognos for Smart Card and certificate login (OnCommand
+            Insight 7.3.5 through 7.3.9)
+          url: "/config-admin/task_cognos_configuration_for_smart_card_and_certificate_login_7_3_5_through_7_3_9.html"
+        - title: Configuring Cognos for Smart Card and certificate login (OnCommand
+            Insight 7.3.10 and later)
+          url: "/config-admin/task_cognos_configuration_for_smart_card_and_certificate_login_7_3_10_and_later.html"
+        - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight
+            7.3.5 to 7.3.9)
+          url: "/config-admin/task_importing_ca_signed_ssl_certificates_for_cognos_and_dwh_insight_7_3_5_to_7_3_9.html"
+        - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight
+            7.3.10 and later)
+          url: "/config-admin/task_importing_ca_signed_ssl_certificates_for_cognos_and_dwh_insight_7_3_10_and_later.html"
+      - title: Configuring Data Warehouse for Smart Card and certificate login
+        url: "/config-admin/task_host_configuration_for_smart_card_and_certificate_login_dwh.html"
+      - title: Configuring Cognos for Smart Card and certificate login (OnCommand
+          Insight 7.3.5 through 7.3.9)
+        url: "/config-admin/task_cognos_configuration_for_smart_card_and_certificate_login_7_3_5_through_7_3_9.html"
+      - title: Configuring Cognos for Smart Card and certificate login (OnCommand
+          Insight 7.3.10 and later)
+        url: "/config-admin/task_cognos_configuration_for_smart_card_and_certificate_login_7_3_10_and_later.html"
+      - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight 7.3.5
+          to 7.3.9)
+        url: "/config-admin/task_importing_ca_signed_ssl_certificates_for_cognos_and_dwh_insight_7_3_5_to_7_3_9.html"
+      - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight 7.3.10
+          and later)
+        url: "/config-admin/task_importing_ca_signed_ssl_certificates_for_cognos_and_dwh_insight_7_3_10_and_later.html"
+      - title: Importing SSL certificates
+        url: "/config-admin/task_importing_an_ssl_certificate.html"
+      - title: Setting up weekly backups for your Insight database
+        url: "/config-admin/task_setting_up_weekly_backups_for_your_oci_database.html"
+        entries:
+        - title: What&#8217;s included in the backup
+          url: "/config-admin/concept_what_s_included_in_the_backup.html"
+      - title: Performance data archiving
+        url: "/config-admin/concept_performance_data_archiving.html"
+        entries:
+        - title: Enabling performance archive
+          url: "/config-admin/task_enabling_performance_archive.html"
+        - title: Loading performance archive
+          url: "/config-admin/task_loading_performance_archive.html"
+      - title: Configuring your email
+        url: "/config-admin/concept_configuring_your_email.html"
+        entries:
+        - title: Email configuration prerequisites
+          url: "/config-admin/concept_email_configuration_prerequisites.html"
+        - title: Configuring your email for Insight
+          url: "/config-admin/task_configuring_your_email_for_insight.html"
+      - title: Configuring SNMP notifications
+        url: "/config-admin/task_configuring_snmp_notifications.html"
+      - title: Enabling the syslog facility
+        url: "/config-admin/task_enabling_the_syslog_facility.html"
+        entries:
+        - title: Insight syslog contents
+          url: "/config-admin/reference_insight_syslog_contents.html"
+      - title: Configuring performance and assure violation notifications
+        url: "/config-admin/task_configuring_performance_and_assurance_violation_notifications.html"
+      - title: Configuring system-level event notifications
+        url: "/config-admin/task_configuring_system_level_event_notifications.html"
+      - title: Configuring your ASUP processing
+        url: "/config-admin/task_configuring_your_asup_processing.html"
+        entries:
+        - title: What&#8217;s included in the Autosupport (ASUP) package
+          url: "/config-admin/concept_what_s_included_in_the_autosupport_package.html"
+      - title: Defining applications
+        url: "/config-admin/task_defining_applications.html"
+        entries:
+        - title: Assigning applications to assets
+          url: "/config-admin/task_assigning_applications_to_assets.html"
+        - title: Editing applications
+          url: "/config-admin/task_editing_applications.html"
+        - title: Deleting applications
+          url: "/config-admin/task_deleting_an_application.html"
+      - title: How OnCommand Insight anomaly detection works
+        url: "/config-admin/concept_about_oncommand_insight_anomaly_detection.html"
+        entries:
+        - title: Configuring applications for anomaly detection
+          url: "/config-admin/task_configuring_anomaly_detection_for_applications.html"
+        - title: Using the Anomalies section
+          url: "/config-admin/task_what_the_anomalies_section_enables_you_to_do.html"
+        - title: Anomaly detection monitoring status
+          url: "/config-admin/reference_anomaly_detection_monitoring_status.html"
+        - title: Creating an application performance policy
+          url: "/config-admin/task_creating_an_application_performance_policy.html"
+      - title: Your business entities hierarchy
+        url: "/config-admin/concept_your_business_entities_hierarchy.html"
+        entries:
+        - title: Designing your business entities hierarchy
+          url: "/config-admin/task_designing_your_business_entities_hierarchy.html"
+        - title: Creating business entities
+          url: "/config-admin/task_setting_up_business_entities.html"
+        - title: Assigning business entities to assets
+          url: "/config-admin/task_assigning_business_entities_to_assets.html"
+        - title: Assigning business entities to or removing business entities from
+            multiple assets
+          url: "/config-admin/task_adding_or_removing_business_entitie_from_multiple_assets.html"
+      - title: Defining annotations
+        url: "/config-admin/task_defining_annotations.html"
+        entries:
+        - title: Using annotations to monitor your environment
+          url: "/config-admin/concept_using_annotations_to_monitor_your_environment.html"
+          entries:
+          - title: Managing annotation types
+            url: "/config-admin/concept_managing_annotation_types.html"
+            entries:
+            - title: Default annotation types
+              url: "/config-admin/concept_predefined_annotation_types.html"
+            - title: How annotations are assigned
+              url: "/config-admin/concept_how_annotations_are_assigned.html"
+            - title: Associating costs with annotations
+              url: "/config-admin/task_associating_costs_with_annotations.html"
+          - title: Creating custom annotations
+            url: "/config-admin/task_creating_custom_annotations.html"
+            entries:
+            - title: Manually assigning annotations to assets
+              url: "/config-admin/task_manually_assigning_annotations_to_assets.html"
+            - title: Modifying annotations
+              url: "/config-admin/task_modifying_annotations.html"
+            - title: Deleting annotations
+              url: "/config-admin/task_deleting_annotations.html"
+          - title: Assigning annotations to assets using annotation rules
+            url: "/config-admin/task_assigning_annotations_to_assets_using_annotation_rules.html"
+            entries:
+            - title: Default storage annotation rules
+              url: "/config-admin/concept_default_storage_annotation_settings.html"
+            - title: Creating annotation rules
+              url: "/config-admin/task_configuring_annotation_rules_for_automatic_assignment.html"
+            - title: Setting annotation rule precedence
+              url: "/config-admin/task_setting_annotation_rule_precedence.html"
+            - title: Modifying annotation rules
+              url: "/config-admin/task_modifying_annotation_rules.html"
+            - title: Deleting annotation rules
+              url: "/config-admin/task_deleting_annotation_rules.html"
+          - title: Importing annotation values
+            url: "/config-admin/task_importing_annotation_values.html"
+          - title: Assigning annotations to multiple assets using a query
+            url: "/config-admin/task_assigning_annotations_using_a_query.html"
+      - title: Querying assets
+        url: "/config-admin/concept_using_queries.html"
+        entries:
+        - title: Assets used in queries and dashboards
+          url: "/config-admin/reference_assets_used_in_queries_and_dashboards.html"
+        - title: Creating a query
+          url: "/config-admin/task_creating_a_query.html"
+        - title: Viewing queries
+          url: "/config-admin/task_viewing_queries.html"
+        - title: Exporting query results to a .CSV file
+          url: "/config-admin/task_exporting_query_results_to_a_csv_file.html"
+        - title: Modifying queries
+          url: "/config-admin/task_modifying_queries.html"
+        - title: Deleting queries
+          url: "/config-admin/task_deleting_queries.html"
+        - title: Assigning multiple applications to or removing multiple applications
+            from assets
+          url: "/config-admin/task_editing_or_removing_applications_in_bulk.html"
+        - title: Editing or removing multiple annotations from assets
+          url: "/config-admin/task_editing_or_removing_annotations_from_assets_in_bulk.html"
+        - title: Copying table values
+          url: "/config-admin/task_copying_table_values.html"
+      - title: Managing performance policies
+        url: "/config-admin/concept_performance_policy_management.html"
+        entries:
+        - title: Creating performance policies
+          url: "/config-admin/task_creating_performance_policies.html"
+        - title: Performance policy evaluation precedence
+          url: "/config-admin/concept_performance_policy_precedence.html"
+          entries:
+          - title: Changing the precedence of a performance policy
+            url: "/config-admin/task_configuring_performance_policy_precedence.html"
+        - title: Editing performance policies
+          url: "/config-admin/task_modifying_performance_policies.html"
+        - title: Deleting performance policies
+          url: "/config-admin/task_deleting_performance_policies.html"
+      - title: Importing and Exporting user data
+        url: "/config-admin/reference_importing_and_exporting_user_data.html"
+    - title: Insight Security
+      url: "/config-admin/concept_security_management.html"
+      entries:
+      - title: Managing security on the Insight server
+        url: "/config-admin/task_managing_security_on_the_insight_server.html"
+      - title: Managing security on the local acquisition unit
+        url: "/config-admin/task_managing_security_on_the_local_acquisition_unit.html"
+      - title: Managing security on an RAU
+        url: "/config-admin/task_managing_security_on_an_rau.html"
+      - title: Managing security on the Data Warehouse
+        url: "/config-admin/task_managing_security_on_the_data_warehouse.html"
+      - title: Changing OnCommand Insight internal user passwords
+        url: "/config-admin/task_changing_oncommand_insight_internal_user_passwords.html"
+        entries:
+        - title: Changing the &#8220;inventory&#8221; and &#8220;dwh_internal&#8221;
+            passwords using the Server Connection Configuration UI
+          url: "/config-admin/task_changing_passwords_in_the_server_connection_confuguration_ui.html"
+        - title: Changing the dwh password using the ODBC Administration tool
+          url: "/config-admin/task_changing_the_dwh_password_using_the_odbc_administration_tool.html"
+    - title: Smart Card and certificate login support
+      url: "/config-admin/concept_certificate_login_support.html"
+      entries:
+      - title: Configuring hosts for Smart Card and certificate login
+        url: "/config-admin/task_host_configuration_for_smart_card_and_certificate_login.html"
+      - title: Configuring a client to support Smart Card and certificate login
+        url: "/config-admin/task_client_configuration_for_smart_card_and_certificate_login.html"
+      - title: Enabling CAC on a Linux server
+        url: "/config-admin/task_cac_configuration_for_linux.html"
+      - title: Configuring Data Warehouse for Smart Card and certificate login
+        url: "/config-admin/task_host_configuration_for_smart_card_and_certificate_login_dwh.html"
+      - title: Configuring Cognos for Smart Card and certificate login (OnCommand
+          Insight 7.3.5 through 7.3.9)
+        url: "/config-admin/task_cognos_configuration_for_smart_card_and_certificate_login_7_3_5_through_7_3_9.html"
+      - title: Configuring Cognos for Smart Card and certificate login (OnCommand
+          Insight 7.3.10 and later)
+        url: "/config-admin/task_cognos_configuration_for_smart_card_and_certificate_login_7_3_10_and_later.html"
+      - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight 7.3.5
+          to 7.3.9)
+        url: "/config-admin/task_importing_ca_signed_ssl_certificates_for_cognos_and_dwh_insight_7_3_5_to_7_3_9.html"
+      - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight 7.3.10
+          and later)
+        url: "/config-admin/task_importing_ca_signed_ssl_certificates_for_cognos_and_dwh_insight_7_3_10_and_later.html"
+    - title: Configuring Data Warehouse for Smart Card and certificate login
+      url: "/config-admin/task_host_configuration_for_smart_card_and_certificate_login_dwh.html"
+    - title: Configuring Cognos for Smart Card and certificate login (OnCommand Insight
+        7.3.5 through 7.3.9)
+      url: "/config-admin/task_cognos_configuration_for_smart_card_and_certificate_login_7_3_5_through_7_3_9.html"
+    - title: Configuring Cognos for Smart Card and certificate login (OnCommand Insight
+        7.3.10 and later)
+      url: "/config-admin/task_cognos_configuration_for_smart_card_and_certificate_login_7_3_10_and_later.html"
+    - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight 7.3.5
+        to 7.3.9)
+      url: "/config-admin/task_importing_ca_signed_ssl_certificates_for_cognos_and_dwh_insight_7_3_5_to_7_3_9.html"
+    - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight 7.3.10
+        and later)
+      url: "/config-admin/task_importing_ca_signed_ssl_certificates_for_cognos_and_dwh_insight_7_3_10_and_later.html"
+    - title: Importing SSL certificates
+      url: "/config-admin/task_importing_an_ssl_certificate.html"
+    - title: How OnCommand Insight anomaly detection works
+      url: "/config-admin/concept_about_oncommand_insight_anomaly_detection.html"
+      entries:
+      - title: Configuring applications for anomaly detection
+        url: "/config-admin/task_configuring_anomaly_detection_for_applications.html"
+      - title: Using the Anomalies section
+        url: "/config-admin/task_what_the_anomalies_section_enables_you_to_do.html"
+      - title: Anomaly detection monitoring status
+        url: "/config-admin/reference_anomaly_detection_monitoring_status.html"
+      - title: Creating an application performance policy
+        url: "/config-admin/task_creating_an_application_performance_policy.html"
+    - title: Your business entities hierarchy
+      url: "/config-admin/concept_your_business_entities_hierarchy.html"
+      entries:
+      - title: Designing your business entities hierarchy
+        url: "/config-admin/task_designing_your_business_entities_hierarchy.html"
+      - title: Creating business entities
+        url: "/config-admin/task_setting_up_business_entities.html"
+      - title: Assigning business entities to assets
+        url: "/config-admin/task_assigning_business_entities_to_assets.html"
+      - title: Assigning business entities to or removing business entities from multiple
+          assets
+        url: "/config-admin/task_adding_or_removing_business_entitie_from_multiple_assets.html"
+    - title: Defining annotations
+      url: "/config-admin/task_defining_annotations.html"
+      entries:
+      - title: Using annotations to monitor your environment
+        url: "/config-admin/concept_using_annotations_to_monitor_your_environment.html"
+        entries:
+        - title: Managing annotation types
+          url: "/config-admin/concept_managing_annotation_types.html"
+          entries:
+          - title: Default annotation types
+            url: "/config-admin/concept_predefined_annotation_types.html"
+          - title: How annotations are assigned
+            url: "/config-admin/concept_how_annotations_are_assigned.html"
+          - title: Associating costs with annotations
+            url: "/config-admin/task_associating_costs_with_annotations.html"
+        - title: Creating custom annotations
+          url: "/config-admin/task_creating_custom_annotations.html"
+          entries:
+          - title: Manually assigning annotations to assets
+            url: "/config-admin/task_manually_assigning_annotations_to_assets.html"
+          - title: Modifying annotations
+            url: "/config-admin/task_modifying_annotations.html"
+          - title: Deleting annotations
+            url: "/config-admin/task_deleting_annotations.html"
+        - title: Assigning annotations to assets using annotation rules
+          url: "/config-admin/task_assigning_annotations_to_assets_using_annotation_rules.html"
+          entries:
+          - title: Default storage annotation rules
+            url: "/config-admin/concept_default_storage_annotation_settings.html"
+          - title: Creating annotation rules
+            url: "/config-admin/task_configuring_annotation_rules_for_automatic_assignment.html"
+          - title: Setting annotation rule precedence
+            url: "/config-admin/task_setting_annotation_rule_precedence.html"
+          - title: Modifying annotation rules
+            url: "/config-admin/task_modifying_annotation_rules.html"
+          - title: Deleting annotation rules
+            url: "/config-admin/task_deleting_annotation_rules.html"
+        - title: Importing annotation values
+          url: "/config-admin/task_importing_annotation_values.html"
+        - title: Assigning annotations to multiple assets using a query
+          url: "/config-admin/task_assigning_annotations_using_a_query.html"
+    - title: Querying assets
+      url: "/config-admin/concept_using_queries.html"
+      entries:
+      - title: Assets used in queries and dashboards
+        url: "/config-admin/reference_assets_used_in_queries_and_dashboards.html"
+      - title: Creating a query
+        url: "/config-admin/task_creating_a_query.html"
+      - title: Viewing queries
+        url: "/config-admin/task_viewing_queries.html"
+      - title: Exporting query results to a .CSV file
+        url: "/config-admin/task_exporting_query_results_to_a_csv_file.html"
+      - title: Modifying queries
+        url: "/config-admin/task_modifying_queries.html"
+      - title: Deleting queries
+        url: "/config-admin/task_deleting_queries.html"
+      - title: Assigning multiple applications to or removing multiple applications
+          from assets
+        url: "/config-admin/task_editing_or_removing_applications_in_bulk.html"
+      - title: Editing or removing multiple annotations from assets
+        url: "/config-admin/task_editing_or_removing_annotations_from_assets_in_bulk.html"
+      - title: Copying table values
+        url: "/config-admin/task_copying_table_values.html"
+    - title: Insight data source management
+      url: "/config-admin/concept_insight_data_source_management.html"
+      entries:
+      - title: Setting up your data sources in Insight
+        url: "/config-admin/concept_setting_up_your_data_sources_in_insight.html"
+        entries:
+        - title: Data source support information
+          url: "/config-admin/concept_data_source_support_information.html"
+        - title: Adding data sources
+          url: "/config-admin/task_adding_data_sources.html"
+          entries:
+          - title: Importing data sources from a spreadsheet
+            url: "/config-admin/task_importing_data_sources_from_a_spreadsheet.html"
+          - title: Adding a new data source by patch
+            url: "/config-admin/task_adding_a_new_data_source_patch_us26313_fr.html"
+        - title: Cloning a data source
+          url: "/config-admin/task_cloning_a_data_source.html"
+        - title: Testing the data source configuration
+          url: "/config-admin/reference_testing_the_data_source_configuration.html"
+      - title: Vendor-specific data source reference
+        url: "/config-admin/reference_vendor_specific_data_source_reference.html"
+        entries:
+        - title: 3PAR InServ data source
+          url: "/config-admin/reference_3par_inserv_firmware_ssh_data_source.html"
+        - title: Amazon AWS EC2 data source
+          url: "/config-admin/reference_amazon_aws_ec2_data_source.html"
+        - title: Brocade Enterprise Fabric Connectivity Manager data source
+          url: "/config-admin/reference_brocade_efcm_9_5_to_9_7_data_sources.html"
+        - title: Brocade FC Switch data source
+          url: "/config-admin/reference_brocade_fc_switch_firmware_ssh_data_source.html"
+        - title: Brocade Sphereon/Intrepid Switch data source
+          url: "/config-admin/reference_brocade_sphereon_intrepid_switch_snmp_data_source.html"
+        - title: Cisco FC Switch Firmware (SNMP) data source
+          url: "/config-admin/reference_cisco_fc_switch_firmware_snmp_data_source.html"
+        - title: EMC Celerra data source
+          url: "/config-admin/reference_emc_celerra_ssh_data_source.html"
+        - title: EMC CLARiiON (NaviCLI) data source
+          url: "/config-admin/reference_emc_clariion_navicli_data_source.html"
+        - title: EMC Data Domain data source
+          url: "/config-admin/reference_emc_datadomain_data_source.html"
+        - title: EMC ECC StorageScope data source
+          url: "/config-admin/generic_emc_ecc_storagescope_data_source.html"
+        - title: Dell EMC ECS data source
+          url: "/config-admin/reference_dell_emc_ecs_data_source.html"
+        - title: EMC Isilon data source
+          url: "/config-admin/reference_emc_isilon_ssh_data_source.html"
+        - title: Dell EMC PowerStore data source
+          url: "/config-admin/reference_dell_emc_powerstore_data_source.html"
+        - title: EMC RecoverPoint data source
+          url: "/config-admin/reference_emc_recoverpoint_data_source.html"
+        - title: EMC Solutions Enabler with SMI-S Performance data source
+          url: "/config-admin/reference_emc_solutions_enabler_cli_with_smi_s_performance.html"
+        - title: EMC VNX data source
+          url: "/config-admin/reference_emc_vnx_ssh_data_source.html"
+        - title: EMC VNXe data source
+          url: "/config-admin/reference_emc_vnxe_data_source.html"
+        - title: EMC VPLEX data source
+          url: "/config-admin/reference_emc_vplex_cli_data_source.html"
+        - title: EMC XtremIO data source
+          url: "/config-admin/reference_emc_xtremeio_data_source.html"
+        - title: Fujitsu Eternus data source
+          url: "/config-admin/reference_fujitsu_eternus_data_source.html"
+        - title: Hitachi Content Platform (HCP) data source
+          url: "/config-admin/reference_hitachi_content_platform_hcp_data_source.html"
+        - title: HDS HiCommand Device Manager data source
+          url: "/config-admin/reference_hds_hicommand_devicemanager_data_source.html"
+          entries:
+          - title: HDS Storage
+            url: "/config-admin/reference_hds_landing_page_terminology_storage.html"
+          - title: HDS Storage Pool
+            url: "/config-admin/reference_hds_landing_page_terminology_storage_pool.html"
+          - title: HDS Storage Node
+            url: "/config-admin/reference_hds_landing_page_terminology_storage_node.html"
+        - title: HDS NAS (HNAS) data source
+          url: "/config-admin/reference_hds_hnas_data_source.html"
+        - title: HP CommandView AE data source
+          url: "/config-admin/reference_hp_commandview_ae_data_source.html"
+        - title: HP EVA Storage data source
+          url: "/config-admin/reference_hp_eva_storage_sssu_data_source.html"
+        - title: HPE Nimble data source
+          url: "/config-admin/reference_hpe_nimble_data_source.html"
+        - title: Huawei OceanStor data source
+          url: "/config-admin/reference_huawei_oceanstor_data_source.html"
+        - title: IBM Cleversafe data source
+          url: "/config-admin/reference_ibm_cleversafe_data_source.html"
+        - title: IBM DS data source
+          url: "/config-admin/reference_ibm_ds_cli_data_source.html"
+        - title: IBM PowerVM data source
+          url: "/config-admin/reference_ibm_powervm_ssh_data_source.html"
+        - title: IBM SVC data source
+          url: "/config-admin/reference_ibm_svc_ssh_data_source.html"
+        - title: IBM Tivoli Monitoring data source
+          url: "/config-admin/reference_ibm_tivoli_monitoring_data_source.html"
+        - title: IBM TotalStorage DS4000 data source
+          url: "/config-admin/reference_ibm_totalstorage_ds4000_data_source.html"
+        - title: IBM XIV data source
+          url: "/config-admin/reference_ibm_xiv_cli_data_source.html"
+        - title: Infinidat InfiniBox data source
+          url: "/config-admin/reference_infinidat_infinibox_http_data_source.html"
+        - title: Microsoft Azure compute data source
+          url: "/config-admin/reference_microsoft_azure_compute_data_source.html"
+        - title: Azure NetApp Files data source
+          url: "/config-admin/reference_microsoft_azure_netapp_files_data_source.html"
+        - title: Microsoft Hyper-V data source
+          url: "/config-admin/reference_microsoft_hyper_v_wmi_data_source.html"
+        - title: NetApp Clustered Data ONTAP data source
+          url: "/config-admin/reference_netapp_clustered_data_ontap_data_source.html"
+          entries:
+          - title: Clustered Data ONTAP Storage
+            url: "/config-admin/reference_cdot_landing_page_terminology_storage.html"
+          - title: Clustered Data ONTAP Storage Pool
+            url: "/config-admin/reference_cdot_landing_page_terminology_storage_pool.html"
+          - title: Clustered Data ONTAP Storage Node
+            url: "/config-admin/reference_cdot_landing_page_terminology_storage_node.html"
+        - title: NetApp Clustered Data ONTAP for Unified Manager data source
+          url: "/config-admin/reference_netapp_clustered_data_ontap_for_unified_manager_data_source.html"
+        - title: NetApp Data ONTAP operating in 7-Mode data source
+          url: "/config-admin/reference_netapp_data_ontap_operating_in_7_mode_data_source.html"
+        - title: NetApp E-Series data source
+          url: "/config-admin/reference_netapp_e_series_data_source.html"
+          entries:
+          - title: E-Series Storage
+            url: "/config-admin/reference_e_series_landing_page_terminology_storage.html"
+          - title: E-Series Storage Pool
+            url: "/config-admin/reference_e_series_landing_page_terminology_storage_pool.html"
+          - title: E-Series Storage Node
+            url: "/config-admin/reference_e_series_landing_page_terminology_storage_node.html"
+        - title: NetApp Host and VM File Systems data source
+          url: "/config-admin/reference_netapp_host_and_vm_filesystems_data_source.html"
+        - title: NetApp SolidFire data source
+          url: "/config-admin/reference_netapp_solidfire_data_source.html"
+        - title: NetApp StorageGRID data source
+          url: "/config-admin/reference_netapp_storagegrid_data_source.html"
+        - title: OpenStack data source
+          url: "/config-admin/reference_openstack_data_source.html"
+        - title: Oracle ZFS data source
+          url: "/config-admin/reference_oracle_zfs_data_source.html"
+        - title: Pure Storage FlashArray data source
+          url: "/config-admin/reference_pure_storage_flasharray_http_data_source.html"
+        - title: QLogic FC Switch data source
+          url: "/config-admin/reference_qlogic_fc_switch_snmp_data_source.html"
+        - title: Red Hat (RHEV) data source
+          url: "/config-admin/reference_red_hat_rhev_data_source.html"
+        - title: Violin Flash Memory Array data source
+          url: "/config-admin/reference_violin_memory_data_source.html"
+        - title: VMware vSphere data source
+          url: "/config-admin/reference_vmware_vsphere_web_services_data_source.html"
+      - title: Changing data source credentials
+        url: "/config-admin/task_changing_data_source_credentials.html"
+      - title: Changes causing data collection problems
+        url: "/config-admin/concept_changes_causing_data_collection_problems.html"
+      - title: Examining one data source in detail
+        url: "/config-admin/task_examining_one_data_source_in_detail.html"
+      - title: Researching a failed data source
+        url: "/config-admin/task_researching_a_failed_data_source.html"
+      - title: Controlling data source polling
+        url: "/config-admin/task_controlling_data_source_polling.html"
+      - title: Editing data source information
+        url: "/config-admin/task_editing_data_source_information.html"
+      - title: Editing information for multiple data sources
+        url: "/config-admin/task_editing_multiple_data_sources.html"
+      - title: Mapping data source tags to annotations
+        url: "/config-admin/concept_mapping_data_source_tags_to_annotations.html"
+      - title: Deleting a data source
+        url: "/config-admin/task_deleting_a_data_source_from_the_monitoring_environment.html"
+      - title: What data source patches are
+        url: "/config-admin/concept_data_source_patches.html"
+        entries:
+        - title: Applying a data source patch
+          url: "/config-admin/task_applying_a_data_source_patch.html"
+        - title: Installing a patch on one type of data source
+          url: "/config-admin/task_installing_a_patch_on_all_data_sources_of_one_type.html"
+        - title: Managing patches
+          url: "/config-admin/task_managing_patches.html"
+        - title: Committing a data source patch
+          url: "/config-admin/task_committing_a_data_source_patch.html"
+        - title: Rolling back a data source patch
+          url: "/config-admin/task_rolling_back_a_data_source_patch.html"
+    - title: Device resolution
+      url: "/config-admin/concept_device_resolution.html"
+      entries:
+      - title: Before you begin
+        url: "/config-admin/concept_before_you_begin.html"
+      - title: Planning device resolution rules for your environment
+        url: "/config-admin/concept_creating_rules_for_your_environment.html"
+      - title: Creating device resolution rules
+        url: "/config-admin/task_creating_device_resolution_rules.html"
+        entries:
+        - title: Starting an automatic device resolution update
+          url: "/config-admin/task_starting_a_automatic_device_resolution_update.html"
+        - title: Rule assisted manual identification
+          url: "/config-admin/task_rule_assisted_manual_identification.html"
+      - title: Fibre Channel device resolution
+        url: "/config-admin/concept_device_resolution_fc_identify.html"
+        entries:
+        - title: Adding a Fibre Channel device manually
+          url: "/config-admin/task_adding_fc_devices_manually.html"
+        - title: Importing Fibre Channel device identification from a CSV file
+          url: "/config-admin/task_importing_fc_identificartion_from_a_csv_file.html"
+        - title: Exporting Fibre Channel device identifications to a CSV file
+          url: "/config-admin/task_exporting_fc_identification_to_a_csv_file.html"
+      - title: IP device resolution
+        url: "/config-admin/concept_device_resolution_ip_identify.html"
+        entries:
+        - title: Adding IP devices manually
+          url: "/config-admin/task_adding_ip_devices_manually.html"
+        - title: Importing IP device identification from a CSV file
+          url: "/config-admin/task_importing_ip_identification_from_a_csv_file.html"
+        - title: Exporting IP device identification to a CSV file
+          url: "/config-admin/task_exporting_ip_identification_to_a_csv_file.html"
+      - title: Setting options in the Preferences tab
+        url: "/config-admin/reference_using_options_in_the_preferences_tab.html"
+      - title: Regular expression examples
+        url: "/config-admin/reference_regular_expression_examples.html"
+    - title: Maintaining Insight
+      url: "/config-admin/concept_maintaining_insight.html"
+      entries:
+      - title: Managing Insight
+        url: "/config-admin/task_managing_insight.html"
+      - title: Monitoring OnCommand Insight system health
+        url: "/config-admin/task_monitoring_oncommand_insight_system_health.html"
+      - title: Deleting inactive devices
+        url: "/config-admin/task_deleting_inactive_devices.html"
+      - title: Auditing system and user activities
+        url: "/config-admin/task_auditing_system_and_user_activities.html"
+      - title: Monitoring the violations in your network
+        url: "/config-admin/task_opening_the_violations_dashboard.html"
+      - title: Acquisition unit status
+        url: "/config-admin/concept_acquisition_unit_status.html"
+      - title: Restoring the Insight database
+        url: "/config-admin/task_restoring_the_insight_database.html"
+      - title: Updating expired licenses
+        url: "/config-admin/task_updating_expired_licenses.html"
+        entries:
+        - title: Licenses no longer compliant
+          url: "/config-admin/concept_licenses_no_longer_compliant.html"
+        - title: Replacing licenses for older Insight versions
+          url: "/config-admin/concept_replacing_licenses_for_older_insight_versions.html"
+      - title: Applying a service pack
+        url: "/config-admin/task_applying_a_service_pack.html"
+      - title: Preparing a special troubleshooting report
+        url: "/config-admin/concept_preparing_a_special_troubleshooting_report.html"
+        entries:
+        - title: Manually backing up the OnCommand Insight database
+          url: "/config-admin/task_manually_backing_up_the_oci_database.html"
+        - title: Bundling logs for Support
+          url: "/config-admin/task_bundling_logs_for_support.html"
+        - title: Sending information to NetApp Support
+          url: "/config-admin/task_sending_information_to_netapp_support.html"
+        - title: Scrubbing data for transfer to support
+          url: "/config-admin/task_scrubbing_data_for_transfer_to_support_webui.html"
+      - title: Advanced troubleshooting
+        url: "/config-admin/concept_advanced_troubleshooting.html"
+        entries:
+        - title: Configuring the number of hours to ignore dynamic data
+          url: "/config-admin/task_configuring_the_number_of_hours_to_ignore_dynamic_data.html"
+        - title: Generating logs for Customer Support
+          url: "/config-admin/task_generating_logs_for_customer_support.html"
+        - title: Displaying system information
+          url: "/config-admin/task_displaying_system_information.html"
+        - title: Listing installed OnCommand Insight components
+          url: "/config-admin/task_listing_installed_oncommand_insight_packages.html"
+        - title: Calculating the number of database objects
+          url: "/config-admin/task_calculating_the_number_of_database_objects.html"
+        - title: Restarting the OnCommand Insight Server
+          url: "/config-admin/task_restarting_the_oncommand_insight_server_or_acquisition_unit.html"
+        - title: Moving MySQL data using the migrate option
+          url: "/config-admin/task_moving_mysql_data_using_the_migrate_option.html"
+          entries:
+          - title: Moving MySQL data using the command line
+            url: "/config-admin/task_moving_mysql_data_using_the_command_line.html"
+        - title: Forcing annotation updates
+          url: "/config-admin/task_forcing_annotation_updates.html"
+        - title: Configuring Client settings
+          url: "/config-admin/task_configuring_client_settings.html"
+        - title: Checking the status of server resources
+          url: "/config-admin/task_checking_the_status_of_server_resources.html"
+        - title: Finding ghost data sources
+          url: "/config-admin/task_finding_ghost_data_sources.html"
+        - title: Adding a missing disk model
+          url: "/config-admin/task_adding_a_missing_disk_model.html"
+          entries:
+          - title: Locating required information for new disk model
+            url: "/config-admin/task_locating_required_information_for_new_disk_model.html"
+            entries:
+            - title: Content of the new_disk_models.txt file
+              url: "/config-admin/reference_content_of_the_new_disk_models_txt_file.html"
+    - title: Monitoring your environment
+      url: "/config-admin/concept_monitoring_your_environment.html"
+      entries:
+      - title: Asset page data
+        url: "/config-admin/concept_asset_pages.html"
+        entries:
+        - title: Types of asset pages
+          url: "/config-admin/reference_types_of_asset_pages.html"
+        - title: Searching your environment for specific assets
+          url: "/config-admin/task_searching_your_environment_for_specific_assets.html"
+          entries:
+          - title: Advanced search techniques
+            url: "/config-admin/reference_advanced_asset_search_techniques_new.html"
+        - title: Changing the time range of displayed data
+          url: "/config-admin/task_changing_the_time_segment_of_the_data_displayed.html"
+        - title: Determining data source acquisition status
+          url: "/config-admin/concept_determining_data_source_acquisition_status.html"
+        - title: Asset page sections
+          url: "/config-admin/reference_asset_page_sections.html"
+          entries:
+          - title: Summary
+            url: "/config-admin/concept_summary.html"
+            entries:
+            - title: Using the Summary section
+              url: "/config-admin/task_what_the_summary_section_enables_you_to_do.html"
+          - title: Topology
+            url: "/config-admin/concept_topology.html"
+            entries:
+            - title: Using the Topology section
+              url: "/config-admin/task_what_the_topology_section_enables_you_to_do.html"
+          - title: User Data
+            url: "/config-admin/concept_user_data.html"
+            entries:
+            - title: Using the User Data section to assign or modify applications
+              url: "/config-admin/task_what_the_user_data_section_enables_you_to_do_with_applications.html"
+            - title: Using the User Data section to assign or modify business entities
+              url: "/config-admin/task_what_the_user_data_section_enables_you_to_do_with_business_entities.html"
+            - title: Using the User Data section to assign or modify annotations
+              url: "/config-admin/task_what_the_user_data_section_enables_you_to_do_with_annotations.html"
+          - title: Anomalies
+            url: "/config-admin/concept_anomalies.html"
+            entries:
+            - title: Using the Anomalies section
+              url: "/config-admin/task_what_the_anomalies_section_enables_you_to_do.html"
+          - title: Expert view
+            url: "/config-admin/concept_expert_view.html"
+            entries:
+            - title: Expert View metric definitions
+              url: "/config-admin/reference_metric_definitions.html"
+            - title: Using the Expert View section
+              url: "/config-admin/task_what_the_expert_view_section_enables_you_to_do.html"
+          - title: Related Assets
+            url: "/config-admin/concept_related_assets.html"
+            entries:
+            - title: Using the Related Assets section
+              url: "/config-admin/task_what_the_related_assets_sections_enable_you_to_do.html"
+          - title: Violations
+            url: "/config-admin/concept_violations.html"
+            entries:
+            - title: Using the Violations section
+              url: "/config-admin/task_what_the_violations_section_enables_you_to_do.html"
+          - title: Customizable asset page
+            url: "/config-admin/concept_additional_data.html"
+            entries:
+            - title: Understanding &#8220;$this&#8221; variables
+              url: "/config-admin/task_understanding_this_variables.html"
+      - title: Balancing network resources
+        url: "/config-admin/task_balancing_network_resources.html"
+      - title: Examining network performance
+        url: "/config-admin/concept_examining_network_performance.html"
+        entries:
+        - title: Analyzing slow PC performance
+          url: "/config-admin/task_analyzing_slow_pc_performance.html"
+        - title: Analyzing correlated resources
+          url: "/config-admin/task_analyzing_correlated_resources.html"
+      - title: Fibre Channel environment monitoring
+        url: "/config-admin/concept_monitoring_fabric_inventory_and_performance.html"
+      - title: Time-to-live (TTL) and downsampled data
+        url: "/config-admin/reference_time_to_live_ttl_and_downsampling.html"
+      - title: Pruning of inventory history
+        url: "/config-admin/reference_pruning_of_inventory_history.html"
+      - title: NAS path for VMs
+        url: "/config-admin/concept_nas_path_for_vms.html"
+      - title: Capacity as Time Series
+        url: "/config-admin/concept_capacity_as_time_series.html"
+  - title: dwh
+    url: "/dwh/index.html"
+    entries:
+    - title: Welcome to OnCommand Insight Data Warehouse
+      url: "/dwh/concept_welcome_to_data_warehouse.html"
+      entries:
+      - title: Data Warehouse features
+        url: "/dwh/concept_data_warehouse_features.html"
+      - title: Data Warehouse components
+        url: "/dwh/concept_data_warehouse_components.html"
+        entries:
+        - title: What you can do using the Data Warehouse Portal
+          url: "/dwh/concept_oncommand_insight_data_warehouse_portal.html"
+        - title: Data Warehouse software components
+          url: "/dwh/concept_data_warehouse_software_components.html"
+      - title: Data Warehouse processes
+        url: "/dwh/concept_data_warehouse_processes.html"
+      - title: How Data Warehouse extracts data
+        url: "/dwh/concept_how_data_warehouse_extracts_data.html"
+      - title: ETL frequency and date data
+        url: "/dwh/reference_etl_frequency.html"
+      - title: How historical data is retained in Data Warehouse
+        url: "/dwh/concept_historical_data_retention_in_data_warehouse.html"
+        entries:
+        - title: Data retention, ETL, and time periods
+          url: "/dwh/reference_data_retention_and_time_periods.html"
+    - title: Getting started with Data Warehouse
+      url: "/dwh/task_getting_started_with_data_warehouse.html"
+      entries:
+      - title: Accessing the Data Warehouse portal
+        url: "/dwh/task_accessing_the_data_warehouse_portal.html"
+      - title: Managing Data Warehouse and Reporting user accounts
+        url: "/dwh/concept_managing_data_warehouse_and_reporting_user_accounts.html"
+        entries:
+        - title: Accessing the Data Warehouse and Reporting portal
+          url: "/dwh/task_accessing_the_data_warehouse_and_reporting.html"
+        - title: Reporting user roles
+          url: "/dwh/reference_reporting_user_roles.html"
+        - title: Adding a Reporting user
+          url: "/dwh/task_adding_a_reporting_user.html"
+        - title: Managing user accounts
+          url: "/dwh/task_managing_user_accounts.html"
+        - title: Configuring LDAP for Reporting
+          url: "/dwh/task_configuring_reporting_ldap.html"
+      - title: Connecting Data Warehouse to OnCommand Insight servers
+        url: "/dwh/task_connecting_data_warehouse_to_oncommand_insight_servers.html"
+      - title: Data Warehouse database build from history overview
+        url: "/dwh/concept_data_warehouse_database_build_from_history_overview.html"
+        entries:
+        - title: Adding a job that builds a Data Warehouse database from history
+          url: "/dwh/task_adding_a_build_from_history_job.html"
+        - title: Canceling a build from history job
+          url: "/dwh/task_canceling_a_build_from_history_job.html"
+      - title: Backing up the Data Warehouse database
+        url: "/dwh/task_backing_up_the_data_warehouse_database.html"
+      - title: Backing up custom reports and report artifacts
+        url: "/dwh/task_backing_up_custom_reports_and_report_artifacts.html"
+      - title: Restoring the Data Warehouse database
+        url: "/dwh/task_restoring_the_data_warehouse_database.html"
+      - title: Setting up multiple tenancy in reporting
+        url: "/dwh/concept_setting_up_multiple_tenancy_in_reporting.html"
+        entries:
+        - title: Configuring user accounts
+          url: "/dwh/task_configuring_user_accounts.html"
+        - title: Assigning users to business entities
+          url: "/dwh/task_assigning_users_to_business_entities.html"
+      - title: Troubleshooting setup issues
+        url: "/dwh/concept_troubleshooting_setup_issues.html"
+        entries:
+        - title: Why I cannot see my annotations
+          url: "/dwh/concept_why_i_cannot_see_my_annotations.html"
+          entries:
+          - title: Forcing an update of annotations for Data Warehouse
+            url: "/dwh/task_forcing_an_update_of_annotations_for_data_warehouse.html"
+          - title: Generating a manual Data Warehouse build
+            url: "/dwh/task_generating_a_manual_data_warehouse_build.html"
+          - title: Importing user-defined annotations into Data Warehouse
+            url: "/dwh/task_importing_user_defined_annotations_into_data_warehouse.html"
+        - title: What to do with failing historical build points
+          url: "/dwh/concept_what_to_do_with_failing_historical_build_points.html"
+    - title: Administrative tasks you can perform using Data Warehouse
+      url: "/dwh/reference_administrative_tasks_you_can_perform_using_data_warehouse.html"
+      entries:
+      - title: Managing jobs
+        url: "/dwh/task_managing_jobs.html"
+      - title: Monitoring Data Warehouse health
+        url: "/dwh/reference_monitoring_data_warehouse_health.html"
+      - title: Scheduling daily builds
+        url: "/dwh/task_scheduling_daily_builds.html"
+      - title: Configuring a weekly schedule
+        url: "/dwh/task_configuring_a_weekly_scehdule.html"
+      - title: Scheduling daily backups
+        url: "/dwh/task_scheduling_daily_backups.html"
+      - title: Running custom scripts in Data Warehouse
+        url: "/dwh/task_running_external_scripts_in_data_warehouse.html"
+      - title: What you can do using annotations
+        url: "/dwh/concept_annotations.html"
+        entries:
+        - title: Preparing annotations in OnCommand Insight
+          url: "/dwh/task_preparing_annotations_in_oncommand_insight.html"
+        - title: Importing user-defined annotations into Data Warehouse
+          url: "/dwh/task_importing_user_defined_annotations_into_data_warehouse.html"
+        - title: Viewing the Annotations job in the Jobs list
+          url: "/dwh/task_viewing_the_annotations_job_in_the_jobs_list.html"
+        - title: Displaying annotation changes in the database schema
+          url: "/dwh/task_seeing_the_annotation_changes_in_the_database_schema.html"
+      - title: Setting email notifications
+        url: "/dwh/task_setting_email_notifications.html"
+      - title: Accessing the Reporting Portal
+        url: "/dwh/task_accessing_the_reporting_portal.html"
+      - title: Viewing the Data Warehouse database schema documentation
+        url: "/dwh/task_viewing_the_data_warehouse_documentation.html"
+      - title: Viewing the Data Warehouse database schema
+        url: "/dwh/task_viewing_the_data_warehouse_database_schema.html"
+      - title: Viewing system information
+        url: "/dwh/task_editing_the_site_name_and_viewing_system_information.html"
+      - title: Advanced options
+        url: "/dwh/concept_advanced_options.html"
+        entries:
+        - title: Skipping failed builds
+          url: "/dwh/task_skipping_failed_builds.html"
+        - title: Resetting the Data Warehouse database or Reporting server
+          url: "/dwh/task_resetting_the_data_warehouse_database.html"
+        - title: Restoring and upgrading reports for versions prior to 6.3
+          url: "/dwh/task_restoring_and_upgrading_reports_for_versions_prior_to_6_3.html"
+        - title: Accessing MySQL using the command-line interface
+          url: "/dwh/task_accessing_mysql_using_the_command_line_interface_valid.html"
+        - title: Troubleshooting Data Warehouse
+          url: "/dwh/concept_troubleshooting_data_warehouse.html"
+          entries:
+          - title: Issue resolution with ASUP
+            url: "/dwh/concept_issue_resolution_with_autosupport_asup.html"
+            entries:
+            - title: Disabling automatic ASUP transmissions
+              url: "/dwh/task_configuring_your_asup_processing.html"
+            - title: Including a backup of the Data Warehouse database
+              url: "/dwh/task_including_the_data_warehouse_database.html"
+            - title: Sending Insight logs to ASUP
+              url: "/dwh/task_sending_oncommand_insight_logs_to_asup.html"
+          - title: Viewing OnCommand Insight logs
+            url: "/dwh/task_viewing_oncommand_insight_logs.html"
+          - title: Multiple server chassis consolidation issues
+            url: "/dwh/concept_multiple_server_chassis_consolidation_issues.html"
+            entries:
+            - title: Viewing hosts and adapters consolidation issues
+              url: "/dwh/task_viewing_hosts_and_adapters_consolidation_issues.html"
+            - title: Viewing storage arrays consolidation issues
+              url: "/dwh/task_viewing_storage_arrays_consolidation_issues.html"
+            - title: Viewing switches consolidation issues
+              url: "/dwh/task_viewing_switches_consolidation_issues.html"
+          - title: Resolving multiple server annotation consolidation issues
+            url: "/dwh/task_resolving_multiple_server_annotation_consolidation_issues.html"
+  - title: faq
+    url: "/faq/index.html"
+    entries:
+    - title: General Questions
+      url: "/faq/reference_faq_general_insight_questions.html"
+    - title: OnCommand Insight Licensing
+      url: "/faq/reference_faq_insight_licensing.html"
+    - title: Configuration and Supported devices
+      url: "/faq/reference_faq_configuration_and_supported_devices.html"
+    - title: Scale and Ease of Use
+      url: "/faq/reference_faq_scale_and_ease_of_use.html"
+    - title: Performance troubleshooting
+      url: "/faq/reference_faq_performance_troubleshooting.html"
+    - title: Managing your environment
+      url: "/faq/reference_faq_environment_management.html"
+    - title: Integrating Insight with other tools
+      url: "/faq/reference_faq_integrating_insight_and_third_party_tools.html"
+    - title: Data ONTAP Storage IOPS
+      url: "/faq/reference_oci_faq_netapp_storage_iops.html"
+    - title: Anomaly detection
+      url: "/faq/reference_faq_anomaly_detection.html"
+  - title: howto
+    url: "/howto/index.html"
+    entries:
+    - title: Getting Started with Insight
+      url: "/howto/concept_getting_started_with_insight.html"
+      entries:
+      - title: Setting up notifications
+        url: "/howto/concept_setting_up_notifications.html"
+        entries:
+        - title: Setting up email for notifications
+          url: "/howto/task_setting_up_email_for_notifications.html"
+        - title: Setting up Syslog for logging
+          url: "/howto/task_setting_up_syslog_for_notifications.html"
+        - title: Setting up SNMP for notifications
+          url: "/howto/task_setting_up_snmp_for_notifications.html"
+      - title: 'Preparing assets: Annotating'
+        url: "/howto/concept_preparing_assets_annotating.html"
+        entries:
+        - title: Creating annotations for your enterprise
+          url: "/howto/concept_assigning_annotations_to_assets.html"
+        - title: Configuring Data Center annotations
+          url: "/howto/concept_configuring_data_center_annotations.html"
+        - title: Configure Tier annotations
+          url: "/howto/concept_configure_tier_annotations.html"
+        - title: Configure Service Level annotations
+          url: "/howto/concept_configure_service_level_annotations.html"
+        - title: Configure custom Environment annotations
+          url: "/howto/concept_configure_custom_environment_annotations.html"
+      - title: 'Finding assets: Querying'
+        url: "/howto/concept_finding_assets_querying.html"
+        entries:
+        - title: Using queries to annotate your assets
+          url: "/howto/concept_using_queries_to_annotate_your_assets.html"
+        - title: Querying and annotating data centers
+          url: "/howto/concept_querying_and_annotating_data_centers.html"
+        - title: Querying and annotating tiers
+          url: "/howto/concept_querying_and_annotating_tiers.html"
+        - title: Service Level and Environment annotations
+          url: "/howto/concept_service_level_and_environment.html"
+      - title: 'Your corporate structure: setting up business entities and applications'
+        url: "/howto/concept_your_corporate_structure_setting_up_business_entities_and_applications.html"
+        entries:
+        - title: Configuring business entities for your company
+          url: "/howto/task_configuring_business_entities_for_your_company.html"
+        - title: Configuring applications for your company
+          url: "/howto/task_configuring_applications_for_your_company.html"
+      - title: Creating performance policies for alerting
+        url: "/howto/task_creating_a_performance_policy_for_alerting.html"
+      - title: Highlighting data using dashboards
+        url: "/howto/task_viewing_data_on_a_dashboard_how_to.html"
+    - title: Creating custom dashboards
+      url: "/howto/concept_custom_dashboards.html"
+      entries:
+      - title: Custom Dashboard concepts
+        url: "/howto/concept_custom_dashboard_concepts.html"
+        entries:
+        - title: Dashboard variables
+          url: "/howto/task_custom_dashboard_variables.html"
+          entries:
+          - title: More on dashboard variables
+            url: "/howto/reference_more_on_dashboard_variables.html"
+        - title: Displaying widget legends
+          url: "/howto/concept_displaying_widget_legends.html"
+        - title: Dashboard widget queries and filters
+          url: "/howto/reference_custom_dashboard_queries_and_filters.html"
+        - title: Roll up and Aggregation
+          url: "/howto/reference_custom_dashboard_roll_up.html"
+        - title: Showing top/bottom results in dashboard widgets
+          url: "/howto/reference_custom_dashboard_top_bottom_results.html"
+        - title: Grouping in table widgets
+          url: "/howto/reference_custom_dashboard_group_by.html"
+          entries:
+          - title: Grouping example (with rollup explained)
+            url: "/howto/task_grouping_example_with_rollup_explained.html"
+        - title: Overriding dashboard time for individual widgets
+          url: "/howto/reference_custom_dashboard_override_dashboard_time.html"
+        - title: Primary and Secondary axis explained
+          url: "/howto/task_primary_and_secondary_axis_explained.html"
+        - title: Expressions in dashboard widgets
+          url: "/howto/reference_expressions_in_dashboard_widgets.html"
+          entries:
+          - title: 'Expressions example: Read IOPS percentage'
+            url: "/howto/task_expressions_example_read_iops_percentage.html"
+          - title: 'Expressions example: "System" I/O'
+            url: "/howto/task_expressions_example_system_i_o.html"
+      - title: 'Custom Dashboard: Virtual Machine Performance'
+        url: "/howto/task_custom_dashboard_vm_performance.html"
+      - title: Example storage node utilization dashboard with variables
+        url: "/howto/task_custom_dashboard_example_with_variables.html"
+        entries:
+        - title: Node dashboard example widget settings
+          url: "/howto/reference_node_dashboard_example_widget_settings.html"
+      - title: Best Practices for Dashboards and Widgets
+        url: "/howto/reference_best_practices_for_dashboards_and_widgets.html"
+        entries:
+        - title: 'Best Practice: finding the right metric'
+          url: "/howto/reference_finding_the_right_metric.html"
+        - title: 'Best Practice: finding the right assets'
+          url: "/howto/reference_finding_the_right_assets.html"
+        - title: 'Scatterplot Example: knowing your axis'
+          url: "/howto/task_scatterplot_example_knowing_your_axis.html"
+    - title: Creating performance policies
+      url: "/howto/task_creating_performance_policies.html"
+      entries:
+      - title: Configuring performance and assure violation notifications
+        url: "/howto/task_configuring_performance_and_assurance_violation_notifications.html"
+      - title: Monitoring the violations in your network
+        url: "/howto/task_opening_the_violations_dashboard.html"
+    - title: Troubleshooting Fibre Channel BB credit 0 errors
+      url: "/howto/concept_how_to_trobleshootfibre_channel_bb_credit_0_errors.html"
+      entries:
+      - title: Creating performance policies and thresholds for ports
+        url: "/howto/task_creating_performance_policies_and_thresholds_for_ports.html"
+    - title: Analyzing your infrastructure
+      url: "/howto/task_analyzing_your_infrastructure.html"
+      entries:
+      - title: Observe an object&#8217;s behavior over time
+        url: "/howto/task_observe_anobject_s_behavior_over_time.html"
+      - title: Compare objects with the top 10 latency total to the average latency
+          for all like objects
+        url: "/howto/task_compare_objects_with_the_top_10_latency_total_to_the_average_latency_for_all_like_objects.html"
+      - title: Compare one object&#8217;s latency total to the latency total of the
+          top 10 objects
+        url: "/howto/task_compare_one_object_s_latency_total_to_the_latency_total_of_the_top_10_objects.html"
+      - title: Compare metrics-A against metrics-B to show categories and anomalies
+        url: "/howto/task_compare_metrics_a_against_metrics_b_to_show_categories_and_anomalies.html"
+      - title: Use an expression to identify alternate metrics
+        url: "/howto/task_use_an_expression_to_identify_alternate_metrics.html"
+    - title: Introduction to minimizing risk in thin provisioning
+      url: "/howto/concept_introduction_to_minimizing_risk_in_thin_provisioning.html"
+      entries:
+      - title: Monitoring the storage pool
+        url: "/howto/concept_monitoring_the_storage_pool.html"
+      - title: Monitoring the Datastores
+        url: "/howto/concept_monitoring_the_data_stores.html"
+      - title: Create dashboards to monitor thin provisioned environments
+        url: "/howto/concept_create_dashboards_to_monitor_thin_provisioned_environments.html"
+      - title: Using performance policies to reduce risk in thin provisioning
+        url: "/howto/concept_using_performance_policies_to_reduce_risk_in_thin_provisioning.html"
+      - title: Creating performance policies for Storage Pools
+        url: "/howto/task_creating_policies_and_thresholds_for_storage_pools.html"
+      - title: Creating performance policies for Datastores
+        url: "/howto/task_creating_performance_policies_for_datastores.html"
+    - title: Collecting Host and VM file system utilization data
+      url: "/howto/concept_host_and_vm_filesystem_utilization.html"
+      entries:
+      - title: Configure Insight for file system collection
+        url: "/howto/task_configure_insight_for_filesystem_collection.html"
+      - title: File system chargeback and reporting
+        url: "/howto/task_file_system_utilization_chargeback.html"
+    - title: Configuring your system to report chargeback data
+      url: "/howto/concept_introduction_to_configuring_your_system_for_chargeback.html"
+      entries:
+      - title: Defining annotations for use with chargeback
+        url: "/howto/task_defining_annotations.html"
+      - title: Defining applications for use with chargeback
+        url: "/howto/task_defining_applications_how_to_chargeback.html"
+      - title: Assigning applications to assets
+        url: "/howto/task_assigning_application_to_assets_how_to_chargeback.html"
+        entries:
+        - title: Assigning applications to assets using an ad hoc method
+          url: "/howto/task_assigning_applications_using_an_ad_hoc_method.html"
+        - title: Assigning applications to an asset using a query
+          url: "/howto/task_assigning_applications_using_a_query.html"
+      - title: Creating a simple Chargeback report
+        url: "/howto/task_creating_a_simple_chargeback_report.html"
+    - title: Ensuring IO density reports describe only internal data volumes
+      url: "/howto/concept_introduction_to_root_volume_isolation.html"
+      entries:
+      - title: Creating a query to identify NetApp root aggregates in your environment
+        url: "/howto/task_creating_a_query_to_identify_netapp_root_aggregates.html"
+      - title: Create an annotation for the root volumes returned by your queries
+        url: "/howto/task_create_an_annotation_for_the_root_volumes_returned_by_your_queries.html"
+      - title: Create an annotation rule to automate excluding specific aggregates
+          from your I/O density report
+        url: "/howto/task_create_an_annotation_rule_to_automate_excluding_specific_aggregates_from_your_query.html"
+    - title: Collecting integration data
+      url: "/howto/concept_collecting_integration_data.html"
+      entries:
+      - title: Collecting SNMP Integration data
+        url: "/howto/reference_collecting_snmp_integration_data.html"
+        entries:
+        - title: Importing SNMP integration packs
+          url: "/howto/task_importing_snmp_integration_data.html"
+        - title: Creating an SNMP integration data source
+          url: "/howto/task_adding_the_snmp_integration_data_source.html"
+        - title: Integration.json file information
+          url: "/howto/reference_integration_code_sample.html"
+    - title: Analyzing an application performance problem
+      url: "/howto/task_analyzing_an_application_performance_problem.html"
+      entries:
+      - title: Examining the internal volume
+        url: "/howto/concept_examining_the_internal_volume.html"
+      - title: Examining the greedy resource
+        url: "/howto/concept_examining_the_greedy_resource.html"
+      - title: Examine the storage pool
+        url: "/howto/concept_examining_the_details_of_the_storage_pool.html"
+      - title: Examining the volume
+        url: "/howto/concept_examining_the_server_volume.html"
+      - title: Examining the VM
+        url: "/howto/concept_examining_the_vm.html"
+    - title: Collecting and reporting AWS billing data
+      url: "/howto/concept_collecting_aws_billing_data.html"
+      entries:
+      - title: Preparing AWS for Insight data collection
+        url: "/howto/task_preparing_aws_for_insight_collection.html"
+      - title: Configuring the AWS Cloud Cost data source
+        url: "/howto/task_configuring_the_aws_cloud_cost_data_source.html"
+      - title: Processing AWS Cloud Cost data in Insight
+        url: "/howto/concept_processing_cloud_cost_data_in_insight.html"
+      - title: Reporting on Cloud Cost data in Insight
+        url: "/howto/task_reporting_on_cloud_cost_data_task.html"
+    - title: Integrating with ServiceNow
+      url: "/howto/concept_integrating_with_servicenow.html"
+      entries:
+      - title: Preparation and prerequisites for Service Now integration
+        url: "/howto/reference_preparation_and_prerequisites_for_servicenow_integration.html"
+        entries:
+        - title: Downloading the ServiceNow Python connector
+          url: "/howto/task_downloading_the_servicenow_connector.html"
+      - title: Configuring ServiceNow for integration
+        url: "/howto/task_configuring_servicenow_for_integration.html"
+        entries:
+        - title: Elevate role
+          url: "/howto/task_servicenow_integration_elevate_role.html"
+        - title: Install update set
+          url: "/howto/task_servicenow_integration_install_update_set.html"
+        - title: ServiceNow integration - Set up user
+          url: "/howto/task_servicenow_integration_set_up_user.html"
+        - title: Install Python and libraries
+          url: "/howto/task_servicenow_integration_install_python_and_libraries.html"
+        - title: Setup Python middleware
+          url: "/howto/task_servicenow_integration_python_middleware_setup.html"
+        - title: Syncing the connector
+          url: "/howto/task_servicenow_integration_syncing_the_connector.html"
+        - title: Scheduling synchronization to occur daily
+          url: "/howto/task_servicenow_integration_scheduling_daily_sync.html"
+  - title: install-linux
+    url: "/install-linux/index.html"
+    entries:
+    - title: OnCommand Insight overview
+      url: "/install-linux/concept_oncommand_insight_overview.html"
+      entries:
+      - title: Insight architecture
+        url: "/install-linux/concept_insight_architecture.html"
+      - title: How Insight is used by administrators, managers, and planners
+        url: "/install-linux/concept_insight_for_administrators_and_planners.html"
+    - title: Installation prerequisites
+      url: "/install-linux/reference_installation_prerequisites.html"
+      entries:
+      - title: Planning the deployment
+        url: "/install-linux/task_planning_the_installation.html"
+        entries:
+        - title: Data source support information
+          url: "/install-linux/concept_data_source_support_information.html"
+        - title: Device identification and data source planning
+          url: "/install-linux/concept_device_identification_and_data_source_planning.html"
+        - title: Network traffic generated by OnCommand Insight
+          url: "/install-linux/concept_network_traffic_generated_by_oncommand_insight.html"
+      - title: Uninstalling MariaDB
+        url: "/install-linux/task_uninstalling_mariadb.html"
+      - title: Insight Server requirements
+        url: "/install-linux/reference_insight_server_requirements.html"
+      - title: Data Warehouse server requirements
+        url: "/install-linux/reference_data_warehouse_server_requirements_linux.html"
+      - title: Remote Acquisition Unit server requirements
+        url: "/install-linux/reference_remote_acquisition_unit_server_requirements.html"
+      - title: Anomaly detection requirements
+        url: "/install-linux/reference_anomaly_detection_requirements.html"
+      - title: Insight Java UI requirements
+        url: "/install-linux/reference_insight_java_ui_requirements.html"
+      - title: Browsers supported by OnCommand Insight
+        url: "/install-linux/reference_insight_browser_support.html"
+    - title: Insight installation instructions
+      url: "/install-linux/concept_oncommand_insight_installation_instructions.html"
+      entries:
+      - title: Downloading the OnCommand Insight installer
+        url: "/install-linux/task_downloading_the_oncommand_insight_installer.html"
+      - title: Installing the OnCommand Insight Server
+        url: "/install-linux/task_installing_the_oncommand_insight_server_linux.html"
+      - title: Installing OnCommand Insight Data Warehouse
+        url: "/install-linux/task_installing_oncommand_insight_data_warehouse_linux.html"
+      - title: Installing a Remote Acquisition Unit
+        url: "/install-linux/task_installing_a_remote_acquisition_unit_rau_linux.html"
+        entries:
+        - title: Validating the remote acquisition unit installation
+          url: "/install-linux/task_validating_the_rau_installation.html"
+      - title: Installing the anomaly detection software
+        url: "/install-linux/task_installing_the_anomaly_detection_software.html"
+      - title: Installing an Ethernet Monitoring Unit
+        url: "/install-linux/task_installing_an_ethernet_monitoring_unit_linux.html"
+      - title: Checking the installation
+        url: "/install-linux/concept_checking_the_installation.html"
+        entries:
+        - title: Verifying that new Insight components are installed
+          url: "/install-linux/task_verifying_new_insight_services_linux.html"
+        - title: Insight logs
+          url: "/install-linux/concept_insight_logs.html"
+        - title: Accessing the web UI
+          url: "/install-linux/task_opening_insight.html"
+        - title: Installing your Insight licenses
+          url: "/install-linux/task_installing_your_insight_licenses.html"
+          entries:
+          - title: OnCommand Insight licenses
+            url: "/install-linux/concept_oncommand_insight_licenses.html"
+      - title: Troubleshooting installations
+        url: "/install-linux/concept_troubleshooting_installations.html"
+        entries:
+        - title: Missing licenses
+          url: "/install-linux/concept_missing_licenses.html"
+        - title: Submitting an online technical support request
+          url: "/install-linux/task_submitting_an_online_technical_support_request.html"
+    - title: Upgrading Insight
+      url: "/install-linux/concept_upgrading_insight_linux.html"
+      entries:
+      - title: Upgrading Insight to version 7.3.12 or later - Linux
+        url: "/install-linux/concept_upgrading_insight_to_version_7_3_12_or_later_linux.html"
+      - title: Upgrading Insight Server software
+        url: "/install-linux/task_upgrading_insight_server_software.html"
+      - title: Upgrading Data Warehouse software
+        url: "/install-linux/task_upgrading_data_warehouse.html"
+      - title: Upgrading Remote Acquisition Unit software
+        url: "/install-linux/task_upgrading_remote_acquisition_units.html"
+      - title: Upgrading the anomaly detection engine
+        url: "/install-linux/task_upgrading_the_anomaly_detection_engine.html"
+      - title: Upgrading Ethernet Monitoring Unit software
+        url: "/install-linux/task_upgrading_ethernet_monitoring_units.html"
+      - title: Migrating from Windows to Linux
+        url: "/install-linux/task_migrating_from_windows_to_linux.html"
+    - title: Uninstalling OnCommand Insight
+      url: "/install-linux/concept_uninstalling_oncommand_insight.html"
+      entries:
+      - title: Uninstalling the OnCommand Insight Server
+        url: "/install-linux/task_uninstalling_insight.html"
+      - title: Uninstalling Data Warehouse
+        url: "/install-linux/task_uninstalling_data_warehouse.html"
+      - title: Uninstalling a Remote Acquisition Unit
+        url: "/install-linux/task_uninstalling_a_remote_acquisition_unit_rau.html"
+      - title: Uninstalling an Ethernet Monitoring Unit
+        url: "/install-linux/task_uninstalling_an_ethernet_monitoringunit_emu_linux.html"
+      - title: Uninstalling the anomaly detection engine
+        url: "/install-linux/task_uninstalling_the_anomaly_detection_engine_linux.html"
+  - title: install-windows
+    url: "/install-windows/index.html"
+    entries:
+    - title: OnCommand Insight overview
+      url: "/install-windows/concept_oncommand_insight_overview.html"
+      entries:
+      - title: Insight architecture
+        url: "/install-windows/concept_insight_architecture.html"
+      - title: How Insight is used by administrators, managers, and planners
+        url: "/install-windows/concept_insight_for_administrators_and_planners.html"
+    - title: Installation prerequisites
+      url: "/install-windows/reference_installation_prerequisites.html"
+      entries:
+      - title: Planning the deployment
+        url: "/install-windows/task_planning_the_installation.html"
+        entries:
+        - title: Data source support information
+          url: "/install-windows/concept_data_source_support_information.html"
+        - title: Device identification and data source planning
+          url: "/install-windows/concept_device_identification_and_data_source_planning.html"
+        - title: Network traffic generated by OnCommand Insight
+          url: "/install-windows/concept_network_traffic_generated_by_oncommand_insight.html"
+      - title: Virus scan software disablement
+        url: "/install-windows/concept_disable_virus_scan_software.html"
+      - title: Insight Server requirements
+        url: "/install-windows/reference_insight_server_requirements.html"
+      - title: Data Warehouse and Reporting server requirements
+        url: "/install-windows/reference_data_warehouse_and_reporting_server_requirements.html"
+      - title: Remote Acquisition Unit server requirements
+        url: "/install-windows/reference_remote_acquisition_unit_server_requirements.html"
+      - title: Anomaly detection requirements
+        url: "/install-windows/reference_anomaly_detection_requirements.html"
+      - title: Insight Java UI requirements
+        url: "/install-windows/reference_insight_java_ui_requirements.html"
+      - title: Browsers supported by OnCommand Insight
+        url: "/install-windows/reference_insight_browser_support.html"
+    - title: Insight installation instructions
+      url: "/install-windows/concept_oncommand_insight_installation_instructions.html"
+      entries:
+      - title: Downloading the OnCommand Insight installer
+        url: "/install-windows/task_downloading_the_oncommand_insight_installer.html"
+      - title: Installing the OnCommand Insight Server
+        url: "/install-windows/task_installing_the_oncommand_insight_server.html"
+      - title: Installing OnCommand Insight Data Warehouse and Reporting
+        url: "/install-windows/task_installing_the_oncommand_insight_data_warehouse_and_reporting.html"
+        entries:
+        - title: Locating IBM Cognos documentation
+          url: "/install-windows/task_locating_ibm_cognos_documentation.html"
+        - title: Verifying the Data Warehouse and Reporting installation
+          url: "/install-windows/task_verifying_the_data_warehouse_and_reporting_installation.html"
+      - title: Installing a Remote Acquisition Unit (RAU)
+        url: "/install-windows/task_installing_a_remote_acquisition_unit_rau.html"
+        entries:
+        - title: Verifying the remote acquisition unit service
+          url: "/install-windows/task_verifying_the_rau_service.html"
+        - title: Validating the remote acquisition unit installation
+          url: "/install-windows/task_validating_the_rau_installation.html"
+      - title: Installing the anomaly detection software
+        url: "/install-windows/task_installing_the_anomaly_detection_software.html"
+      - title: Installing an Ethernet Monitoring Unit
+        url: "/install-windows/task_installing_an_ethernet_monitoring_unit_linux.html"
+      - title: Checking the installation
+        url: "/install-windows/concept_checking_the_installation.html"
+        entries:
+        - title: Verifying new Insight services
+          url: "/install-windows/task_verifying_new_oncommand_insight_services.html"
+        - title: Insight logs
+          url: "/install-windows/concept_insight_logs.html"
+        - title: Accessing the web UI
+          url: "/install-windows/task_opening_insight.html"
+        - title: Installing your Insight licenses
+          url: "/install-windows/task_installing_your_insight_licenses.html"
+          entries:
+          - title: OnCommand Insight licenses
+            url: "/install-windows/concept_oncommand_insight_licenses.html"
+      - title: Troubleshooting installations
+        url: "/install-windows/concept_troubleshooting_installations.html"
+        entries:
+        - title: Missing licenses
+          url: "/install-windows/concept_missing_licenses.html"
+        - title: Submitting an online technical support request
+          url: "/install-windows/task_submitting_an_online_technical_support_request.html"
+    - title: Upgrading OnCommand Insight
+      url: "/install-windows/concept_upgrading_insight.html"
+      entries:
+      - title: Upgrading Insight to version 7.3.12 or later - Windows
+        url: "/install-windows/concept_upgrading_insight_to_version_7_3_12_or_later_windows.html"
+      - title: Overview of the OnCommand Insight upgrade process
+        url: "/install-windows/concept_overview_of_insight_upgrade_process.html"
+        entries:
+        - title: OnCommand Insight upgrade checklist
+          url: "/install-windows/reference_insight_upgrade_checklist.html"
+      - title: Downloading the OnCommand Insight installation packages
+        url: "/install-windows/task_downloading_the_installation_packages.html"
+      - title: Backing up the databases
+        url: "/install-windows/concept_backing_up_databases.html"
+        entries:
+        - title: Backing up the Data Warehouse database
+          url: "/install-windows/task_backing_up_the_data_warehouse_database.html"
+        - title: Backing up the OnCommand Insight database
+          url: "/install-windows/task_backing_up_the_insight_server_database.html"
+      - title: Backing up the security configuration
+        url: "/install-windows/task_backing_up_the_security_configuration.html"
+      - title: Backing up custom Data Warehouse reports
+        url: "/install-windows/task_backing_up_custom_data_warehouse_reports.html"
+      - title: Performing the software upgrade
+        url: "/install-windows/concept_performing_the_software_upgrade.html"
+        entries:
+        - title: Upgrading Insight
+          url: "/install-windows/task_upgrading_insight.html"
+        - title: Upgrading Data Warehouse
+          url: "/install-windows/task_upgrading_data_warehouse.html"
+          entries:
+          - title: Preserving custom Cognos settings during a Data Warehouse upgrade
+            url: "/install-windows/reference_preserving_custom_settings_when_upgrading_data_warehouse.html"
+        - title: Backing up the security configuration
+          url: "/install-windows/task_backing_up_the_security_configuration.html"
+        - title: Upgrading remote acquisition unit servers
+          url: "/install-windows/task_upgrading_remote_acquisition_servers.html"
+        - title: Upgrading the anomaly detection engine
+          url: "/install-windows/task_upgrading_the_anomaly_detection_engine.html"
+      - title: Completing post-upgrade tasks
+        url: "/install-windows/concept_completing_post_upgrade_tasks.html"
+        entries:
+        - title: Installing data source patches
+          url: "/install-windows/task_installing_data_source_patches.html"
+        - title: Replacing a certificate after upgrading OnCommand Insight
+          url: "/install-windows/task_replacing_a_certificate_after_upgrading.html"
+        - title: Increasing Cognos memory
+          url: "/install-windows/task_increasing_cognos_memory.html"
+        - title: Restoring the Data Warehouse database
+          url: "/install-windows/task_restoring_the_data_warehouse_database.html"
+        - title: Restoring custom Data Warehouse reports
+          url: "/install-windows/task_restoring_custom_data_warehouse_reports.html"
+        - title: Verifying that Data Warehouse has historical data
+          url: "/install-windows/task_verifying_data_warehouse_has_historical_data.html"
+        - title: Restoring the performance archive
+          url: "/install-windows/task_restoring_the_performance_archive.html"
+        - title: Testing the connectors
+          url: "/install-windows/task_testing_the_connectors.html"
+        - title: Verifying the Extract, Transform, and Load scheduling
+          url: "/install-windows/task_verifying_the_extract_transform_and_load_process.html"
+        - title: Updating disk models
+          url: "/install-windows/task_updating_disk_models.html"
+        - title: Verifying that business intelligence tools are running
+          url: "/install-windows/concept_verifying_that_business_intelligence_tools_are_running.html"
+      - title: Troubleshooting an upgrade
+        url: "/install-windows/reference_troubleshooting_an_upgrade.html"
+    - title: Uninstalling the software
+      url: "/install-windows/concept_uninstalling_the_insight_software.html"
+      entries:
+      - title: Uninstalling the OnCommand Insight Server
+        url: "/install-windows/task_uninstalling_insight.html"
+      - title: Uninstalling the Data Warehouse software
+        url: "/install-windows/task_uninstalling_the_data_warehouse_software.html"
+      - title: Uninstalling the remote acquisition unit software
+        url: "/install-windows/task_uninstalling_the_remote_acquisition_unit_software.html"
+      - title: Uninstalling the anomaly detection engine
+        url: "/install-windows/task_uninstalling_the_anomaly_detection_engine_linux.html"
+  - title: reporting
+    url: "/reporting/index.html"
+    entries:
+    - title: Welcome to OnCommand Insight reporting
+      url: "/reporting/concept_welcome_to_oncommand_insight_reporting.html"
+      entries:
+      - title: Accessing the OnCommand Insight Reporting Portal
+        url: "/reporting/task_accessing_the_oncommand_insight_reporting_portal.html"
+      - title: Variations due to installed licenses
+        url: "/reporting/concept_variations_due_to_installed_licenses.html"
+      - title: Reporting user roles
+        url: "/reporting/reference_reporting_user_roles.html"
+      - title: Enabling Security Headers
+        url: "/reporting/concept_enabling_security_headers.html"
+    - title: Reporting made easy
+      url: "/reporting/concept_reporting_made_easy.html"
+      entries:
+      - title: Navigating to pre-defined OnCommand Insight reports
+        url: "/reporting/task_navigating_to_the_pre_defined_oncommand_insight_reports_and_dashboards.html"
+      - title: What the Storage Manager Dashboard enables you to do
+        url: "/reporting/reference_storage_manager_dashboard.html"
+      - title: Using predefined reports to answer common questions
+        url: "/reporting/concept_which_report_answers_your_question.html"
+      - title: Creating a report using Cognos 11
+        url: "/reporting/task_creating_a_report_cognos_11.html"
+    - title: Managing reports
+      url: "/reporting/concept_managing_reports.html"
+      entries:
+      - title: Customizing a report&#8217;s output format and delivery
+        url: "/reporting/task_customizing_a_report_s_output_format_and_delivery.html"
+      - title: Copying a report to the clipboard
+        url: "/reporting/task_copying_a_report_to_the_clipboard.html"
+      - title: Opening reports (xml) from the clipboard
+        url: "/reporting/task_importing_existing_reports_to_cognos_11.html"
+    - title: Creating custom ad hoc reports
+      url: "/reporting/concept_creating_custom_ad_hoc_reports.html"
+      entries:
+      - title: What you need to do before you design your report
+        url: "/reporting/concept_what_you_need_to_do_before_you_design_your_report.html"
+      - title: Process of creating reports
+        url: "/reporting/concept_process_of_creating_custom_reports.html"
+        entries:
+        - title: How to plan the results of your custom report
+          url: "/reporting/concept_how_to_plan_the_results_of_your_custom_report.html"
+        - title: Tips for designing reports
+          url: "/reporting/concept_tips_for_designing_reports.html"
+    - title: Reporting data model
+      url: "/reporting/concept_reporting_data_model.html"
+      entries:
+      - title: Data model overview
+        url: "/reporting/concept_data_model_overview.html"
+        entries:
+        - title: OnCommand Insight data models
+          url: "/reporting/concept_oncommand_insight_data_model_descriptions.html"
+        - title: Data model fact and dimension tables
+          url: "/reporting/concept_data_model_fact_and_dimension_tables.html"
+        - title: Colors used in data model elements
+          url: "/reporting/concept_colors_used_in_data_model_elements.html"
+        - title: Using multiple data models in one report
+          url: "/reporting/concept_using_multiple_data_models_in_one_report.html"

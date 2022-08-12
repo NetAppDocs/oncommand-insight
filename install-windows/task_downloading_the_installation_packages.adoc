@@ -1,0 +1,44 @@
+---
+permalink: install-windows/task_downloading_the_installation_packages.html
+sidebar: sidebar
+keywords: 
+summary: 'You should download the installation packages for Insight, Data Warehouse, and the Remote Acquisition Unit \(if applicable\) prior to the day that you choose to upgrade. Download times for the packages \(.msi files\) vary based on your available bandwidth.'
+---
+= Downloading the OnCommand Insight installation packages
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You should download the installation packages for Insight, Data Warehouse, and the Remote Acquisition Unit (if applicable) prior to the day that you choose to upgrade. Download times for the packages (`.msi` files) vary based on your available bandwidth.
+
+== About this task
+
+You can download the installation packages using the Insight webUI or by navigating to the appropriate OnCommand Insight link from http://support.netapp.com/NOW/cgi-bin/software.
+
+To download the installation package from within the Insight server, do the following:
+
+== Steps
+
+. Open the Insight web UI by opening a web browser and entering one of the following:
+ ** On the Insight server: `+https://localhost+`
+ ** From any location: `+https://IP Address:port or fqdn:port+`
++
+The port number is either 443 or the port that was configured when the Insight server was installed. The port number defaults to 443 if you do not specify the port number in the URL.
+. Log in to Insight.
+. Click on the Help icon and select *Check for updates*.
+. If a newer version is detected, follow the instructions in the message box.
++
+You will be taken to the InsightDescription page for the newer version.
+
+. On the *Description* page, click *Continue*.
+. When the end-user license agreement (EULA) is displayed, click *Accept*.
+. Click the installation package link for each component (Insight server, Data Warehouse, Remote Acquisition Unit), etc.) and click *Save as* to save the installation package.
++
+Before you upgrade, you should ensure that you copy the Data Warehouse and Remote Acquisition Unit installation packages to disks that are local to their respective servers.
+
+. Click *CHECKSUM*, and make a note of the numerical values that are associated with each installation package.
+. Verify that the installation packages are complete and without error after you download them.
++
+Incomplete file transfers can cause issues with the upgrade process.
++
+To generate MD5 hash values for the installation packages, you can use a third-party utility like Microsoft'slink:HTTP://SUPPORT.MICROSOFT.COM/KB/841290[File ChecksumIntegrity Verifier] utility.

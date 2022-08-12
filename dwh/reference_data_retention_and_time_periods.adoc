@@ -1,0 +1,71 @@
+---
+permalink: dwh/reference_data_retention_and_time_periods.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight Data Warehouse retains data obtained from the Extract, Transform, and Load \(ETL\) process for different time periods based on the different data marts and time granularity of the data.'
+---
+= Data retention, ETL, and time periods
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight Data Warehouse retains data obtained from the Extract, Transform, and Load (ETL) process for different time periods based on the different data marts and time granularity of the data.
+
+== Performance Marts and hourly granularity for volumes and internal volumes
+
+The OnCommand Insight Data Warehouse records the hourly averages, hourly maximums, and access bit for each hour of the day (24 data points) for 14 days. The access bit is a Boolean value that is true if the volume is accessed or false if the volume is not accessed during the hourly interval. All 24 data points for the preceding day are obtained during the first ETL process of the day.
+
+You do not need to run one ETL process per hour to gather the hourly data points. Running additional ETL processes during the day does not obtain any performance information from the OnCommand Insight Servers.
+
+== Performance Marts and daily granularity for volumes and internal volumes
+
+Each day when the ETL is processed, the daily averages for the preceding day are calculated and populated within Data Warehouse. The daily average is a summary of the 24 data points for the previous day. The performance data marts retain daily summaries for volumes and internal volumes for 13 months.
+
+== Capacity marts and daily granularity
+
+The Capacity marts provide daily measurements for various capacity facts on a daily basis for a period of 13 months. The capacity facts in Data Warehouse are current as of the last data source acquisition for the device prior to the ETL.
+
+== Capacity marts and monthly granularity
+
+Data Warehouse retains daily capacity data for 13 months. After the 13-month threshold is reached, the capacity data is summarized on a monthly basis. The monthly data is based on the values reflected by the date that is the month representative date.
+
+The following table shows which monthly data is included in the monthly summary:
+
+|===
+| Date| Is Month Representative value| Allocated capacity
+a|
+Jan 1
+a|
+1 (True)
+a|
+50 TB
+a|
+Jan 2
+a|
+0 (False)
+a|
+52 TB
+a|
+...
+a|
+...
+a|
+...
+a|
+Jan 31
+a|
+0 (False)
+a|
+65 TB
+a|
+Feb 1
+a|
+1 (True)
+a|
+65 TB
+|===
+Based on the table, a monthly report would show 50 TB allocated for January and 65 TB allocated for February. All of the other capacity values for January would not be included in the monthly summary.
+
+== Inventory mart
+
+The Inventory data mart is not historical. Each time an ETL process is run, the Inventory mart is erased and rebuilt. Therefore, any reports generated out of the Inventory mart do not reflect historical inventory configuration.

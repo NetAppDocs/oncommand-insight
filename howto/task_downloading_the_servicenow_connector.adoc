@@ -1,0 +1,19 @@
+---
+permalink: howto/task_downloading_the_servicenow_connector.html
+sidebar: sidebar
+keywords: 
+summary: 'You must download the Python connector for ServiceNow integration and extract it to a location of your choosing.'
+---
+= Downloading the ServiceNow Python connector
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must download the Python connector for ServiceNow integration and extract it to a location of your choosing.
+
+== Steps
+
+. Download the *ServiceNow Integration connector* from the https://automationstore.netapp.com/onCommandInsight.shtml[NetApp Storefront].
+. Extract the .zip file to a folder, for example `c:\OCI2SNOW`.
++
+The integration connector script is named `oci_snow_sync.pyz`.

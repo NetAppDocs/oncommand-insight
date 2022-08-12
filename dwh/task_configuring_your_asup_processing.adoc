@@ -1,0 +1,19 @@
+---
+permalink: dwh/task_configuring_your_asup_processing.html
+sidebar: sidebar
+keywords: 
+summary: 'All NetApp products are equipped with automated capabilities to provide the best possible support to troubleshoot issues that occur in your environment. ASUP periodically sends predefined, specific, information to Customer Support. By default, ASUP is enabled for Data Warehouse; however, you can disable it if you no longer want the information sent.'
+---
+= Disabling automatic ASUP transmissions
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+All NetApp products are equipped with automated capabilities to provide the best possible support to troubleshoot issues that occur in your environment. ASUP periodically sends predefined, specific, information to Customer Support. By default, ASUP is enabled for Data Warehouse; however, you can disable it if you no longer want the information sent.
+
+== Steps
+
+. From the navigation pane on the left, click *Troubleshooting*.
+. Click *Disable* to prevent ASUP from sending a daily report.
++
+A message displays saying ASUP is disabled.

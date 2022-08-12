@@ -1,0 +1,209 @@
+---
+permalink: config-admin/task_monitoring_oncommand_insight_system_health.html
+sidebar: sidebar
+keywords: 
+summary: 'You should periodically check the current status of your Insight system components by viewing the health page, which shows the status of each component and alerts you when there is an issue.'
+---
+= Monitoring OnCommand Insight system health
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You should periodically check the current status of your Insight system components by viewing the health page, which shows the status of each component and alerts you when there is an issue.
+
+== Steps
+
+. Log in to the Insightweb UI.
+. Click *Admin* and select *Health*.
++
+The Health page is displayed.
+
+. View the summary of the current status of the components paying particular attention to any attention status in the *Details* column that is preceded by a red circle, which indicates an issue that requires your immediate attention.
++
+The Health page displays information about any or all of the following Insight components based on your system configuration:
++
+|===
+| Component| Test| Details| Displays
+a|
+Acquisition
+a|
+Inventory data processing
+a|
+Status of local acquisition unit
+a|
+"`OK`" if number of concurrently-polling data sources is less than 75% of execution pool maximum (default maximum is 30).     "`Acquisition is busy`" if usage is greater than 75%, and recommends increasing polling interval or adding more remote acquisition units.
+a|
+Anomaly Detection Engine
+a|
+Engine capacity
+a|
+Count of applications monitored for anomaly detection
+a|
+Number and percentage of applications being monitored out of 48 possible applications.
+a|
+Anomaly Detection Engine
+a|
+Engine status
+a|
+Status of anomaly detection engine
+a|
+"`OK`" if no errors are detected, otherwise displays information about any error found.     See the `prelert.log` file for more information.
+a|
+DWH
+a|
+Backup
+a|
+Status of Data Warehouse scheduled backup
+a|
+"`OK`" and the last successful DWH backup time if DWH scheduled backup is enabled.    Otherwise, displays information about any error found.
+a|
+DWH
+a|
+ETL
+a|
+Status of Data Warehouse ETL
+a|
+"`OK`" and the last successful DWH build time if no errors.    Otherwise, displays information about any error found.
+a|
+Server
+a|
+ASUP
+a|
+Status of ASUP
+a|
+"`ASUP Enabled`" and the last successful phonehome time if available.    "`ASUP Failed`" if phonehome is enabled but encountered a problem.
++
+"Invalid backup location" if backup directory is not valid.
++
+Displays the last successful phonehome time as well as time of the last failed attempt if available.
++
+"`ASUP Disabled`" if phonehome is disabled.
+a|
+Server
+a|
+Auto resolution
+a|
+Status of automatic device resolution
+a|
+"`OK`" if no errors.    "`Auto resolution is blocked`" if identification errors prevent resolution progress.
++
+"`Low success rate`" if less than 75% of generic devices could be identified.
+a|
+Server
+a|
+Elasticsearch
+a|
+Status of elastic search data store
+a|
+"`OK`" if no errors.     "`Service unavailable`" if unable to connect to elastic search service.
++
+"Cluster mode detected" if more than one node is detected.
++
+"High memory utilization" if heap space used is more than 85%.
++
+"Status: RED" indicates an error reported by elastic search. Displays information about the error and recommends contacting customer support.
+a|
+Server
+a|
+CPU
+a|
+Insight CPU usage
+a|
+"`OK`" if CPU load is less than 65%.    "`System CPU load is high. Reduce your CPU load.`" if CPU load is greater than 65%.
+a|
+Server
+a|
+Disk space
+a|
+Status of disk space
+a|
+Free disk space, disk space in use by Insight, and recommended disk space reserved for Insight.    "`Low Disk Space`" if disk utilization is more than 80%.
+a|
+Server
+a|
+EventBus
+a|
+Status of EventBus
+a|
+"`EventBus is empty`" if EventBus queue is empty, otherwise displays status of EventBus queue.
+a|
+Server
+a|
+Inventory data processing
+a|
+Status of inventory data processing capability of Insight server
+a|
+"`OK`" if Insight server is not busy.    "`Server is busy`" if the server is busy at least 75% of the time for the last hour. Recommends not adding more data sources and recommends splitting the environment to several servers.
+a|
+Server
+a|
+MySQL
+a|
+Status of MySQL database
+a|
+"`OK`" if no problems are detected.    "`The database is having performance issues. Some queries are taking too long to run`" if the number of slow queries is more than 5%.
++
+"`The database log file grew more than <size> in the past hour. Check MySQL log file`" if the error log grows to more than 20 KB.
+a|
+Server
+a|
+Performance archive
+a|
+Status of performance archive
+a|
+"`Performance archive is enabled`" or "`Performance archive is not enabled`".
+a|
+Server
+a|
+Physical memory
+a|
+Status of physical memory
+a|
+"`OK`" if memory usage is less than 85%.     "`Memory usage is high. Reduce your overall memory footprint for system stability`" if memory usage is greater than 85%.
+a|
+Server
+a|
+Service pack
+a|
+Service pack availability
+a|
+Displays whether a service pack is available for Insight. If a service pack is available, displays instructions.
+a|
+Server
+a|
+Usage information
+a|
+Status of sending of usage information
+a|
+Displays whether sending of usage information to NetApp is enabled or disabled. Recommends enabling if disabled.     Displays last attempted or last successful send time.
++
+Displays information on any problems encountered.
+a|
+Server
+a|
+Violation
+a|
+Status of open violations
+a|
+"`OK`" if the number of open violations is less than 75% of the violations limit.    "`Maximum number of open violations allowed is <number>`" if the number of open violations is greater than 75% of the violations limit. Recommends reviewing performance policy configuration.
++
+"`Violation manager is blocked`" if the number of open violations is at the violations limit.
++
+Note that the violation manager cannot create new violations and recommends reviewing performance policy configuration.
+a|
+Server
+a|
+Weekly backup
+a|
+Status of weekly backup
+a|
+"`OK`" if weekly backup is enabled, otherwise displays "`Weekly backup is not enabled`".
+|===
++
+[NOTE]
+====
+If the anomaly detection engine displays an error, see the `prelert.log` file in the following location for more information:
+    -   Windows: `disk drive:\install directory\SANscreen\Wildfly\Standalone\Logs`
+    -   Linux: `/var/log/netapp/oci/wildfly/`
++
+====

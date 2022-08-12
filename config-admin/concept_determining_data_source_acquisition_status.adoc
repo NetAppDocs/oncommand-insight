@@ -1,0 +1,24 @@
+---
+permalink: config-admin/concept_determining_data_source_acquisition_status.html
+sidebar: sidebar
+keywords: 
+summary: 'Because data sources are the primary source of information for Insight, it is imperative that you ensure that they remain in a running state.'
+---
+= Determining data source acquisition status
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Because data sources are the primary source of information for Insight, it is imperative that you ensure that they remain in a running state.
+
+The ability to see the data source acquisition status is available on every asset page for all assets that are directly acquired. Either of the following acquisition scenarios can occur, in which the status is displayed in the upper right corner of the asset page:
+
+* Acquired successfully from data source
++
+Displays the status "`Acquired `xxxx``", where `xxxx` indicates the most recent acquisition time of the asset's data sources.
+
+* There is an acquisition error.
++
+Displays the status "`Acquired `xxxx``", where `xxxx` indicates the most recent acquisition time of the asset's one or more data sources with image:../media/acquisition_icon.gif[]. When you click image:../media/acquisition_icon.gif[], a window displays each data source for the asset, the data source's status, and the last time data was acquired. Clicking a data source displays the data source's detail page.
+
+If an asset is not directly acquired, no status is displayed.

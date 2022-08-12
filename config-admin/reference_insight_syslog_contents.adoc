@@ -1,0 +1,30 @@
+---
+permalink: config-admin/reference_insight_syslog_contents.html
+sidebar: sidebar
+keywords: 
+summary: 'You can enable a syslog on a server to collect Insight violation and performance alert messages that include utilization and traffic data.'
+---
+= Insight syslog contents
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can enable a syslog on a server to collect Insight violation and performance alert messages that include utilization and traffic data.
+
+== Message types
+
+The Insight syslog lists three types of messages:
+
+* SAN path violations
+* General violations
+* Performance alerts
+
+== Data provided
+
+Violation descriptions include the elements involved, time of the event, and relative severity or priority of the violation.
+
+Performance alerts include these data:
+
+* Utilization percentages
+* Traffic types
+* Traffic rate measured in MB

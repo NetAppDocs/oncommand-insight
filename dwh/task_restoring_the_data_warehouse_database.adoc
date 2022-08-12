@@ -1,0 +1,38 @@
+---
+permalink: dwh/task_restoring_the_data_warehouse_database.html
+sidebar: sidebar
+keywords: 
+summary: 'You can restore a Data Warehouse database by using the .zip file that was created when you backed up that Data Warehouse database.'
+---
+= Restoring the Data Warehouse database
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can restore a Data Warehouse database by using the `.zip` file that was created when you backed up that Data Warehouse database.
+
+== About this task
+
+When you restore a Data Warehouse database, you have the option to restore user account information from the backup as well. User management tables are used by the Data Warehouse report engine in a Data Warehouse only installation.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system on which OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *Backup/Restore*.
+. In the *Restore Database and Reports* section, click *Browse*, and locate the `.zip` file that contains the Data Warehouse backup.
+. If you want to restore reports or user account data, select one or both of the following check boxes:
+ ** *Restore database*
++
+Includes Data Warehouse settings, data marts, connections, and user account information.
+
+ ** *Restore reports*
++
+Includes custom reports, predesigned reports, changes that you made to predesigned reports, and reporting settings that you created in the Reporting Portal.
++
+[NOTE]
+====
+If your database backup contains a custom report that has a slash (/) or an open bracket ([) in its name (for example, US IT Center Switch Port Boston/July), the restore operation renames the report, replacing the slash or open bracket with an underscore (for example, US IT Center Switch Port Boston_July).
+====
+. Click *Restore*.
++
+After the restore process is completed, a message is displayed below the Restore button. If the restore process is successful, the message indicates success. If the restore process fails, the message reports the specific exception that caused the failure. If an exception occurs and the restore process fails, the original database is automatically reset.

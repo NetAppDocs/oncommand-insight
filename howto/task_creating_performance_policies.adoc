@@ -1,0 +1,58 @@
+---
+permalink: howto/task_creating_performance_policies.html
+sidebar: sidebar
+keywords: 
+summary: 'You create performance policies to set thresholds that trigger alerts to notify you about issues related to the resources in your network. For example, you can create a performance policy to alert you when the total utilization for storage pools is greater than 60%.'
+---
+= Creating performance policies
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You create performance policies to set thresholds that trigger alerts to notify you about issues related to the resources in your network. For example, you can create a performance policy to alert you when the total utilization for storage pools is greater than 60%.
+
+== Steps
+
+. Open OnCommand Insight in your browser.
+. Select *Manage* > *Performance Policies*.
++
+The Performance Policies page is displayed.image:../media/performance_policies_page.gif[]
++
+Policies are organized by object, and are evaluated in the order in which they appear in the list for that object.
+
+. Click *Add new policy*.
++
+The Add Policy dialog box is displayed.
+
+. In the *Policy name* field, enter a name for the policy.
++
+You must use a name that is different from all the other policy names for the object. For example, you cannot have two policies named "`Latency`" for an internal volume; however, you can have a "`Latency`" policy for an internal volume and another "`Latency`" policy for a different volume. The best practice is to always use a unique name for any policy, regardless of the object type.
+
+. From the *Apply to objects of type* list, select the type of object to which the policy applies.
+. From the *With annotation* list, select an annotation type, if applicable, and enter a value for the annotation in the *Value* box to apply the policy only to objects that have this particular annotation set.
+. If you selected *Port* as the object type, from the *Connected to* list, select what the port is connected to.
+. From the *Apply after a window of* list, select when an alert is raised to indicate a threshold violation.
++
+The First occurrence option triggers an alert when a threshold is exceeded on the first sample of data. All other options trigger an alert when the threshold is crossed once and is continuously crossed for at least the specified amount of time.
+
+. From the *With severity* list, select the severity for the violation.
+. By default, email alerts on policy violations will be sent to the recipients in the global email list. You can override these settings so that alerts for a particular policy are sent to specific recipients.
+ ** Click the link to open the recipients list, then click the *+* button to add recipients. Violation alerts for that policy will be sent to all recipients in the list.
+. Click the *any* link in the *Create alert if any of the following are true* section to control how alerts are triggered:
+ ** *any*
++
+This is the default setting, which creates alerts when any of the thresholds related to a policy are crossed.
+
+ ** *all*
++
+This setting creates an alert when all of the thresholds for a policy are crossed. When you select *all*, the first threshold that you create for a performance policy is referred to as the primary rule. You must ensure that the primary rule threshold is the violation that you are most concerned about for the performance policy.
+. In the *Create alert if* section, select a performance counter and an operator, and then enter a value to create a threshold.
+. Click *Add threshold* to add more thresholds.
+. To remove a threshold, click the trash can icon.
+. Select the *Stop processing further policies if alert is generated* check box if you want the policy to stop processing when an alert occurs.
++
+For example, if you have four policies for datastores, and the second policy is configured to stop processing when an alert occurs, the third and fourth policies are not processed while a violation of the second policy is active.
+
+. Click *Save*.
++
+The Performance Policies page displays, and the performance policy appears in the list of policies for the object type.

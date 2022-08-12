@@ -1,0 +1,50 @@
+---
+permalink: config-admin/concept_what_s_included_in_the_autosupport_package.html
+sidebar: sidebar
+keywords: 
+summary: 'The Autosupport package contains the database backup as well as extended information.'
+---
+= What's included in the Autosupport (ASUP) package
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Autosupport package contains the database backup as well as extended information.
+
+The Autosupport package includes the following:
+
+* Inventory data
+* Performance data (if selected for inclusion in ASUP)
+* Data sources and data source settings
+* Integration packs
+* Remote acquisition units
+* Ethernet monitoring units
+* ASUP/proxy settings
+* Backup location settings
+* Archive location settings
+* Notification settings
+* Anomaly detection scores and devices
+* Anomaly detection application settings
+* Users
+* Performance policies
+* Business entities and applications
+* Device resolution rules and settings
+* Dashboards and widgets
+* Customized asset page dashboards and widgets
+* Queries
+* Annotations and annotation rules
+* Logs
+* Licenses
+* Acquisition / data source status
+* MySQL status
+* System information
+
+The Autosupport package does not include:
+
+* Security tool settings / vault information (backed up via separate CLI process)
+* Performance data (if not selected for inclusion in ASUP)
+
+[NOTE]
+====
+If you choose to include performance data in the ASUP, the most recent seven days of data is included. The remaining data will be in the archive if you have that feature enabled. Archive data is not included in ASUP.
+====

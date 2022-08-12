@@ -1,0 +1,39 @@
+---
+permalink: config-admin/task_what_the_related_assets_sections_enable_you_to_do.html
+sidebar: sidebar
+keywords: 
+summary: 'The Related Assets section enables you to view any of the assets that are related to the base asset. Each related asset is displayed in a table along with pertinent statistics for the asset. You can export the asset information, view the asset statistics in the Expert View performance charts, or show a chart that displays statistics for only related assets.'
+---
+= Using the Related Assets section
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Related Assets section enables you to view any of the assets that are related to the base asset. Each related asset is displayed in a table along with pertinent statistics for the asset. You can export the asset information, view the asset statistics in the Expert View performance charts, or show a chart that displays statistics for only related assets.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Locate an asset page by doing either of the following:
+ ** On the Insight toolbar, click image:../media/icon_sanscreen_magnifying_glass_gif.gif[], type in the name of the asset, and then select the asset from the list.
+ ** Click *Dashboards*, select *Assets Dashboard*, locate an asset name, and click it.
+The asset page displays.
+. To control how assets display in the table:
+ ** Click the name of any asset to display its asset page.
+ ** Use the *filter* box to show only specific assets.
+ ** Click a page number to browse through the assets by page if there are more than five assets in the table.
+ ** Change the sort order of the columns in a table to either ascending (up arrow) or descending (down arrow) by clicking the arrow in the column header.
+ ** Add a related asset to any performance chart in the Expert View section by placing your cursor over the related asset and clicking image:../media/add_to_expert_view_graph.gif[].
+. To export the information displayed in the table to a `.CSV` file:
+ .. Click image:../media/export_to_csv.gif[].
+ .. Click *Open with* and then *OK* to open the file with Microsoft Excel and save the file to a specific location, or click *Save file* and then *OK* to save the file to your Downloads folder.
++
+All of the object attributes for the columns currently selected for display are exported to the file. Only the attributes for the displayed columns will be exported. Note that only the first 10,000 rows of the table are exported.
+. To display the related asset information in a chart below the table, click image:../media/show_as_chart.gif[] and do any of the following:
+ ** Click *Read*,*Write*, or *Total* to change the metric data that displays. *Total* is the default.
+ ** Click image:../media/pencil_icon_landing_page_be.gif[] to select a different metric.
+ ** Click image:../media/change_chart_type_icon.gif[] to change the chart type. *Line chart* is the default.
+ ** Move your cursor over the data points in the chart to see how the value of the metric changes over the time period selected for each related asset.
+ ** Click a related asset in the chart legend to add it to or remove it from the chart.
+ ** Click a page number in the related asset table to view other related assets in the chart.
+ ** Click image:../media/close_chart_icon.gif[] to close the chart.

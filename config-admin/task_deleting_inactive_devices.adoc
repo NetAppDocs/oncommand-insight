@@ -1,0 +1,29 @@
+---
+permalink: config-admin/task_deleting_inactive_devices.html
+sidebar: sidebar
+keywords: 
+summary: 'Deleting devices that are inactive helps keep your data cleaner and easier to navigate.'
+---
+= Deleting inactive devices
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Deleting devices that are inactive helps keep your data cleaner and easier to navigate.
+
+== About this task
+
+To delete inactive devices from Insight, do the following:
+
+== Steps
+
+. Create a new query or open an existing query.
+. Choose either the _generic device_, _host_, _storage_,_switch_, or _tape_ asset type.
+. Add a filter for *Is active*, and set the filter to *No*.
++
+The results table displays only assets that are not active.
+
+. Select the devices that you want to delete.
+. Click the *Actions* button and select *Delete Inactive Devices*.
++
+Your inactive devices are deleted and will no longer be displayed in Insight.

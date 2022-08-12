@@ -1,0 +1,127 @@
+---
+permalink: config-admin/reference_hp_eva_storage_sssu_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'For configuration, The EVA Storage \(SSSU\) data source requires the IP address of the Command View \(CV\) server and a read-only username and password to the CV software. The user must be defined in the CV software.'
+---
+= HP EVA Storage data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+For configuration, The EVA Storage (SSSU) data source requires the IP address of the Command View (CV) server and a _read-only_ username and password to the CV software. The user must be defined in the CV software.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the HP EVA data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Disk
+a|
+Disk
+a|
+Disk Group
+a|
+Disk Group (not modeled)
+a|
+Storage Cell
+a|
+Storage
+a|
+Virtual Disk
+a|
+Storage Pool
+a|
+Virtual Disk
+a|
+Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Inventory Requirements
+
+* IP address of the CV server
+* Read-only username and password to the CV software. The user must be defined in the CV software.
+* Third-party software installed on the OnCommand Insight Server/RAU: `sssu.exe`. The `sssu.exe` version should correspond to the CV version.
+* Access validation: Run `sssu.exe` commands using username and password.
+
+== Performance Requirements
+
+The HP StorageWorks Command View EVA software suite must be installed on the OnCommand Insight Server. Alternatively, you can install a Remote Acquisition Unit (RAU) on the EVA server:
+
+. Install HP StorageWorks Command View EVA Software Suite on the OnCommand Insight Server, or install a Remote Acquisition Unit on the Command View EVA server.
+. Locate the `evaperf.exe` command. For example, `c:\Program Files\Hewlett-Packard\EVA Performance Monitor\`
+. Using the IP of the Command View server, perform these steps:
+ .. Run this command where 860 is the default port `Evaperf.exe server <Command View Server IP\> 860 <username\>`
+ .. Enter the Command View server password at the password prompt.
++
+This should return a command line prompt and nothing else.
+. Verify the setup by running `evaperf.exe ls`.
++
+You should see a list of arrays or controllers managed by the Command View server. Each line shows a controller on an EVA array.
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+CommandView Server
+a|
+IP address or fully-qualified domain name of the EVA Storage Manager
+a|
+User Name
+a|
+User name for the Command View manager. The name must be defined in Command View.
+a|
+Password
+a|
+Password used for the Command View manager.
+a|
+Performance User Name
+a|
+For performance, the user name for the Command View manager. The name must be defined in Command View.
+a|
+Performance Password
+a|
+For performance, the password used for the Command View manager.
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 40 minutes)
+a|
+CLI Home
+a|
+Full pathname to the CLI home directory where `sssu.exe` is located
+a|
+Inventory Exclude Devices
+a|
+Comma-separated list of device names to include
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+a|
+Performance CLI Home
+a|
+For Array Performance, full pathname to the CLI home directory where sssu.exe is located. To validate access, run `sssu.exe`
+a|
+Command Timeout (sec)
+a|
+`evaperf` command wait timeout (default 600 seconds)
+a|
+Performance Exclude Devices
+a|
+Comma-separated list of device names to exclude from collecting performance data
+|===

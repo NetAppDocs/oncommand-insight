@@ -1,0 +1,104 @@
+---
+permalink: config-admin/reference_huawei_oceanstor_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight uses the Huawei OceanStor \(REST/HTTPS\) data source to discover inventory for Huawei OceanStor storage.'
+---
+= Huawei OceanStor data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight uses the Huawei OceanStor (REST/HTTPS) data source to discover inventory for Huawei OceanStor storage.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory and performance information from the Huawei OceanStor. For each asset type acquired by OnCommand Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| OnCommand Insight Term
+a|
+Storage Pool
+a|
+Storage Pool
+a|
+File System
+a|
+Internal Volume
+a|
+Controller
+a|
+Storage Node
+a|
+FC Port (Mapped)
+a|
+Volume Map
+a|
+Host FC Initiator (Mapped)
+a|
+Volume Mask
+a|
+NFS/CIFS Share
+a|
+Share
+a|
+Share
+a|
+iSCSI Target Node
+a|
+iSCSI Link Initiator
+a|
+iSCSI Initiator Node
+a|
+Disk
+a|
+Disk
+a|
+LUN
+a|
+Volume
+|===
+
+== Requirements
+
+The following are requirements to configure and use this data collector:
+
+* Device IP
+* Credentials to access OceanStor device manager
+* Port 8088 must be available
+
+== Configuration
+
+|===
+| Field| Description
+a|
+OceanStor Host IP Address
+a|
+IP address or fully-qualified domain name of the OceanStor Device Manager
+a|
+User Name
+a|
+Name used to log into the OceanStor Device Manager
+a|
+Password
+a|
+Password used to log into the OceanStor Device Manager
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+TCP Port
+a|
+TCP Port used to connect to OceanStor Device Manager (default 8088 )
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 60 minutes)
+a|
+Connection Timeout (sec)
+a|
+Connection timeout (default 60 seconds)
+|===

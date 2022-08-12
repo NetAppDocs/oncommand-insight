@@ -1,0 +1,24 @@
+---
+permalink: howto/task_setting_up_syslog_for_notifications.html
+sidebar: sidebar
+keywords: 
+summary: 'Insight can send syslog events for capacity or path violations and performance alerts.'
+---
+= Setting up Syslog for logging
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Insight can send syslog events for capacity or path violations and performance alerts.
+
+== About this task
+
+Follow these basic steps to configure syslog notification in Insight:
+
+== Steps
+
+. Click *Admin* > *Notifications* and go to the *Syslog* section.
+. Place a check in the *Syslog enabled* checkbox..
+. In the *Server* field, enter the IP address of the log server.
+. In the *Facility* field, select the facility level that corresponds to the type of program that is logging the message.
+. Click *Save*.

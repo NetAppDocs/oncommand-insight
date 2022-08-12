@@ -1,0 +1,18 @@
+---
+permalink: dwh/task_backing_up_custom_reports_and_report_artifacts.html
+sidebar: sidebar
+keywords: 
+summary: 'If you created custom reports in a version of Insight earlier than 7.0, and you want to upgrade to the newest Insight version, you should back up your reports and report artifacts before the upgrade installation and restore them after the upgrade installation. You should also pay attention to the folders that you are using to store report artifacts.'
+---
+= Backing up custom reports and report artifacts
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you created custom reports in a version of Insight earlier than 7.0, and you want to upgrade to the newest Insight version, you should back up your reports and report artifacts before the upgrade installation and restore them after the upgrade installation. You should also pay attention to the folders that you are using to store report artifacts.
+
+== About this task
+
+If you made changes to the predesigned reports, create your own copies of those reports in a separate folder. That way, when you update the predesigned artifacts, you do not overwrite your changes.
+
+If you have reports in the My Folders area, you should copy them to the Custom Reports folders so that they are not lost.

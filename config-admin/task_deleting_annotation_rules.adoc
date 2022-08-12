@@ -1,0 +1,28 @@
+---
+permalink: config-admin/task_deleting_annotation_rules.html
+sidebar: sidebar
+keywords: 
+summary: 'You can delete an annotation rule when the rule is no longer required to monitor the objects in your network.'
+---
+= Deleting annotation rules
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can delete an annotation rule when the rule is no longer required to monitor the objects in your network.
+
+== Steps
+
+. Log in to the OnCommand Insightweb UI.
+. Click *Manage*, and select *Annotation rules*.
++
+The Annotation Rules page displays the list of existing annotation rules.
+
+. Locate the rule that you want to delete:
+ ** On the Annotation Rules page, you can filter the annotation rules by entering a value in the filter box.
+ ** Click a page number to browse through the annotation rules by page if there are more rules than fit on a single page.
+. Point the cursor over the rule that you want to delete, and then click image:../media/trash_can_query.gif[].
++
+A confirmation message is displayed, prompting whether you want to delete the rule.
+
+. Click *OK*.

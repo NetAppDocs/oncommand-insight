@@ -1,0 +1,100 @@
+---
+permalink: config-admin/reference_ibm_powervm_ssh_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'The IBM PowerVM \(SSH\) data source collects information about virtual partitions running on IBM POWER hardware instances managed by a hardware management console \(HMC\). For configuration, this data source requires the user name to log in to the HMC through SSH, and the view-level permission on HMC configurations.'
+---
+= IBM PowerVM data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The IBM PowerVM (SSH) data source collects information about virtual partitions running on IBM POWER hardware instances managed by a hardware management console (HMC). For configuration, this data source requires the user name to log in to the HMC through SSH, and the view-level permission on HMC configurations.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the IBM PowerVM data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+hdisk
+a|
+Virtual Disk
+a|
+Managed System
+a|
+Host
+a|
+LPAR, VIO Server
+a|
+Virtual Machine
+a|
+Volume Group
+a|
+Data Store
+a|
+Physical Volume
+a|
+LUN
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* IP address of the Hardware Management Console (HMC)
+* User name and password that provide access to HMC through SSH
+* Port requirement SSH-22
+* View permission on all management systems and logical partition security domains
++
+The user must also have View permission on HMC configurations and the ability to collect VPD information for the HMC console security grouping. The user must also be allowed Virtual IO Server Command access under the Logical Partition security grouping. It is a best practice to start from a role of an operator and then remove all roles. Read-only users on the HMC do not have privileges to run proxied commands on AIX hosts.
+
+* IBM best practice is to have the devices monitored by two or more HMCs. Be aware that this may cause OnCommand Insight to report duplicated devices, therefore it is highly recommended to add redundant devices to the "Exclude Devices" list in the Advanced Configuration for this data collector.
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+Hardware Management Console (HMC) Address
+a|
+IP address or fully-qualified domain name of the PowerVM Hardware Management Console
+a|
+HMC User
+a|
+User name for the Hardware Management Console
+a|
+Password
+a|
+Password used for the Hardware Management Console
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 20 minutes)
+a|
+SSH Port
+a|
+Port used for SSH to the PowerVM
+a|
+SSH Process Wait Timeout (sec)
+a|
+SSH process timeout (default 600 seconds)
+a|
+Number of Retries
+a|
+Number of inventory retry attempts
+a|
+Exclude Devices
+a|
+Comma-separated list of device IDs or display names to exclude
+|===

@@ -1,0 +1,20 @@
+---
+permalink: howto/reference_custom_dashboard_group_by.html
+sidebar: sidebar
+keywords: 
+summary: 'Data in a table widget can be grouped by any available attribute, allowing you to see an overview of your data, and to drill-down into it for more detail. Metrics in the table are rolled up for easy viewing in each collapsed row.'
+---
+= Grouping in table widgets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Data in a table widget can be grouped by any available attribute, allowing you to see an overview of your data, and to drill-down into it for more detail. Metrics in the table are rolled up for easy viewing in each collapsed row.
+
+Table widgets allow you to group your data based on the attributes you set. For example, you might want your table to show Total Storage IOPS grouped by the data centers in which those storages live. Or you might want to display a table of Virtual machines grouped according to the hypervisor that hosts them. From the list, you can expand each group to view the assets in that group.
+
+Grouping is only available in the *Table* widget type.
+
+== Performance data roll up
+
+If you include a column for performance data (for example, _IOPS - Total_) in a table widget, when you choose to group the data you can then choose a roll up method for that column. The default roll up method is to display the _average_ of the underlying data in the group row. ou can also choose to display the _sum_, _minimum_, or _maximum_ of the data..

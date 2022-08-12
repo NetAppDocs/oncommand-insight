@@ -1,0 +1,43 @@
+---
+permalink: config-admin/task_modifying_annotations.html
+sidebar: sidebar
+keywords: 
+summary: 'You might want to change the name, description, or values for an annotation, or delete an annotation that you no longer want to use.'
+---
+= Modifying annotations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You might want to change the name, description, or values for an annotation, or delete an annotation that you no longer want to use.
+
+== Steps
+
+. Log in to the OnCommand Insightweb UI.
+. Click *Manage* and select *Annotations*.
++
+The Annotations page displays.
+
+. Position your cursor over the annotation you want to edit and click image:../media/edit_recipient_icon.gif[].
++
+The *Edit Annotation* dialog box displays.
+
+. You can make the following modifications to an annotation:
+ .. Change the name, description, or both.
++
+However, note that you can enter a maximum of 255 characters for both the name and description, and you cannot change the type of any annotation. Additionally, for system-level annotations, you cannot change the name or description; however, you can add or remove values if the annotation is a list type.
++
+[NOTE]
+====
+If a custom annotation is published to the Data Warehouse and you rename it, you will lose historical data.
+====
+
+ .. To add another value to an annotation of list type, click image:../media/add_annotation_icon.gif[].
+ .. To remove a value from an annotation of list type, click image:../media/trash_can_query.gif[].
++
+You cannot delete an annotation value if that value is associated with an annotation contained in an annotation rule, query, or performance policy.
+. Click *Save* when you finish.
+
+== After you finish
+
+If you are going to use annotations in the Data Warehouse, you need to force an update of annotations in the Data Warehouse. Refer to the _OnCommand Insight Data Warehouse Administration Guide_.

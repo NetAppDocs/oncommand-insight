@@ -1,0 +1,48 @@
+---
+permalink: howto/task_creating_a_performance_policy_for_alerting.html
+sidebar: sidebar
+keywords: 
+summary: 'Performance Policies allow you to monitor and send alerts when specific conditions are met.'
+---
+= Creating performance policies for alerting
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Performance Policies allow you to monitor and send alerts when specific conditions are met.
+
+== About this task
+
+Now that we have annotated our assets, let's create a Performance Policy that we can use to alert us when latency is higher than 2ms in any storage array at our Sunnyvale (DC1_SVL) data center. When these conditions occur, we will send an email to selected recipients.
+
+== Steps
+
+. Select *Manage* > *Performance policies*.
++
+The Performance policies page opens. There are several default policies already set, which you can modify to suit your needs. We will create a new policy, however.
+
+. Click the *+Add* button.
++
+The *Add Policy* dialog opens.
+
+. In the *Policy name* field, enter "`SVL Data Center Latency policy`".
++
+You must use a name that is different from all the other policy names for the object. For example, you cannot have two policies named "Latency" for an internal volume; however, you can have a "Latency" policy for an internal volume and another "Latency" policy for a different volume. The best practice is to always use a unique name for any policy, regardless of the object type.
+
+. For *Apply to objects of type*, select *Storage*.
+. In the *With annotation* field, select *Data Center* is "`DC1_SVL`" (or choose the name of your desired data center here).
+. Apply after a window of *First occurrence* .
++
+The First occurrence option triggers an alert when a threshold is exceeded on the first sample of data. All other options trigger an alert when the threshold is crossed once and is continuously crossed for at least the specified amount of time.
+
+. From the *With severity* list, select *Warning*.
+. Under *Email recipients*, click to override the global recipient list. Click**+**to add the email address of your first desired alert recipient, and click *OK*. Repeat for any additional desired email recipients.
+. Leave the default choice to Create alert if *any* of the following are true. This will send an alert if any one of the set thresholds is met. You can also choose to alert only if *all* of the set thresholds are met.
+. To set your first threshold, select *Latency - Total* in the drop-down and set it to greater than 2 ms.
+. If desired, add additional thresholds to alert on by clicking the *Add threshold* button. When the policy is customized the way you want it, click *Save*.
+. You can also choose to *Stop processing further policies if alert is generated*. This will halt additional policy alerting if this policy's conditions are met.
+. You may add as many new policies as you like, setting alerts for other recipients based on different conditions, according to business need. Any policies configured without specific recipients will send alerts to the global recipient list set in the *Admin* > *Notifications* page
+
+== After you finish
+
+Each new policy is automatically activated when it is saved, and recipients will start receiving alerts when the policy's conditions are met (known as a _violation_). You can also monitor these violations in the *Dashboards* > *Violations Dashboard*.

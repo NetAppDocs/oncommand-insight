@@ -1,0 +1,55 @@
+---
+permalink: config-admin/concept_examining_network_performance.html
+sidebar: sidebar
+keywords: 
+summary: 'You can examine your storage environment performance and identify under-utilized and over-utilized resources and identify risks before they turn into problems.'
+---
+= Examining network performance
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can examine your storage environment performance and identify under-utilized and over-utilized resources and identify risks before they turn into problems.
+
+Insight helps you to resolve or prevent performance and availability problems that are revealed through the collected storage data.
+
+You can use Insight to perform these performance management tasks:
+
+* Monitor performance across your environment
+* Identify resources influencing the performance of other devices
+
+== The Importance of Ports
+
+The Insight Server and Data Warehouse (DWH) server may require a number of TCP ports to be free in order to operate reliably. Some of these ports are only utilized for processes bound to the localhost adapter (127.0.0.1), but are still required for core services to operate reliably. The number of ports required is a superset of what ports are used across the network.
+
+== Insight Server Ports
+
+Insight Servers can have software firewalls installed. The "holes" that would need to be opened would be as described below.
+
+*Inbound HTTPS 443* - assuming you have the Insight WebUI running on TCP 443, you must expose that as to allow any and all of the following consumers:
+
+* Insight users of the WebUI
+* Remote Acquisition Units seeking to connect to the Insight server
+* OCI DWH servers with connectors to this Insight server.
+* Any programmatic interactions with the Insight REST API
+* Anomaly Detection Engine seeking to source Insight performance data for rendering anomaly information
+
+Our general recommendation for anyone looking to implement Insight server host-level firewalling is to allow HTTPS access to all corporate network IP blocks.
+
+*Inbound MySQL (TCP 3306)*. This port only needs to be exposed to any Insight DWH server with a connector
+
+While Insight has dozens of data collectors, they are all poll-based - Insight will cause its Acquisition Units (AUs) to initiate outbound communication to various devices. As long as your host based firewall is "stateful" such that it allows return traffic to be allowed through the firewall, host based firewalls on the Insight Server should not impact data acquisition.
+
+== Data Warehouse Ports
+
+For Insight DWH servers:
+
+*Inbound HTTPS 443* - assuming you have the Insight WebUI running on TCP 443, you must expose that as to allow the following consumers:
+
+* Insight administrative users of the DWH admin portal
+
+*Inbound HTTPS (TCP 9300)* - this is the Cognos reporting interface. If you will have users interacting with the Cognos reporting interface, this must be exposed remotely.
+
+We can imagine environments where the DWH may not need to be exposed - perhaps the report authors just make RDP connections to the DWH server, and craft and schedule reports there, while having all reports scheduled to be delivered via SMTP, or written to a remote file system.
+
+*Inbound MySQL (TCP 3306)*. This port only needs to be exposed if your organization has any MySQL-based integrations with DWH data - are you extracting data out of the various DWH data marts for ingestion into other applications like CMDBs, chargeback systems, etc.

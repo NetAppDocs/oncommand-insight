@@ -1,0 +1,26 @@
+---
+permalink: config-admin/concept_changes_causing_data_collection_problems.html
+sidebar: sidebar
+keywords: 
+summary: 'If you are experiencing data collection problems in OnCommand Insight, changes in your environment are a likely cause. As a general maintenance rule, you should accommodate any changes in your environment in Insight as well.'
+---
+= Changes causing data collection problems
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are experiencing data collection problems in OnCommand Insight, changes in your environment are a likely cause. As a general maintenance rule, you should accommodate any changes in your environment in Insight as well.
+
+You can use this checklist to identify changes to your network that might be causing problems:
+
+* Have you changed any passwords? Were those passwords changed in Insight?
+* Did you remove a device from your network? You must also remove the device from OnCommand Insight to prevent it from being rediscovered and reintroduced.
+* Did you upgrade infrastructure software (such as HP CommandView EVA or EMC Solutions Enabler)?
++
+Ensure that the appropriate versions of the client tools are installed on the acquisition unit. If data source failures persist, you need to contact technical supportto request assistance and possibly a data source patch.
+
+* Are all of your OnCommand Insight acquisition units using the same OnCommand Insight version? If the Remote Acquisition Units and local acquisition unit are running different OnCommand Insight versions, install the same version on all units to correct the data collection problem.
++
+If you need to install a new version of OnCommand Insight on all of the acquisition units, go to the support siteand download the correct version.
+
+* Have you changed any domain names or added a new domain? You must update your Device Resolution (formerly Auto Resolution) methods.

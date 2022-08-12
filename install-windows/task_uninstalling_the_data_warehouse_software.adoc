@@ -1,0 +1,28 @@
+---
+permalink: install-windows/task_uninstalling_the_data_warehouse_software.html
+sidebar: sidebar
+keywords: 
+summary: 'You must uninstall the Data Warehouse software before you can upgrade.'
+---
+= Uninstalling the Data Warehouse software
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must uninstall the Data Warehouse software before you can upgrade.
+
+== Before you begin
+
+If you made changes to reports you want to keep, it is critical that you create a backup before you uninstall Data Warehouse. Uninstalling Data Warehouse permanently deletes all previously collected data and removes all reports, including any newly created or edited reports.
+
+== Steps
+
+. Log in to the Data Warehouse server.
+. Ensure that all of the Insight windows on the server are closed.
+. To uninstall using Control Panel:
+ .. Open *Uninstall a Program* from the control panel and select the OnCommand Insight application for removal. Click *Uninstall* and follow the prompts.
+ .. Select the IBM Db2 application for removal. Click *Uninstall* and follow the prompts.
+ .. Delete the Db2 install folder (for example _C:\Program Files\IBM\DB2_) to completely remove the Db2 database.
+. To uninstall using the provided script:
+ .. Navigate to the _<download location>\oci_dwh_uninstall\_ folder and run the _uninstall_oci_dwh.bat_ script.
+. Reboot the server.

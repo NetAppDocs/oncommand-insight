@@ -1,0 +1,50 @@
+---
+permalink: install-windows/task_upgrading_data_warehouse.html
+sidebar: sidebar
+keywords: 
+summary: 'After you complete all prerequisite tasks, you can log in to the Data Warehouse server and run the installation package to complete the upgrade.'
+---
+= Upgrading Data Warehouse
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After you complete all prerequisite tasks, you can log in to the Data Warehouse server and run the installation package to complete the upgrade.
+
+== About this task
+
+Inline upgrade is not supported by the Data Warehouse (DWH). Use the following steps to upgrade to the new version of DWH software.
+
+[NOTE]
+====
+When upgrading DWH, the folder containing the _securityadmin_ tool vault backup is deleted. It is highly recommended to back up the vault prior to upgrading DWH. For reference, the default vault folders are as follows:
+
+* Vault folder (vaults in use):``%SANSCREEN_HOME%\wildfly\standalone\configuration\vault``
+* Vault backups: `%SANSCREEN_HOME%\backup\vault`
+
+See http://ie-docs.rtp.openeng.netapp.com/oci-73_ram/topic/com.netapp.doc.oci-acg/GUID-E3351676-2088-4767-AAB5-CB1D8476291C.html?resultof=%22%76%61%75%6c%74%22%20[Managing security on the Data Warehouse] for more information.
+
+====
+
+== Steps
+
+. Log in to the DWH server using an account that has Windows local administrator permissions.
+. Back up the DWH DB and Reports using the DWH portal interface.
+. Back up the security configuration if the server is using a non-default security configuration.
+. Uninstall the DWH software from the server.
+. Reboot the server to remove components from memory.
+. Install the new version of DWH on the server.
++
+The installation takes approximately 2 hours. It is a best practice to leave all the defaults selected.
+
+. Restore the non-default security configuration to the DWH server.
+. Restore the DWH database to the server.
+
+== After you finish
+
+After you upgrade, you must restore the Data Warehouse database, which can take as long or longer than the upgrade.
+
+[NOTE]
+====
+During an OnCommand Insight upgrade, it is not uncommon for a customer to switch to a different Insight server. If you have changed your Insight server, after you restore the data warehouse database the existing connectors will point to the previous server IP address or hostname. It is a best practice to delete the connector and create a new one, to avoid possible errors.
+====

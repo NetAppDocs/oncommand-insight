@@ -1,0 +1,16 @@
+---
+permalink: config-admin/concept_summary.html
+sidebar: sidebar
+keywords: 
+summary: 'The Summary section on an asset page displays a summary of information about the particular asset and shows issues related to the asset, indicated by a red circle, with hyperlinks to additional information about related assets and to any performance policies assigned to the asset.'
+---
+= Summary
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Summary section on an asset page displays a summary of information about the particular asset and shows issues related to the asset, indicated by a red circle, with hyperlinks to additional information about related assets and to any performance policies assigned to the asset.
+
+The following example shows some of the types of information available in the Summary section of an asset page for a virtual machine. Any item with a solid red circle next to it indicates potential issues with the monitored environment.
+
+image::../media/sumnmary_section.gif[]

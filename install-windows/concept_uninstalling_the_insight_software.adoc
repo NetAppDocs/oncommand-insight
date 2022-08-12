@@ -1,0 +1,12 @@
+---
+permalink: install-windows/concept_uninstalling_the_insight_software.html
+sidebar: sidebar
+keywords: 
+summary: 'You must uninstall the old versions of the Data Warehouse and Remote Acquisition software to install the new versions. You should do this before you attempt to upgrade any of these components. The software on the Insight server is uninstalled during the in-place upgrade.'
+---
+= Uninstalling the software
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must uninstall the old versions of the Data Warehouse and Remote Acquisition software to install the new versions. You should do this before you attempt to upgrade any of these components. The software on the Insight server is uninstalled during the in-place upgrade.

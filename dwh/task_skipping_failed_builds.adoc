@@ -1,0 +1,36 @@
+---
+permalink: dwh/task_skipping_failed_builds.html
+sidebar: sidebar
+keywords: 
+summary: 'After your first build, sometimes you might encounter an unsuccessful build. To ensure that all the jobs after an unsuccessful build complete successfully, you can enable the Skip history build failures option.'
+---
+= Skipping failed builds
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After your first build, sometimes you might encounter an unsuccessful build. To ensure that all the jobs after an unsuccessful build complete successfully, you can enable the *Skip history build failures* option.
+
+== About this task
+
+If a build fails and the *Skip history build failures* option is enabled, Data Warehouse continues building and ignores any failed builds. If this occurs, there will not be a data point in the historical data for any skipped builds.
+
+Use this option only if the build is not successful.
+
+If a build fails in Build from History and the *Skip history build failures* check box is not selected, all subsequent jobs are aborted.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *Build from history*.
++
+image::../media/oci_dwh_admin_buildfromhistory_gif.gif[Build From History View]
+
+. Click *Configure*.
+. Configure the build.
+. Click *Save*.
+. To skip failed builds, check *Skip history build failures*.
++
+You can see this check box only if the *Run* button is enabled.
+
+. To perform a build outside of the automatic scheduled build, click *Run*.

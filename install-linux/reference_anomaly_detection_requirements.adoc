@@ -1,0 +1,87 @@
+---
+permalink: install-linux/reference_anomaly_detection_requirements.html
+sidebar: sidebar
+keywords: redhat
+summary: 'The anomaly detection software requires a specific operating system, amounts of memory, CPU cores, and disk space. You must adhere to certain requirements to successfully install the anomaly detection software.'
+---
+= Anomaly detection requirements
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The anomaly detection software requires a specific operating system, amounts of memory, CPU cores, and disk space. You must adhere to certain requirements to successfully install the anomaly detection software.
+
+|===
+| Component| Required
+a|
+Operating system
+a|
+A computer running a licensed version of one of the following, that is running no other application-level software:
+
+* Red Hat Enterprise Linux 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, 8.5
+* CentOS 7.5, 7.6, 7.7, 7.8, 7.9, CentOS 8 Stream
+* Oracle Enterprise Linux 7.5, 7.6, 7.7, 7.8, 7.9, 8.1, 8.2, 8.3, 8.4, 8.5
+* SUSE Enterprise Linux 15.1, 15.2, 15.3
+* openSUSE 15.1, 15.2, 15.3
+
+A licensed version ensures that dependencies required for the installation are resolved automatically by the operating system.
+
+A dedicated server is recommended.
+
+a|
+Virtual machine (VM)
+a|
+Anomaly Detection can run in a virtual environment, provided that the CPU and memory resources for your instance are reserved.
+a|
+CPU and Memory
+a|
+An 8 core. 64 GB memory server.
+a|
+Available disk space
+a|
+The server requires 200 GB of free disk space partitioned as follows:
+
+* 150 GB in `/var/lib`
+* 25 GB in `/var/log`
+* 25 GB in `/opt`
+
+Software installation requires the following disk space:
+
+* 5 GB in `/var/lib`
+* 25 GB in `/var/log`
+* 25 GB in `/opt`
+
+It is a best practice to mount ``/opt``and `/var` on separate disks from the root file system (`/`).
+
+a|
+Permissions
+a|
+Sudo permissions are required to install the anomaly detection software.
+a|
+Network
+a|
+The Insight server on which you want to install the anomaly detection software must reside on the same network, or at least in the same site or Data Center, as the server that is running the anomaly detection engine. The anomaly detection software does not support configuration in a Wide-Area Network (WAN).
+
+TCP ports 8080 and 9200 must be open on the VM.
+
+a|
+Prerequisites
+a|
+You must have a valid Perform license.You must have the IP address of the Insight server on which you want to install the anomaly detection software.
+
+You must have an alternate port number on the Insight server if you do not accept the default port.
+
+TCP ports 8080 and 9200 must be open on the VM.
+
+You must have a user name and password for an account with Administrator privileges on the VM.
+
+You must enter two backslashes (company\\user) for a user name containing a single backslash (company\user).
+
+A user name cannot contain a "`t`" following a backslash (company\\tom).
+
+|===
+
+[NOTE]
+====
+You must discuss and validate all sizing recommendations with a NetApp representative.
+====

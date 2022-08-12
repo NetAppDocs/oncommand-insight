@@ -1,0 +1,23 @@
+---
+permalink: config-admin/reference_hds_landing_page_terminology_storage.html
+sidebar: sidebar
+keywords: 
+summary: 'Terms applying to objects or references that you might find on HDS storage asset landing pages.'
+---
+= HDS Storage
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Terms applying to objects or references that you might find on HDS storage asset landing pages.
+
+== HDS Storage Terminology
+
+The following terms apply to objects or references that you might find on HDS storage asset landing pages. Many of these terms apply to other data collectors as well.
+
+* Name -- comes directly from HDS HiCommand Device Manager's "`name`" attribute via the GetStorageArray XML API call
+* Model - comes directly from HDS HiCommand Device Manager's "`arrayType`" attribute via the GetStorageArray XML API call
+* Vendor -- HDS
+* Family - comes directly from HDS HiCommand Device Manager's "`arrayFamily`" attribute via the GetStorageArray XML API call
+* IP -- this is the management IP address of the array, not an exhaustive list of all IP addresses on the array
+* Raw Capacity -- a base2 value representing the sum of the total capacity of all disks in this system, regardless of disk role.

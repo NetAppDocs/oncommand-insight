@@ -1,0 +1,18 @@
+---
+permalink: dwh/task_configuring_user_accounts.html
+sidebar: sidebar
+keywords: 
+summary: 'You must complete several steps to configure user accounts.'
+---
+= Configuring user accounts
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must complete several steps to configure user accounts.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *User Management*.
+. Configure each user account.

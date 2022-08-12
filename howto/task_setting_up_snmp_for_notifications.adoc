@@ -1,0 +1,23 @@
+---
+permalink: howto/task_setting_up_snmp_for_notifications.html
+sidebar: sidebar
+keywords: 
+summary: 'Insight can send SNMP notifications on trigger events, such as violations or when data source thresholds are exceeded.'
+---
+= Setting up SNMP for notifications
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Insight can send SNMP notifications on trigger events, such as violations or when data source thresholds are exceeded.
+
+== About this task
+
+Follow these basic steps to configure SNMP in Insight:
+
+== Steps
+
+. Click *Admin* > *Notifications* and go to the *SNMP* section.
+. Click *Actions* and select *Add trap source*.
+. In the *Add SNMP trap recipients* dialog box, enter the *IP* address and *Port* to which you want SNMP trap messages sent. For *Community String*, use "`public`" for SNMP trap messages.
+. Click *Save*.

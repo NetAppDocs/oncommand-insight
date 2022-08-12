@@ -1,0 +1,21 @@
+---
+permalink: reporting/task_navigating_to_the_pre_defined_oncommand_insight_reports_and_dashboards.html
+sidebar: sidebar
+keywords: 
+summary: 'When you open the Reporting Portal, the Team content folder is the starting point for you to select the type of information that you require in the OnCommand Insight reports.'
+---
+= Navigating to pre-defined OnCommand Insight reports
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When you open the Reporting Portal, the Team content folder is the starting point for you to select the type of information that you require in the OnCommand Insight reports.
+
+== Steps
+
+. In the left navigation pane, click *Team content* and select the information category that you want to use.
++
+image::../media/cognos_menu.gif[]
+
+. Click *Reports* to access the pre-defined reports.
+. Click *Get Started*, *Samples* or *Tutorials* to learn how to create reports.

@@ -1,0 +1,37 @@
+---
+permalink: config-admin/task_manually_assigning_annotations_to_assets.html
+sidebar: sidebar
+keywords: 
+summary: 'Assigning annotations to assets helps you sort, group, and report on assets in ways that are relevant to your business. Although you can assign annotations to assets of a particular type automatically, using annotation rules, you can assign annotations to an individual asset by using its asset page.'
+---
+= Manually assigning annotations to assets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Assigning annotations to assets helps you sort, group, and report on assets in ways that are relevant to your business. Although you can assign annotations to assets of a particular type automatically, using annotation rules, you can assign annotations to an individual asset by using its asset page.
+
+== Before you begin
+
+You must have created the annotation you want to assign.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Locate the asset to which you want to apply the annotation by doing either of the following:
+ ** Click the asset in the Assets Dashboard.
+ ** Click image:../media/icon_sanscreen_magnifying_glass_gif.gif[] on the toolbar to display the *Search assets* box, type the type of or name of the asset, and then select the asset from the list that displays.
++
+The asset page displays.
+. In the *User Data* section of the asset page, click image:../media/add_annotation_icon.gif[].
++
+The Add Annotation dialog box displays.
+
+. Click *Annotation* and select an annotation from the list.
+. Click *Value* and do either of the following, depending on type of annotation you selected:
+ ** If the annotation type is list, date, or Boolean, select a value from the list.
+ ** If the annotation type is text, type a value.
+. Click *Save*.
+. If you want to change the value of the annotation after you assign it, click image:../media/change_annotation_value.gif[] and select a different value.
++
+If the annotation is of list type for which the *Add values dynamically upon annotation assignment* option is selected, you can type to add a new value in addition to selecting an existing value.

@@ -1,0 +1,29 @@
+---
+permalink: config-admin/reference_e_series_landing_page_terminology_storage_node.html
+sidebar: sidebar
+keywords: 
+summary: 'Terms applying to objects or references that you might find on NetApp E-Series storage node asset landing pages.'
+---
+= E-Series Storage Node
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Terms applying to objects or references that you might find on NetApp E-Series storage node asset landing pages.
+
+== E-Series Storage Node Terminology
+
+The following terms apply to objects or references that you might find on NetApp E-Series storage pool asset landing pages. Many of these terms apply to other data collectors as well.
+
+* Storage -- what storage array this node is part of. Mandatory.
+* HA Partner -- on platforms where a node will fail over to one and only one other node, it will generally be seen here.
+* State -- health of the node. Only available when the array is healthy enough to be inventoried by a data source.
+* Model -- model name of the node.
+* Version -- version name of the device.
+* Serial number -- The node serial number.
+* Memory -- base 2 memory if available.
+* Utilization -- Utilization is not currently available for NetApp E-Series.
+* IOPS -- Calculated by summing all the IOPs for volumes that belong exclusively to this node.
+* Latency -- a number representing the typical host latency or response time on this controller. Insights calculates an IOPs weighted average from volumes that belong exclusively to this node.
+* Throughput -- a number representing the host driven throughput on this controller. Calculated by summing all the throughput for volumes that belong exclusively to this node.
+* Processors -- CPU count.

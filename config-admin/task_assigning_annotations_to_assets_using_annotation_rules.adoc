@@ -1,0 +1,12 @@
+---
+permalink: config-admin/task_assigning_annotations_to_assets_using_annotation_rules.html
+sidebar: sidebar
+keywords: 
+summary: 'To automatically assign annotations to assets based on criteria that you define, you configure annotation rules. OnCommand Insight assigns the annotations to assets based on these rules. Insight also provides two default annotation rules, which you can modify to suit your needs or remove if you do not want to use them.'
+---
+= Assigning annotations to assets using annotation rules
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To automatically assign annotations to assets based on criteria that you define, you configure annotation rules. OnCommand Insight assigns the annotations to assets based on these rules. Insight also provides two default annotation rules, which you can modify to suit your needs or remove if you do not want to use them.

@@ -1,0 +1,22 @@
+---
+permalink: config-admin/concept_setting_up_insight.html
+sidebar: sidebar
+keywords: 
+summary: 'To set up Insight, you must activate Insight licenses, set up your data sources, define users and notifications, enable backups, and perform any required advanced configuration steps.'
+---
+= Setting up Insight
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To set up Insight, you must activate Insight licenses, set up your data sources, define users and notifications, enable backups, and perform any required advanced configuration steps.
+
+After the OnCommand Insight system is installed, you must perform these setup tasks:
+
+* Install your Insight licenses.
+* Set up your data sources in Insight.
+* Set up user accounts.
+* Configure your email.
+* Define your SNMP, email, or syslog notifications if needed.
+* Enable automatic weekly backups of your Insight database.
+* Perform any advanced configuration steps required, including defining annotations and thresholds.

@@ -1,0 +1,42 @@
+---
+permalink: config-admin/task_what_the_expert_view_section_enables_you_to_do.html
+sidebar: sidebar
+keywords: 
+summary: 'The Expert view section enables you to view performance charts for an asset based on any number of applicable metrics during a chosen time period, and to add related assets to compare and contrast asset and related asset performance over different time periods.'
+---
+= Using the Expert View section
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Expert view section enables you to view performance charts for an asset based on any number of applicable metrics during a chosen time period, and to add related assets to compare and contrast asset and related asset performance over different time periods.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Locate an asset page by doing either of the following:
+ ** On the Insight toolbar, click image:../media/icon_sanscreen_magnifying_glass_gif.gif[], type in the name of the asset, and then select the asset from the list.
+ ** Click *Dashboards*, select *Assets Dashboard*, locate an asset name, and click it.
+The asset page displays. By default, the performance chart shows two metrics for time period selected for the asset page. For example, for a storage, the performance chart shows latency and total IOPS by default. The Resources section displays the resource name and an Additional resources section, which enables you to search for assets. Depending on the asset, you might also see assets in the Top correlated, Top contributor, Greedy, and Degraded sections.
+. You can click *Select metrics to show*, and select a metric to add a performance chart for a metric.
++
+A performance chart is added for the selected metric. The chart displays the data for the selected time period. You can change the time period by clicking on another time period in the top left-hand corner of the asset page.
++
+You can perform the step again, and click to clear a metric. The performance chart for the metric is removed.
+
+. You can position your cursor over the chart and change the metric data that displays by clicking either of the following, depending on the asset:
+ ** *Read* or *Write*
+ ** **Tx**or *Rx*
+*Total* is the default.
+. You can drag your cursor over the data points in the chart to see how the value of the metric changes over the time period selected.
+. In the *Resources* section, you can do any of the following, if applicable, to add any related assets to the performance charts:
+ ** You can select a related asset in the Top correlated, Top contributors, Greedy, or Degraded sections to add data from that asset to the performance chart for each selected metric. Assets must have a minimum 15% correlation or contribution to be shown.
++
+After you select the asset, a color block appears next to the asset to denote the color of its data points in the chart.
+
+ ** For any asset shown, you can click the asset name to display its asset page, or you can click the percentage that the asset correlates or contributes to the base asset to view more information about the assets relation to the base asset.
++
+For example, clicking the linked percentage next to a top correlated asset displays an informational message comparing the type of correlation that asset has with the base asset.
+
+ ** If the Top correlated section does not contain an asset you want to display in a performance chart for comparison purposes, you can use the *Search assets* box in the Additional resources section to locate other assets.
+After you select an asset, it displays in the Additional resources section. When you no longer want to view information about the asset, click image:../media/trash_can_query.gif[].

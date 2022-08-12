@@ -1,0 +1,17 @@
+---
+permalink: dwh/task_viewing_the_annotations_job_in_the_jobs_list.html
+sidebar: sidebar
+keywords: 
+summary: 'You can view the Annotations job in the Jobs list and apply the annotation changes to Data Warehouse data marts.'
+---
+= Viewing the Annotations job in the Jobs list
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can view the Annotations job in the Jobs list and apply the annotation changes to Data Warehouse data marts.
+
+== Steps
+
+. Log in as an administrator to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *Jobs*.

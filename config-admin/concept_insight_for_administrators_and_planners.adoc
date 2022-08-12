@@ -1,0 +1,28 @@
+---
+permalink: config-admin/concept_insight_for_administrators_and_planners.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight supplies information that is vital for storage administrators, managers, and storage architects to perform troubleshooting and analysis.'
+---
+= How Insight is used by administrators, managers, and planners
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight supplies information that is vital for storage administrators, managers, and storage architects to perform troubleshooting and analysis.
+
+Experienced storage administrators use OnCommand Insight along with their network storage knowledge to accomplish these typical tasks:
+
+* Manage the SAN and NAS environment.
+* Work with SAN engineers on network concerns.
+* Evaluate, test, and integrate new storage technologies into the environment.
+* Troubleshoot performance issues, alerts, policy breaches, violations, and vulnerabilities.
+
+Managers and network planners use OnCommand Insight to perform these business tasks:
+
+* Capacity planning
+* Develop project budgets and timelines.
+* Evaluate and revise project plans to meet changing project demands. 
+* Manage project planning and expenses.
+* Purchase hardware and software.
+* Provide business reports for capacity management, charge back billing, right sizing, and service level agreements.

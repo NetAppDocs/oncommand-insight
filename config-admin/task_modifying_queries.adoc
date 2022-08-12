@@ -1,0 +1,28 @@
+---
+permalink: config-admin/task_modifying_queries.html
+sidebar: sidebar
+keywords: 
+summary: 'You can change the criteria that are associated with a query when you want to change the search criteria for the assets that you are querying.'
+---
+= Modifying queries
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can change the criteria that are associated with a query when you want to change the search criteria for the assets that you are querying.
+
+== Steps
+
+. Log in to the Insightweb UI.
+. Click *Queries* and select *Show all queries*.
++
+The Queries page is displayed.
+
+. Click the query name.
+. To remove a criterion from the query, click image:../media/trash_can_query.gif[].
+. To add a criteria to the query, click image:../media/more_button.gif[], and select a criteria from the list.
+. Do one of the following:
+ ** Click *Save* to save the query with the name that was used initially.
+ ** Click *Save as* to save the query with another name.
+ ** Click *Rename* to change the query name that you had used initially.
+ ** Click *Revert* to change the query name back to the one that you had used initially.

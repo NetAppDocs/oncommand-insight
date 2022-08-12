@@ -1,0 +1,52 @@
+---
+permalink: config-admin/reference_netapp_storagegrid_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'This data source collects inventory and performance data for StorageGRID.'
+---
+= NetApp StorageGRID data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This data source collects inventory and performance data for StorageGRID.
+
+== Requirements
+
+The following are requirements for configuring this data source:
+
+* StorageGRID Host IP Address
+* A username and password for a user that has had the Metric Query and Tenant Access roles assigned
+* Port 443
+
+== Configuration
+
+|===
+| Field| Description
+a|
+StorageGRID Host IP Address (MVIP)
+a|
+Host IP address of the StorageGRID
+a|
+User Name
+a|
+Name used to log into the StorageGRID
+a|
+Password
+a|
+Password used to log into the StorageGRID
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 60 minutes)
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 900 seconds)
+|===

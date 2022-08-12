@@ -1,0 +1,22 @@
+---
+permalink: config-admin/concept_setting_up_your_data_sources_in_insight.html
+sidebar: sidebar
+keywords: 
+summary: 'Data sources are the most critical component when trying to maintain a Insight environment. Data sources discover network information that is used for analysis and validation. You need to configure your data sources within Insight so that they can be monitored within your network.'
+---
+= Setting up your data sources in Insight
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Data sources are the most critical component when trying to maintain a Insight environment. Data sources discover network information that is used for analysis and validation. You need to configure your data sources within Insight so that they can be monitored within your network.
+
+For each data source, the specific requirements to define that data source depend on the vendor and model of the corresponding devices. Before adding the data sources, you need network addresses, account information, and passwords for all devices and possibly these additional details:
+
+* Switches
+* Device management stations
+* Storage systems that have IP connectivity
+* Storage management stations
+* Host servers running management software for storage devices that do not have IP connectivity
+
+For more information about your data source definitions, see the "Vendor-specific data source reference" information in this section.

@@ -1,0 +1,16 @@
+---
+permalink: reporting/concept_using_multiple_data_models_in_one_report.html
+sidebar: sidebar
+keywords: 
+summary: 'Typically, you use one data model per report. However, you can write a report that combines data from multiple data models.'
+---
+= Using multiple data models in one report
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Typically, you use one data model per report. However, you can write a report that combines data from multiple data models.
+
+To write a report that combines data from multiple data models, choose one of the data models to use as the base, then write SQL queries to access the data from the additional data marts. You can use the SQL Join feature to combine the data from the different queries into a single query that you can use to write the report.
+
+For example, say you want the current capacity for each storage array and you want to capture custom annotations on the arrays. You could create the report using the Storage Capacity data model. You could use the elements from the Current Capacity and dimension tables and add a separate SQL query to access the annotations information in the Inventory data model. Finally, you could combine the data by linking the Inventory storage data to the Storage Dimension table using the storage name and the join criteria.

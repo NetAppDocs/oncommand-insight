@@ -1,0 +1,14 @@
+---
+permalink: howto/reference_expressions_in_dashboard_widgets.html
+sidebar: sidebar
+keywords: 
+summary: 'Expressions in time series widgets allow you to display data based on calculations with metrics of your choosing.'
+---
+= Expressions in dashboard widgets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Expressions in time series widgets allow you to display data based on calculations with metrics of your choosing.
+
+In a dashboard, any time series widget (line, spline, area, stacked area) allows you to build expressions from metrics you choose, and show the result of those expressions in a single graph. The following examples use expressions to solve specific problems. In the first example, we want to show Read IOPS as a percentage of Total IOPS for all storage assets in our environment. The second example gives us visibility into the "system" or "overhead" IOPS that occur in our environment--those IOPS that are not from reading or writing data.

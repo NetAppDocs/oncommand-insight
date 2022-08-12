@@ -1,0 +1,126 @@
+---
+permalink: config-admin/reference_openstack_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'The OpenStack \(REST API / KVM\) data source collects information about OpenStack hardware instances. This data source collects inventory data for all OpenStack instances, and optionally, VM performance data.'
+---
+= OpenStack data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The OpenStack (REST API / KVM) data source collects information about OpenStack hardware instances. This data source collects inventory data for all OpenStack instances, and optionally, VM performance data.
+
+== Requirements
+
+The following are requirements for configuring the OpenStack data source.
+
+* IP address of the OpenStack controller
+* OpenStack admin role credentials and sudo access to the Linux KVM hypervisor are recommended.
++
+[NOTE]
+====
+If you are not using an admin account or admin equivalent privileges, you can still acquire data from the data source. You will need to modify the policy configuration file (i.e. etc/nova/policy.json) to allow users with non-admin role to call the API:
+====
+
+ ** "os_compute_api:os-availability-zone:detail": ""
+ ** "os_compute_api:os-hypervisors": ""
+ ** os_compute_api:servers:detail:get_all_tenants": ""
+
+* For performance collection the OpenStack Ceilometer module must be installed and configured. Configuring the Ceilometer is done by editing the `nova.conf` file for each hypervisor and then restart the Nova Compute service on each hypervisor. The option name changes for different releases of OpenStack:
+ ** Icehouse
+ ** Juno
+ ** Kilo
+ ** Liberty
+ ** Mitaka
+ ** Newton
+ ** Ocata
+* For CPU stats, "compute_monitors=ComputeDriverCPUMonitor" needs to be turned on in /etc/nova/nova.conf on compute nodes.
+* Port requirements:
+ ** 5000 for http and 13000 for https, for the Keystone service
+ ** 22 for KVM SSH
+ ** 8774 for Nova Compute Service
+ ** 8776 for Cinder Block Service
+ ** 8777 for Ceilometer Performance Service
+ ** 9292 for Glance Image Service
++
+[NOTE]
+====
+The port binds to the specific service, and the service may run on the controller or another host in larger environments.
+====
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+OpenStack Controller IP Address
+a|
+IP address or fully-qualified domain name of the OpenStack Controller
+a|
+OpenStack Administrator
+a|
+User name for an OpenStack Admin
+a|
+OpenStack Password
+a|
+Password used for the OpenStack Admin
+a|
+OpenStack Administrator Tenant
+a|
+OpenStack Administrator Tenant
+a|
+KVM Sudo User
+a|
+KVM Sudo User name
+a|
+Choose 'Password' or 'OpenSSH Key File' to specify credential type
+a|
+The credential type used to connect to the device via SSH
+a|
+Full Path to Inventory Private Key
+a|
+Full Path to Inventory Private Key
+a|
+KVM Sudo Password
+a|
+KVM Sudo Password
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Enable hypervisor inventory discovery through SSH
+a|
+Check this to enable hypervisor inventory discovery through SSH
+a|
+OpenStack Admin URL port
+a|
+OpenStack Admin URL port
+a|
+Use HTTPS
+a|
+Check to use secure HTTP
+a|
+HTTP Connection Timeout (sec)
+a|
+Timeout for HTTP connection (default 300 seconds)
+a|
+SSH Port
+a|
+Port used for SSH
+a|
+SSH Process Wait Timeout (sec)
+a|
+SSH process timeout (default 30 seconds)
+a|
+SSH Process Retries
+a|
+Number of inventory retry attempts
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 20 minutes)
+|===

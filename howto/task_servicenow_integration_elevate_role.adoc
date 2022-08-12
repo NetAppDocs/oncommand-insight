@@ -1,0 +1,17 @@
+---
+permalink: howto/task_servicenow_integration_elevate_role.html
+sidebar: sidebar
+keywords: 
+summary: 'You must elevate your ServiceNow role to security_admin before you can integrate with insight.'
+---
+= Elevate role
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must elevate your ServiceNow role to security_admin before you can integrate with insight.
+
+== Steps
+
+. Log into your ServiceNow instance with administrator permissions.
+. Under the *System Administrator* drop-down, choose *Elevate Roles* and elevate your role to security_admin. Click OK.

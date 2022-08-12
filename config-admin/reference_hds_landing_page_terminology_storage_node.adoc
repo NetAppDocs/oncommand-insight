@@ -1,0 +1,19 @@
+---
+permalink: config-admin/reference_hds_landing_page_terminology_storage_node.html
+sidebar: sidebar
+keywords: 
+summary: 'Terms applying to objects or references that you might find on HDS storage node asset landing pages.'
+---
+= HDS Storage Node
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Terms applying to objects or references that you might find on HDS storage node asset landing pages.
+
+== HDS Storage Node Terminology
+
+The following terms apply to objects or references that you might find on HDS storage node asset landing pages. Many of these terms apply to other data collectors as well.
+
+* Name -- The name of the Front-end director (FED) or Channel Adapter on monolithic arrays, or the name of the controller on a modular array. A given HDS array will have 2 or more Storage Nodes
+* Volumes -- The Volume table will show any volume mapped to any port owned by this storage node

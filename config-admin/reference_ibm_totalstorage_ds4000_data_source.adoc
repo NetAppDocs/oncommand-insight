@@ -1,0 +1,41 @@
+---
+permalink: config-admin/reference_ibm_totalstorage_ds4000_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'This data source collects inventory and performance information. There are two possible configurations \(firmware 6.x and 7.x+\), and they both have the same values. The API collects the volume data statistics.'
+---
+= IBM TotalStorage DS4000 data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This data source collects inventory and performance information. There are two possible configurations (firmware 6.x and 7.x+), and they both have the same values. The API collects the volume data statistics.
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+Comma Separated List of Array SANtricity Controller IPs
+a|
+IP addresses or fully-qualified domain names of controllers, separated by commas
+|===
+
+== Requirements
+
+* IP address of each DS5 or FAStT array
+* Access validation: Ping the IP address of both controllers on each array.
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 30 minutes)
+a|
+Performance Poll Interval (up to 3600 seconds)
+a|
+Interval between performance polls (default 300 seconds)
+|===

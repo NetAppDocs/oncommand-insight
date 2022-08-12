@@ -1,0 +1,12 @@
+---
+permalink: config-admin/concept_related_assets.html
+sidebar: sidebar
+keywords: 
+summary: 'If applicable, an asset page displays a Related Assets section. For example, a volume asset page might show information about assets like Storage Pools, Connected switch ports, and Compute Resources. Each section comprises a table that lists any of the related assets in that category, with links to their respective asset pages, and several performance statistics related to the asset.'
+---
+= Related Assets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If applicable, an asset page displays a Related Assets section. For example, a volume asset page might show information about assets like Storage Pools, Connected switch ports, and Compute Resources. Each section comprises a table that lists any of the related assets in that category, with links to their respective asset pages, and several performance statistics related to the asset.

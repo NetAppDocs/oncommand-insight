@@ -1,0 +1,87 @@
+---
+permalink: config-admin/task_managing_security_on_an_rau.html
+sidebar: sidebar
+keywords: rekey
+summary: 'The securityadmin tool allows you to manage security options on RAUs. You might need to backup or restore a vault configuration, change encryption keys, or update passwords for the acquisition units.'
+---
+= Managing security on an RAU
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The `securityadmin` tool allows you to manage security options on RAUs. You might need to backup or restore a vault configuration, change encryption keys, or update passwords for the acquisition units.
+
+== About this task
+
+You use the `securityadmin` tool to manage security:
+
+* Windows - `C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat`
+* Linux - `/bin/oci-securityadmin.sh`
+
+One scenario for updating the security configuration for the LAU, RAU is to update the 'acquisition' user password when the password for that user has been changed on the server. All of the RAUs, and the LAU use the same password as that of the server 'acquisition' user to communicate with the server.
+
+[NOTE]
+====
+
+====
+
+The 'acquisition' user only exists on the Insight server. The RAU or LAU logs in as that user when they connect to the server.
+
+Use the following steps to manage security options on an RAU:
+
+== Steps
+
+. Perform a remote login to the server running the RAU
+. Start the security admin tool in interactive mode: `Windows - C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat -i``Linux - /bin/oci-securityadmin.sh -i`
++
+The system requests login credentials.
+
+. Enter the user name and password for an account with "`Admin`" credentials.
++
+The system displays the menu for the RAU.
+
+ ** *Backup*
++
+Creates a backup zip file of the vault containing all passwords and keys and places the file in a location specified by the user, or in the following default locations:
+
+  *** Windows - `C:\Program Files\SANscreen\backup\vault`
+  *** Linux - `/var/log/netapp/oci/backup/vault`
+
+ ** *Restore*
++
+Restores the zip backup of the vault that was created. Once restored, all passwords and keys are reverted to values existing at the time of the backup creation.
++
+[NOTE]
+====
+Restore can be used to synchronize passwords and keys on multiple servers, for example:
+        -   Change encryption keys on one server
+        -   Create a backup of the vault
+        -   Restore the vault backup to the second server
++
+====
+
+ ** *Change Encryption Keys*
++
+Change the RAU encryption keys used to encrypt or decrypt device passwords.
++
+[NOTE]
+====
+When you change encryption keys, you should backup your new security configuration so that you can restore it after an upgrade or installation.
+====
+
+ ** *Update Password*
++
+Change password for 'acquisition' user account.
++
+[NOTE]
+====
+Some accounts need to be synchronized when passwords are changed. For example, if you change the password for the 'acquisition' user on the server, you need to change the password for the 'acquisition' user on the LAU, RAU, and DWH to match. Also, when you change passwords, you should backup your new security configuration so that you can restore it after an upgrade or installation.
+====
+
+ ** *Reset to Defaults*
++
+Resets encryption keys and passwords to default values. Default values are those provided during installation.
+
+ ** *Exit*
++
+Exit the `securityadmin` tool.

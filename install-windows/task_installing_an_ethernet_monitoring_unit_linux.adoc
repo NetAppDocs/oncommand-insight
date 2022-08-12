@@ -1,0 +1,48 @@
+---
+permalink: install-windows/task_installing_an_ethernet_monitoring_unit_linux.html
+sidebar: sidebar
+keywords: 
+summary: '“Ethernet monitoring units \(EMUs\) inspect network packets in your environment, to enable troubleshooting of performance in terms of network traffic from the hosts to the storage resources.'
+---
+= Installing an Ethernet Monitoring Unit
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+"`Ethernet monitoring units (EMUs) inspect network packets in your environment, to enable troubleshooting of performance in terms of network traffic from the hosts to the storage resources.
+
+== Before you begin
+
+[NOTE]
+====
+Ethernet Monitoring Unit (EMU) is not supported in OnCommand Insight version 7.3.12 and later.
+====
+
+You must have completed all of the installation prerequisites.
+
+== Steps
+
+. Log in to the EMU server using an account with sudo privileges.
+. Navigate to the directory on the server where the installation files are located and type the following command:
++
+`unzip oci-ethernet-<version>-linux-x86_64.zip`
++
+Where `<version>` is the version number specified in the filename you downloaded.
+
+. You can view syntax, command arguments, and parameter usage for `oci-install.sh`:
++
+`sudo ./oci-ethernet-<version>-linux-x86_64/oci-install.sh --help`
+
+. Run the installation script:
++
+`sudo ./oci-ethernet-<version>-linux-x86_64/oci-install.sh`
+
+. Read the License Agreement and accept it.
+. Answer each of the prompts:
+ ** *OnCommand Insight* *Server Name or IP Address* - hostname or IP address to identify the OnCommand Insight Server. The EMU uses this name/IP to open a communications link with the server. If you specify a hostname, make sure it can be resolved through DNS.
+ ** *Acquisition Unit Name* - unique name that identifies the EMU.
+ ** *OnCommand Insight Secured Remote Acquisition Port (HTTPS)* - Port used by the EMU to send environment change information to the OnCommand Insight server. This setting should match the value entered when installing the OnCommand Insight server and must be the same on all EMUs.
+ ** *Ethernet PAS output directory* - Enter the folder for PAS output.
+ ** *Ethernet PAS interfaces to monitor* - Enter the interfaces whose traffic you wish to monitor.
+ ** *Enable jumbo packets* - If the customer environment uses jumbo packets, EMU creates large packet buffers to read those packets. Otherwise, EMU uses the available memory pool for standard Ethernet packets.
+After you answer all the prompts, the installation begins and should take approximately 10 minutes, depending on the applications installed.

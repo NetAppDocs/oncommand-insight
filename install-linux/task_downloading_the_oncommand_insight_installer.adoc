@@ -1,0 +1,23 @@
+---
+permalink: install-linux/task_downloading_the_oncommand_insight_installer.html
+sidebar: sidebar
+keywords: 
+summary: 'You can download the OnCommand Insight installer from the NetApp Support Site.'
+---
+= Downloading the OnCommand Insight installer
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can download the OnCommand Insight installer from the NetApp Support Site.
+
+== Before you begin
+
+You must have a login to the NetApp Support Site at http://mysupport.netapp.com/[mysupport.netapp.com].
+
+Additionally, you must have an unzip utility with which to open the installation `.ZIP` files.
+
+== Steps
+
+. Log in to the server on which you want to install OnCommand Insight.
+. Download the installation file from the NetApp Support site.

@@ -1,0 +1,19 @@
+---
+permalink: dwh/concept_managing_data_warehouse_and_reporting_user_accounts.html
+sidebar: sidebar
+keywords: 
+summary: 'User accounts, user authentication, and user authorization for the OnCommand Insight reporting tools are defined and managed from the Data Warehouse \(DWH\). Based on these configurations, users and administrators gain access to some or all of the available OnCommand Insight reports.'
+---
+= Managing Data Warehouse and Reporting user accounts
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+User accounts, user authentication, and user authorization for the OnCommand Insight reporting tools are defined and managed from the Data Warehouse (DWH). Based on these configurations, users and administrators gain access to some or all of the available OnCommand Insight reports.
+
+Access to the User Management in the Data Warehouse requires an account with System Administrator privileges. This includes:
+
+* Full administrative capabilities for the Data Warehouse
+* Configuration and maintenance of all user accounts
+* Read access to the database
+* Capability to set up connectors in the ETL, schedule Data Warehouse jobs, reset the database, assign or change roles, and add and remove user accounts

@@ -1,0 +1,36 @@
+---
+permalink: config-admin/task_configuring_your_asup_processing.html
+sidebar: sidebar
+keywords: 
+summary: 'All NetApp products are equipped with automated capabilities to provide the best possible support for customers. The automated support \(ASUP\) periodically sends predefined and specific information to Customer Support. You can control the information to be forwarded to NetApp, and how often it is sent.'
+---
+= Configuring your ASUP processing
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+All NetApp products are equipped with automated capabilities to provide the best possible support for customers. The automated support (ASUP) periodically sends predefined and specific information to Customer Support. You can control the information to be forwarded to NetApp, and how often it is sent.
+
+== Before you begin
+
+You must configure OnCommand Insight to forward data before any data is sent.
+
+== About this task
+
+ASUP data is forwarded using the HTTPS protocol.
+
+== Steps
+
+. On the Insight toolbar, click *Admin*.
+. Click *Setup*.
+. Click the *ASUP & Proxy* tab.
+. In the *ASUP* section, select *Enable ASUP* to activate the ASUP facility.
+. If you want to change your corporate information, update the following fields:
+ ** *Company name*
+ ** *Site name*
+ ** *What to send*: Logs, configuration data, performance data
+. Click *Test Connection* to ensure that the connection that you specified works.
+. Click *Save*.
+. In the *Proxy* section, choose whether to *Enable Proxy*, and specify your proxy *host*, *port*, and *user* information.
+. Click *Test Connection* to ensure that the proxy that you specified works.
+. Click *Save*.

@@ -1,0 +1,27 @@
+---
+permalink: config-admin/task_modifying_annotation_rules.html
+sidebar: sidebar
+keywords: 
+summary: 'You can modify an annotation rule to change the rule’s name, its annotation, the annotation’s value, or the query associated with the rule.'
+---
+= Modifying annotation rules
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can modify an annotation rule to change the rule's name, its annotation, the annotation's value, or the query associated with the rule.
+
+== Steps
+
+. Log in to the OnCommand Insightweb UI.
+. Click *Manage* and select *Annotation rules*.
++
+The Annotation Rules page displays the list of existing annotation rules.
+
+. Locate the rule that you want to modify:
+ ** On the Annotation Rules page, you can filter the annotation rules by entering a value in the filter box.
+ ** Click a page number to browse through the annotation rules by page if there are more rules than fit on a page.
+. Perform one of the following to display the *Edit Rule* dialog box:
+ ** If you are on theAnnotation Rules page, position your cursor over the annotation rule and click image:../media/edit_annotation_icon.gif[].
+ ** If you are on an asset page, position your cursor over the annotation associated with the rule, position your cursor over the rule name when it displays, and then click the rule name.
+. Make the required changes and click *Save*.

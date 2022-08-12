@@ -1,0 +1,58 @@
+---
+permalink: config-admin/reference_microsoft_azure_netapp_files_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'This data source acquires inventory and performance data for Azure NetApp Files \(ANF\).'
+---
+= Azure NetApp Files data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This data source acquires inventory and performance data for Azure NetApp Files (ANF).
+
+== Requirements
+
+The following are requirements for configuring this data source:
+
+* Port requirement: 443 HTTPS
+* Azure Management Rest IP (management.azure.com)
+* Azure Service Principal Application (Client) ID (user account)
+* Azure Service Principal authentication key (user password)
+* You need to set up an Azure account for Cloud Insights discovery.
++
+Once the account is properly configured and you register the application in Azure, you will have the credentials required to discover the Azure instance with Cloud Insights. The following link describes how to set up the account for discovery:
++
+https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal
+
+== Configuration
+
+|===
+| Field| Description
+a|
+Azure Service Principal Application (Client) ID
+a|
+Sign-in ID to Azure
+a|
+Azure Tenant ID
+a|
+Azure Tenant ID
+a|
+Azure Service Principal Authentication Key
+a|
+Login authentication key
+a|
+I understand Microsoft bills me for API requests
+a|
+Check this to verify your understanding that Microsoft bills you for API requests made by Insight polling.
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Default is 60 minutes
+|===

@@ -1,0 +1,12 @@
+---
+permalink: config-admin/concept_managing_annotation_types.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight provides some default annotation types, such as asset life cycle \(birthday or end of life\), building or data center location, and tier, that you can customize to show in your reports. You can define values for default annotation types or create your own custom annotation types. You can later edit those values.'
+---
+= Managing annotation types
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight provides some default annotation types, such as asset life cycle (birthday or end of life), building or data center location, and tier, that you can customize to show in your reports. You can define values for default annotation types or create your own custom annotation types. You can later edit those values.

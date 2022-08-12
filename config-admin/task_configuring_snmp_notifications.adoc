@@ -1,0 +1,47 @@
+---
+permalink: config-admin/task_configuring_snmp_notifications.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight supports SNMP notifications for configuration and Global Path policy changes as well as violations. For example, SNMP notifications are sent when data source thresholds are exceeded.'
+---
+= Configuring SNMP notifications
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight supports SNMP notifications for configuration and Global Path policy changes as well as violations. For example, SNMP notifications are sent when data source thresholds are exceeded.
+
+== Before you begin
+
+The following must have been completed:
+
+* Identifying the IP address of the server that consolidates traps for each type of event.
++
+You might have to consult with your system administrator to obtain this information.
+
+* Identifying the port number through which the designated machine obtains SNMP traps, for each type of event.
++
+The default port for SNMP traps is 162.
+
+* Compiling the MIB at your site.
++
+The proprietary MIB comes with the installation software to support OnCommand Insight traps. The NetApp MIB is compatible with all standard SNMP management software and can be found on the Insight server in `<install dir>\SANscreen\MIBS\sanscreen.mib`.
+
+== Steps
+
+. Click *Admin* and select *Notifications*.
+. Scroll down to the *SNMP* section of the page.
+. Click *Actions* and select *Add trap source*.
+. In the *Add SNMP trap recipients* dialog box, enter these values:
+ ** *IP*
++
+The IP address to which OnCommand Insight sends SNMP trap messages.
+
+ ** *Port*
++
+The port number to which OnCommand Insight sends SNMP trap messages.
+
+ ** *Community String*
++
+Use "`public`" for SNMP trap messages.
+. Click *Save*.

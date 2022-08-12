@@ -1,0 +1,61 @@
+---
+permalink: howto/concept_configure_tier_annotations.html
+sidebar: sidebar
+keywords: 
+summary: 'The Tier annotation is used to associate assets with their respective Tiers, for use in cost accounting, for example. Insight comes with a number of default Tier annotations; you may modify these according to your tiering naming conventions or create your own Tiers as needed.'
+---
+= Configure Tier annotations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Tier annotation is used to associate assets with their respective Tiers, for use in cost accounting, for example. Insight comes with a number of default Tier annotations; you may modify these according to your tiering naming conventions or create your own Tiers as needed.
+
+When setting Tier annotations, keep the following in mind:
+
+* Cost is per gigabyte.
+* Tier 1, 2, 3 are default tiers configured at a storage array level, by disk type. However, many customers will have multiple disk types within an array, or across arrays of the same type.
+* Best practice is to create Tier annotations based on disk type and/or disk speed. This is a typical Tier methodology; your own needs may vary.
+
+Steps:
+
+* Choose the *Tier* annotation and click on the *Edit* icon.
+* If desired, click *+Add* and add the Name and Description of your first tier to the annotation list.
+* Do the same for your other tiers.
+* When finished, click *Save*.
+
+Example Tier annotations:
+
+|===
+| Name| Description| Cost per Gb
+a|
+Auto Tier
+a|
+Automatic Storage Tiering Tier
+a|
+0.5
+a|
+Tier 1 SSD
+a|
+All Flash Array
+a|
+0.5
+a|
+Tier 2 SAS
+a|
+SAS
+a|
+0.25
+a|
+Tier 3 SATA
+a|
+SATA
+a|
+0.1
+a|
+...
+a|
+ 
+a|
+ 
+|===

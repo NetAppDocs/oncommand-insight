@@ -1,0 +1,136 @@
+---
+permalink: config-admin/reference_oracle_zfs_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'The Oracle ZFS data source supports inventory and performance collection.'
+---
+= Oracle ZFS data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Oracle ZFS data source supports inventory and performance collection.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from this data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Disk (SDD)
+a|
+Disk
+a|
+Cluster
+a|
+Storage
+a|
+Controller
+a|
+Storage Node
+a|
+LUN
+a|
+Volume
+a|
+LUN Map
+a|
+Volume Map
+a|
+Initiator, Target
+a|
+Volume mask
+a|
+Share
+a|
+Internal Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+The following are requirements for configuring this data source:
+
+* Host names for the ZFS Controller-1 and the ZFS Controller-2
+* Administrator user name and credentials
+* Port requirement: 215 HTTP/HTTPS
+
+== Configuration
+
+|===
+|  |  
+a|
+ZFS Controller-1 Hostname
+a|
+Host name for storage controller 1
+a|
+ZFS Controller-2 Hostname
+a|
+Host name for storage controller 2
+a|
+User name
+a|
+User name for the storage system administrator user account
+a|
+Password
+a|
+Password for the administrator user account
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+TCP port
+a|
+TCP Port used to connect to ZFS (default 215 )
+a|
+Connection Type
+a|
+HTTP or HTTPS
+a|
+Inventory poll interval
+a|
+Inventory poll interval (default 60 minutes)
+a|
+Connection Timeout
+a|
+Default is 60 seconds
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+|===
+
+== Troubleshooting
+
+Some things to try if you encounter problems with this data collector:
+
+|===
+| Problem:| Try This:
+a|
+"Invalid login credentials"
+a|
+validate Zfs user account and password
+a|
+"Configuration error" with error message "`REST Service is disabled`"
+a|
+Verify REST service is enabled on this device.
+a|
+"Configuration error " with error message "`User unauthorized for command`"
+a|
+Likely due to certain roles (for example, 'advanced_analytics') are not included for the configured user <userName>.Possible Solution:
+
+* Correct the Analytics (statistic) scope for the user $\{user} with the read only role:- From the Configuration → Users screen, put your mouse over the role and double click to allow editing
+
+* Select "Analytics" from the Scope drop down menu. A list of the possible properties appears.
+* Click the top most check box and it will select all three properties.- Click the Add button on the right side.
+* Click the Apply button at the top right of the pop-up window. The pop-up window will close.
+
+|===

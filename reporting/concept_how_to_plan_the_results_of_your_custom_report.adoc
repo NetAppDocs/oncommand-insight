@@ -1,0 +1,27 @@
+---
+permalink: reporting/concept_how_to_plan_the_results_of_your_custom_report.html
+sidebar: sidebar
+keywords: 
+summary: 'Before you open the report design tools, you might want to plan the results you want from the report. With report authoring tools, you can create reports easily and might not need a great deal of planning; however, it is a good idea to get a sense from the report requestor about the report requirements.'
+---
+= How to plan the results of your custom report
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before you open the report design tools, you might want to plan the results you want from the report. With report authoring tools, you can create reports easily and might not need a great deal of planning; however, it is a good idea to get a sense from the report requestor about the report requirements.
+
+* Identify the exact question you want to answer. For example:
+ ** How much capacity do I have left?
+ ** What are the chargeback costs per business unit?
+ ** What is the capacity by tier to ensure that business units are aligned at the proper tier of storage?
+ ** How can I forecast power and cooling requirements? (Add customized metadata by adding annotations to resources.)
+* Identify the data elements that you need to support the answer.
+* Identify the relationships between data that you want to see in the answer. Do not include illogical relationships in your question, for example, "`I want to see the ports that relate to capacity.`"
+* Identify any calculations needed on data.
+* Determine what types of filtering are needed to limit the results.
+* Determine if you need to use current or historical data.
+* Determine if you need to set access privileges on reports to limit the data to specific audiences.
+* Identify how the report will be distributed. For example, should it be emailed on a set schedule or included in the Team content folder area?
+* Determine who will maintain the report. This might affect the complexity of the design.
+* Create a mockup of the report.

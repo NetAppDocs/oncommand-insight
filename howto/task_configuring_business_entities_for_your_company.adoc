@@ -1,0 +1,101 @@
+---
+permalink: howto/task_configuring_business_entities_for_your_company.html
+sidebar: sidebar
+keywords: 
+summary: 'Understanding the business elements of your corporate structure helps you to keep track of asset usage and report on costs. Here we will configure your company business entities.'
+---
+= Configuring business entities for your company
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Understanding the business elements of your corporate structure helps you to keep track of asset usage and report on costs. Here we will configure your company business entities.
+
+== About this task
+
+OnCommand Insight allows you to define business entities in a hierarchy that includes up to four levels of granularity.
+
+* *Tenant*
++
+Primarily used by service providers to associate resources with a customer. Tenant level is needed if your company is an ISP and you want to track customer usage of resources.
+
+* *Line of Business (LOB)*
++
+A line of business or product line within a company, for example, Data Storage. Line of Business is needed in the hierarchy if the data for different product lines needs to be tracked.
+
+* *Business Unit*
++
+Represents a traditional business unit such as Legal or Marketing. Business Unit is required if you need to track data for different departments. This level of the hierarchy is often valuable in separating a resource that one department uses that other departments do not.
+
+* *Project*
++
+Often used to identify a specific project within a business unit for which you want capacity chargeback. For example, "`Patents`" might be a project name for the Legal business unit and "`Sales Events`" might be a project name for the Marketing business unit. Note that level names may include spaces.
+
+An example of a business entity hierarchy would be:
+
+image::../media/businessentitieshierarchyexample.gif[]
+
+Best practice: Create a table with each row showing one full business entity in your hierarchy:
+
+|===
+| Tenant| Line of Business| Business Unit| Project
+a|
+NetApp Inc.
+a|
+Data Storage
+a|
+Legal
+a|
+Patents
+a|
+NetApp Inc.
+a|
+Data storage
+a|
+Marketing
+a|
+Sales Events
+a|
+N/A
+a|
+N/A
+a|
+Safety and Security
+a|
+N/A
+a|
+...
+a|
+ 
+a|
+ 
+a|
+ 
+|===
+
+[NOTE]
+====
+You are not required to use all of the levels in the design of your corporate hierarchy. You can choose "`N/A`" for levels that you do not use.
+====
+
+To create a business entity hierarchy in Insight:
+
+== Steps
+
+. Log in to Insight as a user with administrative permissions.
+. Select *Manage* > *Business entities*.
+. Click the *+Add* button
+. Click in the *Tenant* box and type your tenant name.
++
+If you have already entered tenants for your environment, a list of existing tenants will appear from which you may choose. You may also choose N/A if tenant does not apply for this business entity.
+
+. Repeat for *Line of Business*, *Business Unit*, and *Project*.
+. Click *Save*
+
+== After you finish
+
+Best Practices:
+
+* Map out your business hierarchy in a table, and check that the names in the hierarchy will be self-explanatory in Insight views and reports.
+* Create your business entities in Insight before creating applications.
+* Identify and list all applications that will be associated with each business entity.

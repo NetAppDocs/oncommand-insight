@@ -1,0 +1,24 @@
+---
+permalink: dwh/task_viewing_the_data_warehouse_database_schema.html
+sidebar: sidebar
+keywords: 
+summary: 'You might want to view the database schema to understand how to use the data in another API or to develop SQL queries. The schema option lists all databases, tables, and columns in the schema. You can also review the database schema diagrams showing the table relationships.'
+---
+= Viewing the Data Warehouse database schema
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You might want to view the database schema to understand how to use the data in another API or to develop SQL queries. The schema option lists all databases, tables, and columns in the schema. You can also review the database schema diagrams showing the table relationships.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. Click image:../media/oci_7_help_icon_gif.gif[] on the Data Warehouse toolbar, and select *Documentation*.
+. Select *Database Schema*.
+. For example, in the *Databases* pane, click *DWH_INVENTORY*.
+. In the *All tables* pane, scroll down to *DWH_INVENTORY* section, and click the *annotation_value* table.
++
+image::../media/oci_dwh_databaseschema_inventory_annotation_gif.gif[Inventory data mart annotation value table]
++
+The dwh_inventory.annotation table appears.

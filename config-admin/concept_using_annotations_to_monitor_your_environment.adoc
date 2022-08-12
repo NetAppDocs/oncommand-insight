@@ -1,0 +1,26 @@
+---
+permalink: config-admin/concept_using_annotations_to_monitor_your_environment.html
+sidebar: sidebar
+keywords: 
+summary: 'When customizing OnCommand Insight to track data for your corporate requirements, you can define specialized notes, called annotations, and assign them to your assets. For example, you can annotate assets with information such as asset end of life, data center, building location, storage tier, or volume service level.'
+---
+= Using annotations to monitor your environment
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When customizing OnCommand Insight to track data for your corporate requirements, you can define specialized notes, called _annotations_, and assign them to your assets. For example, you can annotate assets with information such as asset end of life, data center, building location, storage tier, or volume service level.
+
+Using annotations to help monitor your environment includes the following high-level tasks:
+
+* Creating or edit definitions for all annotation types.
+* Displaying asset pages and associating each asset with one or more annotations.
++
+For example, if an asset is being leased and the lease expires within two months, you might want to apply an end-of-life annotation to the asset. This helps prevent others from using that asset for an extended time.
+
+* Creating rules to automatically apply annotations to multiple assets of the same type.
+* Using the annotation import utility to import annotations.
+* Filter assets by their annotations.
+* Grouping data in reports based on annotations and generate those reports.
++
+See the _OnCommand Insight Reporting Guide_ for more information about reports.

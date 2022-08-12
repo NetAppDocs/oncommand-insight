@@ -1,0 +1,102 @@
+---
+permalink: config-admin/reference_ibm_ds_cli_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'The IBM DS \(CLI\) data source supports DS6xxx and DS8xxx devices only. DS3xxx, DS4xxx, and DS5xxx devices are supported by the NetApp E-Series data source. You should refer to the Insight data source support matrix for supported models and firmware versions.'
+---
+= IBM DS data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The IBM DS (CLI) data source supports DS6xxx and DS8xxx devices only. DS3xxx, DS4xxx, and DS5xxx devices are supported by the NetApp E-Series data source. You should refer to the Insight data source support matrix for supported models and firmware versions.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the IBM DS data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Disk Drive Module
+a|
+Disk
+a|
+Storage Image
+a|
+Storage
+a|
+Extent Pool
+a|
+Storage Pool
+a|
+Fixed Block Volume
+a|
+Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* IP address of each DS array
+* Storage Display Name is optional and cosmetic only
+* Read-only username and password on each DS array
+* Third-party software installed on the Insight server: IBM dscli
+* Access validation: Run `dscli` commands using the username and password
+* Port requirements: 80, 443, & 1750
+
+== Configuration
+
+|===
+| Field| Description
+a|
+DS storage
+a|
+IP address or fully-qualified domain name of the DS Storage Host
+a|
+User Name
+a|
+Name used for the DS CLI
+a|
+Password
+a|
+Password used for the DS CLI
+a|
+Executable dscli.exe Path
+a|
+Full path to the ``dscli.exe``utility.
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 40 minutes)
+a|
+Storage Display Name
+a|
+Name of the IBM DS storage array
+a|
+Inventory Exclude Devices
+a|
+Comma-separated list of device serial numbers to exclude from inventory collection
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+a|
+Performance Filter Type
+a|
+Include: Data collected only from devices on list. Exclude: No data from these devices is collected
+a|
+Performance Filter Device List
+a|
+Comma-separated list of device IDs to include or exclude from performance collection
+|===

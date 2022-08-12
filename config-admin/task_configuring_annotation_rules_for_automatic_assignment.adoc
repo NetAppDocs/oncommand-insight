@@ -1,0 +1,44 @@
+---
+permalink: config-admin/task_configuring_annotation_rules_for_automatic_assignment.html
+sidebar: sidebar
+keywords: 
+summary: 'As an alternative to manually applying annotations to individual assets, you can automatically apply annotations to multiple assets using annotation rules. Annotations set manually on an individual asset pages take precedence over rule-based annotations when Insight evaluates the annotation rules.'
+---
+= Creating annotation rules
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+As an alternative to manually applying annotations to individual assets, you can automatically apply annotations to multiple assets using annotation rules. Annotations set manually on an individual asset pages take precedence over rule-based annotations when Insight evaluates the annotation rules.
+
+== Before you begin
+
+You must have created a query for the annotation rule.
+
+== About this task
+
+Although you can edit the annotation types while you are creating the rules, you should have defined the types ahead of time.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Click *Manage* and select *Annotation rules*.
++
+The Annotation Rules page displays the list of existing annotation rules.
+
+. Click image:../media/add_annotation_icon.gif[].
++
+The Add Rule dialog box displays.
+
+. Do the following:
+ .. In the *Name* box, enter a unique name that describes the rule.
++
+This name will appear in the Annotation Rules page.
+
+ .. Click *Query* and select the query that OnCommand Insight should use to apply the annotation to assets.
+ .. Click *Annotation* and select the annotation you want to apply.
+ .. Click *Value* and select a value for the annotation.
++
+For example, if you choose Birthday as the annotation, you specify a date for the value.
+. Click *Save*.
+. Click *Run all rules* if you want to run all the rules immediately; otherwise, the rules are run at a regularly scheduled interval.

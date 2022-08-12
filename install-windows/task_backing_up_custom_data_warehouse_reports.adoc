@@ -1,0 +1,22 @@
+---
+permalink: install-windows/task_backing_up_custom_data_warehouse_reports.html
+sidebar: sidebar
+keywords: 
+summary: 'If you created custom reports and you do not have the .xml source files for them, then you should back up these reports before the upgrade. You should then copy them to a server other than the Data Warehouse server.'
+---
+= Backing up custom Data Warehouse reports
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you created custom reports and you do not have the `.xml` source files for them, then you should back up these reports before the upgrade. You should then copy them to a server other than the Data Warehouse server.
+
+== Steps
+
+. Log in to the Data Warehouse portal at `+https://fqdn/dwh+`.
+. On the Data Warehouse toolbar, click image:../media/oci_reporting_portal_icon.gif[] to open the Reporting Portal and log in.
+. Select *File* > *Open*.
+. Select the folder that the report is located in, select the report, and then click *Open*.
+. Select *Tools* > *Copy report to clipboard*.
+. Open a text editor, paste the contents of the report, and save the file as `report_name.txt`, where `report _name` is the name of the report.
+. Store the reports on a server other than the Data Warehouse server.

@@ -1,0 +1,181 @@
+---
+permalink: dwh/concept_historical_data_retention_in_data_warehouse.html
+sidebar: sidebar
+keywords: 
+summary: 'Data is maintained in Data Warehouse according to a schedule. As data gets older, the data record retention is reduced.'
+---
+= How historical data is retained in Data Warehouse
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Data is maintained in Data Warehouse according to a schedule. As data gets older, the data record retention is reduced.
+
+Data Warehouse retains historical data based on the data marts and granularity of the data, as shown in the following table.
+
+|===
+| Data mart| Measured object| Granularity| Retention period
+a|
+Performance marts
+a|
+Volumes and internal volumes
+a|
+Hourly
+a|
+14 days
+a|
+Performance marts
+a|
+Volumes and internal volumes
+a|
+Daily
+a|
+13 months
+a|
+Performance marts
+a|
+Application
+a|
+Hourly
+a|
+13 months
+a|
+Performance marts
+a|
+Host
+a|
+Hourly
+a|
+13 months
+a|
+Performance marts
+a|
+Switch performance for port
+a|
+Hourly
+a|
+5 weeks
+a|
+Performance marts
+a|
+Switch performance for host, storage, and tape
+a|
+Hourly
+a|
+13 months
+a|
+Performance marts
+a|
+Storage node
+a|
+Hourly
+a|
+14 days
+a|
+Performance marts
+a|
+Storage node
+a|
+Daily
+a|
+13 months
+a|
+Performance marts
+a|
+VM performance
+a|
+Hourly
+a|
+14 days
+a|
+Performance marts
+a|
+VM performance
+a|
+Daily
+a|
+13 months
+a|
+Performance marts
+a|
+Hypervisor performance
+a|
+Hourly
+a|
+14 days
+a|
+Performance marts
+a|
+Hypervisor performance
+a|
+Daily
+a|
+13 months
+a|
+Performance marts
+a|
+VMDK performance
+a|
+Hourly
+a|
+14 days
+a|
+Performance marts
+a|
+VMDK performance
+a|
+Daily
+a|
+13 months
+a|
+Performance marts
+a|
+Disk performance
+a|
+Hourly
+a|
+14 days
+a|
+Performance marts
+a|
+Disk performance
+a|
+Daily
+a|
+13 months
+a|
+Capacity marts
+a|
+All (except individual volumes)
+a|
+Daily
+a|
+13 months
+a|
+Capacity marts
+a|
+All (except individual volumes)
+a|
+Monthly representative
+a|
+14 months and beyond
+a|
+Inventory marts
+a|
+Individual volumes
+a|
+Current state
+a|
+1 day (or until next ETL)
+|===
+After 13 months (which is configurable), Data Warehouse retains only one record per month instead of one record per day for capacity, performance, and resource data in the following fact tables:
+
+* Chargeback fact table (dwh_capacity.chargeback_fact)
+* File System Utilization fact table (dwh_fs_util.fs_util_fact)
+* Host fact table (dwh_sa.sa_host_fact)
+* Internal Volume Capacity fact table (dwh_capacity.internal_volume_capacity_fact)
+* Ports fact table (dwh_ports.ports_fact)
+* Qtree Capacity fact table (dwh_capacity.qtree_capacity_fact)
+* Storage and Storage Pool Capacity fact table (dwh_capacity.storage_and_storage_pool_capacity_fact)
+* Volume Capacity fact table (dwh_capacity.vm_capacity_fact)
+* Storage Node Hourly Performance (storage_node_hourly_performance_fact) and Storage Node Daily Performance (storage_node_daily_performance_fact) fact tables

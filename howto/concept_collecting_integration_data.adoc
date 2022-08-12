@@ -1,0 +1,35 @@
+---
+permalink: howto/concept_collecting_integration_data.html
+sidebar: sidebar
+keywords: 
+summary: 'You can import integration data into your OnCommand insight system. Data can be imported using collectd, open source software that runs as a daemon to collect performance data, or by using the integration SNMP data source which allows you to collect generic SNMP data.'
+---
+= Collecting integration data
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can import integration data into your OnCommand insight system. Data can be imported using collectd, open source software that runs as a daemon to collect performance data, or by using the integration SNMP data source which allows you to collect generic SNMP data.
+
+== Data flow for integration data
+
+The following applies to the total amount of integration data that is allowed to be presented to the OnCommand Insight server:
+
+* A queue of 100 calls is maintained.
++
+When a client waits in the queue for more than one minute, a timeout error occurs.
+
+* The recommended ingestion rate for integration data is once per minute, per client.
+* There is a limit of 300 integration object types allowed.
+
+== Accessing collectd software and documentation
+
+You can access the output writer plugin software and documentation for collectd at NetApp's GitHub site: https://github.com/NetApp/OCI_collectd
+
+== Backup and restore of integration data
+
+Backup and restore of integration data is modeled after OnCommand Insight performance data backup and restore policies. When a backup is configured for performance data, integration data is also included in the backup. As with performance backup, the most recent seven days of integration data is included in the backup. Any integration data that is present in a backup is restored in a restore operation.
+
+== Licenses
+
+A Perform license is required for integration data to be reported. If a Perform license is not present an error occurs with a message "Perform license required to report integration data".

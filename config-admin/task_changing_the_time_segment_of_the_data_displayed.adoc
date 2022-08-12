@@ -1,0 +1,53 @@
+---
+permalink: config-admin/task_changing_the_time_segment_of_the_data_displayed.html
+sidebar: sidebar
+keywords: 
+summary: 'By default, an asset page displays the last 24 hours of data; however, you can change the segment of data displayed by selecting another fixed time or a custom range of time to view less or more data.'
+---
+= Changing the time range of displayed data
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+By default, an asset page displays the last 24 hours of data; however, you can change the segment of data displayed by selecting another fixed time or a custom range of time to view less or more data.
+
+== About this task
+
+You can change the time segment of displayed data by using an option that is located on every asset page, regardless of asset type.
+
+== Steps
+
+. Log in to the OnCommand Insightweb UI.
+. Locate an asset page by doing either of the following:
+ ** On the Insight toolbar, click image:../media/search_assets_icon.gif[], type in the name of the asset, and then select the asset from the list.
+ ** Click *Dashboards*, select *Assets Dashboard*, locate an asset name, and click it.
+The asset page displays.
+. In the upper left corner of the page, click any of the following time icons to change the segment of data displayed:
+ ** *3h*
++
+Displays the last three hours of data.
+
+ ** *24h*
++
+Displays the last 24 hours of data.
+
+ ** *3d*
++
+Displays the last three days of data.
+
+ ** *7d*
++
+Displays the last seven days of data.
+
+ ** *30d*
++
+Displays the last thirty days of data.
+
+ ** *Custom*
++
+Displays a dialog box that enables you to choose a custom range of time. You may display up to 31 days of data at a time.
+. If you chose *Custom*, do the following:
+ .. Click the date field, and select a month, day, and year for the begin date.
+ .. Click the time list, and select a begin time.
+ .. Repeat both steps a and b for the end data and time.
+ .. Click image:../media/check_box_ok.gif[].

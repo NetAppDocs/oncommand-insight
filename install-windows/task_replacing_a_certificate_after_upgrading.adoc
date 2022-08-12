@@ -1,0 +1,59 @@
+---
+permalink: install-windows/task_replacing_a_certificate_after_upgrading.html
+sidebar: sidebar
+keywords: 
+summary: 'Opening the OnCommand Insight web UI after an upgrade results in a certification warning. The warning message is displayed because a valid self-signed certificate is not available after the upgrade. To prevent the warning message from being displayed in the future, you can install a valid self-signed certificate to replace the original certificate.'
+---
+= Replacing a certificate after upgrading OnCommand Insight
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Opening the OnCommand Insight web UI after an upgrade results in a certification warning. The warning message is displayed because a valid self-signed certificate is not available after the upgrade. To prevent the warning message from being displayed in the future, you can install a valid self-signed certificate to replace the original certificate.
+
+== Before you begin
+
+Your system must satisfy the minimum encryption bit level (1024 bits).
+
+== About this task
+
+The certification warning does not impact the usability of the system. At the message prompt, you can indicate that you understand the risk, and then proceed to use Insight.
+
+== Steps
+
+. List the contents of the keystore: `C:\Program Files\SANscreen\java64\bin>keytool.exe -list -v -keystore "c:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore"`
++
+When prompted for a password, enter `changeit`.
++
+There should be at least one certificate in the keystore, `ssl certificate`.
+
+. Delete the `ssl certificate`: `keytool -delete -alias ssl certificate -keystore c:\ProgramFiles\SANscreen\wildfly\standalone\configuration\server.keystore`
+. Generate a new key: `keytool -genkey -alias OCI.hostname.com -keyalg RSA -keysize 2048 -keystore "c:\ProgramFiles\SANscreen\wildfly\standalone\configuration\server.keystore"`
+ .. When prompted for first and last names, enter the fully qualified domain name (FQDN) that you intend to use.
+ .. Provide the following information about your organization and organizational structure:
+  *** Country: two-letter ISO abbreviation for your country (for example, US)
+  *** State or Province: name of the state or province where your organization's head office is located (for example, Massachusetts)
+  *** Locality: name of the city where your organization's head office is located (for example, Waltham)
+  *** Organizational name: name of the organization that owns the domain name (for example, NetApp)
+  *** Organizational unit name: name of the department or group that will use the certificate (for example, Support)
+  *** Domain Name/ Common Name: the FQDN that is used for DNS lookups of your server (for example, www.example.com)
+The system responds with information similar to the following: `Is CN=www.example.com, OU=support, O=NetApp, L=Waltham, ST=MA, C=US correct?`
+ .. Enter `Yes` when the Common Name (CN) is equal to the FQDN.
+ .. When prompted for the key password, enter the password, or press the Enter key to use the existing keystore password.
+. Generate a certificate request file: `keytool -certreq -alias localhost -keystore "c:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore" -file c:\localhost.csr`
++
+The `c:\localhost.csr` file is the certificate request file that is newly generated.
+
+. Submit the `c:\localhost.csr` file to your certification authority (CA) for approval.
++
+Once the certificate request file is approved, you want the certificate returned to you in `.der` format. The file might or might not be returned as a `.der` file. The default file format is `.cer` for Microsoft CA services.
+
+. Import the approved certificate: `keytool -importcert -alias localhost -file c:\localhost2.DER -keystore "c:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore"`
+ .. When prompted for a password, enter the keystore password.
++
+The system displays the following message: `Certificate reply was installed in keystore`
+. Restart the SANscreen Server service.
+
+== Results
+
+The web browser no longer reports certificate warnings.

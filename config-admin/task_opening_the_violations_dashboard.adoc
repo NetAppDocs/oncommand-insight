@@ -1,0 +1,51 @@
+---
+permalink: config-admin/task_opening_the_violations_dashboard.html
+sidebar: sidebar
+keywords: 
+summary: 'When Insight generates violations due to the thresholds set in performance policies, you can view them using the Violations Dashboard. The dashboard lists all the violations that occur in your network and enables you to locate and address issues.'
+---
+= Monitoring the violations in your network
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When Insight generates violations due to the thresholds set in performance policies, you can view them using the Violations Dashboard. The dashboard lists all the violations that occur in your network and enables you to locate and address issues.
+
+== Steps
+
+. Open OnCommand Insight in your browser.
+. On the Insight toolbar, click *Dashboards* and select *Violations Dashboard*.
++
+The Violations Dashboard displays.
+
+. You can use the *Violations By Policies* pie chart in the following ways:
+ ** You can position your cursor over any slice of a chart to display the percentage of the total violations that occurred for a particular policy or metric.
+ ** You can click a slice of a chart to "`enlarge`" it, which enables you to emphasize and study more carefully that slice by moving it away from the rest of the chart.
+ ** You can click the image:../media/oci_widget_open_full_screen.gif[] icon in the upper-right corner to display the pie chart in full screen mode, and click image:../media/oci_restore_size_icon.gif[] again to minimize the pie chart.
+A pie chart can contain a maximum of five slices; thus, if you have six policies that generate violations, Insight combines the fifth and sixth slices into an "`Others`" slice. Insight assigns the most violations to the first slice, the second most violations to the second slice, and so on.
+. You can use the *Violations History* chart in the following ways:
+ ** You can position your cursor over the chart to display the total number of violations that occurred at a particular time and the number that occurred out of the total for each specified metric.
+ ** You can click a legend label to remove the data associated with the legend from the chart.
++
+Click on the legend to display the data again.
+
+ ** You can click the image:../media/oci_widget_open_full_screen.gif[] icon in the upper-right corner to display the chart in full screen mode, and click image:../media/oci_restore_size_icon.gif[] again to minimize the pie chart.
+. You can use the *Violations Table* in the following ways:
+ ** You can click the image:../media/oci_widget_open_full_screen.gif[] icon in the upper-right corner to display the table in full screen mode, and click image:../media/oci_restore_size_icon.gif[] again to minimize the pie chart.
++
+If your window size is too small, then the Violations Table displays only three columns; however, when you click image:../media/oci_widget_open_full_screen.gif[], additional columns (up to seven) display.
+
+ ** You can display violations for a particular time period (*1h*, *3h*, *24h*, *3d*, *7d*, and *30d*), with Insight showing a maximum number of 1000 violations for the selected time period.
+ ** You can use the *filter* box to show only the violations you want.
+ ** You can change the sort order of the columns in a table to either ascending (up arrow) or descending (down arrow) by clicking the arrow in the column header; to return to the default sort order, click any other column header.
++
+By default, the table displays the violations in descending order.
+
+ ** You can click a violation in the ID column to display the asset page for the duration of the violation.
+ ** You can click the resource links (for example, storage pool and storage volume) in the Description column to display the asset pages associated with those resources.
+ ** You can click the performance policy link in the Policy column to display the Edit Policy dialog box.
++
+You might want to adjust the thresholds for a policy if you feel it generates too few or too many violations.
+
+ ** You can click a page number to browse through data by page if there is more data than fits on a single page.
+ ** You can click image:../media/oci_delete_policy_threshold_icon.gif[] to dismiss the violation.

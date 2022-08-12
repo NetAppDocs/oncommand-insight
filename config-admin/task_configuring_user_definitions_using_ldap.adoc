@@ -1,0 +1,114 @@
+---
+permalink: config-admin/task_configuring_user_definitions_using_ldap.html
+sidebar: sidebar
+keywords: 
+summary: 'To configure OnCommand Insight \(OCI\) for user authentication and authorization from an LDAP server, you must be defined in the LDAP server as the OnCommand Insight server administrator.'
+---
+= Configuring user definitions using LDAP
+:experimental:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To configure OnCommand Insight (OCI) for user authentication and authorization from an LDAP server, you must be defined in the LDAP server as the OnCommand Insight server administrator.
+
+== Before you begin
+
+You must know the user and group attributes that have been configured for Insight in your LDAP domain.
+
+For all Secure Active Directory (i.e. LDAPS) users, you must use the AD server name exactly as it is defined in the certificate. You can not use IP address for secure AD login.
+
+== About this task
+
+OnCommand Insight supports LDAP and LDAPS via Microsoft Active Directory server. Additional LDAP implementations may work but have not been qualified with Insight. This procedure assumes that you are using Microsoft Active Directory Version 2 or 3 LDAP (Lightweight Directory Access Protocol).
+
+LDAP users display along with the locally defined users in the *Admin* > menu:Setup[Users] list.
+
+== Steps
+
+. On the Insight toolbar, click *Admin*.
+. Click *Setup*.
+. Click the *Users* tab.
+. Scroll to the LDAP section, as shown here.
++
+image::../media/ldap_setup.gif[]
+
+. Click *Enable LDAP* to allow the LDAP user authentication and authorization.
+. Fill in the fields:
+ ** `LDAP servers`: Insight accepts a comma-separated list of LDAP URLs. Insight attempts to connect to the provided URLs without validating for LDAP protocol.
++
+[NOTE]
+====
+To import the LDAP certificates, click *Certificates* and automatically import or manually locate the certificate files.
+====
++
+The IP address or DNS name used to identify the LDAP server is typically entered in this format:
++
+----
+ldap://<ldap-server-address>:port
+----
++
+or, if using the default port:
++
+----
+ ldap://<ldap-server-address>
+----
++
+When entering multiple LDAP servers in this field, ensure that the correct port number is used in each entry.
+
+ ** `User name`: Enter the credentials for a user authorized for directory lookup queries on the LDAP servers.
+ ** `Password`: Enter the password for the above user. To confirm this password on the LDAP server, click *Validate*.
+. If you want to define this LDAP user more precisely, click *Show more* and fill in the fields for the listed attributes.
++
+These settings must match the attributes configured in your LDAP domain. Check with your Active Directory administrator if you are unsure of the values to enter for these fields.
+
+ ** *Admins group*
++
+LDAP group for users with Insight Administrator privileges. Default is `insight.admins`.
+
+ ** *Users group*
++
+LDAP group for users with Insight User privileges. Default is `insight.users`.
+
+ ** *Guests group*
++
+LDAP group for users with Insight Guest privileges. Default is `insight.guests`.
+
+ ** *Server admins group*
++
+LDAP group for users with Insight Server Administrator privileges. Default is `insight.server.admins`.
+
+ ** *Timeout*
++
+Length of time to wait for a response from the LDAP server before timing out, in milliseconds. default is 2,000, which is adequate in all cases and should not be modified.
+
+ ** *Domain*
++
+LDAP node where OnCommand Insight should start looking for the LDAP user. Typically this is the top-level domain for the organization. For example:
++
+----
+DC=<enterprise>,DC=com
+----
+
+ ** *User principal name attribute*
++
+Attribute that identifies each user in the LDAP server. Default is `userPrincipalName`, which is globally unique. OnCommand Insight attempts to match the contents of this attribute with the username that has been supplied above.
+
+ ** *Role attribute*
++
+LDAP attribute that identifies the user's fit within the specified group. Default is `memberOf`.
+
+ ** *Mail attribute*
++
+LDAP attribute that identifies the user's email address. Default is `mail`. This is useful if you want to subscribe to reports available from OnCommand Insight. Insight picks up the user's email address the first time each user logs in and does not look for it after that.
++
+[NOTE]
+====
+If the user's email address changes on the LDAP server, be sure to update it in Insight.
+====
+
+ ** *Distinguished name attribute*
++
+LDAP attribute that identifies the user's distinguished name. default is `distinguishedName`.
+
+. Click *Save*.

@@ -1,0 +1,97 @@
+---
+permalink: config-admin/reference_hds_hnas_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'The HDS NAS \(HNAS\) data source is an inventory and configuration data source to support discovery of HDS NAS clusters. Insight supports discovering NFS and CIFS shares, file systems \(Insight Internal Volumes\), and spans \(Insight Storage Pools\).'
+---
+= HDS NAS (HNAS) data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The HDS NAS (HNAS) data source is an inventory and configuration data source to support discovery of HDS NAS clusters. Insight supports discovering NFS and CIFS shares, file systems (Insight Internal Volumes), and spans (Insight Storage Pools).
+
+This data source is SSH based, so the acquisition unit that will host it needs to be able to initiate SSH sessions to TCP 22 on the HNAS itself, or the Systems Management Unit (SMU) that the cluster is connected to.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the HNAS data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Tier
+a|
+Disk Group
+a|
+Cluster
+a|
+Storage
+a|
+Node
+a|
+Storage Node
+a|
+Span
+a|
+Storage Pool
+a|
+File System
+a|
+Internal Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+The following are requirements to configure and use this data source:
+
+* Device IP address
+* Port 22, SSH protocol
+* Username and password - privilege level: Supervisor
+* NOTE: This data collector is SSH based, so the AU that hosts it must be able to initiate SSH sessions to TCP 22 on the HNAS itself, or the Systems Management Unit (SMU) that the cluster is connected to.
+
+[NOTE]
+====
+This data collector is SSH based, so the AU that hosts it must be able to initiate SSH sessions to TCP 22 on the HNAS itself, or the Systems Management Unit (SMU) that the cluster is connected to.
+====
+
+== Configuration
+
+|===
+| Field| Description
+a|
+HNAS Host
+a|
+IP address or fully-qualified domain name of HNAS Management Host
+a|
+User Name
+a|
+User name for HNAS CLI
+a|
+Password
+a|
+Password used for HNAS CLI
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 30 minutes)
+a|
+SSH Banner Wait Timeout (sec)
+a|
+SSH banner wait timeout (default 15 seconds)
+a|
+SSH Command Timeout (sec)
+a|
+SSH command timeout (default 30 seconds)
+|===

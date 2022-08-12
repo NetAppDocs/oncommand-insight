@@ -1,0 +1,97 @@
+---
+permalink: config-admin/reference_infinidat_infinibox_http_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'The Infinidat InfiniBox \(HTTP\) data source is used to collect information from the Infinidat InfiniBox storage. You must have access to the InfiniBox Management Node.'
+---
+= Infinidat InfiniBox data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Infinidat InfiniBox (HTTP) data source is used to collect information from the Infinidat InfiniBox storage. You must have access to the InfiniBox Management Node.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the InfiniBox data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Drive
+a|
+Disk
+a|
+InfiniBox
+a|
+Storage
+a|
+Node
+a|
+Storage Node
+a|
+Pool
+a|
+Storage Pool
+a|
+Volume
+a|
+Volume
+a|
+FC Port
+a|
+Port
+a|
+Filesystem
+a|
+Internal Volume
+a|
+Filesystem
+a|
+FileShare
+a|
+Filesystem Exports
+a|
+Share
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Configuration
+
+|===
+| Field| Description
+a|
+InfiniBox Host
+a|
+IP address or fully-qualified domain name of the InfiniBox Management Node
+a|
+User Name
+a|
+User name for InfiniBox Management Node
+a|
+Password
+a|
+Password for the InfiniBox Management Node
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+TCP Port
+a|
+TCP Port used to connect to InfiniBox Server (default 443 )
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 60 minutes)
+a|
+Connection Timeout
+a|
+Connection timeout (default 60 seconds)
+|===

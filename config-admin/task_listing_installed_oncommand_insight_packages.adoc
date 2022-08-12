@@ -1,0 +1,19 @@
+---
+permalink: config-admin/task_listing_installed_oncommand_insight_packages.html
+sidebar: sidebar
+keywords: 
+summary: 'You can display a list of the installed OnCommand Insight components including, among others, inventory, capacity, dimensions, and the Data Warehouse views. Customer Support might ask you for this information, or you might want to see what software versions were installed and when they were installed.'
+---
+= Listing installed OnCommand Insight components
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can display a list of the installed OnCommand Insight components including, among others, inventory, capacity, dimensions, and the Data Warehouse views. Customer Support might ask you for this information, or you might want to see what software versions were installed and when they were installed.
+
+== Steps
+
+. On the Insight toolbar, click *Admin* and select *Troubleshooting*.
+. At the bottom of the page in the Other tasks area, click the *Advanced Troubleshooting* link.
+. On the Advanced Troubleshooting page, click the *Reports* tab.
+. Click *Installed Software Packages*.

@@ -1,0 +1,117 @@
+---
+permalink: config-admin/reference_vmware_vsphere_web_services_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'The VMware vSphere \(Web Services\) data source collects ESX Host information and requires read-only privileges on all objects within the Virtual Center.'
+---
+= VMware vSphere data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The VMware vSphere (Web Services) data source collects ESX Host information and requires _read-only_ privileges on all objects within the Virtual Center.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the VMware vSphere data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Virtual Disk
+a|
+Disk
+a|
+Host
+a|
+Host
+a|
+Virtual Machine
+a|
+Virtual Machine
+a|
+Data Store
+a|
+Data Store
+a|
+LUN
+a|
+LUN
+a|
+Fiber Channel Port
+a|
+Port
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* IP address of the Virtual Center server
+* Read-only username and password in Virtual Center
+* Read-only privileges on all objects within the Virtual Center.
+* SDK access on the Virtual Center server
+* Port requirements: http-80 https-443
+* Validate access by logging in to Virtual Center Client using your user name and password and verifying that the SDK is enabled by entering `telnet <vc_ip\> 443`.
+
+== Configuration
+
+|===
+| *Field*
+
+| *Description*
+
+a|
+Virtual Center Address
+a|
+Network address for the Virtual Center or vSphere server, specified as an IP _(nnn.nnn.nnn.nnn_ format) address or as a host name that can be resolved through DNS.
+a|
+User Name
+a|
+User name for the VMware server.
+a|
+Password
+a|
+Password for the VMware server.
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 20 minutes)
+a|
+Connection Timeout (ms)
+a|
+Connection timeout (default 60000 ms)
+a|
+Filter VMs by
+a|
+Choose how to filter VMs
+a|
+Choose 'Exclude' or 'Include' to specify a list
+a|
+Specify whether to include or exclude the VM list below when collecting data
+a|
+List of VMs to filter (Comma Separated, or Semicolon Separated If Comma Is Used in the Value)
+a|
+Comma-separated or semicolon-separated list of VMs to include or exclude from polling
+a|
+Number of Retries for Requests to vCenter
+a|
+Number of vCenter Request retry attempts
+a|
+Communication Port
+a|
+Port used for Vmware server
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+|===

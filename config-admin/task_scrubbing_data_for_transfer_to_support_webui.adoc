@@ -1,0 +1,38 @@
+---
+permalink: config-admin/task_scrubbing_data_for_transfer_to_support_webui.html
+sidebar: sidebar
+keywords: 
+summary: 'Customers who have secure environments need to communicate with NetApp Customer Service to troubleshoot problems that arise without compromising their database information. The OnCommand Insight Scrub utilities allow you set up a comprehensive dictionary of keywords and patterns so that you can "cleanse" sensitive data and send scrubbed files to Customer Support.'
+---
+= Scrubbing data for transfer to support
+:experimental:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Customers who have secure environments need to communicate with NetApp Customer Service to troubleshoot problems that arise without compromising their database information. The OnCommand Insight Scrub utilities allow you set up a comprehensive dictionary of keywords and patterns so that you can "cleanse" sensitive data and send scrubbed files to Customer Support.
+
+== Steps
+
+. In the web UI, click *Admin* and select *Troubleshooting*.
+. At the bottom of the page in the Other tasks area, click the *Scrub utilities* link.
++
+There are several scrub sections: Lookup in Dictionary, Scrub data, and Build dictionary, Custom keywords, and Regular expressions.
+
+. {blank}
+ .. In the**Lookup in dictionary** section, Enter a code to display the value it replaces, or enter a value to see the code that replaces it. Note: before you can do a lookup, you must *Build* the dictionary to identify values to scrub from the support data.
+. To add your own keywords to scrub from the support data, in the *Custom keywords* section, click menu:Actions[Add custom keyword]. Enter a keyword and click *Save*. The keyword is added to the dictionary.
+. Expand *Patterns (regexp)*. Click *Add* to get the dialog box for entering a new pattern.
+. To use a regular expression to to identify words or phrases to scrub, enter a pattern or patterns in the *Regular expressions* section. Click menu:Actions[Add regular expression], enter a Name for the pattern and the Regular expression in the fields and click *Save*. The information has been added to the dictionary.
++
+[NOTE]
+====
+Patterns must be encompassed by round parentheses to identify a regular expression capturing group.
+====
+
+. In the**Build dictionary** section, click *Build* to initiate compilation of the dictionary of all words identified as sensitive from the OnCommand Insight database.
++
+On completion, you see a prompt informing you the revised dictionary is available. The Database description includes a line indicating how many keywords are in the dictionary. Check your keywords in the dictionary for accuracy. If you find problems and want to rebuild the dictionary, click *Reset* on the Database block to remove all keywords collected from the OnCommand Insight database from the dictionary. As the prompt advises, no other keywords will be deleted. Return to the Scrub utilities and enter your Custom Keywords again.
+
+. After you create a Scrub dictionary, you can use it to scrub a log, XML, or other text file to make the data anonymous.
+. To scrub a log, XML, or other text file, in the *Scrub data* section, Browse to locate the file and click *Scrub file*.

@@ -1,0 +1,14 @@
+---
+permalink: config-admin/reference_pruning_of_inventory_history.html
+sidebar: sidebar
+keywords: 
+summary: 'Starting with version 7.3.2, Insight keeps inventory \(foundation\) change history for 90 days. Previous versions of Insight kept all inventory change history from the time of installation. Following an upgrade from an older version of Insight, older inventory history is pruned down to and then kept at 90 days.'
+---
+= Pruning of inventory history
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Starting with version 7.3.2, Insight keeps inventory (foundation) change history for 90 days. Previous versions of Insight kept all inventory change history from the time of installation. Following an upgrade from an older version of Insight, older inventory history is pruned down to and then kept at 90 days.
+
+After upgrading to the current version of OnCommand Insight, history is pruned to the most recent 90 days. Insight prunes the history in 30-day chunks occurring once a day, starting with the oldest, until 90 days' worth of history remains. Then, history is pruned daily, to keep only 90 days`' worth of inventory change history.

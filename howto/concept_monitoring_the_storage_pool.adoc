@@ -1,0 +1,36 @@
+---
+permalink: howto/concept_monitoring_the_storage_pool.html
+sidebar: sidebar
+keywords: 
+summary: 'Each storage pool landing page provides over-subscription ratios, identifies correlated resources, LUN and disk utilization, as well as policy breaches and violations that have occurred with the storage pool.'
+---
+= Monitoring the storage pool
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Each storage pool landing page provides over-subscription ratios, identifies correlated resources, LUN and disk utilization, as well as policy breaches and violations that have occurred with the storage pool.
+
+Use the storage pool landing page to identify any potential problems with the physical assets supporting your virtual infrastructure. You can track capacity and capacity ratios trending over 30 days or use a custom time frame. Pay attention to data in the following sections to monitor the status of the storage pool.
+
+* *Summary*
++
+Use this section to understand:
+
+ ** Storage pool capacity information including physical capacity and the overcommitted capacity.
+ ** Whether the aggregate is oversubscribed, and by how much.
+ ** Any policy violations that have occurred.
+
+* *Storage resources and Disks sections*
++
+The storage resources section shows the LUN utilization.
++
+The disks section shows the individual disks that make up the storage pool.
+
+* *Resources*
++
+Use this section to understand the VMDKs to LUNs correlation and understand the storage to VM application path.
+
+* *Violations section*
++
+The violations section identifies any breaches to performance policies that have been set for the storage pool.

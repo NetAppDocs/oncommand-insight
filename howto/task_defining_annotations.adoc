@@ -1,0 +1,37 @@
+---
+permalink: howto/task_defining_annotations.html
+sidebar: sidebar
+keywords: 
+summary: 'When customizing OnCommand Insight to track data for your corporate requirements, you can define specialized annotations needed to provide a complete picture of your data: for example, an annotation can define an asset’s end of life, or the data center the asset resides in, or a storage tier defining the cost per GB of the storage.'
+---
+= Defining annotations for use with chargeback
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When customizing OnCommand Insight to track data for your corporate requirements, you can define specialized annotations needed to provide a complete picture of your data: for example, an annotation can define an asset's end of life, or the data center the asset resides in, or a storage tier defining the cost per GB of the storage.
+
+== About this task
+
+The chargeback report example in this guide provides data for Service level and for Tier level. You must create annotations for each Service level and Tier level and then define costs for the Service levels and Tier levels.
+
+== Steps
+
+. Log in to the Insight web UI
+. Click *Manage* > *Annotations*
++
+The annotations page displays.
+
+. Position your cursor over the Service Level, or Tier annotation, and click image:../media/edit_annotation_icon.gif[].
++
+The Edit Annotation dialog box displays.
+
+. Click *ADD* to add new Tiers and cost.
++
+In the report example, the Tier and Service level names use the precious metal analogy of Gold, Sliver, and Bronze. You can use any naming convention chosen by your organization, for example, Tier 1, Level 2, Supreme.
+
+. Enter the values for the Gold-Fast, Gold, Silver, and Bronze Tiers and the costs associated with each.
++
+The values you enter define the cost per-GB for the storage that is used by applications. The service level cost can be the cost of providing the service or the actual price to service the consumer. These costs will be reported in the Chargeback report.
+
+. Click *Save* when you finish.

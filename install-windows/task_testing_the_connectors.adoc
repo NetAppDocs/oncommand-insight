@@ -1,0 +1,30 @@
+---
+permalink: install-windows/task_testing_the_connectors.html
+sidebar: sidebar
+keywords: 
+summary: 'After you upgrade, you want to test the connectors to ensure that you have a connection from the OnCommand Insight Data Warehouse to the OnCommand Insight server.'
+---
+= Testing the connectors
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After you upgrade, you want to test the connectors to ensure that you have a connection from the OnCommand Insight Data Warehouse to the OnCommand Insight server.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://fqdn/dwh+`.
+. From the navigation pane on the left, click *Connectors*.
+. Select the first connector.
++
+The Edit Connector page displays.
+
+. Click *Test*.
+. If the test is successful, click *Close*; if it fails, enter the name of the Insight server in the *Name* field and its IP address in the *Host* field and click *Test*.
+. When there is a successful connection between the Data Warehouse and the Insight server, click *Save*.
++
+If it does not succeed, check the connection configuration and ensure the Insight server does not have any issues.
+
+. Click *Test*.
++
+Data Warehouse tests the connection.

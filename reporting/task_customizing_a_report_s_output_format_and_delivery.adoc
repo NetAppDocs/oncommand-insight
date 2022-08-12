@@ -1,0 +1,29 @@
+---
+permalink: reporting/task_customizing_a_report_s_output_format_and_delivery.html
+sidebar: sidebar
+keywords: 
+summary: 'You can customize the format and delivery method of reports.'
+---
+= Customizing a report's output format and delivery
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can customize the format and delivery method of reports.
+
+== Steps
+
+. Open the OnCommand Insight Reporting Portal and select the report you want to customize and click *[...]*.
++
+image::../media/run_report.gif[]
+
+. Click *Properties* > *Schedule*
++
+image::../media/email_report.gif[]
+
+. You can set the following options:
+ ** *Schedule* when you want reports to run.
+ ** *Format* the report output.
+ ** *Delivery* print, save, or email the report.
+ ** *Languages* define the language the report is delivered in.
+. Click *Create* to produce the report using the selections you made.

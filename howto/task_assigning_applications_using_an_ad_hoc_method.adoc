@@ -1,0 +1,46 @@
+---
+permalink: howto/task_assigning_applications_using_an_ad_hoc_method.html
+sidebar: sidebar
+keywords: 
+summary: 'You assign an application to an asset so that you can identify the resources of the asset that the application uses. If an asset has a cost assigned to it you can identify the cost that is incurred by the application and if the resource is measured by size, you can determine if the resource will need to be replenished.'
+---
+= Assigning applications to assets using an ad hoc method
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You assign an application to an asset so that you can identify the resources of the asset that the application uses. If an asset has a cost assigned to it you can identify the cost that is incurred by the application and if the resource is measured by size, you can determine if the resource will need to be replenished.
+
+== About this task
+
+Use the following method to assign applications to assets.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Locate the asset (host, virtual machine, volume, or internal volume) to which you want to apply the application by doing either of the following:
++
+|===
+| Option| Description
+a|
+Navigate to the list of assets
+a|
+Click *Dashboard* > *Assets Dashboard* and select the asset.
+a|
+Search for the asset
+a|
+Click image:../media/icon_sanscreen_magnifying_glass_gif.gif[] on the toolbar to display the *Search assets* box, type the name of the asset, and then select the asset from the list.
+|===
+
+. In the *User Data* section of the asset page, position your cursor over the name of the application currently assigned to the asset (if there is no application assigned, *None* is displayed) and then click image:../media/pencil_icon_landing_page_be.gif[] (Edit application).
++
+The list of available applications for the selected asset is displayed. The applications that are currently associated with the asset are preceded by a check mark.
+
+. You can type in the Search box to filter the application names, or you can scroll down the list.
+. Select the applications you want to associate with the asset.
++
+You can assign multiple applications to host, virtual machine, and internal volume; however, you can only assign one application to a volume.
+
+. Click image:../media/check_box_ok.gif[] to assign the selected application or applications to the asset.
++
+The application names appear in the User Data section; if the application is associated with a business entity, the name of the business entity appears in this section also.

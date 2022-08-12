@@ -1,0 +1,14 @@
+---
+permalink: howto/concept_introduction_to_minimizing_risk_in_thin_provisioning.html
+sidebar: sidebar
+keywords: 
+summary: 'In today’s hybrid IT data centers, administrators are pressured to stretch resource utilization beyond physical bounds by employing capacity efficiency technologies such as thin provisioning to control over allocation and leverage what was once unavailable capacities.'
+---
+= Introduction to minimizing risk in thin provisioning
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+In today's hybrid IT data centers, administrators are pressured to stretch resource utilization beyond physical bounds by employing capacity efficiency technologies such as thin provisioning to control over allocation and leverage what was once unavailable capacities.
+
+OnCommand Insight provides near real time capacity usage and utilization details historically across multiple thin provisioned layers within the IT service stack. Failing to properly manage oversubscription risk could result in untimely downtime to the business.

@@ -1,0 +1,29 @@
+---
+permalink: howto/task_creating_a_query_to_identify_netapp_root_aggregates.html
+sidebar: sidebar
+keywords: 
+summary: 'Queries provide search at a granular level, based on user-selected criteria. Using a query allows you to search for Internal volumes in your environment that contain the NetApp root aggregate.'
+---
+= Creating a query to identify NetApp root aggregates in your environment
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Queries provide search at a granular level, based on user-selected criteria. Using a query allows you to search for Internal volumes in your environment that contain the NetApp root aggregate.
+
+== Steps
+
+. In the OnCommand Insight web UI, create a query to identify NetApp root aggregates in your environment: *Queries* > *New Query* > *Select Resource Type*
+. Click *Storage Pool*
+. Enter the name for the root aggregate
++
+This example uses "`aggr0`" for the name. When creating an aggregate, only the following requirements for the name must be followed:
+
+ ** It must begin with either a letter or an underscore (_).
+ ** It can contain only letters, digits, and underscores.
+ ** It can be 250 characters or less.
+In most cases the aggregate is name aggr0, aggr_0, or something similar. It might require an iterative process to identify all of the NetApp root aggregates in your environment.
+
+. Click *Save* and enter a name for the new query.
++
+As mentioned before, this might be an iterative process and require multiple queries to identify all of the NetApp root aggregates.

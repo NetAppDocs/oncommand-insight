@@ -1,0 +1,27 @@
+---
+permalink: config-admin/task_configuring_performance_policy_precedence.html
+sidebar: sidebar
+keywords: 
+summary: 'By default, Insight evaluates an object’s policies sequentially. You can configure the order in which Insight evaluates performance policies. For example, if you have a policy configured to stop processing when a violation occurs for Gold Tier storage, you can place that policy first in the list and avoid seeing more generic violations for the same storage asset.'
+---
+= Changing the precedence of a performance policy
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+By default, Insight evaluates an object's policies sequentially. You can configure the order in which Insight evaluates performance policies. For example, if you have a policy configured to stop processing when a violation occurs for Gold Tier storage, you can place that policy first in the list and avoid seeing more generic violations for the same storage asset.
+
+== Steps
+
+. Open Insight in your browser.
+. From the *Manage* menu, select *Performance Policies*.
++
+The Performance Policies page displays.
+
+. Hover your cursor over a policy name in an object type's performance policy list.
++
+The precedence arrows appear to the right of the policy.
+
+. To move a policy up in the list, click the up arrow; to move a policy down in the list, click the down arrow.
++
+By default, new policies are added sequentially to an object's list of policies.

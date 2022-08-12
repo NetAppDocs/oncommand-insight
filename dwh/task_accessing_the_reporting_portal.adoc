@@ -1,0 +1,17 @@
+---
+permalink: dwh/task_accessing_the_reporting_portal.html
+sidebar: sidebar
+keywords: 
+summary: 'From the Data Warehouse Portal, you can access the Reporting Portal, where you can create custom reports using report authoring tools such as Workspace Advanced and Report Studio.'
+---
+= Accessing the Reporting Portal
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+From the Data Warehouse Portal, you can access the Reporting Portal, where you can create custom reports using report authoring tools such as Workspace Advanced and Report Studio.
+
+== Steps
+
+. On the Data Warehouse toolbar, click image:../media/oci_reporting_portal_icon.gif[] to open the Insight Reporting Portal.
+. Enter your user name and password and click *Login*.

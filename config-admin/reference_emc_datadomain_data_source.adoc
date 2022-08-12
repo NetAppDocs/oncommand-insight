@@ -1,0 +1,95 @@
+---
+permalink: config-admin/reference_emc_datadomain_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'This data source collects storage and configuration information from EMC Data Domain deduplication storage systems. To add the data source, you must use specific configuration instructions and commands and be aware of data source requirements and usage recommendations.'
+---
+= EMC Data Domain data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This data source collects storage and configuration information from EMC Data Domain deduplication storage systems. To add the data source, you must use specific configuration instructions and commands and be aware of data source requirements and usage recommendations.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the EMC Data Domain data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Disk
+a|
+Disk
+a|
+Array
+a|
+Storage
+a|
+Port
+a|
+Port
+a|
+Filesys
+a|
+Internal Volume
+a|
+Mtree
+a|
+QTree
+a|
+Quota
+a|
+Quota
+a|
+NFS and CIFS share
+a|
+FileShare
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* IP address of the Data Domain device
+* Read-only user name and password to the Data Domain storage
+* SSH port 22
+
+== Configuration
+
+|===
+| Field| Description
+a|
+IP address
+a|
+The IP address or fully-qualified domain name of the Data Domain storage array
+a|
+User name
+a|
+The user name for the Data Domain storage array
+a|
+Password
+a|
+The password for the Data Domain storage array
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 20 minutes)
+a|
+SSH Process Wait Timeout (sec)
+a|
+SSH process timeout (default 180 seconds)
+a|
+SSH Port
+a|
+SSH service port
+|===

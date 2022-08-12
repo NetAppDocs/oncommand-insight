@@ -1,0 +1,30 @@
+---
+permalink: config-admin/task_managing_patches.html
+sidebar: sidebar
+keywords: 
+summary: 'You can review the current status of all of the data source patches being applied to your network. If you want to perform an action on a patch, you can click the linked name in the Patches currently under review table.'
+---
+= Managing patches
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can review the current status of all of the data source patches being applied to your network. If you want to perform an action on a patch, you can click the linked name in the Patches currently under review table.
+
+== Before you begin
+
+You must have already uploaded and be installing at least one patch.
+
+== Steps
+
+. On the Insight toolbar, click *Admin*.
+. Click *Patches*.
++
+If no patches are being installed, the table of Patches currently under review is empty.
+
+. In *Patches currently under review*, check the status of the data source patches currently being applied.
+. To examine the details associated with a specific patch, click the linked name of the patch.
+. For the selected patch, you might click any of these options to perform the next action on the patch:
+ ** *Approve patch* commits the patch to the data sources.
+ ** *Rollback* removes the patch.
+ ** *Replace patch* enables you to select a different patch for those data sources.

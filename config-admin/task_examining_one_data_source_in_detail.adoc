@@ -1,0 +1,40 @@
+---
+permalink: config-admin/task_examining_one_data_source_in_detail.html
+sidebar: sidebar
+keywords: 
+summary: 'If you see that a data source has failed or slowed, you might want to examine a detailed summary of information for that data source to determine the cause of the problem. Data sources with conditions requiring your attention are marked with a solid red circle.'
+---
+= Examining one data source in detail
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you see that a data source has failed or slowed, you might want to examine a detailed summary of information for that data source to determine the cause of the problem. Data sources with conditions requiring your attention are marked with a solid red circle.
+
+== Steps
+
+. On the Insight toolbar, click *Admin*.
++
+The *Data sources* list opens. Any listed data sources with potential problems are marked with a solid red circle. The most serious problems are at the top of the list.
+
+. Select the data source that is causing concern.
+. Click the data source name link.
+. On the data source summary page, check the information in any of these sections:
+ ** *Event timeline*
++
+Lists events tied to the current status shown in the Data sources list. Events in this summary are displayed per device. Errors are shown in red. You can position your mouse pointer on timeline items to display additional information.
+
+ ** *Devices reported by this data source*
++
+Lists the types of devices, their IP addresses, and links to more detailed information for each device.
+
+ ** *Changes reported by this data source (last 3 weeks)*
++
+Lists any devices that were added or removed or had a change to the configuration.
+. After examining the data source information, you might want to perform one of these operations using the buttons at the top of the page:
+ ** *Edit* the description of the data source to correct the problem.
+ ** *Poll again* forces polling to reveal if the problem was persistent or intermittent.
+ ** *Postpone* data source polling for 3, 7, or 30 days to give you time to research the problem and stop the warning messages.
+ ** *Install a patch* on the data source to correct the problem.
+ ** Prepare an *Error report* for technical support.
+ ** *Delete* the data source from your Insight monitoring environment.

@@ -1,0 +1,20 @@
+---
+permalink: install-linux/task_validating_the_rau_installation.html
+sidebar: sidebar
+keywords: 
+summary: 'To validate proper installation of the Remote Acquisition Unit, you can view the status of the Remote Acquisition Units connected to your server.'
+---
+= Validating the remote acquisition unit installation
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To validate proper installation of the Remote Acquisition Unit, you can view the status of the Remote Acquisition Units connected to your server.
+
+== Steps
+
+. On the Insight toolbar, click *Admin*.
+. Click *Acquisition Units*.
+. Verify that the new Remote Acquisition Unit was registered correctly and that it has a Connected status.
++
+If it does not, you must contact technical support.

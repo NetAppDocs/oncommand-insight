@@ -1,0 +1,39 @@
+---
+permalink: config-admin/reference_assets_used_in_queries_and_dashboards.html
+sidebar: sidebar
+keywords: queryable,Data Store,objects,custom landing page
+summary: 'Insight queries and dashboard widgets can be used with a wide range of asset types'
+---
+= Assets used in queries and dashboards
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Insight queries and dashboard widgets can be used with a wide range of asset types
+
+The following asset types can be used in queries, dashboard widgets, and custom asset pages. The fields and counters available for filters, expressions, and display will vary among asset types. Not all assets can be used in all widget types.
+
+* Application
+* Datastore
+* Disk
+* Fabric
+* Generic Device
+* Host
+* Internal Volume
+* iSCSI Session
+* iSCSI Network Portal
+* Path
+* Port
+* Qtree
+* Quota
+* Share
+* Storage
+* Storage Node
+* Storage Pool
+* Switch
+* Tape
+* VMDK
+* Virtual Machine
+* Volume
+* Zone
+* Zone Member

@@ -1,0 +1,18 @@
+---
+permalink: config-admin/reference_testing_the_data_source_configuration.html
+sidebar: sidebar
+keywords: 
+summary: 'When you are adding a data source, you can verify the correctness of configuration to communicate with the device before saving or updating that data source.'
+---
+= Testing the data source configuration
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When you are adding a data source, you can verify the correctness of configuration to communicate with the device before saving or updating that data source.
+
+When you click the *Test* button in the data source wizard, communication with the specified device is checked. The test produces one of these results:
+
+* PASSED: the data source is configured correctly.
+* WARNING: the testing was incomplete, probably due to timing out during processing or acquisition not running.
+* FAILED: the data source, as configured, cannot communicate with the specified device. Check your configuration settings and re-test.

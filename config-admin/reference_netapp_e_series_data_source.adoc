@@ -1,0 +1,78 @@
+---
+permalink: config-admin/reference_netapp_e_series_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'The NetApp E-Series data source collects inventory and performance information. There are two possible configurations \(firmware 6.x and firmware 7.x+\), and they both have the same values.'
+---
+= NetApp E-Series data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The NetApp E-Series data source collects inventory and performance information. There are two possible configurations (firmware 6.x and firmware 7.x+), and they both have the same values.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the NetApp E-Series data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Drive
+a|
+Disk
+a|
+Volume Group
+a|
+Disk Group
+a|
+Storage Array
+a|
+Storage
+a|
+Controller
+a|
+Storage Node
+a|
+Volume Group
+a|
+Storage Pool
+a|
+Volume
+a|
+Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* The IP address of each controller on the array
+* Port requirement 2463
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+Comma-separated list of Array SANtricity Controller IPs
+a|
+IP addresses and/or fully-qualified domain names for the array controllers
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 30 minutes)
+a|
+Performance Poll Interval (up to 3600 seconds)
+a|
+Interval between performance polls (default 300 seconds)
+|===

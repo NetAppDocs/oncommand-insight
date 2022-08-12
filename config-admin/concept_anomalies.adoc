@@ -1,0 +1,21 @@
+---
+permalink: config-admin/concept_anomalies.html
+sidebar: sidebar
+keywords: 
+summary: 'The Anomalies section, which displays only on an application asset page when the anomaly detection engine is installed, enables you to identify the normal operating workload range for an application and identify when changes in performance are outside of expected levels.'
+---
+= Anomalies
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Anomalies section, which displays only on an application asset page when the anomaly detection engine is installed, enables you to identify the normal operating workload range for an application and identify when changes in performance are outside of expected levels.
+
+Anomaly analysis provides proactive visibility into the infrastructure supporting business critical applications and informs you of performance anomalies before they become service disruptions. The application anomaly detection engine ingests performance metrics collected by Insight and identifies anomalies in the application infrastructure. Anomalies are items, events or observations that do not conform to an expected pattern or other items. You use anomaly detection to:
+
+* Monitor selected critical applications.
+* Identify significant changes in the application infrastructure behavior.
+* Track an application through the entire stack and across multiple counters.
+* Diagnose the cause of periodically recurring events in an application workload.
+* Provide a more comprehensive set of information compared to data from performance counters using static threshold values.
+* Improved reactive mode monitoring with end to end view of the topology and the ability to focus on the most anomalous behaviors in a data set.

@@ -1,0 +1,118 @@
+---
+permalink: config-admin/reference_emc_clariion_navicli_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'Before configuring this data source, make sure that the EMC Navisphere CLI is installed on the target device and on the Insight server. The Navisphere CLI version must match the firmware version on the controller. For performance data collection, statistics logging must be turned on.'
+---
+= EMC CLARiiON (NaviCLI) data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Before configuring this data source, make sure that the EMC Navisphere CLI is installed on the target device and on the Insight server. The Navisphere CLI version must match the firmware version on the controller. For performance data collection, statistics logging must be turned on.
+
+== NaviSphere Command Line Interface syntax
+
+----
+naviseccli.exe -h <IP address> -user <user> -password <password> -scope
+<scope,use 0 for global scope> -port <use 443 by default> command
+----
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the EMC CLARiiON data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Disk
+a|
+Disk
+a|
+Storage
+a|
+Storage
+a|
+Storage Processor
+a|
+Storage Node
+a|
+Thin Pool, RAID Group
+a|
+Storage Pool
+a|
+LUN
+a|
+Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* An IP address of each CLARiiON storage processor
+* Read-only Navisphere username and password to the CLARiiON arrays
+* NaviCLI must be installed on the Insight server/RAU
+* Access validation: Run NaviCLI from the Insight server to each array using the above username and password.
+* NaviCLI version should correspond with the newest FLARE code on your array
+* For performance, statistics logging must be turned on.
+* Port requirements: 80, 443
+
+== Configuration
+
+|===
+| Field| Description
+a|
+CLARiiON storage
+a|
+IP address or fully-qualified domain name of the CLARiiON Storage
+a|
+User Name
+a|
+Name used to log into the CLARiiON storage device.
+a|
+Password
+a|
+Password used to log into the CLARiiON storage device.
+a|
+CLI Path to navicli.exe path or naviseccli.exe path
+a|
+Full path to the `navicli.exe` OR `naviseccli.exe` executable
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 40 minutes)
+a|
+Use Secure Client (naviseccli)
+a|
+Select to use secure client (navseccli)
+a|
+Scope
+a|
+The secure client scope. The default is Global.
+a|
+CLARiiON CLI Port
+a|
+Port used for CLARiiON CLI
+a|
+Inventory External Process Timeout (sec)
+a|
+External process timeout (default 1800 seconds)
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+a|
+Performance External process timeout (sec)
+a|
+External process timeout (default 1800 seconds)
+|===

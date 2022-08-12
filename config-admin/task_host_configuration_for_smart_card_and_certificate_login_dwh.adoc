@@ -1,0 +1,64 @@
+---
+permalink: config-admin/task_host_configuration_for_smart_card_and_certificate_login_dwh.html
+sidebar: sidebar
+keywords: 
+summary: 'You must modify the OnCommand Insight Data Warehouse configuration to support Smart Card \(CAC\) and certificate logins.'
+---
+= Configuring Data Warehouse for Smart Card and certificate login
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must modify the OnCommand Insight Data Warehouse configuration to support Smart Card (CAC) and certificate logins.
+
+== Before you begin
+
+* LDAP must be enabled on the system.
+* The LDAP `User principal account name` attribute must match the LDAP field that contains a user's government ID number.
++
+The common name (CN) stored on government-issued CACs is normally in the following format: `first.last.ID`. For some LDAP fields, such as `sAMAccountName`, this format is too long. For these fields, OnCommand Insight extracts only the ID number from the CNs.
+
+[NOTE]
+====
+For the most up to date CAC and Certificate instructions, see the following Knowledgebase articles (Support login required):
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_configure_Common_Access_Card_(CAC)_authentication_for_NetApp_OnCommand_Insight[How to configure Common Access Card (CAC) authentication for OnCommand Insight]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_configure_Common_Access_Card_(CAC)_authentication_for_NetApp_OnCommand_Insight_DataWarehouse[How to configure Common Access Card (CAC) authentication for OnCommand Insight Data Warehouse]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_create_and_import_a_Certificate_Authority_(CA)_signed_certificate_into_OCI_and_DWH_7.3.X[How to create and import a Certificate Authority (CA) signed certificate into OnComand Insight and OnCommand Insight Data Warehouse 7.3.x]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_create_a_Self_Signed_Certificate_within_OnCommand_Insight_7.3.X_installed_on_a_Windows_Host[How to create a Self Signed Certificate within OnCommand Insight 7.3.X installed on a Windows Host]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_import_a_Cognos_Certificate_Authority_(CA)_signed_certificate_into_DWH_7.3.3_and_later[How to import a Cognos Certificate Authority (CA) signed certificate into OnCommand DataWarehouse 7.3.3 and later]
+
+====
+
+== Steps
+
+. Use regedit to modify registry values in `HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Apache Software Foundation\Procrun2.0\SANscreen Server\Parameters\Java`
+ .. Change the JVM_Option `-DclientAuth=false` to `-DclientAuth=true`.
+
++
+For Linux, modify the `clientAuth` parameter in `/opt/netapp/oci/scripts/wildfly.server`
+. Add certificate authorities (CAs) to the Data Warehouse trustore:
+ .. In a command window, go to `..\SANscreen\wildfly\standalone\configuration`.
+ .. Use the `keytool` utility to list the trusted CAs: `C:\Program Files\SANscreen\java64\bin\keytool.exe -list -keystore server.trustore -storepass changeit`
++
+The first word in each line indicates the CA alias.
+
+ .. If necessary, supply a CA certificate file, usually a `.pem` file. To include customer's CAs with Data Warehouse trusted CAs go to `..\SANscreen\wildfly\standalone\configuration` and use the `keytool` import command: `C:\Program Files\SANscreen\java64\bin\keytool.exe -importcert -keystore server.trustore -alias my_alias -file 'path/to/my.pem' -v -trustcacerts`
++
+my_alias is usually an alias that would easily identify the CA in the``keytool -list`` operation.
+. On the OnCommand Insight server, the `wildfly/standalone/configuration/standalone-full.xml` file needs to be modified by updating verify-client to "REQUESTED" in ``/subsystem=undertow/server=default-server/https-listener=default-https``to enable CAC. Log in to the Insight server and run the appropriate command:
++
+|===
+| OS| Script
+a|
+Windows
+a|
+<install dir>\SANscreen\wildfly\bin\enableCACforRemoteEJB.bat
+a|
+Linux
+a|
+/opt/netapp/oci/wildfly/bin/enableCACforRemoteEJB.sh
+|===
+After executing the script, wait until the reload of the wildfly server is complete before proceeding to the next step.
+
+. Restart the OnCommand Insight server.

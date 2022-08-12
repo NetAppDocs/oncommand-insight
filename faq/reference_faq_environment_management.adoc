@@ -1,0 +1,16 @@
+---
+permalink: faq/reference_faq_environment_management.html
+sidebar: sidebar
+keywords: 
+summary: 'This FAQ answers common questions about managing OnCommand Insight environments.'
+---
+= Managing your environment
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This FAQ answers common questions about managing OnCommand Insight environments.
+
+== Can I give access to OCI to a specific user, while restricting the view to only certain resources (ie. SVM and related volumes, VMs, servers)?
+
+OCI provides role-based access. For example, access to Reporting is controlled through OCI's Data Warehouse reporting. Reports can be scheduled, emailed as PDF, HTML or CSV, or to a file share or even a URL requiring the user to authenticate before viewing. User-based access is granted in the form of Admins, Users and Guests. Active directory/ldap support is also available.

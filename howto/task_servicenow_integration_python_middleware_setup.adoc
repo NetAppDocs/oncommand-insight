@@ -1,0 +1,36 @@
+---
+permalink: howto/task_servicenow_integration_python_middleware_setup.html
+sidebar: sidebar
+keywords: 
+summary: 'Now that Python and the necessary libraries are installed, you can configure the middleware connector to communicate with OnCommand Insight and ServiceNow.'
+---
+= Setup Python middleware
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Now that Python and the necessary libraries are installed, you can configure the middleware connector to communicate with OnCommand Insight and ServiceNow.
+
+== Steps
+
+. On the host or VM where you downloaded the connector software, open a cmd window as administrator and change to the `\OCI2SNOW\` folder.
+. You must initialize the script to generate an empty *config.ini* file. Run the following command: `oci_snow_sync.pyz init`
+. Open the **config.ini**file in a text editor and make the following changes in the [OCI] section:
+ ** Set *url* to `https://<name.domain>` or `https://<ip address>` for the Insight instance.
+ ** Set *user* and *password* to the Insight user created, for example, OCI2SNOW.
+ ** Set *include_off_vms* to *false*
+. In the [SNOW] section, make the following changes:
+ ** Set *Instance* to the FQDN or ip address for your ServiceNow instance
+ ** Set *User* and *Password* to the ServiceNow service account user, for example, the OCI2SNOW.
+ ** Under *Field for the OCI URL*, set the *url* field to "`u_oci_url`". This field is created as part of the connector OCI update set. You can change this in the customer environment, but if you do so, you need to modify it here and in ServiceNow. Best practice is to leave this field as is.
+ ** Set the *filter_status* field to "`Installed, In Stock`". If you have a status that is different, you must set that status here in order to get all the records to match with Insight records prior to upload of new records. In most cases this field should remain unchanged.
+ ** Set **stale_status**to "`Retired`".
+. The [Proxy] section is only required if you use a proxy server. If you need to use this section, ensure the following settings:
+ ** ;https = http://<host>:<port>
+ ** ;http = http://<host>:<port>
+ ** ;include_oci = True
+ ** ;include_snow = True
+. Edit the [Log] section only if you need deeper debug information.
+. To test the connector, open a cmd prompt as administrator and change to the \OCI2SNOW folder. Run the following command: `oci_snow_sync.pyz test`
++
+Details can be seen in the `logs\` folder.

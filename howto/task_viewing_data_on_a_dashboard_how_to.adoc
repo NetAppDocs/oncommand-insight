@@ -1,0 +1,51 @@
+---
+permalink: howto/task_viewing_data_on_a_dashboard_how_to.html
+sidebar: sidebar
+keywords: 
+summary: 'Now that you have your assets annotated and have configured performance policies to alert for violations, you can create dashboards to highlight specific data that you want to target.'
+---
+= Highlighting data using dashboards
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Now that you have your assets annotated and have configured performance policies to alert for violations, you can create dashboards to highlight specific data that you want to target.
+
+== About this task
+
+In this example we will provide a high-level view of dashboard creation by creating a dashboard with a single widget highlighting VM Performance data. You can add as many widgets as you need on a single dashboard, and you can create as many dashboards as you need. Widgets can be resized and moved as desired.
+
+More information on Dashboards and Widgets can be found throughout the OnCommand Insight documentation.
+
+== Steps
+
+. Log in to Insight as a user with administrative permissions.
+. From the *Dashboards* menu, select *+New dashboard*.
++
+The New dashboard page opens.
+
+. Best practice: Name and save your dashboard as soon as you create it. Click the *Save* button and enter a unique name for the dashboard in the *Name* field. For example "`VM Performance Dashboard`". Click *Save*.
+. If necessary, slide the *Edit* switch to "`On`" to enable Edit mode. This allows you to begin adding widgets to your dashboard.
+. Click the *+Widgets* button and select *Table* to add a new table widget to the dashboard.
++
+The Edit Widget dialog opens.
+
+. In the Name field, delete "`Widget 1`" and enter "`Virtual Machine Performance table`".
+. Click the asset type drop-down and change *Storage* to *Virtual Machine*.
++
+The table data changes to show all virtual machines in your environment.
+
+. To add additional columns to the table, click the *Columns*image:../media/column_picker_button.gif[] button and select the desired columns, for example__Data Center__, _Storage name_, and _Tier_.You can sort the table by any of these columns.
+. You can set filters as needed to highlight the data that is important to you for this dashboard, for example, you might choose to only show only virtual machines with "`Tier 1 - SSD`" annotation. Click the"` + `"button next to *Filter by* and select__Tier__. Click on *Any* and enter "`Tier 1 - SSD`". Click the image:../media/check_box_ok.gif[] button to save the filter.
++
+The table now shows only virtual machines in the "`SSD`" tier.
+
+. You can group results by clicking the"` + `" button next to *Group by* and selecting a field to group by, such as Data Center. Grouping is automatically applied to the table.
+. When you have customized the widget to your satisfaction, click the *Save* button.
++
+The table widget is saved to the dashboard.
+
+. You can resize the widget on the dashboard by dragging the lower-right corner.
+. To add more widgets, click the *+Widget* button. Each widget is added to the dashboard when it is saved.
+. When you have made all the changes desired, be sure to click *Save* to save the dashboard.
+. You can create additional dashboards to highlight different data.

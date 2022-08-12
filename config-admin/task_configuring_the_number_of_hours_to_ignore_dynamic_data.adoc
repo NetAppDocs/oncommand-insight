@@ -1,0 +1,62 @@
+---
+permalink: config-admin/task_configuring_the_number_of_hours_to_ignore_dynamic_data.html
+sidebar: sidebar
+keywords: 
+summary: 'You can configure the number of hours during which OnCommand Insight ignores updating dynamic data, such as used capacity. If the default of six hours is used and no configuration changes occur, reports will not be updated with dynamic data until after the default number of hours. This option improves performance because this option defers updates when only the dynamic data changes.'
+---
+= Configuring the number of hours to ignore dynamic data
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can configure the number of hours during which OnCommand Insight ignores updating dynamic data, such as used capacity. If the default of six hours is used and no configuration changes occur, reports will not be updated with dynamic data until after the default number of hours. This option improves performance because this option defers updates when only the dynamic data changes.
+
+== About this task
+
+If a value is set for this option, OnCommand Insight will update dynamic data based on the following rules:
+
+* If no configuration changes occur but capacity data changes, data will not be updated.
+* Dynamic data (other than configuration changes) will be updated only after the timeout specified in this option.
+* If configuration changes occur, configuration and dynamic data is updated.
+
+Dynamic data impacted by this option includes the following:
+
+* Capacity violation data
+* File Systems Allocated Capacity and Used Capacity
+* Hypervisor
+ ** Virtual Disk Used Capacity
+ ** Virtual Machine Used Capacity
+* Internal Volume
+ ** Data Allocated Capacity
+ ** Data Used Capacity
+ ** Deduplication Savings
+ ** Last Known Access Time
+ ** Last Snapshot Time
+ ** Other Used Capacity
+ ** Snapshot Count
+ ** Snapshot Used Capacity
+ ** Total Used Capacity
+* iSCSI Session Initiator IPs, Target Session ID, and Initiator Session ID
+* Qtree Quota Used Capacity
+* Quota Used Files and Used Capacity
+* Storage Efficiency Technology, Gain/Loss, and Potential Gain/Loss
+* Storage Pool
+ ** Data Used Capacity
+ ** Deduplication Savings
+ ** Other Used Capacity
+ ** Snapshot Used Capacity
+ ** Total Used Capacity
+* Volume
+ ** Deduplication Savings
+ ** Last Known Access Time
+ ** Used Capacity
+
+== Steps
+
+. On the Insight toolbar, click *Admin* and select *Troubleshooting*.
+. At the bottom of the page in the Other tasks area, click the *Advanced Troubleshooting* link.
+. Click the *Advanced settings* tab, in the Acquisition Dynamic Attributes section enter the number of hours that OnCommand Insight should ignore dynamic data for Acquisition Dynamic Attributes.
+. Click *Save*.
+. (Optional) To restart the acquisition unit, click the *Restart Acquisition Unit* link.
++
+Restating the local acquisition unit reloads all of the OnCommand Insight data source views. This change is applied during the next poll, so you do not have to restart the Acquisition Unit.

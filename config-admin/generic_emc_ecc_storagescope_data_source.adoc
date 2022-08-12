@@ -1,0 +1,57 @@
+---
+permalink: config-admin/generic_emc_ecc_storagescope_data_source.html
+sidebar: sidebar
+keywords: 
+summary: 'The EMC ECC StorageScope device has three types of data sources: 5.x, 6.0, and 6.1.'
+---
+= EMC ECC StorageScope data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The EMC ECC StorageScope device has three types of data sources: 5.x, 6.0, and 6.1.
+
+== Configuration
+
+[NOTE]
+====
+This data collector is no longer available starting with OnCommand Insight 7.3.11.
+====
+
+|===
+| *Field*| *Description*
+a|
+ECC server
+a|
+IP address or fully-qualified domain name of the ECC Server
+a|
+User Name
+a|
+User name for the ECC server
+a|
+Password
+a|
+Password r the ECC server
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+ECC Port
+a|
+Port used for the ECC server
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 30 minutes)
+a|
+Protocol to Connect to Database
+a|
+Protocol Used to Connect to the Database
+a|
+Query File System Information
+a|
+Select to retrieve details for WWN Aliases and File Systems.
+|===

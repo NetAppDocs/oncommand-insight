@@ -1,0 +1,23 @@
+---
+permalink: howto/task_configuring_performance_and_assurance_violation_notifications.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight supports notifications for performance and assure violations. By default, Insight does not send notifications for these violations; you must configure Insight to send email, to send syslog messages to the syslog server, or to send SNMP notifications when a violation occurs.'
+---
+= Configuring performance and assure violation notifications
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight supports notifications for performance and assure violations. By default, Insight does not send notifications for these violations; you must configure Insight to send email, to send syslog messages to the syslog server, or to send SNMP notifications when a violation occurs.
+
+== Before you begin
+
+You must have configured email, syslog, and SNMP sending methods for violations.
+
+== Steps
+
+. Click *Admin* > *Notifications*.
+. Click *Events*.
+. In the *Performance Violations events* or *Assure Violations events* section, click the list for the notification method (*Email*, *Syslog*, or *SNMP*) you want, and select the severity level (*Warning and above* or *Critical*) for the violation.
+. Click *Save*.

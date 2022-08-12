@@ -1,0 +1,26 @@
+---
+permalink: howto/concept_assigning_annotations_to_assets.html
+sidebar: sidebar
+keywords: 
+summary: 'This guide describes how to create and customize annotations for your environment that can be used for querying, filtering, alert notifications and reporting.'
+---
+= Creating annotations for your enterprise
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This guide describes how to create and customize annotations for your environment that can be used for querying, filtering, alert notifications and reporting.
+
+An annotation is a note or tag that you associate with specific assets in your environment. OnCommand Insight provides several annotations that you can configure for your assets as needed, or you can create your own custom annotations based on your business needs.
+
+The examples that follow are those that are typically configured first in new customer environments, to serve as a baseline for additional actions. Your own annotation needs may vary, but the steps described herein can be used as a guide to configuring any annotations you may need on the assets you desire.
+
+This guide is based on the following assumptions:
+
+* You have OnCommand Insight Server installed and properly licensed.
+* You want to explore best practices, not every available option.
+* You understand that these are examples only and that your specific needs may vary.
+
+This guide walks you through modifying existing annotations as well as creating custom ones
+
+In our example environment, we wish to be able to list assets according to Data Center, Tier, Service Level and Environment.

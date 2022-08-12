@@ -1,0 +1,36 @@
+---
+permalink: install-windows/task_opening_insight.html
+sidebar: sidebar
+keywords: 
+summary: 'After you install OnCommand Insight, you must install your licenses and then set up Insight to monitor your environment. To do this, you use a web browser to access the Insight web UI.'
+---
+= Accessing the web UI
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After you install OnCommand Insight, you must install your licenses and then set up Insight to monitor your environment. To do this, you use a web browser to access the Insight web UI.
+
+== Steps
+
+. Do one of the following:
+ ** Open Insight on the Insight server:
++
+`+https://fqdn+`
+
+ ** Open Insight from any other location:
++
+`+https://fqdn:port+`
++
+The port number is either 443 or another port configured when the Insight server was installed. The port number defaults to 443 if you do not specify it in the URL.
+
++
+The OnCommand Insight dialog box displays:image:../media/oci_login_dialog_box.gif[]
+. Enter your user name and password and click *Login*.
++
+If the licenses have been installed, the data source setup page displays.
++
+[NOTE]
+====
+An Insight browser session that is inactive for 30 minutes is timed out and you are automatically logged out of the system. For added security, it is recommended to close your browser after logging out of Insight.
+====

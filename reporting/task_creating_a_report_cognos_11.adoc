@@ -1,0 +1,54 @@
+---
+permalink: reporting/task_creating_a_report_cognos_11.html
+sidebar: sidebar
+keywords: 
+summary: 'Creating reports with Cognos 11 differs from previous versions of Cognos. Use this procedure to create a report using the pre-defined OnCommand Insight reports.'
+---
+= Creating a report using Cognos 11
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Creating reports with Cognos 11 differs from previous versions of Cognos. Use this procedure to create a report using the pre-defined OnCommand Insight reports.
+
+== About this task
+
+Use the following steps to generate a simple report on physical capacity of storage and storage pools in a number of data centers.
+
+== Steps
+
+. In the toolbar, click image:../media/new_report.gif[]
+. Click *Report*
+. Click *Templates* > *Blank*
+. Click *Themes* > *Cool Blue* > *OK*
++
+The Source and Data tabs is displayed
+
+. Click *Source* > *image:../media/new_report.gif[]*
+. In the Open file dialog, click *Team content* > *Packages*
++
+A list of available packages is displayed.
+
+. Click *Storage and Storage Pool Capacity* > *Open*
+. Click image:../media/new_report.gif[]
++
+The available styles for your report are displayed.
+
+. Click *List*
++
+Add appropriate names for List and Query
+
+. Click *OK*
+. Expand *Physical Capacity*
+. Expand to the lowest level of *Data Center*
+. Drag image:../media/data_center.gif[] to the Reporting palate.
+. Expand *Capacity (MB)*
+. Drag *Capacity (MB)* to the Reporting palate.
+. Drag *Used Capacity (MB)* to the Reporting palate.
+. Run the report, by clicking image:../media/run_report.gif[] and selecting an output type.
+
+== Results
+
+A report similar to the following is created:
+
+image::../media/cognos_11_report.gif[]

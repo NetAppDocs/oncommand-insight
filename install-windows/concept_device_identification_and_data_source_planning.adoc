@@ -1,0 +1,28 @@
+---
+permalink: install-windows/concept_device_identification_and_data_source_planning.html
+sidebar: sidebar
+keywords: 
+summary: 'As part of your deployment planning, you should collect information about the devices in your environment.'
+---
+= Device identification and data source planning
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+As part of your deployment planning, you should collect information about the devices in your environment.
+
+You need the following software, connectivity, and information about each device in your environment:
+
+* IP address or hostname resolvable by the OCI server
+* Login name and password
+* Type of access to the device, for example, controller and management station
++
+[NOTE]
+====
+Read-only access will be sufficient for most devices, but some devices require administrator permissions.
+====
+
+* Port connectivity to the device depending on data source port requirements
+* For switches, SNMP read-only community string (user ID or password to give access to the switches)
+* Any third-party software required on the device, for example, Solutions Enabler.
+* See the "Vendor-specific data source reference" in the web UI Help or in the _OnCommand Insight Configuration and Administration Guide_ for more information on data source permissions and requirements.

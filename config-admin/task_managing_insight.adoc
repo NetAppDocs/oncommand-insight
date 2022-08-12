@@ -1,0 +1,34 @@
+---
+permalink: config-admin/task_managing_insight.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight monitors your environment, enabling you to research potential problems before a crisis is reported. The Assets Dashboard provides summary pie charts, heat maps for IOPS, and an interactive chart of the top 10 utilized storage pools.'
+---
+= Managing Insight
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight monitors your environment, enabling you to research potential problems before a crisis is reported. The Assets Dashboard provides summary pie charts, heat maps for IOPS, and an interactive chart of the top 10 utilized storage pools.
+
+== Steps
+
+. Open the Insight**Assets Dashboard** and move your cursor over the pie charts to examine the asset distribution in these three charts:
+ ** Capacity by Vendor shows the total raw capacity for storage by each vendor.
+ ** Capacity by Tier shows the total useable capacity for each storage tier.
+ ** Switch Ports pie chart shows the manufacturers of ports and shows the percentage of ports used.
+. View *Facts About Your Environment* to see information about your environment's used capacity, the capacity's efficiency, consumed FC resources, and virtual infrastructure statistics.
+. Position your cursor over a storage pool bar in the *Top 10 Utilized Pools* chart to view the used and unused capacity of the storage pool.
+. Click any asset name appearing in large text (which indicates that the asset has issues) in the *Storage IOP* heat map to display a page summarizing the current state of that asset.
+. In the lower right corner of the *Assets Dashboard*, click any asset name appearing in large text (which indicates the asset has issues) in the *Virtual Machine IOPS* heat map to display a page summarizing the current state of the asset.
+. On the Insight toolbar, click *Admin*.
+. Note any areas showing solid red circles.
++
+In the OnCommand Insightweb UI, potential problems are marked with a solid red circle.
+
+. Click *Data Sources* to examine a list of all monitored data sources.
++
+Examine any data source with a *Status* column containing a message with a solid red circle and with an *Impact* listed as High or Medium. These are at the top of the table. The problems with those data sources affect a significant portion of your network, which you need to address.
+
+. Click *Acquisition Units* to note the status for each IP address running Insight and to restart an acquisition unit, if necessary
+. Click *Health* to see high-level instance monitoring of the Insight servers.

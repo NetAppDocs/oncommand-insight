@@ -1,0 +1,22 @@
+---
+permalink: config-admin/task_editing_data_source_information.html
+sidebar: sidebar
+keywords: 
+summary: 'You can quickly edit data source setup information.'
+---
+= Editing data source information
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can quickly edit data source setup information.
+
+== Steps
+
+. Click *Admin* and navigate to the data source list view
+. Locate the data source that you want to edit.
+. Use one of these methods to begin the changes:
+ ** Click *Edit data source* to the right of the selected data source.
+ ** Click the linked name of the selected data source and click *Edit*.
+Either method opens the Edit data source dialog box.
+. Make the desired changes and Click *Save*.

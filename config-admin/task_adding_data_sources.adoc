@@ -1,0 +1,52 @@
+---
+permalink: config-admin/task_adding_data_sources.html
+sidebar: sidebar
+keywords: 
+summary: 'You can add data sources quickly, using the Add data source dialog box.'
+---
+= Adding data sources
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can add data sources quickly, using the Add data source dialog box.
+
+== Steps
+
+. Open OnCommand Insight in your browser and log in as a user with administrative permissions.
+. Select *Admin* and choose *Data sources*.
+. Click the *+Add* button.
++
+The Add data source wizard opens.
+
+. In the *Settings* section, enter the following information:
++
+|===
+| Field| Description
+a|
+Name
+a|
+Enter a unique network name for this data source.     NOTE: only letters, numbers and the underscore (_) character are allowed in the data source name.
+a|
+Vendor
+a|
+Choose the vendor of the data source from the drop-down.
+a|
+Model
+a|
+Choose the model of the data source from the drop-down.
+a|
+Where to run
+a|
+Choose Local, or you may choose a remote acquisition unit if RAU's are configured in your environment.
+a|
+What to collect
+a|
+For most data sources, these options will be Inventory and Performance. Inventory is always selected by default and cannot be un-selected. Note that some data sources may have different options. The collection options you select change the available fields in the Configuration and Advanced configuration sections.
+|===
+
+. Click the *Configuration* link and enter the basic setup information required for the data source with your selected data collection type.
+. If this type of data source usually requires more detailed information to set it up in your network, click the *Advanced configuration* link to enter additional information.
+. For details about configuration or advanced configuration information required or available for your specific data source, see the link:reference_vendor_specific_data_source_reference.md#[Vendor-specific data source reference].
+. Click the *Test* link to be certain that the data source is properly configured.
+. Click *Save*.
