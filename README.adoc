@@ -1,0 +1,9 @@
+---
+permalink: README.html
+sidebar: sidebar
+keywords: 
+summary: ''
+---
+= oncommand-insight-internal
+:icons: font
+:imagesdir: ../media/
