@@ -1,0 +1,85 @@
+---
+permalink: config-admin/importing-ca-signed-ssl-certificates-for-cognos-and-dwh-insight-7-3-10-and-later.html
+sidebar: sidebar
+keywords: CAC,Cognos 11,SSL certificates
+summary: 'You can add SSL certificates to enable enhanced authentication and encryption for your Data Warehouse and Cognos environment.'
+---
+= Importing CA-signed SSL certificates for Cognos and DWH (Insight 7.3.10 and later)
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can add SSL certificates to enable enhanced authentication and encryption for your Data Warehouse and Cognos environment.
+
+== Before you begin
+
+This procedure is for systems running OnCommand Insight 7.3.10 and later.
+
+[NOTE]
+====
+For the most up to date CAC and Certificate instructions, see the following Knowledgebase articles (Support login required):
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_configure_Common_Access_Card_(CAC)_authentication_for_NetApp_OnCommand_Insight[How to configure Common Access Card (CAC) authentication for OnCommand Insight]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_configure_Common_Access_Card_(CAC)_authentication_for_NetApp_OnCommand_Insight_DataWarehouse[How to configure Common Access Card (CAC) authentication for OnCommand Insight Data Warehouse]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_create_and_import_a_Certificate_Authority_(CA)_signed_certificate_into_OCI_and_DWH_7.3.X[How to create and import a Certificate Authority (CA) signed certificate into OnComand Insight and OnCommand Insight Data Warehouse 7.3.x]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_create_a_Self_Signed_Certificate_within_OnCommand_Insight_7.3.X_installed_on_a_Windows_Host[How to create a Self Signed Certificate within OnCommand Insight 7.3.X installed on a Windows Host]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_import_a_Cognos_Certificate_Authority_(CA)_signed_certificate_into_DWH_7.3.3_and_later[How to import a Cognos Certificate Authority (CA) signed certificate into OnCommand DataWarehouse 7.3.3 and later]
+
+====
+
+== About this task
+
+You must have admin privileges to perform this procedure.
+
+== Steps
+
+. Stop Cognos using the IBM Cognos Configuration tool. Close Cognos.
+. Create backups of the `..\SANScreen\cognos\analytics\configuration` and `..\SANScreen\cognos\analytics\temp\cam\freshness` folders.
+. Generate a Certificate Encryption Request from Cognos. In an Admin CMD window, run:
+ .. cd `“\Program Files\sanscreen\cognos\analytics\bin”`
+ .. `ThirdPartyCertificateTool.bat -java:local -c -e -p NoPassWordSet -a RSA -r c:\temp\encryptRequest.csr -d “CN=server.domain.com,O=NETAPP,C=US” -H “server.domain.com” -I “ipaddress”`. Note: here -H and -I are to add subjectAltNames like dns and ipaddress.
+. Open the `c:\temp\encryptRequest.csr` file and copy the generated content.
+. Input the encryptRequest.csr content and generate certificate using CA signing portal.
+. Download the chain certificates by including root certificate by using PKCS7 format
++
+This will download fqdn.p7b file
+
+. Get a cert in .p7b format from your CA. Use a name that marks it as the certificate for the Cognos Webserver.
+. ThirdPartyCertificateTool.bat fails to import the entire chain, so multiple steps are required to export all certificates. Split the chain by exporting them individually as follows:
+ .. Open the .p7b certificate in "`Crypto Shell Extensions`".
+ .. Browse in the left pane to "`Certificates`".
+ .. Right-click on root CA > All Tasks > Export.
+ .. Select Base64 output.
+ .. Enter a file name identifying it as the root certificate.
+ .. Repeat steps 8a through 8e to export all of the certificates separately into .cer files.
+ .. Name the files intermediateX.cer and cognos.cer.
+. Ignore this step if you have only one CA certificate, otherwise merge both root.cer and intermediateX.cer into one file.
+ .. Open root.cer with NotePad and copy the content.
+ .. Open intermediate.cer with NotePad and append the content from 9a (intermediate first and root next).
+ .. Save the file as chain.cer.
+. Import the certificates into the Cognos keystore using the Admin CMD prompt:
+ .. cd "`Program Files\sanscreen\cognos\analytics\bin`"
+ .. ThirdPartyCertificateTool.bat -java:local -i -T -r c:\temp\root.cer
+ .. ThirdPartyCertificateTool.bat -java:local -i -T -r c:\temp\intermediate.cer
+ .. ThirdPartyCertificateTool.bat -java:local -i -e -r c:\temp\cognos.cer -t c:\temp\chain.cer
+. Open the IBM Cognos Configuration.
+ .. Select Local Configuration--> Security --> Cryptography --> Cognos
+ .. Change "`Use third party CA?`" to True.
+ .. Save the configuration.
+ .. Restart Cognos
+. Export the latest Cognos certificate into cognos.crt using the Admin CMD prompt:
+ .. cd "`C:\Program Files\SANscreen"
+ .. java\bin\keytool.exe -exportcert -file c:\temp\cognos.crt -keystore cognos\analytics\configuration\certs\CAMKeystore -storetype PKCS12 -storepass NoPassWordSet -alias encryption
+. Back up the DWH server trustore at``..\SANscreen\wildfly\standalone\configuration\server.trustore``
+. Import the "`c:\temp\cognos.crt`" into DWH trustore to establish SSL communication between Cognos and DWH, using the Admin CMD prompt window.
+ .. cd "`C:\Program Files\SANscreen"
+ .. java\bin\keytool.exe -importcert -file c:\temp\cognos.crt -keystore wildfly\standalone\configuration\server.trustore -storepass changeit -alias cognos3rdca
+. Restart the SANscreen service.
+. Perform a backup of DWH to make sure DWH communicates with Cognos.
+. The following steps should be performed even when only the "`ssl certificate`" is changed and the default Cognos certificates are left unchanged. Otherwise Cognos may complain about the new SANscreen certificate or be unable to create a DWH backup.
+ .. `cd “%SANSCREEN_HOME%cognos\analytics\bin\”`
+ .. `“%SANSCREEN_HOME%java64\bin\keytool.exe” -exportcert -file “c:\temp\sanscreen.cer” -keystore “%SANSCREEN_HOME%wildfly\standalone\configuration\server.keystore” -storepass changeit -alias “ssl certificate”`
+ .. `ThirdPartyCertificateTool.bat -java:local -i -T -r “c:\temp\sanscreen.cer”`
+
++
+Typically, these steps are performed as part of the Cognos certificate import process described in https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_import_a_Cognos_Certificate_Authority_(CA)_signed_certificate_into_DWH_7.3.3_and_later[How to import a Cognos Certificate Authority (CA) signed certificate into OnCommand DataWarehouse 7.3.3 and later]

@@ -1,0 +1,12 @@
+---
+permalink: dwh/advanced-options.html
+sidebar: sidebar
+keywords: 
+summary: 'Data Warehouse includes various advanced options.'
+---
+= Advanced options
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Data Warehouse includes various advanced options.

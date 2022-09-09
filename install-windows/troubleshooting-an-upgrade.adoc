@@ -1,0 +1,32 @@
+---
+permalink: install-windows/troubleshooting-an-upgrade.html
+sidebar: sidebar
+keywords: 
+summary: 'If you encounter issues after an OnCommand Insight upgrade, you might find it helpful to review the troubleshooting information related to some possible issues.'
+---
+= Troubleshooting an upgrade
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you encounter issues after an OnCommand Insight upgrade, you might find it helpful to review the troubleshooting information related to some possible issues.
+
+== Unable to start Cognos from the Windows Start menu
+
+The existence of a space before `\SANscreen\cognos` in the path name is an issue. See the following in the NetApp Customer Success Community for more information: https://forums.netapp.com/thread/62721.
+
+== "`Not a valid win32 application`" error message
+
+This is an issue with Microsoft Windows. To resolve this issue, you must put quotation marks around the image path in the registry. See the following documentation for more information: https://support.microsoft.com/en-us/kb/812486/en-us.
+
+== Annotations are not present
+
+When a Data Warehouse ETL job queries for annotations from an Insight instance, it sometimes receives an empty response (a 0 result) in error. This error results in annotations for certain objects moving back and forth between a "`present`" and "`not present`" state in Data Warehouse. See the following for more information: https://forums.netapp.com/docs/DOC-44167
+
+== Differences in values displayed in reports
+
+Prior to 7.0, reports were integer-based. They are now decimal-based; therefore, after you upgrade, you may notice a increase or decrease in how the values display.
+
+== Data does not display in reports
+
+In 7.0.1, several model names were changed (for example, Symmetrix was changed to Symmetrix VMAX). As a result, if a report contains a filter for "`Symmetrix`", you will not see any data when you run the report. To change the report, you must open the report with Query Explorer in Report Studio, search for the model name, replace it with the new model name, and save the report.

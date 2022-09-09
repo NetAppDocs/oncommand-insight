@@ -1,0 +1,18 @@
+---
+permalink: dwh/canceling-a-build-from-history-job.html
+sidebar: sidebar
+keywords: 
+summary: 'You can cancel all planned jobs. The job status becomes “Aborted”.'
+---
+= Canceling a build from history job
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can cancel all planned jobs. The job status becomes "`Aborted`".
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *Build from History*.
+. Click *Cancel*.

@@ -1,0 +1,27 @@
+---
+permalink: reporting/copying-a-report-to-the-clipboard.html
+sidebar: sidebar
+keywords: 
+summary: 'Use this process to copy a report to the clipboard.'
+---
+= Copying a report to the clipboard
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Use this process to copy a report to the clipboard.
+
+== Steps
+
+. Open the Cognos 11 Reporting Portal: https://server-name:9300/bi/
+. In the toolbar, click image:../media/new-report.gif[]
+. Click *Report*
+. Click the *Pages* iconimage:../media/pages-icon.gif[]
++
+The *Report* icon image:../media/report-icon.gif[] is displayed
+
+. Left click the *Report* icon
++
+Report options are displayed.
+
+. Click *Copy Report to Clipboard*.

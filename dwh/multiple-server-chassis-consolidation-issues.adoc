@@ -1,0 +1,12 @@
+---
+permalink: dwh/multiple-server-chassis-consolidation-issues.html
+sidebar: sidebar
+keywords: 
+summary: 'You can view the connectors that report on hosts and adapters and SAN switches and storage arrays. You can also see the various connectors that report on an object and identify the primary connector, which is the connector that was chosen for the object.'
+---
+= Multiple server chassis consolidation issues
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can view the connectors that report on hosts and adapters and SAN switches and storage arrays. You can also see the various connectors that report on an object and identify the primary connector, which is the connector that was chosen for the object.

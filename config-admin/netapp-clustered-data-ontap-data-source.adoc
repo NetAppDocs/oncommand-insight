@@ -1,0 +1,93 @@
+---
+permalink: config-admin/netapp-clustered-data-ontap-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'This data source should be used for storage systems using Clustered Data ONTAP, and requires an administrator account used for read-only API calls.'
+---
+= NetApp Clustered Data ONTAP data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This data source should be used for storage systems using Clustered Data ONTAP, and requires an administrator account used for read-only API calls.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the Clustered Data ONTAP data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Disk
+a|
+Disk
+a|
+Raid Group
+a|
+Disk Group
+a|
+Cluster
+a|
+Storage
+a|
+Node
+a|
+Storage Node
+a|
+Aggregate
+a|
+Storage Pool
+a|
+LUN
+a|
+Volume
+a|
+Volume
+a|
+Internal Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* Administrator account used for read-only API calls
+* Target IP is the cluster management LIF
+* Username (with read-only role name to ontapi application to the default Vserver) and password to log into NetApp cluster
+* Port requirements: 80 or 443
+* License requirements: FCP license and mapped/masked volumes required for discovery
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+NetApp Management IP
+a|
+IP address or fully-qualified domain name of the NetApp cluster
+a|
+User Name
+a|
+User name for the NetApp cluster
+a|
+Password
+a|
+Password for the NetApp cluster
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 20 minutes)
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+|===

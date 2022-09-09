@@ -1,0 +1,25 @@
+---
+permalink: howto/create-an-annotation-for-the-root-volumes-returned-by-your-queries.html
+sidebar: sidebar
+keywords: 
+summary: 'Annotations are specialized notes that you assign to your assets, allowing you to filter assets by their annotations. The annotation you create will be used to identify the NetApp root aggregates in your environment and ensure that they are not included in a specific report.'
+---
+= Create an annotation for the root volumes returned by your queries
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Annotations are specialized notes that you assign to your assets, allowing you to filter assets by their annotations. The annotation you create will be used to identify the NetApp root aggregates in your environment and ensure that they are not included in a specific report.
+
+== Before you begin
+
+You must have identified all of the root aggregates you want to exclude from the "`High I/O Density`" report.
+
+== Steps
+
+. Create an annotation to associate all of the NetApp root aggregates you identified with queries: *Manage* > *Annotations*
+. Click *Add*
+ .. Enter the name for the annotation: *RootAggr*
+ .. Enter a description of the annotation: *Remove root aggregate from "High I/O Density" report*
+ .. Enter the type of annotation: *Boolean*
+. Click *Save*

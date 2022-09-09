@@ -1,0 +1,20 @@
+---
+permalink: howto/introduction-to-root-volume-isolation.html
+sidebar: sidebar
+keywords: 
+summary: 'In NetApp storage systems the root aggregate contains the root volume. The root volume contains special directories and configuration files for managing and controlling the storage system. The management and control operations might result a large amount of activity in the root aggregate. When you query the Insight system for the top 10 internal volumes with the highest IO density, your results might include NetApp root aggregates as members of the top 10.'
+---
+= Ensuring IO density reports describe only internal data volumes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+In NetApp storage systems the root aggregate contains the root volume. The root volume contains special directories and configuration files for managing and controlling the storage system. The management and control operations might result a large amount of activity in the root aggregate. When you query the Insight system for the top 10 internal volumes with the highest IO density, your results might include NetApp root aggregates as members of the top 10.
+
+When monitoring your environment it is more important to determine which internal data volumes are producing high I/O density numbers. In order to accurately identify only the data volumes, you need to isolate the NetApp internal volumes from queries you use to monitor I/O density.
+
+This guide describes how to easily identify the NetApp root aggregates, isolate them from the results of internal volume queries, and create rules that exclude any new NetApp root aggregates as they are added to the system. The following Insight features are used to insure that your I/O density reports are derived from internal data volumes.
+
+* A query is created to identify all of the NetApp root aggregates that are monitored by Insight.
+* An annotation is assigned to each of the NetApp root aggregates.
+* An annotation rule is created to exclude the NetApp aggregates

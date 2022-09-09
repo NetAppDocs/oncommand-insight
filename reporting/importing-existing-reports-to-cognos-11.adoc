@@ -1,0 +1,31 @@
+---
+permalink: reporting/importing-existing-reports-to-cognos-11.html
+sidebar: sidebar
+keywords: 
+summary: 'You can open a report specification that was previously copied to the clipboard.'
+---
+= Opening reports (xml) from the clipboard
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can open a report specification that was previously copied to the clipboard.
+
+== About this task
+
+You enter the Reporting user interface by creating a new report or opening an existing report
+
+== Steps
+
+. Open the Cognos 11 Reporting Portal: https://server-name:9300/bi/
+. In the toolbar, click image:../media/new-report.gif[]
+. Click *Report*
+. Click the *Pages* iconimage:../media/pages-icon.gif[]
++
+The *Report* icon image:../media/report-icon.gif[] is displayed
+
+. Left click the *Report* icon
++
+Report options are displayed.
+
+. Click *Open report from clipboard*.

@@ -1,0 +1,30 @@
+---
+permalink: install-linux/uninstalling-insight.html
+sidebar: sidebar
+keywords: 
+summary: 'You can uninstall the OnCommand Insight server if needed.'
+---
+= Uninstalling the OnCommand Insight Server
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can uninstall the OnCommand Insight server if needed.
+
+== Before you begin
+
+Best practice: before uninstalling Insight, back up the OnCommand Insight database.
+
+== Steps
+
+. Log in to the OnCommand Insight server using an account with sudo privileges.
+. Ensure that any OnCommand Insight windows are closed.
+. You can view syntax, command arguments, and parameter usage for `oci-uninstall.sh` by entering the following command:
++
+`sudo /usr/bin/oci-uninstall.sh --help`
++
+A normal uninstall does not remove the Insight license or any daily backups. To remove the entire installation, use the `--purge` optioon with the``oci-install.sh`` command.
+
+. Type the following command:
++
+`sudo /usr/bin/oci-uninstall.sh`

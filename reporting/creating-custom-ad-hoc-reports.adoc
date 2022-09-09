@@ -1,0 +1,18 @@
+---
+permalink: reporting/creating-custom-ad-hoc-reports.html
+sidebar: sidebar
+keywords: 
+summary: 'You can use the report authoring tools to create custom reports. After creating reports, you can save them and run them on a regular schedule. The results of reports can be automatically sent by email to yourself and others.'
+---
+= Creating custom ad hoc reports
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use the report authoring tools to create custom reports. After creating reports, you can save them and run them on a regular schedule. The results of reports can be automatically sent by email to yourself and others.
+
+The examples in this section show the following process, which can be used for any of the OnCommand Insight data models:
+
+* Identifying a question to be answered with a report
+* Determining the data needed to support the results
+* Selecting data elements for the report

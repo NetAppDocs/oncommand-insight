@@ -1,0 +1,47 @@
+---
+permalink: config-admin/what-s-included-in-the-backup.html
+sidebar: sidebar
+keywords: 
+summary: 'Weekly and on-demand backups can be used for troubleshooting or migration.'
+---
+= What's included in the backup
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Weekly and on-demand backups can be used for troubleshooting or migration.
+
+The weekly or on-demand backup includes the following:
+
+* Inventory data
+* Performance data (if selected for inclusion in backup)
+* Data sources and data source settings
+* Integration packs
+* Remote acquisition units
+* Ethernet monitoring units
+* ASUP/proxy settings
+* Backup location settings
+* Archive location settings
+* Notification settings
+* Anomaly detection scores and devices
+* Anomaly detection application settings
+* Users
+* Performance policies
+* Business entities and applications
+* Device resolution rules and settings
+* Dashboards and widgets
+* Customized asset page dashboards and widgets
+* Queries
+* Annotations and annotation rules
+
+The weekly backup does not include:
+
+* Security tool settings / vault information (backed up via separate CLI process)
+* Logs (can be saved to a .zip file on demand)
+* Performance data (if not selected for inclusion in backup)
+* Licenses
+
+[NOTE]
+====
+If you choose to include performance data in the backup, the most recent seven days of data is backed up. The remaining data will be in the archive if you have that feature enabled.
+====

@@ -1,0 +1,48 @@
+---
+permalink: howto/expressions-example-system-i-o.html
+sidebar: sidebar
+keywords: 
+summary: 'Expressions give you the freedom to chart data that can be calculated from other metrics.'
+---
+= Expressions example: "System" I/O
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Expressions give you the freedom to chart data that can be calculated from other metrics.
+
+== About this task
+
+Example 2: OnCommand Insight acquires many metrics from data sources. Among them are read, write, and total IOPS. However, the total number of IOPS reported by acquisition sometimes includes "system" IOPS, which are those IO operations that are not a direct part of data reading or writing. This system I/O can also be thought of as "overhead" I/O, necessary for proper system operation but not directly related to data operations.
+
+To show these system I/Os, you can subtract read and write IOPS from the total IOPS reported from acquisition. The formula might look like this:
+
+* System IOPS = Total IOPS - (Read IOPS + Write IOPS)
+
+This data can then be shown in a line graph on your dashboard. To do this, follow these steps:
+
+== Steps
+
+. Create a new dashboard, or open an existing dashboard in *edit mode*.
+. Add a widget to the dashboard. Choose *Line chart*.
++
+The widget opens in edit mode. By default, a query is displayed showing *IOPS - Total* for *Storage* assets. If desired, select a different asset type.
+
+. Click the button to create a copy of the query.
++
+A duplicate of the query is added below the original.
+
+. In the second query, click the *Convert to Expression* button.
++
+The current query is converted to Expression mode. Click *Revert to Query* if you wish to switch back to Query mode at any time. Be aware that switching between modes will reset fields to their defaults.
++
+For now, stay in *Expression* mode.
+
+. The *IOPS - Total* metric is now in the alphabetic variable field "`a`". Click on *IOPS - Total* and change it to *IOPS - Read*. .
+. In the "`b`" variable field, click *Select* and choose *IOPS - Write*.
+. In the *Expression* field, you use the letters corresponding to each variable to build your expression. We would write our expression simply as: `a + b`. In the *Display* section, choose**Area chart** for this expression.
+. The *Label* field identifies the expression. Change the label to "`System IOPS`", or something equally meaningful for you.
++
+The chart displays the total IOPS as a line chart, with an area chart showing the combination of read and write IOPS below that. The gap between the two shows the IOPS that are not directly related to data read or write operations.
+
+. Click *Save* to save the chart to your dashboard.

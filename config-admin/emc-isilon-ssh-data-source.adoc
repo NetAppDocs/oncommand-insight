@@ -1,0 +1,103 @@
+---
+permalink: config-admin/emc-isilon-ssh-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'The Isilon SSH data source collects inventory and performance from EMC Isilon scale-out NAS storage.'
+---
+= EMC Isilon data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Isilon SSH data source collects inventory and performance from EMC Isilon scale-out NAS storage.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the EMC Isilon data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Drive
+a|
+Disk
+a|
+Cluster
+a|
+Storage
+a|
+Node
+a|
+Storage Node
+a|
+File System
+a|
+Internal Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* Administrator permissions to the Isilon storage
+* Validated access by using `telnet` to port 22
+
+== Configuration
+
+|===
+| Field| Description
+a|
+IP address
+a|
+The IP address or fully-qualified domain name of the Isilon cluster
+a|
+User name
+a|
+The user name for the Isilon cluster
+a|
+Password
+a|
+The password for the Isilon cluster
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 20 minutes)
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+a|
+SSH Process Wait Timeout
+a|
+SSH process timeout (default 60 seconds)
+a|
+SSH Port
+a|
+SSH service port
+|===
+
+== Running CLI Commands
+
+Starting with OnCommand Insight version 7.3.11 and Service Pack 9, the EMC Isilon data source contains an enhancement that will result in Insight running more CLI commands. If you are using a non-root user within your data source, you will likely have configured a "sudoers" file to grant that user account the ability to run specific CLI commands via SSH.
+
+In order for Insight to understand EMC's "Access Zones" feature, Insight will now additionally run the following new CLI commands:
+
+* `sudo isi zone zones list --format json –verbose`
+* `sudo isi zone zones list`
+
+Insight parses the output of these commands, and runs more instances of existing commands, to obtain the logical configuration of objects like qtrees, quotas and NAS shares/exports that reside in non-default Access Zones. Insight now reports those objects for non-default Access Zones as the result of this enhancement. As Insight obtains that data by running existing commands (with different options) no sudoers file change is required in order for those to work; it is only with the introduction of the new commands above that the change is required.
+
+Please update your sudoers file to allow your Insight service account to run those commands before upgrading to this Insight release. Failure to do so will result in your Isilon data sources failing.
+
+== "File System" statistics
+
+Beginning with OnCommand Insight 7.3.12, the EMC Isilon data collector introduces "File System" statistics on the node object for EMC Isilon. The existing node statistics reported by OnCommand Insight are "disk" based - i.e, for IOPs and throughput of a storage node, what are the disks in this node doing in aggregate? But for workloads where reads are cached in memory and/or compression is in use, the file system workload may be substantially higher than what actually hits the disks - a data set that compresses 5:1 could therefore have a "File System Read Throughput" value 5x the storage node Read Throughput, as the latter measures the reads off of disk, which expand 5x when the node uncompresses the data to service the client's read request.

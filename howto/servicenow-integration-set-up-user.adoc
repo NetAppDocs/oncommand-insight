@@ -1,0 +1,36 @@
+---
+permalink: howto/servicenow-integration-set-up-user.html
+sidebar: sidebar
+keywords: 
+summary: 'You must set up a ServiceNow user for Insight to connect with and synchronize data.'
+---
+= ServiceNow integration - Set up user
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must set up a ServiceNow user for Insight to connect with and synchronize data.
+
+== About this task
+
+== Steps
+
+. Create a services account in ServiceNow. Login to ServiceNow and navigate to *system security* > *users and groups* > *users*. Click on *New*.
+. Enter a user name. In this example, we will use "`OCI2SNOW`" as our integration user. Enter a password for this user.
++
+[NOTE]
+====
+In this How-to we use a services account user named "`OCI2SNOW`"`" across the documentation. You may use a different services account, but be sure it is consistent across your environment.
+====
+
+. Right-click on the menu bar and click *Save*. This will allow you to stay on this user in order to add roles.
+. Click *Edit* and add the following roles to this user:
+ ** asset
+ ** import_transformer
+ ** rest_service
+. Click *Save*.
+. This same user must be added to OnCommand Insight. Log in to Insight as a user with Administrator permissions.
+. Navigate to *Admin* > *Setup* and click on the *Users* tab.
+. Click the *Actions* button and select *Add user*.
+. For name, enter "`OCI2SNOW`". If you used a different user name above, enter that name here. Enter the same password you used for the ServiceNow user above. You may leave the email field blank.
+. Assign this user the *User* role. Click *Save*.

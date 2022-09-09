@@ -1,0 +1,43 @@
+---
+permalink: config-admin/assigning-annotations-using-a-query.html
+sidebar: sidebar
+keywords: bulk edit
+summary: 'Assigning an annotation to a group of assets helps you more easily identify or use those related assets in queries or dashboards.'
+---
+= Assigning annotations to multiple assets using a query
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Assigning an annotation to a group of assets helps you more easily identify or use those related assets in queries or dashboards.
+
+== Before you begin
+
+Annotations that you wish to assign to assets must have previously been created.
+
+== About this task
+
+You can simplify the task of assigning an annotation to multiple assets by using a query. For example, if you want to assign a custom address annotation to all of your arrays at a specific data center location.
+
+== Steps
+
+. Create a new query to identify the assets on which you wish to assign an annotation. Click *Queries* > *+New Query*.
+. In the *Search for...* drop-down, choose *Storage*. You can set filters to further narrow down the list of storages displayed.
+. In the list of storages displayed, select one or more by clicking on the check box beside the storage name. You may also select all the displayed storages by clicking on the main check box at the top of the list.
+. When you have selected all of the desired storages, click *Actions* > *Edit Annotation*.
++
+The system displays the Add Annotation dialog.
+
+. Select the *Annotation* and *Value* you want to assign to the storages and click *Save*.
++
+If you are displaying the column for that annotation, it will appear on all the selected storages.
+
+. You can now use the annotation to filter for storages in a widget or query. In a widget, you can do the following:
+ .. Create a dashboard or open an existing one. Add a *Variable* and choose the annotation you set on the storages above. The variable is added to the dashboard.
+ .. In the variable field you just added, click on *Any* and enter the appropriate Value to filter on. Click on the check mark to save the variable value.
+ .. Add a widget. In the widget's Query, click on the**Filter by****+**button and select the appropriate annotation from the list.
+ .. Click on *Any* and select the annotation variable you added above. Variables you have created start with "`$`" and are displayed in the drop-down.
+ .. Set any other filters or fields you desire, then click *Save* when the widget is customized to your liking.
+
++
+The widget on the dashboard displays the data for only the storages to which you assigned the annotation.

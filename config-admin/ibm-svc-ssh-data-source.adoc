@@ -1,0 +1,163 @@
+---
+permalink: config-admin/ibm-svc-ssh-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'The IBM SVC data source collects inventory and performance data using SSH, supporting a variety of devices that run the SVC operating system. The list of supported devices includes models such as the SVC, the v7000, the v5000, and the v3700. Refer to the Insight data source support matrix for supported models and firmware versions.'
+---
+= IBM SVC data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The IBM SVC data source collects inventory and performance data using SSH, supporting a variety of devices that run the SVC operating system. The list of supported devices includes models such as the SVC, the v7000, the v5000, and the v3700. Refer to the Insight data source support matrix for supported models and firmware versions.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the IBM SVC data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Drive
+a|
+Disk
+a|
+Cluster
+a|
+Storage
+a|
+Node
+a|
+Storage Node
+a|
+Mdisk Group
+a|
+Storage Pool
+a|
+Vdisk
+a|
+Volume
+a|
+Mdisk
+a|
+Backend LUN
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Inventory Requirements
+
+* IP address of each SVC cluster
+* Port 22 available
+* Public and private key pair that you either generate withInsight or reuse a keypair already in use on your SVC
++
+If you are reusing an existing keypair, you must convert them from Putty format to OpenSSH format.
+
+* Public key installed on the SVC cluster
+* Private key needs to be identified in the data source
+* Access validation: Open `ssh` session to the SVC cluster using the private key
+
+[NOTE]
+====
+No third-party software needs to be installed.
+====
+
+== Performance Requirements
+
+* SVC Console, which is mandatory for any SVC cluster and required for the SVC discovery foundation package.
+* Administrative access level required only for copying performance data files from cluster nodes to the config node.
++
+[NOTE]
+====
+Because this access level is not required for the SVC foundation discovery package, the SVC foundation user might not work successfully.
+====
+
+* Port 22 required
+* A private and public SSH key must be generated for this user, and the private key stored so that it is accessible from the Acquisition Unit. If the SVC foundation user has the proper permissions, then the same user and key works. The same SSH key can be used for inventory and performance data.
+* Enable data collection by connecting to the SVC cluster by SSH and running: `svctask startstats -interval 1`
++
+[NOTE]
+====
+Alternatively, enable data collection using the SVC management user interface.
+====
+
+== Parent Serial Number explained
+
+Traditionally Insight is capable of reporting the storage array serial number, or the individual storage node serial numbers. However, some storage array architectures do not cleanly align to this. An SVC cluster can be comprised of 1-4 appliances, and each appliance has 2 nodes. If the appliance itself has a serial number, that serial number is neither the serial number for the cluster nor the nodes.
+
+The attribute "Parent Serial Number" on the storage node object is populated appropriately for IBM SVC arrays when the individual nodes sit inside an intermediate appliance/enclosure that is just part of a larger cluster.
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+Cluster/s IP
+a|
+IP address of fully-qualified domain name for the SVC storage
+a|
+Choose 'Password' or 'OpenSSH Key File' to specify credential type
+a|
+The credential type used to connect to the device via SSH
+a|
+Inventory User Name
+a|
+User name for the SVC CLI
+a|
+Inventory Password
+a|
+Password for the SVC CLI
+a|
+Full Path to Inventory Private Key
+a|
+Full path to the Inventory private key file
+a|
+Performance User Name
+a|
+User name for the SVC CLI for performance collection
+a|
+Performance Password
+a|
+Password for the SVC CLI for performance collection
+a|
+Full Path to Performance Private Key
+a|
+Full path to the Performance private key file
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 40 minutes)
+a|
+Exclude Devices
+a|
+Comma-separated list of device IDs to exclude from inventory collection
+a|
+SSH Process Wait Timeout (sec)
+a|
+SSH process timeout (default 200 seconds)
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+a|
+Performance Exclude Devices
+a|
+Comma-separated list of device IDs to exclude from performance collection
+a|
+Performance SSH Process Wait Timeout (sec)
+a|
+SSH process timeout (default 200 seconds)
+a|
+To clean up dumped stats files
+a|
+Select to clean up dumped stats files
+|===

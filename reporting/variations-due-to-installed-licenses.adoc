@@ -1,0 +1,16 @@
+---
+permalink: reporting/variations-due-to-installed-licenses.html
+sidebar: sidebar
+keywords: 
+summary: 'Data in the OnCommand Insight reports is based upon the OnCommand Insight licenses that you have purchased. For example without the Plan license, you get point in time data \(today\) in the Inventory datamart for capacity and performance, but you do not have the ability to trend \(report over a time period\) the capacity or performance data for any device.'
+---
+= Variations due to installed licenses
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Data in the OnCommand Insight reports is based upon the OnCommand Insight licenses that you have purchased. For example without the Plan license, you get point in time data (today) in the Inventory datamart for capacity and performance, but you do not have the ability to trend (report over a time period) the capacity or performance data for any device.
+
+The absence of a Plan license removes the ability to create new reports or edit existing reports. You might see differences between the available reports in your OnCommand Insight system compared to the illustrations in the documentation. These variations are due to differences between the installed licenses on your system and the licenses on the system used to create the illustrations.
+
+For more information about Licenses, see the OnCommand Insight Installation guide.

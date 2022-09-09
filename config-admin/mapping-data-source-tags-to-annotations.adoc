@@ -1,0 +1,16 @@
+---
+permalink: config-admin/mapping-data-source-tags-to-annotations.html
+sidebar: sidebar
+keywords: 
+summary: 'When a data source is configured to poll tag data, Insight automatically sets annotation values for an existing Insight annotation with the same name as a tag.'
+---
+= Mapping data source tags to annotations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When a data source is configured to poll tag data, Insight automatically sets annotation values for an existing Insight annotation with the same name as a tag.
+
+When the Insight annotation exists before the tags are enabled in the data source, the data source tag data is automatically added to the Insight annotation.
+
+When you create an annotation after the tag is enabled, initial polling of the data source does not automatically update the annotation. There is a delay in the time it takes to replace or populate the Insight annotation. To avoid the delay, you can force the tag to annotation update by postponing and then resuming the data source.

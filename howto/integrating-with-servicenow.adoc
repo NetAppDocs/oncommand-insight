@@ -1,0 +1,18 @@
+---
+permalink: howto/integrating-with-servicenow.html
+sidebar: sidebar
+keywords: SNOW
+summary: 'OnCommand Insight integrates with ServiceNow management software to provide greater value than the products have separately.'
+---
+= Integrating with ServiceNow
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight integrates with ServiceNow management software to provide greater value than the products have separately.
+
+Using a Python script, Insight can integrate data with ServiceNow, synchronizing the following information:
+
+* Storage asset data for ServiceNow servers
+* Host and VM URLs for ServiceNow servers
+* Relationships between Hosts/VMs and Storage

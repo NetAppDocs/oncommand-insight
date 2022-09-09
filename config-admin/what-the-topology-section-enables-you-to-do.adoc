@@ -1,0 +1,24 @@
+---
+permalink: config-admin/what-the-topology-section-enables-you-to-do.html
+sidebar: sidebar
+keywords: 
+summary: 'The Topology section enables you to view how the assets in your network are connected to each other and display information about related assets.'
+---
+= Using the Topology section
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Topology section enables you to view how the assets in your network are connected to each other and display information about related assets.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Locate an asset page by doing either of the following:
+ ** On the Insight toolbar, click image:../media/icon-sanscreen-magnifying-glass-gif.gif[], type in the name of the asset, and then select the asset from the list.
+ ** Click *Dashboards*, select *Assets Dashboard*, locate an asset name, and click it.
+The asset page displays. You can find the Topology section in the upper right-hand corner of the asset page.
+
++
+If the topology for the asset is larger than will fit in the section, click the *Click link to see the topology* hyperlink.
+. To view more information about the base asset's related assets, position your cursor over a related asset in the topology and click its name, which displays its asset page.

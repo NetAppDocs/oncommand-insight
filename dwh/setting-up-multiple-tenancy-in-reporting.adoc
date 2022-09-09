@@ -1,0 +1,68 @@
+---
+permalink: dwh/setting-up-multiple-tenancy-in-reporting.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight Data Warehouse accommodates multiple tenancy \(often shortened to “multi-tenancy” or “multitenancy”\) in reporting by allowing you to associate users with one or more business entities. With this feature, administrators can separate data or reports according to user attributes or user affiliation.'
+---
+= Setting up multiple tenancy in reporting
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight Data Warehouse accommodates multiple tenancy (often shortened to "`multi-tenancy`" or "`multitenancy`") in reporting by allowing you to associate users with one or more business entities. With this feature, administrators can separate data or reports according to user attributes or user affiliation.
+
+Business entities use a hierarchy for the purposes of capacity chargeback using the following values:
+
+* Tenant: Primarily used by service providers to associate resources with a customer, for example, NetApp.
+* Line of Business (LOB): A line of business within a company, for example "Hardware" or "Software."
+* Business Unit: A traditional business unit such as "Sales" or "Marketing."
+* Project: A project to which you might want to assign capacity chargeback.
+
+The process of configuring multiple tenancy involves the following major steps:
+
+* Configure a Data Warehouse user account.
+* Create a group in Reporting Portal.
+* Assign users to one or more groups, which represent business entities.
+* Assign users to one or more business entities. For example, users associated with "NetApp" obtain access to all business entities that have "`NetApp`" as a tenant.
+* Test that users can see only those reports that they should see.
+
+The following points summarize how users access reporting data:
+
+* A user, not assigned to any group, gets access to all the data.
+* A user, assigned to any group, will not be able to get access to records without business entity.
+
+For example, you might have the following departments and need to separate reports for users within these departments.
+
+|===
+| User| Engineering| Support| Finance| Legal
+a|
+User1
+a|
+X
+a|
+X
+a|
+ 
+a|
+ 
+a|
+User2
+a|
+ 
+a|
+ 
+a|
+X
+a|
+X
+a|
+User3
+a|
+ 
+a|
+X
+a|
+ 
+a|
+ 
+|===

@@ -1,0 +1,35 @@
+---
+permalink: dwh/seeing-the-annotation-changes-in-the-database-schema.html
+sidebar: sidebar
+keywords: 
+summary: 'The database schema reflects the changes in the specific table.'
+---
+= Displaying annotation changes in the database schema
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The database schema reflects the changes in the specific table.
+
+== About this task
+
+For example, if you add annotations to a storage array, they appear in the storage or switch table in the inventory or other data marts.
+
+If you update the annotations on resources using the OnCommand Insight user interface and initiate or wait for the next Data Warehouse build, you see a new column added or removed in the corresponding object in inventory (dwh_inventory) and in the corresponding dimension table as well (in the appropriate data mart). You see the results in the following tables:
+
+* dwh_inventory.annotation_value
+* dwh_inventory.object_to_annotation
+
+== Steps
+
+. Click image:../media/oci-7-help-icon-gif.gif[] on the Data Warehouse tool bar and select *Documentation*.
+. Select *Database Schema*.
+. In the *Database Schema* pane on the left, scroll to the *DWH_INVENTORY* section and click *switch*.
++
+image::../media/oci-dwh-databaseschema-inventory-switch-gif.gif[DWH Inventory database schema switch table]
+
+. The *dwh_inventory.switch* table reflects the changes:
++
+image::../media/oci-dwh-databaseschema-capacity-sd-gif.gif[DWH Capacity database schema storage dimension table]
++
+The dataCenter annotation column appears in the storage_dimensions table.

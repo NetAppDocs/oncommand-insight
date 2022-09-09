@@ -1,0 +1,37 @@
+---
+permalink: dwh/assigning-users-to-business-entities.html
+sidebar: sidebar
+keywords: 
+summary: 'You must complete a series of steps to assign users to business entities. Data Warehouse accommodates multiple tenancy \(often shortened to “multi-tenancy” or “multitenancy”\) in reporting by allowing you to associate users with one or more business entities. This enables administrators to separate data or reports according to user attributes or user affiliation.'
+---
+= Assigning users to business entities
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must complete a series of steps to assign users to business entities. Data Warehouse accommodates multiple tenancy (often shortened to "`multi-tenancy`" or "`multitenancy`") in reporting by allowing you to associate users with one or more business entities. This enables administrators to separate data or reports according to user attributes or user affiliation.
+
+== Steps
+
+. Log in to the Data Warehouse Portal as administrator at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. On the Data Warehouse toolbar, click image:../media/oci-reporting-portal-icon.gif[] to open the Reporting Portal.
+. Enter your user name and password and click *Login*.
+. From the Launch menu, select *IBM Cognos Administration*.
+. Click the *Security* tab:
+. In the Directory, select *Cognos*.
+. Create a new subfolder in the Cognos folder called "`BEs`", for business entities.
+. Open the BEs folder.
+. Click the *New Group* icon to add groups that correspond to different permission levels.
++
+These permission levels can be either the full name of the business entity (for example, NetApp.N/A) or a prefix (for example, NetApp.N/A.Finance). Either of these formats enables access to all projects within the business entity (NetApp.N/A.Finance).
++
+The New Group wizard displays.
+
+. Complete the pages of the wizard.
+. Select a business entity and click *More*.
+. Click *Set members*.
+. Click *Add*.
+. Select the SANscreen directory.
+. From the list of users, select each user that you want to include in the Business Entity and add the user to the Selected Entries box.
+. Click *OK*.
+. Repeat the process of adding members to each of the business entity groups.

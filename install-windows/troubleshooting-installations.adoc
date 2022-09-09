@@ -1,0 +1,14 @@
+---
+permalink: install-windows/troubleshooting-installations.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight installations are generally managed through the installation wizards. However, customers might experience problems during upgrades or with conflicts due to computer environments.'
+---
+= Troubleshooting installations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight installations are generally managed through the installation wizards. However, customers might experience problems during upgrades or with conflicts due to computer environments.
+
+You should also be certain that you install all of the necessary OnCommand Insight licenses for installing the software.

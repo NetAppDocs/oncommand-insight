@@ -1,0 +1,24 @@
+---
+permalink: howto/introduction-to-configuring-your-system-for-chargeback.html
+sidebar: sidebar
+keywords: 
+summary: 'Chargeback reports provide storage capacity chargeback and accountability information by hosts, application, and business entities, and include both current and historical data.'
+---
+= Configuring your system to report chargeback data
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Chargeback reports provide storage capacity chargeback and accountability information by hosts, application, and business entities, and include both current and historical data.
+
+This guide describes how to configure Insight to generate a chargeback report providing accountability for service level costs and storage usage cost. The intent of the guide is to provide the steps required to create a simple chargeback report, and familiarize Insight users with the options available when configuring chargeback in their unique environment.
+
+For each application, the example report identifies the resources provisioned and the cost of the resources. The output for the report is created by defining the following data in Insight
+
+* Storage tiers
+* Cost associated with each storage tier
+* Provisioned storage capacity
+* Service levels
+* Cost per service level
+
+The following sections describe the steps required to configure this data so that it can be accessed by Insight Reporting.

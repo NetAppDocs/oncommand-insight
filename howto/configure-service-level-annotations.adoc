@@ -1,0 +1,51 @@
+---
+permalink: howto/configure-service-level-annotations.html
+sidebar: sidebar
+keywords: 
+summary: 'The Service Level annotation is used to associate assets with their respective service levels.'
+---
+= Configure Service Level annotations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Service Level annotation is used to associate assets with their respective service levels.
+
+Service Level annotations are typically only set in customer environments that use auto-tiering. In the Insight data warehouse, Tier is preferred. However, best practice is to use Service Level when you want to detail Provisioned Cost vs. Customer Cost. When both are present in Data Warehouse, Service Level will supersede Tier.
+
+Steps:
+
+* Choose the *Service Level* annotation and click on the *Edit* icon.
+* Click *+Add* and add the Name and Description of your first service level to the annotation list.
+* Do the same for your other service levels.
+* When finished, click *Save*.
+
+Example Service Level annotations:
+
+|===
+| Name| Description| Cost per Gb
+a|
+Service Level 1
+a|
+FAS controllers with FC or SAS, local & remote mirror and tape
+a|
+0.93
+a|
+Service Level 2
+a|
+FAS controllers with FC or SAS, local & remote mirrors
+a|
+0.85
+a|
+Service Level 3
+a|
+FAS controllers with SATA and local mirror
+a|
+0.48
+a|
+...
+a|
+ 
+a|
+ 
+|===

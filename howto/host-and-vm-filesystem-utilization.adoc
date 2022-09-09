@@ -1,0 +1,23 @@
+---
+permalink: howto/host-and-vm-filesystem-utilization.html
+sidebar: sidebar
+keywords: filesystem
+summary: 'The Host and VM File Systems data source, combined with the Host Utilization license, enables reporting and chargeback at the file system level for known Hosts and VMs.'
+---
+= Collecting Host and VM file system utilization data
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Host and VM File Systems data source, combined with the Host Utilization license, enables reporting and chargeback at the file system level for known Hosts and VMs.
+
+OnCommand Insight collects data from storage devices, most of which report their volumes as block devices. This allows Insight to report on utilization at the storage level, but not at the file system level. Storage arrays typically know which blocks have been written to, but not which blocks have been freed.
+
+Client hosts and VMs implement file systems (ntfs, ext*...) on top of these block devices. Most file systems keep a table of contents containing directory and file metadata. When files are deleted, their entries are simply removed from the table of contents. Blocks consumed by those files are now eligible for re-use by the file system, but the storage array doesn't know this. In order for Insight to report on filesystem usage, it must be collected from the client host or VM point of view for accurate chargeback.
+
+Insight allows this level of file system utilization data collection through the *NetApp Host and VM File System* data source, in combination with the *Host Utilization* license. VM's must be annotated with the appropriate *Compute Resource Group* name, and associated storage arrays must be annotated with appropriate *Tier* annotations with proper costs for accurate cost reporting.
+
+[NOTE]
+====
+The Host Utilization License is resource-based, as opposed to capacity-based as other Insight licenses.
+====

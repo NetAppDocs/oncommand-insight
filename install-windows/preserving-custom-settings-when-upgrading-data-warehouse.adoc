@@ -1,0 +1,14 @@
+---
+permalink: install-windows/preserving-custom-settings-when-upgrading-data-warehouse.html
+sidebar: sidebar
+keywords: 
+summary: 'Custom Cognos settings, such as non-default SMTP email settings, are not automatically backed up as part of a Data Warehouse upgrade. You need to manually document and then restore the custom settings following an upgrade.'
+---
+= Preserving custom Cognos settings during a Data Warehouse upgrade
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Custom Cognos settings, such as non-default SMTP email settings, are not automatically backed up as part of a Data Warehouse upgrade. You need to manually document and then restore the custom settings following an upgrade.
+
+Prior to upgrading Data Warehouse, prepare a checklist with any custom Cognos settings that you want to preserve, and review the list prior to upgrading the system. After the upgrade is complete, you can restore the values manually to return them to the settings in the original configuration.

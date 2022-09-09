@@ -1,0 +1,44 @@
+---
+permalink: config-admin/enabling-the-syslog-facility.html
+sidebar: sidebar
+keywords: 
+summary: 'You can identify a location for the log of the OnCommand Insight violations and performance alerts as well as audit messages, and activate the logging process.'
+---
+= Enabling the syslog facility
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can identify a location for the log of the OnCommand Insight violations and performance alerts as well as audit messages, and activate the logging process.
+
+== Before you begin
+
+* You must have the IP address of the server on which to store the system log.
+* You must know the facility level that corresponds to the type of program that is logging the message, such as LOCAL1 or USER.
+
+== About this task
+
+The syslog includes the following types of information:
+
+* Violation messages
+* Performance alerts
+* Optionally, Audit log messages
+
+The following units are used in the syslog:
+
+* Utilization metrics: percentage
+* Traffic metrics: MB
+* Traffic rate: MB/s
+
+== Steps
+
+. On the Insight toolbar, click *Admin* and select *Notifications*.
+. Scroll down to the *Syslog* section of the page.
+. Select the *Enable syslog* check box.
+. If desired, select the *Send audit* check box. New audit log messages will be sent to syslog in addition to being displayed on the Audit page. Note that already-existing audit log messages will not be sent to syslog; only newly-generated log messages will be sent.
+. In the *Server* field, enter the IP address of the log server.
++
+You can specify a custom port by appending it following a colon at the end of the server IP (e.g. server:port). If port is not specified, the default syslog port of 514 is used.
+
+. In the *Facility* field, select the facility level that corresponds to the type of program that is logging the message.
+. Click *Save*.

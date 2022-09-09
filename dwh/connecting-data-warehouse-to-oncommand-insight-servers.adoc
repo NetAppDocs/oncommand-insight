@@ -1,0 +1,87 @@
+---
+permalink: dwh/connecting-data-warehouse-to-oncommand-insight-servers.html
+sidebar: sidebar
+keywords: 
+summary: 'Connectors establish connections from the OnCommand Insight Data Warehouse to the OnCommand Insight servers. You can connect Data Warehouse with one or more OnCommand Insight servers. You can add or remove connections to or from OnCommand Insight databases.'
+---
+= Connecting Data Warehouse to OnCommand Insight servers
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Connectors establish connections from the OnCommand Insight Data Warehouse to the OnCommand Insight servers. You can connect Data Warehouse with one or more OnCommand Insight servers. You can add or remove connections to or from OnCommand Insight databases.
+
+== About this task
+
+Data Warehouse assigns a global unique ID to the connector that is used in conjunction with the connector name. After adding a connector, Data Warehouse queries the OnCommand Insight database for the OnCommand Insight site name and version.
+
+You can choose to connect to a data source with or without SSL. Choosing the secure data source forces the connection to use SSL when communicating with the OnCommand Insight remote database.
+
+Data Warehouse can provide a consolidated view of data from multiple OnCommand Insight installations. This consolidated database provides the following information:
+
+* Globally Unique Identifiers
++
+Each object is assigned a globally unique ID that is independent of the IDs used by individual sites, to avoid conflicting IDs and enable duplicate detection. These IDs are shared between all the data marts. This ID is the Globally Unique ID (GUID) in the Comment column of the Inventory data mart tables.
+
+* No duplication
++
+Entities that exist in multiple OnCommand Insight databases are registered only once in the consolidated database.
+
+* Current record
++
+The data in the consolidated database (Inventory data mart) is always the most up-to-date possible.
+
+When you add or edit a connection, you can also test the connection. The test does the following:
+
+* Verifies the host IP address, user name, and password and ensures that a connection can be established.
++
+Invalid connections appear in red.
+
+* Compares the OnCommand Insight version to the Data Warehouse version.
++
+If the versions are not compatible, an error message appears.
+
+* Verifies that the OnCommand Insight database has not been changed or restored to a different database as seen by the last Data Warehouse processing. If there has been a change, an error message appears.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *Connectors*.
++
+The Connectors table appears blank at first and shows connector information after you add a connector.
+
+. Click *New* to add a new connector.
+. Enter the following:
+ ** *Encryption*
++
+To enable Data Warehouse requests to be made using SSL encryption, select `Enabled`.
+
+ ** *Name*
++
+A connector name that will identify the connector on the Connectors view.
+
+ ** *Host*
++
+Host IP address
+
+ ** *User name*
++
+"`inventory`"
++
+[NOTE]
+====
+Using this user name and password, you can log in to the remote OnCommand Insight database and perform queries on the data.
+====
+
+ ** *Password*
++
+"sanscreen"
+. To specify the port to use for TCP connections to the host, click *Advanced* and enter the TCP port number.
+. To specify the port (other than the default port) to use for HTTPS connections to the host, click *Advanced* and enter the port number.
+. Click *Test*.
++
+Data Warehouse tests the connection.
+
+. Click *Save*.
++
+If you enter multiple connections for multiple installations, Data Warehouse invokes independent build processes, one for each database from which data should be extracted. Each such build process extracts data from an OnCommand Insight database and loads it into the consolidated database.

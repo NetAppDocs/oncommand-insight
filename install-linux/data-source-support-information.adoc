@@ -1,0 +1,16 @@
+---
+permalink: install-linux/data-source-support-information.html
+sidebar: sidebar
+keywords: 
+summary: 'As part of your configuration planning, you should ensure that the devices in your environment can be monitored by Insight. To do so, you can check the Data source support matrix for details about operating systems, specific devices, and protocols. Some data sources might not be available on all operating systems.'
+---
+= Data source support information
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+As part of your configuration planning, you should ensure that the devices in your environment can be monitored by Insight. To do so, you can check the Data source support matrix for details about operating systems, specific devices, and protocols. Some data sources might not be available on all operating systems.
+
+== Location of the most up-to-date version of the Data Source Support Matrix
+
+The OnCommand Insight Data Source Support Matrix is updated with each service pack release. The most current version of the document can be found at the https://mysupport.netapp.com/api/content-service/staticcontents/content/products/oncommandinsight/DatasourceSupportMatrix_7.3.x.pdf[NetApp Support Site]. .

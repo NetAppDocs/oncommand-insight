@@ -1,0 +1,20 @@
+---
+permalink: howto/processing-cloud-cost-data-in-insight.html
+sidebar: sidebar
+keywords: 
+summary: 'Insight collects data from your AWS billing report once a month for the previous month, and reflects the finalized cloud cost for that month.'
+---
+= Processing AWS Cloud Cost data in Insight
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Insight collects data from your AWS billing report once a month for the previous month, and reflects the finalized cloud cost for that month.
+
+After you set up your AWS Cloud Cost data source(s), if you already had billing reports generated to S3, you will get up to three months of past data immediately after the first data source poll.
+
+Insight collects AWS "`final`" data once a month. This collection occurs a few days after the close of the previous month, allowing AWS time to finalize the actual data.
+
+AWS billing data is sent to Insight's Data Warehouse for use in reporting.
+
+Keep in mind that each data source must be configured for a single billable account/user.

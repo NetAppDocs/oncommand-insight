@@ -1,0 +1,55 @@
+---
+permalink: howto/adding-the-snmp-integration-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'The Integration SNMP Data Source provides common SNMP configuration properties similar to other SNMP based data sources included with the OnCommand Insight data sources for Brocade and Cisco.'
+---
+= Creating an SNMP integration data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Integration SNMP Data Source provides common SNMP configuration properties similar to other SNMP based data sources included with the OnCommand Insight data sources for Brocade and Cisco.
+
+== Before you begin
+
+In order to successfully use the Integration SNMP data source to collect, the following must be true:
+
+* You must have already imported an integration pack you will use for this SNMP data source.
+* All target devices share the same credentials.
+* All target devices implement the SNMP Objects referenced by the configured integration pack.
+
+== About this task
+
+To create an SNMP Integration data source, choose vendor "Integration" and model "SNMP" in the data source creation wizard.
+
+== Steps
+
+. In the OnCommand Insight web UI, click *Admin* > *Data Sources*
+. Click *+Add*
+. Enter a name for the Data Source
+. For Vendor, select *Integration*
+. For Model, select *SNMP*
++
+image::../media/add-integration-ds.gif[]
+
+. For What to collect, check *Integration*
++
+This is the only package on this data source and is checked by default:
+
+. Click *Configuration*
+. Enter the IP addresses for the systems from which you will collect SNMP data
+. Select an imported SNMP Integration Pack
+. Set the integration poll interval
+. Select the SNMP version
+. Enter the SNMP community string
++
+For SNMP V1 and V2.
+
+. Add the user name and password for systems you will be collecting data from.
++
+For SNMP V3.
+
+. Click *Advanced Configuration*
++
+The Advanced Configuration default settings are displayed. Make any changes to these settings that are required.

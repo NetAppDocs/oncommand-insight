@@ -1,0 +1,39 @@
+---
+permalink: install-linux/installing-the-anomaly-detection-software.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight contains software that applies machine-learning anomaly detection to your Insight data. You can install this software separately from other OnCommand Insight components.'
+---
+= Installing the anomaly detection software
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight contains software that applies machine-learning anomaly detection to your Insight data. You can install this software separately from other OnCommand Insight components.
+
+== Before you begin
+
+You must have completed all of the installation prerequisites.
+
+== Steps
+
+. Log in to the anomaly detection server using an account with sudo privileges.
+. Copy the `.zip` file that contains the anomaly detection software to the Linux server.
+. Extract the files to the `oci-prelert-<version>-linux-x86_64` directory.
+. Navigate to the directory where the installer is located: `cd oci-prelert-<version>-linux-x86_64`
+. Install the anomaly detection software: `sudo ./oci-prelert-install.sh`
++
+During the installation, you are prompted to enter the server name or IP address of the OnCommand Insight server, and the user name and password for an account with Administrator privileges.
++
+You can remove the anomaly detection software using the following command: `sudo /usr/bin/oci-prelert-uninstall.sh`
+
+== Results
+
+The software is automatically registered with the instance of OnCommand Insight that is specified in the installation. The software can communicate only with the OnCommand Insight instance that it is registered with, and only one instance of the software can be registered with an OnCommand Insight server.
+
+If you restart either the server that is running the anomaly detection software or the Insight server, the anomaly detection process restarts automatically.
+
+[NOTE]
+====
+If you install the anomaly detection software via command line by providing parameters, as opposed to letting install prompt you for parameters, it will fail to register with the Insight server unless you provide the following parameter: `--path rest/v1`
+====

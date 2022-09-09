@@ -1,0 +1,35 @@
+---
+permalink: dwh/annotations.html
+sidebar: sidebar
+keywords: 
+summary: 'Annotations provide a method for defining information that relates to objects in your environment and then allows you to track objects based on the annotation. For example, you could add building or floor number annotations to devices in your environment and then create a query that returns all of the devices on the first floor of a data center.'
+---
+= What you can do using annotations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Annotations provide a method for defining information that relates to objects in your environment and then allows you to track objects based on the annotation. For example, you could add building or floor number annotations to devices in your environment and then create a query that returns all of the devices on the first floor of a data center.
+
+Additionally, you might want to look at all devices in a specific data center or business entity and determine which business entity is using the most tier 1 storage. To do this, you assign a data center, business entity, or tier annotation to the device using the OnCommand Insight web UI. Then, you can bring selected user-defined annotations from OnCommand Insight into Data Warehouse. You want to do this to see the annotation values assigned to objects appear in your custom reports.
+
+You can specify which user-defined annotations propagate to Data Warehouse. Annotations are added as additional columns to the object table in the inventory, and to the relevant dimension table in the data marts. When you update the annotations on resources using the OnCommand Insight user interface and initiate or wait for the next Data Warehouse build, you see the results in the following tables:
+
+* dwh_inventory.annotation_value
+* dwh_inventory.object_to_annotation
+
+Ensuring annotations entered in OnCommand Insight are included in Data Warehouse requires the following major processes:
+
+* Before you import annotations into Data Warehouse, you must ensure that they are prepared in OnCommand Insight.
++
+To do this, you can manually run the *Troubleshooting* > *Force Update of Annotations for Data Warehouse* option or wait until the next scheduled transient data run process. When you force the update of annotations, you force the OnCommand Insight server to calculate and place the transient data (such as annotation values) into database tables so that the Data Warehouse ETL process can read the data. The update of annotations data occurs automatically every fifteen minutes; however, you can force it to happen more frequently.
+
+* You then import annotations into Data Warehouse by using Data Warehouse**Annotations** option.
+* If you want to include annotations in reports that you create by using the OnCommand Insight Reporting Portal report authoring tools, you must update the OnCommand Insight reporting metadata model.
+
+When you upgrade Data Warehouse, the annotations job runs automatically during the database restore process. The annotations job runs automatically also when WildFly starts up.
+
+[NOTE]
+====
+WildFly is an application server where the OnCommand Insight Java code runs and is needed for both for the OnCommand Insight server and for Data Warehouse.
+====

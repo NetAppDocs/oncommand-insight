@@ -1,0 +1,57 @@
+---
+permalink: howto/finding-the-right-assets.html
+sidebar: sidebar
+keywords: 
+summary: 'The Insight assets you can reference in widget filters and searches vary from asset type to asset type.'
+---
+= Best Practice: finding the right assets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Insight assets you can reference in widget filters and searches vary from asset type to asset type.
+
+In dashboards, the asset type around which you are building your widget determines the other asset type counters for which you can filter or add a column. Keep the following in mind when building your widget:
+
+|===
+| This asset type / counter:| Can be filtered for under these assets:
+a|
+Virtual Machine
+a|
+VMDK
+a|
+Datastore(s)
+a|
+Internal VolumeVMDK
+
+Virtual Machine
+
+Volume
+
+a|
+Hypervisor
+a|
+Virtual Machine
+a|
+Is hypervisor
+a|
+Host
+
+a|
+Host(s)
+a|
+Internal VolumeVolume
+
+a|
+Cluster
+a|
+HostVirtual Machine
+
+a|
+Fabric
+a|
+Port
+|===
+This is not a comprehensive list.
+
+Best practice: If you are filtering for a particular asset type that does not appear in the list, try building your query around an alternate asset type.
