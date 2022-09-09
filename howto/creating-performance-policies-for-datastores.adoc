@@ -1,0 +1,41 @@
+---
+permalink: howto/creating-performance-policies-for-datastores.html
+sidebar: sidebar
+keywords: performance policy,Datastore
+summary: 'You can create performance policies with thresholds for metrics associated with the datastores that correlate to the storage pools you are monitoring. By default, performance policies apply to all devices of the specified type when you create them. You can create an annotation to include only a specific device or a set of devices in the performance policy.'
+---
+= Creating performance policies for Datastores
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can create performance policies with thresholds for metrics associated with the datastores that correlate to the storage pools you are monitoring. By default, performance policies apply to all devices of the specified type when you create them. You can create an annotation to include only a specific device or a set of devices in the performance policy.
+
+== Before you begin
+
+When using an annotation in a performance policy, the annotation must exist before the policy is created.
+
+== About this task
+
+You create a performance policy that provides notification when one or more Datastores you are monitoring exceeds a threshold you set. Your system might already contain a global policy that meets your needs or a policy using annotations might also work if you annotate your Datastores.
+
+== Steps
+
+. From the Insight toolbar, select *Manage* > *Performance Policies*
++
+The performance policies page is displayed. Review any existing performance policies to identify existing policies that address the metrics for thresholds you want to monitor.
+
+. Click *+Add* to add a new policy
+. Add a "`Policy Name`"
++
+You must use a name that is different from all the other policy names for the object. For example, you cannot have two policies named "Latency" for an internal volume; however, you can have a "Latency" policy for an internal volume and another "Latency" policy for a data store. The best practice is to always use a unique name for any policy, regardless of the object type.
+
+. Select "Datastore" as the Object Type
+. Click "`First Occurrence`"
++
+The First occurrence option triggers an alert when a threshold is exceeded on the first sample of data. All other options trigger an alert when the threshold is crossed once and is continuously crossed for at least the specified amount of time.
+
+. Click "`Warning`"
+. For "`Create alert`", select *Capacity ratio - Over commit* and set the value to *> 150*
++
+You might want to create additional capacity related alerts, such as **Capacity total**and *Capacity used*.

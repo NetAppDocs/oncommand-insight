@@ -1,0 +1,121 @@
+---
+permalink: config-admin/dell-emc-powerstore-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'The Dell EMC PowerStore data collector gathers inventory information from Dell EMC PowerStore storage. For configuration, the data collector requires the IP address of the storage processors and a read-only user name and password.'
+---
+= Dell EMC PowerStore data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Dell EMC PowerStore data collector gathers inventory information from Dell EMC PowerStore storage. For configuration, the data collector requires the IP address of the storage processors and a read-only user name and password.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the EMC Data Domain data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+host
+a|
+host
+a|
+host_volume_mapping
+a|
+host_volume_mapping
+a|
+hardware (it has Drives under "extra_details" object): Drives
+a|
+Disk
+a|
+Appliance
+a|
+StoragePool
+a|
+Cluster
+a|
+Storage Array
+a|
+Node
+a|
+StorageNode
+a|
+fc_port
+a|
+Port
+a|
+volume
+a|
+Volume
+a|
+InternalVolume
+a|
+file_system
+a|
+Filesys
+a|
+Internal Volume
+a|
+Mtree
+a|
+QTree
+a|
+Quota
+a|
+Quota
+a|
+NFS and CIFS share
+a|
+FileShare
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* IP address or fully-qualified domain name of storage processor
+* Read-only user name and password
+
+== Parent Serial Number explained
+
+Traditionally Insight is capable of reporting the storage array serial number, or the individual storage node serial numbers. However, some storage array architectures do not cleanly align to this. A PowerStore cluster can be comprised of 1-4 appliances, and each appliance has 2 nodes. If the appliance itself has a serial number, that serial number is neither the serial number for the cluster nor the nodes.
+
+The attribute "Parent Serial Number" on the storage node object is populated appropriately for Dell/EMC PowerStore arrays when the individual nodes sit inside an intermediate appliance/enclosure that is just part of a larger cluster.
+
+== Configuration
+
+|===
+| Field| Description
+a|
+PowerStore gateway(s)
+a|
+IP addresses or fully-qualified domain names of PowerStore storage
+a|
+User Name
+a|
+User name for PowerStore
+a|
+Password
+a|
+Password used for PowerStore
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+HTTPS Port
+a|
+Default is 443
+a|
+Inventory Poll Interval (minutes)
+a|
+Interval between inventory polls. The default is 60 minutes.
+|===
+OnCommand Insight's PowerStore performance collection makes use of PowerStore's 5-minute granularity source data. As such, Insight polls for that data every five minutes, and this is not configurable.

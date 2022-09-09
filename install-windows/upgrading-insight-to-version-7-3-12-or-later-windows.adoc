@@ -1,0 +1,193 @@
+---
+permalink: install-windows/upgrading-insight-to-version-7-3-12-or-later-windows.html
+sidebar: sidebar
+keywords: upgrade,previous version,wizard,backup,conversion
+summary: 'Prior to upgrading from OnCommand Insight 7.3.10 - 7.3.11 to version 7.3.12 or later, you must run the OCI Data Migration Tool.'
+---
+= Upgrading Insight to version 7.3.12 or later - Windows
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Prior to upgrading from OnCommand Insight 7.3.10 - 7.3.11 to version 7.3.12 or later, you must run the OCI Data Migration Tool.
+
+== Background
+
+OnCommand Insight versions 7.3.12 and later utilize underlying software that may be incompatible with previous versions. Insight versions 7.3.12 and later include a *Data Migration Tool* to assist with upgrading.
+
+[NOTE]
+====
+OnCommand Insight versions 7.3.9 and earlier are no longer supported. If you are running one of these versions, you _must_ upgrade to Insight version 7.3.10 or later (7.3.11 is strongly recommended) prior to upgrading to 7.3.12 or later.
+====
+
+== What Does The Data Migration Tool Do?
+
+The migration tool performs an initial compatibility check and then follows one of three different upgrade paths. The path selected is based on the data compatibility of your current version.
+
+[NOTE]
+====
+Prior to upgrading, you must run the Data Migration Tool and follow the recommended steps.
+====
+
+== Before you Begin
+
+* It is strongly recommended to back up your OnCommand Insight system prior to running the Data Migration Tool.
+* The Elasticsearch service on the server needs to be up and running.
+* The Data Migration Tool _must_ be run for the database and any performance archives before you upgrade Insight.
+
+== Running the Data Migration Tool
+
+. Download the latest version of the Data Migration Tool (for example, _SANScreenDataMigrationTool-x86-7.3.12-97.zip_) to your Insight server, as well as the appropriate Insight installer file. Unzip into a working folder. Downloads can be found on the https://mysupport.netapp.com/site/products/all/details/oncommand-insight/downloads-tab[NetApp Support Site].
+. Open a command window and navigate to your working folder.
+ ** Open Powershell as Administrator.
+. Run the data migration tool using the following command:
+ ** _`.\SANScreenDataMigrationTool.ps1`_
+. Follow the instructions as needed. The following is an example.
+
+----
+.\SANScreenDataMigrationTool.ps1
+
+NetApp SANScreen Data Migration Tool 7.3.12-121
+
+Checking OnCommand Insight Installation...
+OnCommand Insight 7.3.10 (139) is installed
+
+Getting installation parameters...
+Installation Directory:  C:\Program Files\SANscreen\
+Elasticsearch Rest Port: 9200
+
+Checking Elasticsearch service...
+Elasticsearch service is up
+
+Checking for obsolete (version 5) indexes...
+Found 54 obsolete indexes. Of these,
+    54 indexes may be migrated with OCI server running,
+       the most recent of which is for 2021-05-13
+
+Verifying migration component is present...
+SANscreen Server service is Running
+
+Proceed with online migration of 54 indexes (y or [n])?:
+----
+
+The Data Migration Tool will check for the presence of obsolete indexes on your system and report if any are found. If none are present the tool will exit.
+
+Some indexes may be migrated while the SANscreen Server service is running. Others may only be migrated when the server is stopped. If there are no indexes that may be migrated the tool will exit. Otherwise follow the instructions as prompted.
+
+After the Data Migration Tool completes it will recheck for obsolete indexes. If all indexes have been migrated, the tool will inform you that upgrade to OnCommand Insight 7.3.12 is supported. You can now proceed with upgrading Insight.
+
+----
+.\SANScreenDataMigrationTool.ps1
+
+NetApp SANScreen Data Migration Tool 7.3.12-127
+
+Checking OnCommand Insight Installation...
+OnCommand Insight 7.3.10 (139) is installed
+
+Getting installation parameters...
+Installation Directory:  D:\SANscreen\
+Elasticsearch Rest Port: 9200
+
+Checking Elasticsearch service...
+Elasticsearch service is up
+
+Checking for obsolete (version 5) indexes...
+Found 5 obsolete indexes. Of these,
+     5 indexes need to be migrated with OCI server stopped
+
+Verifying migration component is present...
+SANscreen Server service is Stopped
+
+Proceed with offline migration of 5 indexes (y or [n])?: y
+Preparing to perform migration...
+Preparing to migrate ociint-inventory-snmp_win2012_host: copied; backup; delete old; restore new; cleanup; done.
+Preparing to migrate ociint-inventory-snmp_win2012_interface: copied; backup; delete old; restore new; cleanup; done.
+Preparing to migrate ociint-inventory-snmp_win2012_load_average: copied; backup; delete old; restore new; cleanup; done.
+Preparing to migrate ociint-inventory-snmp_win2012_storage: copied; backup; delete old; restore new; cleanup; done.
+Preparing to migrate ociint-inventory-snmp_win2012_tcp_connection: copied; backup; delete old; restore new; cleanup; done.
+Execution time 0:00:15
+
+Checking for obsolete (version 5) indexes...
+No obsolete indexes found.  Upgrade to 7.3.12+ is supported.
+
+C:\Users\root\Desktop\SANScreenDataMigrationTool-x64-7.3.12-127>
+----
+
+If you were prompted to stop the SANScreen service, restart it before upgrading Insight.
+
+== Validation failures
+
+In the event that index validation fails, the migration tool will inform you of the problem before quitting.
+
+*OnCommand Insight is not present:*
+
+----
+.\SANScreenDataMigrationTool.ps1
+
+NetApp SANScreen Data Migration Tool V1.0
+
+Checking OnCommand Insight Installation...
+ERROR: OnCommand Insight is not installed
+----
+
+*Invalid Insight version:*
+
+----
+.\SANScreenDataMigrationTool.ps1
+
+NetApp SANScreen Data Migration Tool 7.3.12-105
+
+Checking OnCommand Insight Installation...
+OnCommand Insight 7.3.4 (126) is installed
+ERROR: The OCI Data Migration Tool is intended to be run against OCI 7.3.5 - 7.3.11
+----
+
+*Elasticsearch service is not running:*
+
+----
+.\SANScreenDataMigrationTool.ps1
+
+NetApp SANScreen Data Migration Tool 7.3.12-105
+
+Checking OnCommand Insight Installation...
+OnCommand Insight 7.3.11 (126) is installed
+
+Getting installation parameters...
+Installation Directory:  C:\Program Files\SANscreen\
+Elasticsearch Rest Port: 9200
+
+Checking Elasticsearch service...
+ERROR: The Elasticsearch service is not running
+
+Please start the service and wait for initialization to complete
+Then rerun OCI Data Migration Tool
+----
+
+== Command-line options
+
+The Data Migration Tool includes some optional parameters that affect its operation.
+
+|===
+| Option (Windows)| Function
+a|
+-s
+a|
+Suppress all prompts
+a|
+-perf_archive
+a|
+If specified, existing archive entries for any date whose index(es) are migrated will be replaced. The path should point to the directory containing the archive entry zip files.
+
+An argument of '-' may be specified to indicate there is no performance archive to be updated.
+
+If this argument is present, the prompt for the archive location will be suppressed.
+
+a|
+-check
+a|
+If present, the script will exit immediately after reporting the index counts.
+a|
+-dryrun
+a|
+If present, then the migration executable will report the actions that would be taken (to migrate data and update archive entries) but will not perform the operations.
+|===

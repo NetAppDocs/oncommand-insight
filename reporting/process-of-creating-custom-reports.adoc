@@ -1,0 +1,18 @@
+---
+permalink: reporting/process-of-creating-custom-reports.html
+sidebar: sidebar
+keywords: 
+summary: 'The process of creating ad hoc reports involves several tasks.'
+---
+= Process of creating reports
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The process of creating ad hoc reports involves several tasks.
+
+* Plan the results of your report.
+* Identify data to support your results.
+* Select the data model (for example, Chargeback data model, Inventory data model, and so on) that contains the data.
+* Select data elements for the report.
+* Optionally format, sort, and filter report results.

@@ -1,0 +1,34 @@
+---
+permalink: config-admin/configuring-your-email-for-insight.html
+sidebar: sidebar
+keywords: 
+summary: 'If your users want to receive Insight reports in their email accounts, you need to configure your email server to enable this feature.'
+---
+= Configuring your email for Insight
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If your users want to receive Insight reports in their email accounts, you need to configure your email server to enable this feature.
+
+== Steps
+
+. On the Insight toolbar, click *Admin* and select *Notifications*.
+. Scroll down to the *Email* section of the page.
+. In the *Server* box, enter the name of your SMTP server in your organization, which is identified using either a hostname or an IP address (_nnn.nnn.nnn.nnn_ format).
++
+If you specify a hostname, ensure that the name can be resolved through DNS.
+
+. In the *User name* box, enter your user name.
+. In the *Password* box, enter the password for accessing the email server, which is required only if your SMTP server is password-protected. This is the same password that you use to log into the application that lets you read your email. If a password is required, you must enter it a second time for verification.
+. In the *Sender email* box, enter the sender email account that will be identified as the sender on all OnCommand Insight reports.
++
+This account must be a valid email account within your organization.
+
+. In the *Email signature* box, enter the text that you want to be inserted in every email that is sent.
+. In the Recipients box, click image:../media/add-email-recipient-icon.gif[], enter an email address, and click *OK*.
++
+To edit an email address, select the address, and click image:../media/edit-recipient-icon.gif[]. To delete an email address, select the address, and click image:../media/delete-recipient-icon.gif[].
+
+. To send a test email to specified recipients, click image:../media/test-email-icon.gif[].
+. Click *Save*.

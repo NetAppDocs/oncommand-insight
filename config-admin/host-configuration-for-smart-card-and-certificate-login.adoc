@@ -1,0 +1,67 @@
+---
+permalink: config-admin/host-configuration-for-smart-card-and-certificate-login.html
+sidebar: sidebar
+keywords: 
+summary: 'You must make modifications to the OnCommand Insight host configuration to support Smart Card \(CAC\) and certificate logins.'
+---
+= Configuring hosts for Smart Card and certificate login
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must make modifications to the OnCommand Insight host configuration to support Smart Card (CAC) and certificate logins.
+
+== Before you begin
+
+* LDAP must be enabled on the system.
+* The LDAP `User principal account name` attribute must match the LDAP field that contains a user's ID.
+
+[NOTE]
+====
+For the most up to date CAC and Certificate instructions, see the following Knowledgebase articles (Support login required):
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_configure_Common_Access_Card_(CAC)_authentication_for_NetApp_OnCommand_Insight[How to configure Common Access Card (CAC) authentication for OnCommand Insight]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_configure_Common_Access_Card_(CAC)_authentication_for_NetApp_OnCommand_Insight_DataWarehouse[How to configure Common Access Card (CAC) authentication for OnCommand Insight Data Warehouse]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_create_and_import_a_Certificate_Authority_(CA)_signed_certificate_into_OCI_and_DWH_7.3.X[How to create and import a Certificate Authority (CA) signed certificate into OnComand Insight and OnCommand Insight Data Warehouse 7.3.x]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_create_a_Self_Signed_Certificate_within_OnCommand_Insight_7.3.X_installed_on_a_Windows_Host[How to create a Self Signed Certificate within OnCommand Insight 7.3.X installed on a Windows Host]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_import_a_Cognos_Certificate_Authority_(CA)_signed_certificate_into_DWH_7.3.3_and_later[How to import a Cognos Certificate Authority (CA) signed certificate into OnCommand DataWarehouse 7.3.3 and later]
+
+====
+
+== Steps
+
+. Use the `regedit` utility to modify registry values in `HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Apache Software Foundation\Procrun2.0\SANscreen Server\Parameters\Java`:
+ .. Change the JVM_Option `DclientAuth=false` to `DclientAuth=true.`
+. Back up the keystore file: `C:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore`
+. Open a command prompt specifying `Run as administrator`
+. Delete the self-generated certificate: `C:\Program Files\SANscreen\java64\bin\keytool.exe -delete -alias "ssl certificate" -keystore C:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore`
+. Generate a new certificate: `C:\Program Files\SANscreen\java64\bin\keytool.exe -genkey -alias "alias_name" -keyalg RSA -sigalg SHA1withRSA -keysize 2048 -validity 365 -keystore "C:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore" -dname "CN=commonName,OU=orgUnit,O=orgName,L=localityNameI,S=stateName,C=countryName"`
+. Generate a certificate signing request (CSR): `C:\Program Files\SANscreen\java64\bin\keytool.exe -certreq -sigalg SHA1withRSA -alias "alias_name" -keystore "C:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore" -file C:\temp\server.csr"`
+. After the CSR is returned in step 6, import the certificate, then export the certificate in Base-64 format and place it in `"C:\temp" named servername.cer`.
+. Extract the certificate from the keystore:``C:\Program Files\SANscreen\java64\bin\keytool.exe -v -importkeystore -srckeystore "C:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore" -srcalias "alias_name" -destkeystore "C:\temp\file.p12" -deststoretype PKCS12``
+. Extract a private key from the p12 file: `openssl pkcs12 -in "C:\temp\file.p12" -out "C:\temp\servername.private.pem"`
+. Merge the Base-64 certificate that you exported in step 7 with the private key: `openssl pkcs12 -export -in "<folder>\<certificate>.cer" -inkey "C:\temp\servername.private.pem" -out "C:\temp\servername.new.p12" -name "servername.abc.123.yyy.zzz"`
+. Import the merged certificate into the keystore: `C:\Program Files\SANscreen\java64\bin\keytool.exe -importcert -destkeystore "C:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore" -srckeystore "C:\temp\servername.new.p12" -srcstoretype PKCS12 -alias "alias_name"`
+. Import the root certificate: `C:\Program Files\SANscreen\java64\bin\keytool.exe -importcert -keystore "C:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore" -file "C:\<root_certificate>.cer" -trustcacerts -alias "alias_name"`
+. Import the root certificate into the server.trustore: `C:\Program Files\SANscreen\java64\bin\keytool.exe -importcert -keystore "C:\Program Files\SANscreen\wildfly\standalone\configuration\server.trustore" -file "C:\<email_certificate>.cer" -trustcacerts -alias "alias_name"`
+. Import the intermediate certificate: `C:\Program Files\SANscreen\java64\bin\keytool.exe -importcert -keystore "C:\Program Files\SANscreen\wildfly\standalone\configuration\server.trustore" -file "C:\<intermediate_certificate>.cer" -trustcacerts -alias "alias_name"`
++
+Repeat this step for all intermediate certificates.
+
+. Specify the domain in LDAP to match this example.
+. On the OnCommand Insight server, the `wildfly/standalone/configuration/standalone-full.xml` file needs to be modified by updating verify-client to "REQUESTED" in ``/subsystem=undertow/server=default-server/https-listener=default-https``to enable CAC. Run the appropriate command:
++
+|===
+| OS| Script
+a|
+Windows
+a|
+<install dir>\SANscreen\wildfly\bin\enableCACforRemoteEJB.bat
+a|
+Linux
+a|
+/opt/netapp/oci/wildfly/bin/enableCACforRemoteEJB.sh
+|===
+After executing the script, wait until the reload of the wildfly server is complete before proceeding to the next step.
+
+. Restart the server.

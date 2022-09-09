@@ -1,0 +1,16 @@
+---
+permalink: dwh/data-warehouse-components.html
+sidebar: sidebar
+keywords: 
+summary: 'Data Warehouse contains several components.'
+---
+= Data Warehouse components
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Data Warehouse contains several components.
+
+* Data Warehouse Portal
+* OnCommand Insight Reporting Portal
+* Report authoring tools

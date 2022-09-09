@@ -1,0 +1,27 @@
+---
+permalink: install-linux/uninstalling-data-warehouse.html
+sidebar: sidebar
+keywords: 
+summary: 'You can uninstall Data Warehouse if needed.'
+---
+= Uninstalling Data Warehouse
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can uninstall Data Warehouse if needed.
+
+== Before you begin
+
+Back up the current version of the OnCommand Insight Data Warehouse (DWH) database.
+
+== About this task
+
+Uninstalling the OnCommand Insight Data Warehouse permanently deletes all previously collected data.
+
+== Steps
+
+. Log in to the Data Warehouse server using an account with sudo privileges.
+. Ensure that any OnCommand Insight windows are closed.
+. You can view syntax, command arguments, and parameter usage for `uninstall.sh` by entering the following command: `sudo /usr/bin/oci-uninstall.sh --help`
+. Type the following command: `sudo /usr/bin/oci-uninstall.sh`

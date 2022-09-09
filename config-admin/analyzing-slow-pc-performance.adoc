@@ -1,0 +1,36 @@
+---
+permalink: config-admin/analyzing-slow-pc-performance.html
+sidebar: sidebar
+keywords: 
+summary: 'If you receive calls from network users complaining that their computers are running slowly, you need to analyze host performance and identify the affected resources.'
+---
+= Analyzing slow PC performance
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you receive calls from network users complaining that their computers are running slowly, you need to analyze host performance and identify the affected resources.
+
+== Before you begin
+
+In this example, the caller gave the host name.
+
+== Steps
+
+. Open Insight in your browser.
+. Enter the host name in the *Search assets* box and click the host name in the search results.
++
+The _asset page_ for the resource opens.
+
+. On the asset page for the host, examine the performance charts in the center of the page. You might want to show different types of data in addition to the Latency and IOPS that are usually pre-selected. Click the check boxes for other types of data, such as Throughput, Memory, CPU, or IP Throughput depending on the device type.
+. To display a description of a point on a chart, position the mouse pointer over the point.
+. You might also want to change the time range with the selection at the top of the page to be 3 hours up to 7 days or All of the available data.
+. Examine the list of *Top correlated resources* to see if there are other resources with the same pattern of activity as the base resource.
++
+The first resource in the list is always the base resource.
+
+ .. Click a linked percentage beside a correlated resource to see if the correlated activity pattern is for IOPS or CPU for the base resource and another resource.
+ .. Click the check box for a correlated resource to add its data to the performance charts.
+ .. Click the linked name of the correlated resource to display its asset page.
+
+. For a VM, as in this example, locate the storage pool in the *Top correlated resources* and click the storage pool name.

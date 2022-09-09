@@ -1,0 +1,53 @@
+---
+permalink: dwh/adding-a-reporting-user.html
+sidebar: sidebar
+keywords: 
+summary: 'You must add a new user account for each person who requires access to the Reporting portal. Having a different user account for each person provides a way of controlling access rights, individual preferences, and accountability.'
+---
+= Adding a Reporting user
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must add a new user account for each person who requires access to the Reporting portal. Having a different user account for each person provides a way of controlling access rights, individual preferences, and accountability.
+
+== Before you begin
+
+Before adding a Reporting user, you must have allocated a unique user name, determined what password to use, and verified the correct user role or roles. These roles are specialized in the Reporting portal.
+
+== Steps
+
+. Log in as an administrator to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *User Management*.
+. In the *User Management* window, click *Add New User*.
+. Enter the following information for the new Reporting user:
+ ** *User name*
++
+User name (alphanumeric, including a-z, A-Z, and 0-9) for the account
+
+ ** *E-mail Address*
++
+Email address associated with the user account and required if the user subscribes to any reports
+
+ ** *Password*
++
+Password to log in toOnCommand Insight with this user account, which is typically selected by the user and confirmed in the interface
+
+ ** *Insight role*
++
+Roles available to the user with appropriate permissions
++
+[NOTE]
+====
+The options for the OnCommand Insight role are shown only if OnCommand Insight is installed on the same machine as the reporting facilities, which is not typical.
+====
+
+ ** *Reporting roles*
++
+Reporting role for this user account (for example, Pro Author)
++
+[NOTE]
+====
+The Administrator role is unique. You can add this role to any user.
+====
+. Click *Add*.

@@ -1,0 +1,45 @@
+---
+permalink: config-admin/device-resolution.html
+sidebar: sidebar
+keywords: 
+summary: 'You need to discover all of the devices you want to monitor with OnCommand Insight. Discovery is necessary in order to accurately track performance and inventory in your environment. Typically the majority of devices in your environment are discovered through automatic device resolution.'
+---
+= Device resolution
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You need to discover all of the devices you want to monitor with OnCommand Insight. Discovery is necessary in order to accurately track performance and inventory in your environment. Typically the majority of devices in your environment are discovered through automatic device resolution.
+
+[NOTE]
+====
+If you are performing an upgrade and have inactive Auto Resolution rules in the system you are upgrading from, these rules will be deleted during the upgrade. To preserve inactive Auto Resolution rules, activate the rules (check the box) before the upgrade is performed.
+====
+
+After you install and configure data sources, devices in your environment, including switches, storage arrays and your virtual infrastructure of hypervisors and VMs are identified. However, this does not normally identify 100% of the devices in your environment.
+
+After data source type devices have been configured, best practice is to leverage device resolution rules to help identify the remaining unknown devices in your environment. Device resolution can help you resolve unknown devices as the following device types:
+
+* physical hosts
+* storage arrays
+* tapes
+* switches
+
+Devices remaining as "`unknown`" after device resolution are considered generic devices, which you can also show in queries and on dashboards.
+
+The rules created in turn will automatically identify new devices with similar attributes as they are added to your environment. In some cases, Device resolution also allows for manual identification bypassing the device resolution rules for undiscovered devices within Insight.
+
+Incomplete identification of devices can result in issues including:
+
+* Incomplete paths
+* Unidentified multipath connections
+* The inability to group applications
+* Inaccurate topology views
+* Inaccurate data in the Data warehouse and reporting
+
+The Device resolution feature (*Manage* > *Device resolution*) includes the following tabs, each of which plays a role in device resolution planning and viewing results:
+
+* "`FC identify`" contains a list WWNs and port information of Fibre Channel devices that were not resolved through automatic device resolution. The tab also identifies the percentage of devices that have been identified.
+* "`IP identify`" contains a list of devices accessing CIFs shares and NFS shares that were not identified through automatic device resolution. The tab also identifies the percentage of devices that have been identified.
+* "`Auto resolution rules`" contains the list of rules that are run when performing Fibre channel device resolution. These are rules you create to resolve unidentified Fibre channel devices.
+* "`Preferences`" provides configuration options that you use to customize device resolution for your environment.

@@ -1,0 +1,113 @@
+---
+permalink: config-admin/creating-device-resolution-rules.html
+sidebar: sidebar
+keywords: 
+summary: 'You create device resolution rules to identify hosts, storage, and tapes that are not automatically identified currently by OnCommand Insight. The rules that you create identify devices currently in your environment and also identify similar devices as they are added to your environment.'
+---
+= Creating device resolution rules
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You create device resolution rules to identify hosts, storage, and tapes that are not automatically identified currently by OnCommand Insight. The rules that you create identify devices currently in your environment and also identify similar devices as they are added to your environment.
+
+== About this task
+
+When you create rules you start by identifying the source of information that the rule runs against, the method used to extract information, and whether DNS lookup is applied to the results of the rule.
+
+|===
+a|
+Source that is used to identify the device
+a|
+
+* SRM aliases for hosts
+* Storage alias containing an embedded host or tape name
+* Switch alias containing an embedded host or tape name
+* Zone names containing an embedded host name
+
+a|
+Method that is used to extract the device name from the source
+a|
+
+* As is (extract a name from an SRM)
+* Delimiters
+* Regular expressions
+
+a|
+DNS lookup
+a|
+Specifies if you use DNS to verify the host name.
+|===
+You create rules in the Auto Resolution Rules tab. The following steps describe the rule creation process.
+
+== Steps
+
+. Click *Manage* > *Device resolution*
+. In the *Auto resolution rules* tab, click *+Add*
++
+The New Rule screen is displayed.
++
+[NOTE]
+====
+The New Rule screen includes a *?* icon, that provides help and examples for creating regular expressions.
+====
+
+. In the *Type* list select the device you want to identify.
++
+You can select Host or Tape.
+
+. In the *Source* list, select the source you want to use to identify the host.
++
+Depending on the source you chose, Insight displays the following response:
+
+ ** Zones lists the zones and WWN that need to be identified by Insight.
+ ** SRM lists the unidentified aliases that need to be identified by Insight
+ ** Storage alias lists storage aliases and WWN that need to be identified by Insight
+ ** Switch alias lists the switch aliases that need to be identified by Insight
+
+. In the *Method* list select the method you want to employ to identify the host.
++
+|===
+| Source| Method
+a|
+SRM
+a|
+"`As is`", "`Delimiters`", "`Regular expressions`"
+a|
+Storage alias
+a|
+"`Delimiters`", or "`Regular expressions`"
+a|
+Switch alias
+a|
+"`Delimiters`", or "`Regular expressions`"
+a|
+Zones
+a|
+"`Delimiters`", or "`Regular expressions`"
+|===
+
+ ** Rules using "`Delimiters`" require the delimiters and the minimum length of the host name.
++
+The minimum length of the host name is number of characters that Insight should use to identify a host. Insight performs DNS lookups only for host names that are this long or longer.
++
+For rules using Delimiters, the input string is tokenized by the delimiter and a list of host name candidates is created by making several combinations of the adjacent token. The list is then sorted, largest to smallest. For example, for vipsnq03_hba3_emc3_12ep0 the list would result in the following:
+
+  *** vipsnq03_hba3_emc3_12ep0
+  *** vipsnq03_hba3_emc3
+  *** hba3 emc3_12ep0
+  *** vipsnq03_hba3
+  *** emc3_12ep0
+  *** hba3_emc3
+  *** vipsnq03
+  *** 12ep0
+  *** emc3
+  *** hba3
+
+ ** Rules using "`Regular expression`" require a regular expression, the format, and cases sensitivity selection.
+
+. Click image:../media/runar.gif[] to run all rules, or click the down-arrow in the button to run the rule you created (and any other rules that have been created since the last full run of AR.)
+
+== Results
+
+The results of the rule run are displayed in the FC identify tab.

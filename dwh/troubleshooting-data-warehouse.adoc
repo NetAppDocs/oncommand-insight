@@ -1,0 +1,21 @@
+---
+permalink: dwh/troubleshooting-data-warehouse.html
+sidebar: sidebar
+keywords: 
+summary: 'You can do various tasks related to troubleshooting Data Warehouse.'
+---
+= Troubleshooting Data Warehouse
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can do various tasks related to troubleshooting Data Warehouse.
+
+* Use OnCommand Insight ASUP.
+* View OnCommand Insight logs.
+* Resolve issues related to upgrades and business entities.
+* Resolve issues related to the consolidation of multiple OnCommand Insight servers.
+
+You can consolidate multiple OnCommand Insight servers into the same Data Warehouse database. Many configurations may report the same object from multiple connectors (that is, the same switch exists in two OnCommand Insight instances). In such cases, Data Warehouse consolidates the multiple objects into one (a primary connector is chosen and the object's data will be taken from that connector only).
+
+The storage administrator can use the Troubleshooting page to solve problems related to consolidation issues.

@@ -1,0 +1,40 @@
+---
+permalink: config-admin/performance-policy-management.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight enables you to create performance policies to monitor your network for various thresholds and to raise alerts when those thresholds are crossed. Using performance policies, you can detect a violation of a threshold immediately, identify the implication, and analyze the impact and root cause of the problem in a manner that enables rapid and effective correction.'
+---
+= Managing performance policies
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight enables you to create performance policies to monitor your network for various thresholds and to raise alerts when those thresholds are crossed. Using performance policies, you can detect a violation of a threshold immediately, identify the implication, and analyze the impact and root cause of the problem in a manner that enables rapid and effective correction.
+
+A performance policy enables you to set thresholds on any objects (datastore, disk, hypervisor, internal volume, port, storage, storage node, storage pool, VMDK, virtual machine, and volume) with reported performance counters (for example, total IOPS). When a violation of a threshold occurs, Insight detects and reports it in the associated asset page, by displaying a red solid circle; by email alert, if configured; and in the Violations Dashboard or any custom dashboard that reports violations.
+
+Insight provides some default performance policies, which you can modify or delete if they are not applicable to your environment, for the following objects:
+
+* Hypervisor
++
+There are ESX swapping and ESX utilization policies.
+
+* Internal volume and volume
++
+There are two latency policies for each resource, one annotated for Tier 1 and the other annotated for Tier 2.
+
+* Port
++
+There is a policy for BB credit zero.
+
+* Storage node
++
+There is a policy for node utilization.
+
+* Virtual machine
++
+There are VM swapping and ESX CPU and memory policies.
+
+* Volume
++
+There are latency by tier and misaligned volume policies.

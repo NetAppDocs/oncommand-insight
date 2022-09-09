@@ -1,0 +1,43 @@
+---
+permalink: dwh/restoring-and-upgrading-reports-for-versions-prior-to-6-3.html
+sidebar: sidebar
+keywords: 
+summary: 'If you are upgrading an Insight version prior to 6.3, you must manually restore your reporting artifacts.'
+---
+= Restoring and upgrading reports for versions prior to 6.3
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you are upgrading an Insight version prior to 6.3, you must manually restore your reporting artifacts.
+
+== Before you begin
+
+Follow the instructions in the "Upgrading the Data Warehouse (DWH)" and "Backing up custom reports and reporting artifacts" topics.
+
+== Steps
+
+. To restore Reporting artifacts from releases prior to version 6.3, copy the Export Backup.zip file you created and stored in your `<install>\cognos\c10_64\deployment` directory.
+. Open a browser and go to `http://<server>:<port>/reporting` for the server and port you used during installation.
+. Enter your user name and password and click *Login*.
+. From the *Launch* menu, select *Insight Reporting Administration*.
+. Click the *Configuration* tab.
++
+Due to changes in the data model, the reports in the old packages may not run and need to be upgraded.
+
+. Click *Content Administration*.
+. Click the *New Import* button.
+. Make sure that archive you copied to the deployment directory (for example, `backup6.0.zip`) is selected, and click *Next*.
+. If you entered a password to protect the archive, enter the password and click *OK*.
+. Change the name `+Export...+` to `Import Backup` and click *Next*.
+. Click on the pencil icon next to each package name and enter a new target name if necessary. For example, add a `_original` suffix to the existing name. Then click *OK*.
+. After you rename the target package names for all packages, select all blue folders and click *Next* to continue.
+. Accept all default values.
+. Click *Finish* and then select *Run*.
+. Check for the details of this import and click *OK*.
+. Click *Refresh* to view the status of the import.
+. Click *Close* after the import is complete.
+
+== Results
+
+Two sets of packages appear in the Public Folders tab. For example, one with a `7.0` suffix (for the newer version) and one with a `_original` (or whatever you entered during the backup/restore procedure) suffix which contains your old reports. Due to changes in the data model, the reports in the old packages may not run and need to be upgraded. Your portal tabs now point to the current version of the portal pages.

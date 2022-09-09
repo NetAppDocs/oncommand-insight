@@ -1,0 +1,51 @@
+---
+permalink: config-admin/understanding-this-variables.html
+sidebar: sidebar
+keywords: 
+summary: 'Special variables on an asset’s "Additional data" customizable page allow you to easily showcase additional information that is directly related to the current asset.'
+---
+= Understanding "`$this`" variables
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Special variables on an asset's "Additional data" customizable page allow you to easily showcase additional information that is directly related to the current asset.
+
+== About this task
+
+To use the "`$this`" variables in widgets on your asset's customizable landing page, follow the steps below. For this example, we will add a table widget.
+
+[NOTE]
+====
+"`$this`" variables are only valid for an asset's customizable landing page. They are not available for other Insight dashboards. The available "`$this`" variables varies according to asset type.
+====
+
+== Steps
+
+. Navigate to an asset page for an asset of your choosing. For this example, let's choose a Virtual Machine (VM) asset page. Query or search for a VM and click on the link to go to that VM's asset page.
++
+The asset page for the VM opens.
+
+. Click on the *Change view:* > *Additional Virtual Machine data* drop-down to go to that asset's customizable landing page.
+. Click on the *Widget* button and choose *Table widget*.
++
+The Table widget opens for editing. By default, all storages are shown in the table.
+
+. We want to show all virtual machines. Click on the asset selector and change *Storage* to *Virtual Machine*.
++
+All virtual machines are now shown in the table.
+
+. Click on the *Column selector* buttonimage:../media/column-picker-button.gif[]and add the *hypervisor name* field to the table.
++
+The hypervisor name is shown for each VM in the table.
+
+. We only care about the hypervisor that hosts the current VM. Click on the *Filter by* field's**+**button and select *hypervisor name*.
+. Click on *Any* and select the *$this.host.name* variable. Click the check button to save the filter.
++
+image::../media/variable-this-example-1.gif[]
+
+. The table now shows all the VM's hosted by the current VM's hypervisor. Click *Save*.
+
+== Results
+
+The table that you created for this virtual machine asset page will be displayed for any VM asset page you display. The use of the *$this.host.name* variable in the widget means that only the VM's owned by the current assets's hypervisor will be displayed in the table.

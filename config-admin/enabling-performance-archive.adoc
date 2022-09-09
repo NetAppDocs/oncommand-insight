@@ -1,0 +1,27 @@
+---
+permalink: config-admin/enabling-performance-archive.html
+sidebar: sidebar
+keywords: 
+summary: 'To enable performance data archiving, follow these steps.'
+---
+= Enabling performance archive
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To enable performance data archiving, follow these steps.
+
+== Steps
+
+. On the toolbar, click *Admin* > *Setup*.
+. Select the *Backup & Archive* tab.
+. In the Performance Archive section, ensure**Enable performance archive** is checked.
+. Specify a valid archive location.
++
+You cannot specify a folder under the Insight installation folder.
++
+Best Practice: Do not specify the same folder for archive as the Insight backup location.
+
+. Click *Save*.
++
+The archive process is handled in the background and does not interfere with other Insight activities.

@@ -1,0 +1,26 @@
+---
+permalink: config-admin/deleting-performance-policies.html
+sidebar: sidebar
+keywords: 
+summary: 'You can delete a performance policy if you feel that it is no longer applicable to monitoring the objects in your network.'
+---
+= Deleting performance policies
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can delete a performance policy if you feel that it is no longer applicable to monitoring the objects in your network.
+
+== Steps
+
+. Open Insight in your browser.
+. From the *Manage* menu, select *Performance Policies*.
++
+The Performance Policies page displays.
+
+. Hover your cursor over the name of a policy in an object's performance policy list.
+. Click image:../media/oci-delete-policy-threshold-icon.gif[].
++
+A message appears, asking if you want to delete the policy.
+
+. Click *OK*.

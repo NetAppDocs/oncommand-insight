@@ -1,0 +1,25 @@
+---
+permalink: config-admin/generating-logs-for-customer-support.html
+sidebar: sidebar
+keywords: 
+summary: 'If requested by Customer Support, generate a server, acquisition, or remote log for troubleshooting purposes.'
+---
+= Generating logs for Customer Support
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If requested by Customer Support, generate a server, acquisition, or remote log for troubleshooting purposes.
+
+== About this task
+
+If NetApp Customer Support requests, use this option to generate the logs.
+
+== Steps
+
+. On the Insight toolbar, click *Admin* and select *Troubleshooting*.
+. At the bottom of the page in the Other tasks area, click *Advanced Troubleshooting*.
+. On the next page in the Advanced menu, click the *Troubleshooting* link.
+. Click the *Logs* tab and select the log file to download.
++
+A dialog box opens allowing you to open the log or save the log locally.

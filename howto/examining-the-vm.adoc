@@ -1,0 +1,18 @@
+---
+permalink: howto/examining-the-vm.html
+sidebar: sidebar
+keywords: 
+summary: 'In the VM landing page, select additional metrics to display and include CPU utilization and Memory utilization. The graphs for CPU and Memory utilization show that both are operating at nearly 100% of their capacity. This tells us that the problem with the Exchange server is not a storage problem, but instead is the result of the high VM CPU and memory utilization and the consequential memory swapping of I/O to disk.'
+---
+= Examining the VM
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+In the VM landing page, select additional metrics to display and include CPU utilization and Memory utilization. The graphs for CPU and Memory utilization show that both are operating at nearly 100% of their capacity. This tells us that the problem with the Exchange server is not a storage problem, but instead is the result of the high VM CPU and memory utilization and the consequential memory swapping of I/O to disk.
+
+image::../media/travbook-vm.gif[]
+
+To solve this problem, you can look for additional similar resources. Enter "`Node`" in the Additional resources input dialog to show metrics for assets similar to the Exchange VM. The comparison can help identify a node that might be a better fit for hosting the workload should a change be necessary.
+
+image::../media/resources-vm.gif[]

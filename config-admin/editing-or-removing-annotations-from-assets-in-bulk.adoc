@@ -1,0 +1,38 @@
+---
+permalink: config-admin/editing-or-removing-annotations-from-assets-in-bulk.html
+sidebar: sidebar
+keywords: 
+summary: 'You can edit multiple annotations for assets or remove multiple annotations from assets by using a query instead of having to manually edit or remove them.'
+---
+= Editing or removing multiple annotations from assets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can edit multiple annotations for assets or remove multiple annotations from assets by using a query instead of having to manually edit or remove them.
+
+== Before you begin
+
+You must have already created a query that finds all the assets that you want to edit.
+
+== Steps
+
+. Click *Queries* and select *Show all queries*.
++
+The Queries page displays.
+
+. Click the name of the query that find the assets.
++
+The list of assets associated with the query displays.
+
+. Select the desired assets in the list or click image:../media/select-assets.gif[] to select *All*.
++
+The *Actions* button displays.
+
+. To add an annotation to the assets or edit the value of an annotation assigned to the assets, click image:../media/actions-button.gif[], and select *Edit Annotation*.
+ .. Click *Annotation* and select an annotation you want to change the value for, or select a new annotation to assign it to all the assets.
+ .. Click *Value* and select a value for the annotation.
+ .. Click *Save*.
+. To remove an annotation assigned to the assets, click image:../media/actions-button.gif[], and select *Remove Annotation*.
+ .. Click *Annotation* and select the annotation you want to remove from the assets.
+ .. Click *Delete*.

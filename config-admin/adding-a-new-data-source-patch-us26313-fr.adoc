@@ -1,0 +1,26 @@
+---
+permalink: config-admin/adding-a-new-data-source-patch-us26313-fr.html
+sidebar: sidebar
+keywords: 
+summary: 'New data sources are released as patch files that can be loaded onto the system using the patch process. This process enables new data sources to be available between scheduled releases of OnCommand Insight.'
+---
+= Adding a new data source by patch
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+New data sources are released as patch files that can be loaded onto the system using the patch process. This process enables new data sources to be available between scheduled releases of OnCommand Insight.
+
+== Before you begin
+
+You must have uploaded the patch file that you want to install.
+
+== Steps
+
+. On the Insight toolbar, click *Admin*.
+. Select *Patches*.
+. Select *Actions* > *Install service pack or patch*.
+. In the *Install Service Pack or Patch* dialog box, click *Browse* to locate and select the patch file that you uploaded.
+. Click *Next* in the *Patch Summary* dialog box.
+. Review the *Read Me* information, and click *Next* to continue.
+. In the *Install* dialog box, click *Finish*.

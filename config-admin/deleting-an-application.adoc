@@ -1,0 +1,22 @@
+---
+permalink: config-admin/deleting-an-application.html
+sidebar: sidebar
+keywords: 
+summary: 'You might want to delete an application when it no longer fulfills a need in your environment.'
+---
+= Deleting applications
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You might want to delete an application when it no longer fulfills a need in your environment.
+
+== Steps
+
+. Log in to the Insight web UI.
+. Click *Manage* and select *Applications*.
+. Position your cursor over the application you want to delete and click image:../media/trash-can-query.gif[].
++
+A confirmation dialog box is displayed, asking if you want to delete the application.
+
+. Click *OK*.

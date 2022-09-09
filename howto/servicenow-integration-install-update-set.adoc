@@ -1,0 +1,25 @@
+---
+permalink: howto/servicenow-integration-install-update-set.html
+sidebar: sidebar
+keywords: 
+summary: 'As part of the integration between ServiceNow and OnCommand Insight you must install an Update Set, which loads pre-configured data into ServiceNow in order to provide the connector with specific fields and tables for extracting and loading data.'
+---
+= Install update set
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+As part of the integration between ServiceNow and OnCommand Insight you must install an Update Set, which loads pre-configured data into ServiceNow in order to provide the connector with specific fields and tables for extracting and loading data.
+
+== Steps
+
+. Navigate to the remote update sets table in ServiceNow by searching for "`Retrieved update sets`".
+. Click on *Import Update Set from XML*.
+. The update set is in the Python connector .zip file previously downloaded to your local drive (in our example, the `C:\OCI2SNOW` folder) in the `\update_sets` sub-folder. Click on *Choose File* and select the .xml file in this folder. Click *Upload*.
+. Once the Update Set is loaded, open it and click on *Preview Update Set*.
++
+If errors are detected, you must correct them before you can commit the Update Set.
+
+. If there are no errors, click *Commit Update Set*.
++
+Once the Update Set has been committed it will show on the *System Update Sets* > *Update Sources* page.

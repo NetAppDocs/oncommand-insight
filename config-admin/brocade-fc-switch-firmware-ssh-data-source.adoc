@@ -1,0 +1,165 @@
+---
+permalink: config-admin/brocade-fc-switch-firmware-ssh-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight uses the Brocade FC Switch \(SSH\) data source to discover inventory for Brocade or rebranded switch devices running Factored Operating System \(FOS\) firmware 4.2 and later. Devices in both FC switch and Access Gateway modes are supported.'
+---
+= Brocade FC Switch data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight uses the Brocade FC Switch (SSH) data source to discover inventory for Brocade or rebranded switch devices running Factored Operating System (FOS) firmware 4.2 and later. Devices in both FC switch and Access Gateway modes are supported.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the Brocade FC Switch data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Switch
+a|
+Switch
+a|
+Port
+a|
+Port
+a|
+Virtual Fabric, Physical Fabric
+a|
+Fabric
+a|
+Zone
+a|
+Zone
+a|
+Logical Switch
+a|
+Logical Switch
+a|
+LSAN Zone
+a|
+IVR Zone
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* The Acquisition Unit (local or remote) will initiate connections to TCP Port 22 on Brocade switches to collect inventory data. The AU will also initiate connections to UDP port 161 for collection of performance data.
+* There must be IP connectivity to all switches in the fabric. If you select the Discover all switches in the fabric check box, OCI identifies all the switches in the fabric; however, it needs IP connectivity to these additional switches to discover them.
+* The same account is needed globally across all switches in the fabric. You can use PuTTY (open source terminal emulator) to confirm access.
+* If the Perform license is installed, ports 161 and 162 must be open to all switches in the fabric for SNMP performance polling.
+* SNMP read-only Community String
+
+== Configuration
+
+|===
+| Field| Description
+a|
+Switch IP
+a|
+IP address or fully-qualified domain name of the switch
+a|
+User Name
+a|
+User name for the switch
+a|
+Password
+a|
+Password used for the switch
+a|
+SNMP Version
+a|
+SNMP version
+a|
+SNMP Community String
+a|
+SNMP read-only community string used to access the switch
+a|
+SNMP User Name
+a|
+SNMP version protocol user name (applies only to SNMP v3)
+a|
+SNMP Password
+a|
+SNMP version protocol password (applies only to SNMP v3)
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Fabric Name
+a|
+Fabric name to be reported by the data source. Leave blank to report the fabric name as WWN.
+a|
+Exclude Devices
+a|
+Comma-separated list of device IDs to exclude from polling
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 15 minutes)
+a|
+Timeout (sec)
+a|
+Connection timeout (default 30 seconds)
+a|
+Banner Wait Timeout (sec)
+a|
+SSH banner wait timeout (default 5 seconds)
+a|
+Admin Domains Active
+a|
+Select if using Admin Domains
+a|
+Retrieve MPR Data
+a|
+Select to acquire routing data from your multiprotocol router (MPR)
+a|
+Enable Trapping
+a|
+Select to enable acquisition upon receiving an SNMP trap from the device. If you select enable trapping, you must also activate SNMP.
+a|
+Minimum Time Between Traps (sec)
+a|
+Minimum time between acquisition attempts triggered by traps (default 10 seconds)
+a|
+Discover all switches in the fabric
+a|
+Select to discover all switches in the fabric
+a|
+Choose Favoring HBA vs. Zone Aliases
+a|
+Choose whether to favor HBA or zone aliases
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+a|
+SNMP Auth Protocol
+a|
+SNMP authentication protocol (SNMP v3 only)
+a|
+SNMP Privacy Protocol
+a|
+SNMP privacy protocol (SNMP v3 only)
+a|
+SNMP Privacy Password
+a|
+SNMP privacy password (SNMP v3 only)
+a|
+SNMP Retries
+a|
+Number of SNMP retry attempts
+a|
+SNMP Timeout (ms)
+a|
+SNMP timeout (default 5000 ms)
+|===

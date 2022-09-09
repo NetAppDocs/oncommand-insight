@@ -1,0 +1,54 @@
+---
+permalink: dwh/viewing-storage-arrays-consolidation-issues.html
+sidebar: sidebar
+keywords: 
+summary: 'The reported data for storage arrays is derived from the Inventory data mart. For all storage arrays, there is a row for each connector that reports on them, as well as the Primary Connector from which each array is taken.'
+---
+= Viewing storage arrays consolidation issues
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The reported data for storage arrays is derived from the Inventory data mart. For all storage arrays, there is a row for each connector that reports on them, as well as the Primary Connector from which each array is taken.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *Troubleshooting*.
+. In the *Chassis Consolidation* section, click *SAN Storage Arrays*.
+. Optionally, to filter data in this view, type a portion of the text in the Filter box and click *Filter*. To clear the filter, delete the text in the Filter box and click *Filter*. You can filter by storage name, storage IP, vendor model, or OnCommand Insight object ID.
++
+The filter is case sensitive.
+
+. Review the following data:
+ ** *GUID*
++
+Global Unique Identifier for this type of consolidated device (storage array)
+
+ ** *Name*
++
+Name of the consolidated storage array as it appears in the Data Warehouse
+
+ ** *IP*
++
+IP address of the consolidated storage array
+
+ ** *Vendor and Model*
++
+Name of the vendor who sells the consolidated storage array and the manufacturer's model number
+
+ ** *Principal Connector*
++
+Name of the OnCommand Insight connector that was the actual source of the data
+
+ ** *Available Connectors*
++
+All OnCommand Insight connectors where the consolidated storage array resides
+
+ ** *Insight ID*
++
+ID of the consolidated storage array on the OnCommand Insight chassis where the Principal Connector resides
+
+ ** *Insight Change Time*
++
+When an update has occurred in OnCommand Insight for the storage array and when the same storage array has been updated in other OnCommand Insight servers

@@ -1,0 +1,21 @@
+---
+permalink: install-linux/uninstalling-a-remote-acquisition-unit-rau.html
+sidebar: sidebar
+keywords: 
+summary: 'You can uninstall a Remote Acquisition Unit when you no longer need it.'
+---
+= Uninstalling a Remote Acquisition Unit
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can uninstall a Remote Acquisition Unit when you no longer need it.
+
+== Steps
+
+. Log in to the Remote Acquisition Unit server using an account with sudo privileges.
+. Ensure that any OnCommand Insight windows are closed.
+. You can view syntax, command arguments, and parameter usage for `uninstall.sh` by entering the following command: `sudo /usr/bin/oci-uninstall.sh --help`
+. Type the following command: `sudo /usr/bin/oci-uninstall.sh`
++
+The uninstall script runs. Follow any prompts.

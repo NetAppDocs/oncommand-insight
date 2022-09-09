@@ -1,0 +1,53 @@
+---
+permalink: howto/configuring-data-center-annotations.html
+sidebar: sidebar
+keywords: 
+summary: 'The Data Center annotation is typically used to associate a storage array, switch, or physical host asset with a data center location. You may choose to associate the Data Center annotation with other assets in your environment as well.'
+---
+= Configuring Data Center annotations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Data Center annotation is typically used to associate a storage array, switch, or physical host asset with a data center location. You may choose to associate the Data Center annotation with other assets in your environment as well.
+
+Steps:
+
+* Log in to Insight as a user with administrative permissions.
+* Select *Manage* > *Annotations*.
+* Choose the *Data Center* annotation and click on the *Edit* icon.
+* Click *+Add* and add the Name and Description of your first data center to the annotation list.
+* Do the same for your other data centers.
+* When finished, click *Save*.
+
+Example Data Center annotations:
+
+|===
+| Name| Description
+a|
+DC1_SVL
+a|
+Sunnyvale Bldg 1
+a|
+DC2_SVLb3
+a|
+SVL Bldg3 ENG
+a|
+DC3_NY
+a|
+New York
+a|
+DC4_London
+a|
+London
+a|
+...
+a|
+ 
+|===
+Insight comes with several out-of-the-box annotation types that allow users to define or modify values to fit their needs. These default annotation types will always be available to the Insight web UI as well as reporting. Newly-created custom annotations are visible in the Insight web UI but require additional measures to make them available to reporting. For information on including custom annotations in reports. contact your NetApp Customer Support representative.
+
+[NOTE]
+====
+Some users may be inclined to use the Country annotation to set asset locations, as opposed to, or in conjunction with, the Data Center annotation. However, you should bear in mind that the Country annotation is treated as a custom annotation type in the Insight data warehouse and therefore may not show up in reporting at the same granularity as Data Center.
+====

@@ -1,0 +1,395 @@
+---
+permalink: install-linux/oncommand-insight-licenses.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight operates with licenses that enable specific features on the Insight Server.'
+---
+= OnCommand Insight licenses
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight operates with licenses that enable specific features on the Insight Server.
+
+* *Discover*
++
+Discover is the basic Insight license that supports inventory. You must have a Discover license to use OnCommand Insight, and the Discover license must be paired with at least one of the Assure, Perform, or Plan licenses.
+
+* *Assure*
++
+An Assure license provides support for assurance functionality, including global and SAN path policy, and violation management. An Assure license also enables you to view and manage vulnerabilities.
+
+* *Perform*
++
+A Perform license supports performance monitoring on asset pages, dashboard widgets, queries, and so on, as well as managing performance policies and violations.
+
+* *Plan*
++
+A Plan license supports planning functions, including resource usage and allocation.
+
+* *Host Utilization pack*
++
+A Host Utilization license supports file system utilization on hosts and virtual machines.
+
+* *Report Authoring*
++
+A Report Authoring license supports additional authors for reporting. This license requires the Plan license.
+
+OnCommand Insight modules are licensed for annual term or perpetual:
+
+* By terabyte of monitored capacity for Discover, Assure, Plan, Perform modules
+* By number of hosts for Host Utilization pack
+* By number of additional units of Cognos pro-authors required for Report Authoring
+
+License keys are a set of unique strings that are generated for each customer. You can obtain license keys from your OnCommand Insight representative.
+
+Your installed licenses control the following options that are available in the software:
+
+* *Discover*
++
+Acquire and manage inventory (Foundation)
++
+Monitor changes and manage inventory policies
+
+* *Assure*
++
+View and manage SAN path policies and violations
++
+View and manage vulnerabilities
++
+View and manage tasks and migrations
+
+* *Plan*
++
+View and manage requests
++
+View and manage pending tasks
++
+View and manage reservation violations
++
+View and manage port balance violations
+
+* *Perform*
++
+Monitor performance data, including data in dashboard widgets, asset pages, and queries
++
+View and manage performance policies and violations
+
+The following tables provide details of the features that are available with and without the Perform license for admin users and non-admin users.
+
+|===
+| Feature (admin)| With Perform license| Without Perform license
+a|
+Application
+a|
+Yes
+a|
+No performance data or charts; no anomaly detection-related widgets
+a|
+Virtual machine
+a|
+Yes
+a|
+No performance data or charts
+a|
+Hypervisor
+a|
+Yes
+a|
+No performance data or charts
+a|
+Host
+a|
+Yes
+a|
+No performance data or charts
+a|
+Datastore
+a|
+Yes
+a|
+No performance data or charts
+a|
+VMDK
+a|
+Yes
+a|
+No performance data or charts
+a|
+Internal volume
+a|
+Yes
+a|
+No performance data or charts
+a|
+Volume
+a|
+Yes
+a|
+No performance data or charts
+a|
+Storage pool
+a|
+Yes
+a|
+No performance data or charts
+a|
+Disk
+a|
+Yes
+a|
+No performance data or charts
+a|
+Storage
+a|
+Yes
+a|
+No performance data or charts
+a|
+Storage node
+a|
+Yes
+a|
+No performance data or charts
+a|
+Fabric
+a|
+Yes
+a|
+No performance data or charts
+a|
+Switch port
+a|
+Yes
+a|
+No performance data or charts; "`Port Errors`" shows "`N/A`"
+a|
+Storage port
+a|
+Yes
+a|
+Yes
+a|
+NPV port
+a|
+Yes
+a|
+No performance data or charts
+a|
+Switch
+a|
+Yes
+a|
+No performance data or charts
+a|
+NPV switch
+a|
+Yes
+a|
+No performance data or charts
+a|
+Qtrees
+a|
+Yes
+a|
+No performance data or charts
+a|
+Quota
+a|
+Yes
+a|
+No performance data or charts
+a|
+Path
+a|
+Yes
+a|
+No performance data or charts
+a|
+Zone
+a|
+Yes
+a|
+No performance data or charts
+a|
+Zone member
+a|
+Yes
+a|
+No performance data or charts
+a|
+Generic device
+a|
+Yes
+a|
+No performance data or charts
+a|
+Tape
+a|
+Yes
+a|
+No performance data or charts
+a|
+Masking
+a|
+Yes
+a|
+No performance data or charts
+a|
+ISCSI sessions
+a|
+Yes
+a|
+No performance data or charts
+a|
+ICSI network portals
+a|
+Yes
+a|
+No performance data or charts
+a|
+Search
+a|
+Yes
+a|
+Yes
+a|
+Admin
+a|
+Yes
+a|
+Yes
+a|
+Dashboard
+a|
+Yes
+a|
+Yes
+a|
+Widgets
+a|
+Yes
+a|
+Partially available (only asset, query, and admin widgets are available)
+a|
+Violations dashboard
+a|
+Yes
+a|
+Hidden
+a|
+Assets dashboard
+a|
+Yes
+a|
+Partially available (storage IOPS and VM IOPS widgets are hidden)
+a|
+Manage performance policies
+a|
+Yes
+a|
+Hidden
+a|
+Manage annotations
+a|
+Yes
+a|
+Yes
+a|
+Manage annotation rules
+a|
+Yes
+a|
+Yes
+a|
+Manage applications
+a|
+Yes
+a|
+Yes
+a|
+Queries
+a|
+Yes
+a|
+Yes
+a|
+Manage business entities
+a|
+Yes
+a|
+Yes
+|===
+|===
+| Feature| User - with Perform license| Guest - with Perform license| User - without Perform license| Guest - without Perform license
+a|
+Assets dashboard
+a|
+Yes
+a|
+Yes
+a|
+Partially available (storage IOPS and VM IOPS widgets are hidden)
+a|
+Partially available (storage IOPS and VM IOPS widgets are hidden)
+a|
+Custom dashboard
+a|
+View only (no create, edit, or save options)
+a|
+View only (no create, edit, or save options)
+a|
+View only (no create, edit, or save options)
+a|
+View only (no create, edit, or save options)
+a|
+Manage performance policies
+a|
+Yes
+a|
+Hidden
+a|
+Hidden
+a|
+Hidden
+a|
+Manage annotations
+a|
+Yes
+a|
+Hidden
+a|
+Yes
+a|
+Hidden
+a|
+Manage applications
+a|
+Yes
+a|
+Hidden
+a|
+Yes
+a|
+Hidden
+a|
+Manage business entities
+a|
+Yes
+a|
+Hidden
+a|
+Yes
+a|
+Hidden
+a|
+Queries
+a|
+Yes
+a|
+View and edit only (no save option)
+a|
+Yes
+a|
+View and edit only (no save option)
+|===

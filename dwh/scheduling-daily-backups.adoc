@@ -1,0 +1,32 @@
+---
+permalink: dwh/scheduling-daily-backups.html
+sidebar: sidebar
+keywords: 
+summary: 'Although you can manually back up Data Warehouse by using the Backup/Restore control at any time, it is best practice to schedule automatic backups, defining when and how often to back up the Data Warehouse database and Cognos content store. Backups offer protection from data loss, allowing you to restore the Data Warehouse database if needed. You also use a backup when migrating to a new Data Warehouse server or when upgrading to a new Data Warehouse version.'
+---
+= Scheduling daily backups
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Although you can manually back up Data Warehouse by using the Backup/Restore control at any time, it is best practice to schedule automatic backups, defining when and how often to back up the Data Warehouse database and Cognos content store. Backups offer protection from data loss, allowing you to restore the Data Warehouse database if needed. You also use a backup when migrating to a new Data Warehouse server or when upgrading to a new Data Warehouse version.
+
+== About this task
+
+Scheduling backups during times when the Data Warehouse server is not busy improves backup performance and reduces the impact on users.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *Schedule*.
+. In the *Backup Schedule* dialog box, click *Edit* to add a new schedule.
++
+image::../media/oci-dwh-admin-schedule-backup.gif[]
+
+. To enable the scheduled backups, select *Backup Enabled*.
+. Specify the location where you want to store the backup files.
+. Specify the data you want backed up.
+. Specify the day or days that you want the backup to be performed.
+. Specify what time of day you want the backup started.
+. Specify how many past backup copies you want to retain.
+. Click *Save*.

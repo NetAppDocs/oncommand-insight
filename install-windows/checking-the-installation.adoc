@@ -1,0 +1,16 @@
+---
+permalink: install-windows/checking-the-installation.html
+sidebar: sidebar
+keywords: 
+summary: 'You can open Insight in a supported browser to check the installation. You might also want to check the Insight log files.'
+---
+= Checking the installation
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can open Insight in a supported browser to check the installation. You might also want to check the Insight log files.
+
+When you first open Insight, the license setup page opens. After you enter the license information, you must set up the data sources. See the _OnCommand Insight Configuration and Administration Guide_ for information about entering data source definitions and setting up Insight users and notifications.
+
+If you have experienced installation problems, contact technical support and provide the requested information.

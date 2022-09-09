@@ -1,0 +1,23 @@
+---
+permalink: faq/index.html
+sidebar: sidebar
+keywords: 
+summary: ''
+---
+= Frequently Asked Questions
+:icons: font
+:imagesdir: ../media/
+
+* xref:faq-general-insight-questions.adoc[General Questions]
+* xref:faq-insight-licensing.adoc[OnCommand Insight Licensing]
+* xref:faq-configuration-and-supported-devices.adoc[Configuration and Supported devices]
+* xref:faq-scale-and-ease-of-use.adoc[Scale and Ease of Use]
+* xref:faq-performance-troubleshooting.adoc[Performance troubleshooting]
+* xref:faq-environment-management.adoc[Managing your environment]
+* xref:faq-integrating-insight-and-third-party-tools.adoc[Integrating Insight with other tools]
+* xref:oci-faq-netapp-storage-iops.adoc[Data ONTAP Storage IOPS]
+* xref:faq-anomaly-detection.adoc[Anomaly detection]
+* xref:copyright-and-trademark.adoc[Copyright, trademark, and machine translation]
+ ** xref:copyright.adoc[Copyright]
+ ** xref:trademark.adoc[Trademark]
+ ** xref:generic-machine-translation-disclaimer.adoc[Machine translation]

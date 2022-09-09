@@ -1,0 +1,25 @@
+---
+permalink: reporting/reporting-data-model.html
+sidebar: sidebar
+keywords: 
+summary: 'Your enterprise can benefit from the data that is discovered and stored in OnCommand Insight Data Warehouse. The OnCommand Insight Data Warehouse is a centralized repository that stores data from multiple information sources and transforms them into a common, multidimensional data model for efficient querying and analysis.'
+---
+= Reporting data model
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Your enterprise can benefit from the data that is discovered and stored in OnCommand Insight Data Warehouse. The OnCommand Insight Data Warehouse is a centralized repository that stores data from multiple information sources and transforms them into a common, multidimensional data model for efficient querying and analysis.
+
+From this repository, you can generate custom reports such as chargeback, consumption analysis, and forecasting reports that answer questions such as the following:
+
+* What inventory do I have?
+* Where is my inventory?
+* Who is using our assets?
+* What is the chargeback for allocated storage for a business unit?
+* How much headroom do I have on switch ports?
+* How long until I need to acquire additional storage capacity?
+* Are business units aligned along the proper storage tiers?
+* How is storage allocation changing over a month, quarter, or year?
+
+Using the data model provided with OnCommand Insight Reporting, you can use report authoring tools to design and schedule reports.

@@ -1,0 +1,100 @@
+---
+permalink: install-windows/data-warehouse-and-reporting-server-requirements.html
+sidebar: sidebar
+keywords: 
+summary: 'You must run the Data Warehouse and the Reporting server on a computer that is compatible with established hardware and software requirements, ensuring that Apache web server or reporting software is not already installed on this machine.'
+---
+= Data Warehouse and Reporting server requirements
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must run the Data Warehouse and the Reporting server on a computer that is compatible with established hardware and software requirements, ensuring that Apache web server or reporting software is not already installed on this machine.
+
+[NOTE]
+====
+Sizing for OnCommand Insight has multiple dependencies, such as number of assets in your environment, amount of historical data retained, and more. The following data warehouse sizing examples are guidelines only; they represent some of the environments in which Insight has been tested. Changing any of these or other factors in the environment can change the sizing requirements for Insight.
+====
+
+It is recommended to contact your Sales Engineer for detailed sizing guidance before installing or upgrading Insight.
+
+*Examples:*
+
+|===
+| Environment factors:| Disk space, CPUs, and Memory tested:
+a|
+18 storage arrays3,400 VMs
+
+4,500 switch ports
+
+a|
+200 GB hard disk8 cores
+
+32 GB RAM
+
+a|
+110 storage arrays11,500 VMs
+
+14,500 switch ports
+
+a|
+300 GB hard disk8 cores
+
+48 GB RAM
+
+|===
+*Requirements:*
+
+|===
+| Component| Required
+a|
+Operating system
+a|
+Computer running 64-bit Microsoft Windows Server 2012, 2012 R2, 2016, or 2019 with the latest service pack.
+a|
+Virtual machine (VM)
+a|
+This component can run in a virtual environment, provided that the CPU and memory resources for your instance are reserved.
+a|
+CPU
+a|
+8 - 40 CPU cores
+a|
+Memory
+a|
+32 GB - 2 TB RAM Best Practice: It is strongly recommended to set the paging file size to "`Windows managed`". Small, fixed-size paging files may interfere with the successful storage of Insight performance data.
+
+a|
+Available disk space
+a|
+200 GB - 2 TB disk spaceInstallation requires a minimum of 20 GB free on the C: drive.
+
+NOTE: On Windows, Insight Data Warehouse with Reporting requires the 8dot3 name creation support be enabled on the installation drive prior to installing. The C: drive typically has this enabled by default. You can validate if 8dot3 name creation is enabled on the target installation drive by running the following command (substitute D: with target installation drive):
+
+fsutil 8dot3name query D:
+
+To enable 8dot3 name creation execute the following command (substitute D: with target installation drive):
+
+fsutil 8dot3name set D: 0
+
+a|
+Network
+a|
+
+* 100 Mbps or 1 Gbps Ethernet connection
+* Static IP address
+* Port 50000 must be available before installing Data Warehouse with Reporting on Windows
+* For the OnCommand Insight DWH server process, ports 80, 443, 1098, 1099, 3873, 8083, and 4444 through 4446
+* For the reporting engine, ports 1527, 9362, 9300, and 9399
+* For MySQL, port 3306
+* Ensure that DNS is properly working by doing an `nslookup` against the host
+
+a|
+Virus Scan
+a|
+During the installation of this OnCommand Insight component, you must completely disable all virus scanners. Following installation, the paths used by the Insight component (install, backup, and archiver paths) and all DWH component installation paths (SANscreen, DB2, and backup paths) must be excluded from virus scanning.
+a|
+Visual Studio
+a|
+Visual Studio 2019 https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist[redistributables] must be installed before installing Data Warehouse with Reporting on Windows.
+|===

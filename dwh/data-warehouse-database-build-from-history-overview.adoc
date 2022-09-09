@@ -1,0 +1,25 @@
+---
+permalink: dwh/data-warehouse-database-build-from-history-overview.html
+sidebar: sidebar
+keywords: 
+summary: 'You can build the Data Warehouse database using historical data in your OnCommand Insight server. Data Warehouse extracts data from the OnCommand Insight servers and builds the Data Warehouse data marts according to the build from history schedule.'
+---
+= Data Warehouse database build from history overview
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can build the Data Warehouse database using historical data in your OnCommand Insight server. Data Warehouse extracts data from the OnCommand Insight servers and builds the Data Warehouse data marts according to the build from history schedule.
+
+This option does not require a special license and inventory data is included in the build. However, to build capacity information, the OnCommand Insight Plan and OnCommand Insight Perform licenses are required.
+
+If any build (from history or current) has already been performed, the build cannot be done on dates before the last job. This means if you perform a current build, you cannot build from history. More specifically, if you performed builds from history that ended on Jan 1, 2012, you cannot perform any build on the year 2011.
+
+If the history build does not include a day or two of any unsuccessful ETL processes, do not try building history for just these few days. Historical data is for longer periods and a day or two is not going to change trending significantly. If you do want to rebuild from history, rebuild the entire history.
+
+The Build from History view displays all build jobs from all connectors. For example, the view might display an inventory job for every connector, a port capacity job for every build run, and an annotations job.
+
+Before you configure the Build from History, the following must occur:
+
+* Connectors must be configured.
+* Annotations should be entered in OnCommand Insight and can be manually updated using the *Force Update of Annotations for DWH option* in the old OnCommand Insight Portal or will be automatically updated 15 minutes after they are set.

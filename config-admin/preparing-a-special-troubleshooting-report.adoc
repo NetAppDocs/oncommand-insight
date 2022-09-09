@@ -1,0 +1,14 @@
+---
+permalink: config-admin/preparing-a-special-troubleshooting-report.html
+sidebar: sidebar
+keywords: 
+summary: 'Insight sends information to NetApp Customer Support automatically through the ASUP system you set up after installing the software. However, you might want to create a troubleshooting report and open a case with the Support team for a specific problem.'
+---
+= Preparing a special troubleshooting report
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Insight sends information to NetApp Customer Support automatically through the ASUP system you set up after installing the software. However, you might want to create a troubleshooting report and open a case with the Support team for a specific problem.
+
+You can use tools in Insight to perform a manual Insight backup, bundle the logs, and send that information to NetApp Customer Support.

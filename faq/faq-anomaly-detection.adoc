@@ -1,0 +1,98 @@
+---
+permalink: faq/faq-anomaly-detection.html
+sidebar: sidebar
+keywords: 
+summary: 'This FAQ answers common questions about OnCommand Insight anomaly detection.'
+---
+= Anomaly detection
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This FAQ answers common questions about OnCommand Insight anomaly detection.
+
+== What is an anomaly?
+
+Anomalies are performance change events in IOPS, Latency, Utilization, Buffer-to-Buffer credits and CPU that do not conform to previously observed and expected patterns. OCI anomaly detection targets an application infrastructure servicing the application, looking for changes in processing patterns and behaviors. These cyclical processing patterns include historical "`ebbs and flows`" in workloads performance during hours of business operation and weekends. The anomaly detection engine in OCI uses machine-learning intelligence to establish a "`normal`" baseline pattern and detects when a defined application deviates from its expected behavior.
+
+== How does anomaly detection work in OCI?
+
+OCI `'s anomaly detection is a proactive monitoring approach leveraging Machine Learning Intelligence based on historical information. Its ability to detect emerging performance anomalies far sooner than traditional thresholds provides additional time for administrators to discuss, plan & mitigate concerns before application SLO's or Data Center services are impacted.
+
+Insight discovers and automatically maps the entire infrastructure stack supporting the application, starting from the compute resources, through the switch fabric and down to the storage resources. OCI collects key performance counters including IOPS, Latency, Node information, Storage Pool Utilization, Hypervisor CPU, and BB Credit Zero for each resource, then feeds that data to the anomaly detection engine for use in application anomaly analysis. Anomaly results are updated twice per hour and are available on the Application dashboard, Application landing pages, and using the query table widget. Anomaly scoring is performed resource-by-resource, counter-by-counter and an overall significance score is provided for the entire application infrastructure.
+
+== What versions of OCI support anomaly detection?
+
+Anomaly detection is supported for OCI 7.2 and later.
+
+== How many applications can OCI enable anomaly detection for?
+
+OCI supports monitoring for up to 48 business critical applications.
+
+== How many anomaly detection engines (ADEs) can be deployed?
+
+One anomaly detection engine per OCI operational server.
+
+== Can I deploy additional anomaly detection engines if I have more than 48 applications?
+
+Yes, Currently OCI supports pairing one anomaly detection engine per OCI server. In multi OCI server environments, additional anomaly detection engines and OCI operational servers could be deployed in a "`paired`" fashion. Each server would have visibility only into their applications with anomaly detection capabilities enabled.
+
+== Are there scale limitations for the size of an application cluster/group?
+
+OCI engineering general guidelines for optimal operation and scale using Insight anomaly detection capabilities are as follows: One anomaly detection engine per Insight server is supported. Up to 48 applications can be monitored in OCI. Application infrastructures can consist of up to 4000 objects. Insufficient resources will reduce overall scale.
+
+== What are the OCI licenses required for anomaly detection?
+
+Anomaly detection analysis requires both Discover and Perform Licenses.
+
+== How long does it take to begin detecting anomalies and see results?
+
+Anomaly scoring results will appear in as little as 2-3 hours after application monitoring is enabled.
+
+== How long should I wait before using the results operationally?
+
+The quality and accuracy of the anomaly detection engine results improve over time (weeks, months, quarter, etc.). Cyclical evaluation (periodicity) typically starts around the third week. For patterns that span a longer duration of time (e.g. monthly), the engine is required to observe repeat events before adjusting anomaly scores.
+
+== How long does the anomaly detection engine retain its learning?
+
+The anomaly detection engine is highly efficient in the way it stores learning information. Statistical learning can be measured in months for the anomalous behaviors of objects. There is no "`retention`" as commonly thought of with typical data sets in Insight. The anomaly detection engine learns and stores data that is determined "`statistically significant`" over time and ages out insignificant data where necessary. This mechanism greatly increases its learning duration and reduces both resources required to store data and time to perform analyses
+
+== If I enable anomaly detection today, can it tell me what anomalies happened last week?
+
+No, when anomaly detection is initialized, the Insight server loads any existing performance data from the Insight server to ramp-up the anomaly detection engines understanding of the monitored applications and their infrastructures. Anomalies will not be provided on the ingested "`pre-existing`" performance data. Anomalies will be reported only on the new incoming data as it is analyzed against the pre-existing data. Newly-detected anomalies will begin to be displayed in as little as a few hours.
+
+== How are anomaly scores calculated?
+
+Each application anomaly score is calculated from a rollup of the various individual assets scores. The anomaly detection engine leverages over 30 complex algorithms and formulas in its anomaly determination and scores provided. Users could compare this type of analysis scoring technique to similar medical scorings such as the Body Mass Index (BMI) scores consisting of numerous variables and measurements (weight, age, height, density etc.).
+
+== What do each of the blue bars represent?
+
+Each block of 3 bars represent a resource and its anomaly significance range. The more blue bars, the greater the change in observed behavior. Clicking the blocks reveals the significance (of the anomaly), the individual resource and counters.
+
+== Why do the individual resource scores not add up to the total Application score?
+
+Each resource is scored individually based on its deviation in observed behavior. The individual resource scoring significance does play a part in the total Application scoring but also may include other analytical and mathematical factors.
+
+== Can I configure anomaly detection to monitor business entities or objects with annotations assigned?
+
+Today, anomaly detection can be enabled on defined applications only. Any object that can be assigned to an application (VMs, hypervisors, servers, volumes and internal volumes) can be grouped and monitored.
+
+== Can OCI provide notification for high anomaly scores?
+
+Yes, you can create application performance policies that are based on the anomaly score for the application. Crossing thresholds defined in the policy triggers alerts that notify you about issues related to the resources in your application.
+
+== What happens when I turn off anomaly detection on my application?
+
+All learned (historical anomaly) information for the application Infrastructure is cleared from the anomaly detection engine. All anomaly detection results are cleared from the Insight operational database.
+
+== When should I use static thresholds?
+
+Static thresholds are well suited for best-practice alerting of infrastructure resource limits as well as identifying the duration of the event. They also aid in the management of service levels, and alerting upon various error counter metrics such as Link resets, Class 3 Discards and Loss of Sync.
+
+== What plans are there to include other metrics into anomaly detection?
+
+The Anomaly machine learning model and algorithms will continue to be improved or adjusted as new statistical data, user feedback and product improvement becomes available.
+
+== Are the Anomaly Results available in the Data Warehouse (DWH)?
+
+The Anomaly results today are not sent (ETL-ed) to the OCI Data Warehouse. Users can locate results on the OCI Application landing page or in user-defined Query table widgets.

@@ -1,0 +1,35 @@
+---
+permalink: config-admin/what-the-user-data-section-enables-you-to-do-with-annotations.html
+sidebar: sidebar
+keywords: 
+summary: 'When customizing OnCommand Insight to track data for your corporate requirements, you can define specialized notes, called annotations, and assign them to your assets. The User Data section of an asset page displays annotations assigned to an asset and also enables you to change the annotations assigned to that asset.'
+---
+= Using the User Data section to assign or modify annotations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When customizing OnCommand Insight to track data for your corporate requirements, you can define specialized notes, called _annotations_, and assign them to your assets. The User Data section of an asset page displays annotations assigned to an asset and also enables you to change the annotations assigned to that asset.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Locate an asset page by doing either of the following:
+ ** On the Insight toolbar, click image:../media/icon-sanscreen-magnifying-glass-gif.gif[], type in the name of the asset, and then select the asset from the list.
+ ** Click *Dashboards*, select *Assets Dashboard*, locate an asset name, and click it.
+The asset page displays.
+. In the *User Data* section of the asset page, click image:../media/add-annotation-icon.gif[].
++
+The Add Annotation dialog box displays.
+
+. Click *Annotation* and select an annotation from the list.
+. Click *Value* and do either of the following, depending on type of annotation you selected:
+ ** If the annotation type is list, date, or Boolean, select a value from the list.
+ ** If the annotation type is text, type a value.
+. Click *Save*.
++
+The annotation is assigned to the asset. You can later filter assets by annotation using a query. If you want to group assets by annotations, you must use the Java UI.
+
+. If you want to change the value of the annotation after you assign it, click image:../media/change-annotation-value.gif[] and select a different value.
++
+If the annotation is of list type for which the *Add values dynamically upon annotation assignment* option is selected, you can type to add a new value in addition to selecting an existing value.

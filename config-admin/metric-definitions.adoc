@@ -1,0 +1,150 @@
+---
+permalink: config-admin/metric-definitions.html
+sidebar: sidebar
+keywords: 
+summary: 'The Expert View section of an asset page displays several metrics based on the time period selected for the asset. Each metric is displayed in its own performance chart. You can add or remove metrics and related assets from the charts depending on what data you want to see.'
+---
+= Expert View metric definitions
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Expert View section of an asset page displays several metrics based on the time period selected for the asset. Each metric is displayed in its own performance chart. You can add or remove metrics and related assets from the charts depending on what data you want to see.
+
+|===
+| Metric| Description
+a|
+BB credit zero Rx, Tx
+a|
+Number of times the receive/transmit buffer-to-buffer credit count transitioned to zero during the sampling period. This metric represents the number of times the attached port had to stop transmitting because this port was out of credits to provide.
+
+a|
+BB credit zero duration Tx
+a|
+Time in milliseconds during which the transmit BB credit was zero during the sampling interval.
+a|
+Cache hit ratio (Total, Read, Write) %
+a|
+Percentage of requests that result in cache hits. The higher the number of hits versus accesses to the volume, the better is the performance. This column is empty for storage arrays that do not collect cache hit information.
+
+a|
+Cache utilization (Total) %
+a|
+Total percentage of cache requests that result in cache hits
+a|
+Class 3 discards
+a|
+Count of Fibre Channel Class 3 data transport discards.
+a|
+CPU utilization (Total) %
+a|
+Amount of actively used CPU resources, as a percentage of total available (over all virtual CPUs).
+a|
+CRC error
+a|
+Number of frames with invalid cyclic redundancy checks (CRCs) detected by the port during the sampling period
+a|
+Frame rate
+a|
+Transmit frame rate in frames per second (FPS)
+a|
+Frame size average (Rx, Tx)
+a|
+Ratio of traffic to frame size. This metric enables you to identify whether there are any overhead frames in the fabric.
+
+a|
+Frame size too long
+a|
+Count of Fibre Channel data transmission frames that are too long.
+a|
+Frame size too short
+a|
+Count of Fibre Channel data transmission frames that are too short.
+a|
+I/O density (Total, Read, Write)
+a|
+Number of IOPS divided by used capacity (as acquired from the most recent inventory poll of the data source) for the Volume, Internal Volume or Storage element. Measured in number of I/O operations per second per TB.
+a|
+IOPS (Total, Read, Write)
+a|
+Number of read/write I/O service requests passing through the I/O channel or a portion of that channel per unit of time (measured in I/O per sec)
+a|
+IP throughput (Total, Read, Write)
+a|
+Total: Aggregated rate at which IP data was transmitted and received in megabytes per second. Read: IP Throughput (Receive): Average rate at which IP data was received in megabytes per second.
+
+Write: IP Throughput (Transmit): Average rate at which IP data was transmitted in megabytes per second.
+
+a|
+Latency (Total, Read, Write)
+a|
+Latency (R&W): Rate at which data is read or written to the virtual machines in a fixed amount of time. The value is measured in megabytes per second.
+
+Latency: Average response time from the virtual machines in a data store.
+
+Top Latency: The highest response time from the virtual machines in a data store.
+
+a|
+Link failure
+a|
+Number of link failures detected by the port during the sampling period.
+a|
+Link reset Rx, Tx
+a|
+Number of receive or transmit link resets during the sampling period. This metric represents the number of link resets that were issued by the attached port to this port.
+
+a|
+Memory utilization (Total) %
+a|
+Threshold for the memory used by the host.
+a|
+Partial R/W (Total) %
+a|
+Total number of times that a read/write operation crosses a stripe boundary on any disk module in a RAID 5, RAID 1/0, or RAID 0 LUN Generally, stripe crossings are not beneficial, because each one requires an additional I/O. A low percentage indicates an efficient stripe element size and is an indication of improper alignment of a volume (or a NetApp LUN).
+
+For CLARiiON, this value is the number of stripe crossings divided by the total number of IOPS.
+
+a|
+Port errors
+a|
+Report of port errors over the sampling period/given time span.
+a|
+Signal loss count
+a|
+Number of signal loss errors. If a signal loss error occurs, there is no electrical connection, and a physical problem exists.
+
+a|
+Swap rate (Total Rate, In rate, Out rate)
+a|
+Rate at which memory is swapped in, out, or both from disk to active memory during the sampling period. This counter applies to virtual machines.
+a|
+Sync loss count
+a|
+Number of synchronization loss errors. If a synchronization loss error occurs, the hardware cannot make sense of the traffic or lock onto it. All the equipment might not be using the same data rate, or the optics or physical connections might be of poor quality. The port must resynchronize after each such error, which impacts system performance. Measured in KB/sec.
+
+a|
+Throughput (Total, Read, Write)
+a|
+Rate at which data is being transmitted, received, or both in a fixed amount of time in response to I/O service requests (measured in MB per sec).
+a|
+Timeout discard frames - Tx
+a|
+Count of discarded transmit frames caused by timeout.
+a|
+Traffic rate (Total, Read, Write)
+a|
+Traffic transmitted, received, or both received during the sampling period, in mebibytes per second.
+a|
+Traffic utilization (Total, Read, Write)
+a|
+Ratio of traffic received/transmitted/total to receive/transmit/total capacity, during the sampling period.
+
+a|
+Utilization (Total, Read, Write) %
+a|
+Percentage of available bandwidth used for transmission (Tx) and reception (Rx).
+a|
+Write pending (Total)
+a|
+Number of write I/O service requests that are pending.
+|===

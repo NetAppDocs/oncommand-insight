@@ -1,0 +1,57 @@
+---
+permalink: config-admin/emc-recoverpoint-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'The EMC RecoverPoint data source collects inventory information from EMC recoverPoint storage. For configuration, the data source requires the IP address of the storage processors and a read-only user name and password.'
+---
+= EMC RecoverPoint data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The EMC RecoverPoint data source collects inventory information from EMC recoverPoint storage. For configuration, the data source requires the IP address of the storage processors and a _read-only_ user name and password.
+
+The EMC RecoverPoint data source gathers the volume-to-volume replication relationships that RecoverPoint coordinates across other storage arrays. OnCommand Insight shows a storage array for each RecoverPoint cluster, and collects inventory data for nodes and storage ports on that cluster. No storage pool or volume data is collected.
+
+== Requirements
+
+* IP address or fully-qualified domain name of storage processor
+* Read-only user name and password
+* REST API access via port 443
+* SSH access via PuTTY
+
+== Configuration
+
+|===
+| Field| Description
+a|
+Address of RecoverPoint
+a|
+IP address or fully-qualified domain name of RecoverPoint cluster
+a|
+User Name
+a|
+User name for the RecoverPoint cluster
+a|
+Password
+a|
+Password for the RecoverPoint cluster
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+TCP Port
+a|
+TCP Port used to connect to Recoverpoint cluster
+a|
+Inventory Poll Interval (minutes)
+a|
+Interval between inventory polls (default 20 minutes)
+a|
+Excluded Clusters
+a|
+Comma-separated list of cluster IDs or names to exclude when polling
+|===

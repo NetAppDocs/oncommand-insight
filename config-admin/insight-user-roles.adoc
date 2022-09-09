@@ -1,0 +1,18 @@
+---
+permalink: config-admin/insight-user-roles.html
+sidebar: sidebar
+keywords: 
+summary: 'Each user account is assigned one of the three possible permission levels.'
+---
+= Insight user roles
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Each user account is assigned one of the three possible permission levels.
+
+* Guest permits you to log into Insight and to view the various pages. This account type does not allow you to perform actions such as identifying generic devices and defining the policies in the Java UI.
+* User permits all guest-level privileges, as well as access to Insight operations such as defining policy and identifying generic devices. The User account type does not allow you to perform data source operations, nor to add or edit any user accounts other than your own.
+* Administrator permits you to perform any operation, including adding new users and managing data sources.
+
+*Best Practice:* Limit the number of users with Administrator permissions by creating most accounts for users or guests.

@@ -1,0 +1,37 @@
+---
+permalink: config-admin/content-of-the-new-disk-models-txt-file.html
+sidebar: sidebar
+keywords: 
+summary: 'The new_disk_models.txt file has required and optional fields. The fields are comma separated, so do not use commas within the fields.'
+---
+= Content of the new_disk_models.txt file
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The `new_disk_models.txt` file has required and optional fields. The fields are comma separated, so do not use commas _within_ the fields.
+
+All fields are required except for seek time, transfer rates and additional_info. If available, include the vendor/model website link in the additional_info field.
+
+Using a text editor, enter the following information in this order, separated by commas, for each new disk model you wish to add:
+
+. *key*: use the model number (required)
+. *vendor*: name (required)
+. *model number*: full number (usually the same value as in "key") (required)
+. *rpm of the disk*: for example 10000 or 15000 (required)
+. *size*: capacity in GB (required)
+. *interface type*: ATA, SATA, FC, SAS, FATA, SSD, OTHER (required)
+. *seek time*: in ms (optional)
+. *potential transfer rate*: the potential transfer rate in MB/sec. Maximum transfer rate of the disk itself. (optional)
+. *interface transfer rate*: the rate to and from the host in MB/sec (optional).
+. *Additional Info*: Any additional information you want to capture. Best practice is to enter the link to the vendor page where the specs are found, for reference (optional)
+
+For any optional fields left blank, be sure to include the comma.
+
+Examples (each on one line with no spaces):
+
+`+ST373405,Seagate,ST373405,10000,73,FC,5.3,64,160,http://www.seagate.com/staticfiles/support/disc/manuals/enterprise/cheetah/73(LP)/100109943e.pdf+`
+
+`SLR5B-M400SS,HITACHI,SLR5B-M400SS,1000000,400,SSD,,,,`
+
+`+X477_THARX04TA07,TOSHIBA,X477_THARX04TA07,7200,4000,SATA,9.5,,,https://storage.toshiba.eu/export/sites/toshiba-sdd/media/products/datasheets/MG03ACAxxxY.pdf+`
