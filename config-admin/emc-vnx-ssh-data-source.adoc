@@ -1,0 +1,66 @@
+---
+permalink: config-admin/emc-vnx-ssh-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'For configuration, the EMC VNX \(SSH\) data source requires the IP address of the Control Station and a read-only username and password.'
+---
+= EMC VNX data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+For configuration, the EMC VNX (SSH) data source requires the IP address of the Control Station and a _read-only_ username and password.
+
+== Configuration
+
+|===
+| Field| Description
+a|
+VNX IP
+a|
+IP address or fully-qualified domain name of the VNX Control Station
+a|
+VNX User Name
+a|
+User name for the VNX Control Station
+a|
+VNX Password
+a|
+Password for the VNX Control Station
+|===
+
+== Requirements
+
+* An IP address of the Control Station
+* Read-only username and password.
+* Access validation: Verify SSH access via PuTTY.
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 40 minutes)
+a|
+VNX SSH Process Wait Timeout (sec)
+a|
+VNX SSH process timeout (default 600 seconds)
+a|
+Celerra Command Retry Attempts
+a|
+Number of Celerra command retry attempts
+a|
+CLARiiON External Process Timeout for Inventory (sec)
+a|
+CLARiiON external process timeout for inventory(default 1800 seconds)
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+a|
+CLARiiON External Process Timeout for Performance (sec)
+a|
+CLARiiON external process timeout for performance (default 1800 seconds)
+|===

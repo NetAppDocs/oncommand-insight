@@ -1,0 +1,99 @@
+---
+permalink: config-admin/emc-celerra-ssh-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'The Celerra \(SSH\) data source collects inventory information from Celerra storage. For configuration, this data source requires the IP address of the storage processors and a read-only user name and password.'
+---
+= EMC Celerra data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Celerra (SSH) data source collects inventory information from Celerra storage. For configuration, this data source requires the IP address of the storage processors and a _read-only_ user name and password.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the EMC Celerra data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Celerra Network Server
+a|
+Storage
+a|
+Celerra Meta Volume / Celerra Storage Pool
+a|
+Storage Pool
+a|
+File System
+a|
+Internal Volume
+a|
+Data Mover
+a|
+Controller
+a|
+File System mounted on a data Mover
+a|
+File Share
+a|
+CIFS and NFS Exports
+a|
+Share
+a|
+Disk Volume
+a|
+Backend LUN
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* The IP address of the storage processor
+* Read-only user name and password
+* SSH port 22
+
+== Configuration
+
+|===
+| Field| Description
+a|
+Address of Celerra
+a|
+IP address or fully-qualified domain name of the Celerra device
+a|
+User Name
+a|
+Name used to log in to the Celerra device
+a|
+Password
+a|
+Password used to log in to the Celerra device
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (minutes)
+a|
+Interval between inventory polls (default 20 minutes)
+a|
+SSH Process Wait Timeout (sec)
+a|
+SSH process timeout (default 600 seconds)
+a|
+Number of Retries
+a|
+Number of inventory retry attempts
+a|
+SSH Banner Wait Timeout (sec)
+a|
+SSH banner wait timeout (default 20 seconds)
+|===

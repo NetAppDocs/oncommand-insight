@@ -1,0 +1,29 @@
+---
+permalink: config-admin/cdot-landing-page-terminology-storage-node.html
+sidebar: sidebar
+keywords: 
+summary: 'Terms applying to objects or references that you might find on NetApp Clustered Data ONTAPs storage node asset landing pages.'
+---
+= Clustered Data ONTAP Storage Node
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Terms applying to objects or references that you might find on NetApp Clustered Data ONTAPs storage node asset landing pages.
+
+== Clustered Data ONTAP Storage Node Terminology
+
+The following terms apply to objects or references that you might find on NetApp Clustered Data ONTAP storage pool asset landing pages. Many of these terms apply to other data collectors as well.
+
+* Storage -- what storage array this node is part of. Mandatory.
+* HA Partner -- on platforms where a node will fail over to one and only one other node, it will generally be seen here.
+* State -- health of the node. Only available when the array is healthy enough to be inventoried by a data source.
+* Model -- model name of the node.
+* Version -- version name of the device.
+* Serial number -- The node serial number.
+* Memory -- base 2 memory if available.
+* Utilization -- On Ontap, this is a controller stress index from a proprietary algorithm. With every performance poll, a number between 0 and 100% will be reported that is the higher of either WAFL disk contention, or average CPU utilization. If you observe sustained values > 50%, that is indicative of undersizing -- potentially a controller/node not large enough or not enough spinning disks to absorb the write workload.
+* IOPS -- Derived directly from Ontap ZAPI calls on the node object.
+* Latency -- Derived directly from Ontap ZAPI calls on the node object.
+* Throughput -- Derived directly from Ontap ZAPI calls on the node object.
+* Processors -- CPU count.

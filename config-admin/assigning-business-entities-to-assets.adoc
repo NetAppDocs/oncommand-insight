@@ -1,0 +1,36 @@
+---
+permalink: config-admin/assigning-business-entities-to-assets.html
+sidebar: sidebar
+keywords: 
+summary: 'You can assign a business entity to an asset \( host, port, storage, switch, virtual machine, qtree, share, volume, or internal volume\) without having associated the business entity to an application; however, business entities are assigned automatically to an asset if that asset is associated with an application related to a business entity.'
+---
+= Assigning business entities to assets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can assign a business entity to an asset ( host, port, storage, switch, virtual machine, qtree, share, volume, or internal volume) without having associated the business entity to an application; however, business entities are assigned automatically to an asset if that asset is associated with an application related to a business entity.
+
+== Before you begin
+
+You must have already created a business entity.
+
+== About this task
+
+While you can assign business entities directly to assets, it is recommended that you assign applications to assets and then assign business entities to assets.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Locate the asset to which you want to apply the business entity by doing either of the following:
+ ** Click on the asset in the Assets Dashboard.
+ ** Click image:../media/icon-sanscreen-magnifying-glass-gif.gif[] on the toolbar to display the *Search assets* box, type the name of the asset, and then select the asset from the list.
+. In the *User Data* section of the asset page, position your cursor over *None* next to *Business Entities* and then click image:../media/pencil-icon-landing-page-be.gif[].
++
+The list of available business entities display.
+
+. Type in the *Search* box to filter the list for a specific entity or scroll down the list; select a business entity from the list.
++
+If the business entity you choose is associated with an application, the application name is displayed. In this case, the word "`derived`" appears next to the business entity name. If you want to maintain the entity for only the asset and not the associated application, you can manually override the assignment of the application.
+
+. To override an application derived from a business entity, place your cursor over the application name and click image:../media/trash-can-query.gif[], select another business entity, and select another application from the list.

@@ -1,0 +1,31 @@
+---
+permalink: config-admin/assigning-applications-to-assets.html
+sidebar: sidebar
+keywords: bulk edit
+summary: 'After defining applications with or without business entities, you can associate the applications with assets.'
+---
+= Assigning applications to assets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After defining applications with or without business entities, you can associate the applications with assets.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Locate the asset (host, virtual machine, volume, or internal volume) to which you want to apply the application by doing either of the following:
+ ** Click *Dashboard*, select *Assets Dashboard*, and click the asset.
+ ** Click image:../media/icon-sanscreen-magnifying-glass-gif.gif[] on the toolbar to display the *Search assets* box, type the name of the asset, and then select the asset from the list.
+. In the *User Data* section of the asset page, position your cursor over the name of the application currently assigned to the asset (if there is no application assigned, *None* displays instead) and then click image:../media/pencil-icon-landing-page-be.gif[] (Edit application).
++
+The list of available applications for the selected asset display. The applications that are currently associated with the asset are preceded by a check mark.
+
+. You can type in the Search box to filter the application names, or you can scroll down the list.
+. Select the applications you want to associate with the asset.
++
+You can assign multiple applications to host, virtual machine, and internal volume; however, you can only assign one application to volume.
+
+. Click image:../media/check-box-ok.gif[] to assign the selected application or applications to the asset.
++
+The application names appear in the User Data section; if the application is associated with a business entity, the name of the business entity appears in this section also.

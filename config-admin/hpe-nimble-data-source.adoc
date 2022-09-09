@@ -1,0 +1,93 @@
+---
+permalink: config-admin/hpe-nimble-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'The HPE Nimble data collector supports inventory and performance data for HPE Nimble storage arrays.'
+---
+= HPE Nimble data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The HPE Nimble data collector supports inventory and performance data for HPE Nimble storage arrays.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the HPE Nimble data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Array
+a|
+Storage
+a|
+Disk
+a|
+Disk
+a|
+Pool
+a|
+Storage Pool
+a|
+Volume
+a|
+Volume
+a|
+Initiator
+a|
+Storage Host Alias
+a|
+Controller
+a|
+Storage Node
+a|
+Fibre Channel Interface
+a|
+Controller
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* The array must be installed and configured, and reachable from the client through its fully qualified domain name (FQDN) or array management IP address.
+* The array must be running NimbleOS 2.3.x or later.
+* You must have a valid user name and password to the array.
+* Port 5392 must be open on the array.
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+Array Management IP Address
+a|
+Fully qualified domain name (FQDN) or array management IP address.
+a|
+User Name
+a|
+User name for the Nimble array
+a|
+Password
+a|
+Password for the Nimble array
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Port
+a|
+Port used by Nimble REST API. The default is 5392.
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 60 minutes)
+|===
+Note: The default performance poll interval is 300 seconds and can not be changed. This is the only interval supported by Nimble.

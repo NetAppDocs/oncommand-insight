@@ -1,0 +1,26 @@
+---
+permalink: config-admin/e-series-landing-page-terminology-storage.html
+sidebar: sidebar
+keywords: 
+summary: 'Terms applying to objects or references that you might find on NetApp E-Series storage asset landing pages.'
+---
+= E-Series Storage
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Terms applying to objects or references that you might find on NetApp E-Series storage asset landing pages.
+
+== E-Series Storage Terminology
+
+The following terms apply to objects or references that you might find on NetApp E-Series storage asset landing pages. Many of these terms apply to other data collectors as well.
+
+* Model -- model name of the device.
+* Vendor -- same Vendor name you would see if you were configuring a new data source.
+* Serial number -- The array serial number. On cluster architecture storage systems like NetApp Clustered Data Ontap, this serial number may be less useful than the individual "`Storage Nodes`" serial numbers.
+* IP -- generally will be the IP(s) or hostname(s) as configured in the data source.
+* Microcode version -- firmware.
+* Raw Capacity -- base 2 summation of all the physical disks in the system, regardless of their role.
+* Latency -- a representation of what the host facing workloads are experiencing, across both reads and writes. Insight calculates an IOPs-weighted average derived from the volumes in the storage.
+* Throughput -- the array's total host facing throughput. Insight sums the volumes`' throughput to derive this value.
+* Management -- this may contain a hyperlink for the management interface of the device. Created programmatically by the Insight data source as part of inventory reporting.

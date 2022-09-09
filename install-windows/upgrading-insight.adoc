@@ -1,0 +1,32 @@
+---
+permalink: install-windows/upgrading-insight.html
+sidebar: sidebar
+keywords: 
+summary: 'After you complete all prerequisite tasks, you log in to the Insight server and run the installation package to complete the upgrade. The upgrade process uninstalls the existing software, installs the new software, and then reboots the server.'
+---
+= Upgrading Insight
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After you complete all prerequisite tasks, you log in to the Insight server and run the installation package to complete the upgrade. The upgrade process uninstalls the existing software, installs the new software, and then reboots the server.
+
+== Before you begin
+
+The Insight installation package must be located on the server.
+
+== Steps
+
+. Log in to the Insight server using an account that has Windows local administrator permissions.
+. Locate the Insight installation package (`SANscreenServer-x64-version_number-build_number.msi`) using Windows Explorer and double-click it.
++
+The OnCommand InsightSetup wizard displays.
+
+. Move the progress window away from the center of the screen and away from the *Setup* wizard window so that any generated errors are not hidden from view.
+. Follow the setup wizard prompts.
++
+It is a best practice to leave all the defaults selected.
+
+== After you finish
+
+To verify if the upgrade is successful or if errors are generated, check the upgrade log in the following location: `<install directory>\SANscreen\wildfly\standalone\log`.

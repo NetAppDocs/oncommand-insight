@@ -1,0 +1,37 @@
+---
+permalink: config-admin/before-you-begin.html
+sidebar: sidebar
+keywords: 
+summary: 'You need to know how your environment is configured before you define the rules for identifying devices. The more you know about your environment the easier it will be to identify devices.'
+---
+= Before you begin
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You need to know how your environment is configured before you define the rules for identifying devices. The more you know about your environment the easier it will be to identify devices.
+
+You need to answer questions similar to the following to help you create accurate rules:
+
+* Does your environment have naming standards for zones or hosts and what percentage of these are accurate?
+* Does your environment use a switch alias or storage alias and do they match the host name?
+* Does your environment use an SRM tool and can you use it to identify host names? What coverage does the SRM provide?
+* How often do naming schemes change in your environment?
+* Have there been any acquisitions or mergers that introduced different naming schemes?
+
+After analyzing your environment, you should be able to identify what naming standards exist that you can expect to reliability encounter. The information you gathered might be represented graphically in a figure similar to the following:
+
+image::../media/ar-workflow-circles.gif[]
+
+In this example the largest number of devices are reliably represented by storage aliases. Rules that identify hosts using storage aliases should be written first, rules using switch aliases should be written next , and the last rules created should use zone aliases. Due to the overlap of the use of zone aliases and switch aliases, some storage alias rules might identify additional devices, leaving less rules required for zone aliases and switch aliases.
+
+== Steps to defining devices in your environment
+
+Typically, you would use workflow similar to the following to identify devices in your environment. Identification is an iterative process and might require multiple steps of planning and refining rules.
+
+image::../media/ar-workflow-final.gif[]
+
+[NOTE]
+====
+If you have unidentified devices (otherwise known as "`unknown`" or generic devices) in your environment and you subsequently configure a data source that identifies those devices upon polling, they will no longer be displayed or counted as generic devices.
+====

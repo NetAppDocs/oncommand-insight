@@ -1,0 +1,21 @@
+---
+permalink: config-admin/forcing-annotation-updates.html
+sidebar: sidebar
+keywords: 
+summary: 'If you have changed the annotations and want to use them in reports immediately, use one of the force annotation options.'
+---
+= Forcing annotation updates
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you have changed the annotations and want to use them in reports immediately, use one of the force annotation options.
+
+== Steps
+
+. In the web UI, click *Admin* and select *Troubleshooting*.
+. On the bottom of the page, click the *Advanced Troubleshooting* link.
+. Click the *Actions* tab.
+. Select one of these options:
+ ** *Update DWH Annotations* to force the update of annotations in data warehouse to be used for reports.
+ ** *Update DWH Annotations (incl. deleted)* to force an annotations update (including deleted objects) in the data warehouse to be used for reports.

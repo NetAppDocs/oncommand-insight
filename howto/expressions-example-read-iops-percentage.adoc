@@ -1,0 +1,47 @@
+---
+permalink: howto/expressions-example-read-iops-percentage.html
+sidebar: sidebar
+keywords: 
+summary: 'Using expressions, you can view metrics by alternate means, such as percentage of total.'
+---
+= Expressions example: Read IOPS percentage
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Using expressions, you can view metrics by alternate means, such as percentage of total.
+
+== About this task
+
+In this example we want to show Read IOPS as a percentage of Total IOPS. You can think of this as the following formula:
+
+* Read Percentage = (Read IOPS / Total IOPS) x 100
+
+This data can be shown in a line graph on your dashboard. To do this, follow these steps:
+
+== Steps
+
+. Create a new dashboard, or open an existing dashboard in *edit mode*.
+. Add a widget to the dashboard. Choose *Area chart*.
++
+The widget opens in edit mode. By default, a query is displayed showing *IOPS - Total* for *Storage* assets. If desired, select a different asset type.
+
+. Click the *Convert to Expression* button.
++
+The current query is converted to Expression mode. Notice that you cannot change the asset type while in Expression mode. Notice that while you are in Expression mode, the button changes to *Revert to Query*. Click this if you wish to switch back to Query mode at any time. Be aware that switching between modes will reset fields to their defaults.
++
+For now, stay in *Expression* mode.
+
+. The *IOPS - Total* metric is now in the alphabetic variable field "`a`". In the "`b`" variable field, click *Select* and choose *IOPS - Read*.
++
+You can add up to a total of five alphabetic variables for your expression by clicking the**+**button following the variable fields. For our Read Percentage example, we only need Total IOPS ("`a`") and Read IOPS ("`b`").
+
+. In the *Expression* field, you use the letters corresponding to each variable to build your expression. We know that _Read Percentage = (Read IOPS / Total IOPS) x 100_, so we would write this expression as: `(b / a) * 100`
+. The *Label* field identifies the expression. Change the label to "`Read Percentage`", or something equally meaningful for you.
+. Change the *Units* field to "`%`" or "`Percent`".
++
+The chart displays the IOPS Read percentage over time for the chosen storage devices. If desired, you can set a filter, or choose a different rollup method. Be aware that if you select *Sum* as the rollup method, all percentage values are added together, which potentially may go higher than 100%.
+
+. Click *Save* to save the chart to your dashboard.
++
+You can also use expressions in *Line chart*, *Spline chart*, or *Stacked Area chart* widgets.

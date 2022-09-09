@@ -1,0 +1,21 @@
+---
+permalink: install-windows/planning-the-installation.html
+sidebar: sidebar
+keywords: 
+summary: 'To ensure a successful deployment, you must consider certain system elements before you install OnCommand Insight.'
+---
+= Planning the deployment
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To ensure a successful deployment, you must consider certain system elements before you install OnCommand Insight.
+
+== About this task
+
+Planning your Insight deployment includes considering these system elements:
+
+* Insight architecture
+* Your network components to be monitored
+* Insight installation prerequisites and server requirements
+* Insight web browser requirements

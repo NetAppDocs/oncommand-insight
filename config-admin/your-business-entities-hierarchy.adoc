@@ -1,0 +1,21 @@
+---
+permalink: config-admin/your-business-entities-hierarchy.html
+sidebar: sidebar
+keywords: 
+summary: 'You can define business entities to track and report on your environment data at a more granular level.'
+---
+= Your business entities hierarchy
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can define business entities to track and report on your environment data at a more granular level.
+
+In OnCommand Insight, the business entities hierarchy contains these levels:
+
+* *Tenant* is primarily used by service providers to associate resources with a customer, for example, NetApp.
+* *Line of Business (LOB)* is a line of business or product line within a company, for example, Data Storage.
+* *Business Unit* represents a traditional business unit such as Legal or Marketing.
+* *Project* is often used to identify a specific project within a business unit for which you want capacity chargeback. For example, "Patents" might be a project name for the Legal business unit and "Sales Events" might be a project name for the Marketing business unit. Note that level names may include spaces.
+
+You are not required to use all of the levels in the design of your corporate hierarchy.

@@ -1,0 +1,29 @@
+---
+permalink: config-admin/analyzing-correlated-resources.html
+sidebar: sidebar
+keywords: 
+summary: 'When you are researching performance problems and you open the asset page for a device, you should use the Top correlated resources list to refine data displayed in the performance charts. A resource with a high percentage indicates that resource has similar activity to the base resource.'
+---
+= Analyzing correlated resources
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+When you are researching performance problems and you open the _asset page_ for a device, you should use the Top correlated resources list to refine data displayed in the performance charts. A resource with a high percentage indicates that resource has similar activity to the base resource.
+
+== About this task
+
+You are investigating a performance problem and opened the asset page for a device.
+
+== Steps
+
+. In the *Top correlated resources* list, the first resource is the base resource. The correlated resources in the list are ranked by percentage of correlated activity to the first device. Click the linked percentage of correlation to see the details. In this example, the 70% correlation is in Utilization, so both the base resource and this correlated resource have equally high utilization.
++
+image::../media/correlation-new.gif[]
+
+. To add a correlated resource to the performance charts, select the check box in the *Top correlated resources* list for the resource you want to add. By default each resource provides the Total data available, but you can select only Read or only Write data from the menu on the check box.
++
+Each resource in the charts has a different color so that you can compare the performance measurements for each resource. Only the appropriate type of data is plotted for the selected measurement metrics. For example, CPU data does not include Read or Write metrics, so only Total data is available.
+
+. Click the linked name of the correlated resource to display its asset page.
+. If you do not see a resource listed in the Top correlated resources that you believe should be considered in the analysis, you can use the *Search assets* box to find that resource.

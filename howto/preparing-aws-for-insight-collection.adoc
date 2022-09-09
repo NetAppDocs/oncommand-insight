@@ -1,0 +1,46 @@
+---
+permalink: howto/preparing-aws-for-insight-collection.html
+sidebar: sidebar
+keywords: 
+summary: 'Your AWS account must be properly configured to allow Insight to collect cloud cost data.'
+---
+= Preparing AWS for Insight data collection
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Your AWS account must be properly configured to allow Insight to collect cloud cost data.
+
+== About this task
+
+The following steps are done through your AWS account. See the Amazon documentation for more information: https://docs.aws.amazon.com[http://docs.aws.amazon.com]. If you are unfamiliar with setting up an AWS cloud account, contact your cloud provider for assistance.
+
+[NOTE]
+====
+These steps are provided here as a courtesy and are believed correct as of the time of publication. NetApp makes no guarantee of the correctness of these steps. Contact your cloud provider or AWS account holder for information or assistance on configuring your AWS account.
+====
+
+Best practice: Insight recommends that you create a primary IAM user on the same account that owns the S3 bucket where the billing reports are uploaded, and use this user to configure and collect AWS billing data.
+
+To configure your AWS account to allow Insight to collect data, perform the following steps:
+
+== Steps
+
+. Log in to your AWS account as an Identity Access Management (IAM) user. For proper collection, log in to the primary IAM account, as opposed to a group IAM account.
+. Go to *Amazon S3* to create your bucket. Enter a unique bucket name and verify the correct Region.
+. Turn on your Amazon Cost and Usage Report. See https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports-gettingstarted-turnonreports.html for information.
+ .. Go to the AWS **Billing and Cost Management Dashboard**and choose *Reports*.
+ .. Click on *Create report* and enter in the Report Name. For *Time unit*, choose Daily. Check the box to include *Resource IDs*, and click *Next*.
+ .. Click on the *Sample Policy* link in the Select delivery options page. Copy the Sample Policy text in the box to the clipboard. Click *Close*.
+ .. Go back to the S3 Bucket that was created, click on the *Permissions* tab and select the *Bucket Policy* button.
+ .. Paste the text from the Sample Policy, and replace `<bucketname>` with your actual bucket name in each line that contains the following: `"Resource": "arn:aws:s3:: <bucketname>"`. *Save* the policy.
+ .. Go back to your Create Report screen, enter in your S3 Bucket and click the *Verify* button. Click *Next*.
+ .. Verify your information and click *Review and Complete*.
+. You must grant permissions in order for Insight to collect data from AWS. The following link provides details on how to grant permissions to *List All Buckets* (Step 4.1) and set permissions on the objects in the folder (Step 5.2): https://docs.aws.amazon.com/AmazonS3/latest/dev/walkthrough1.html.
+. In the IAM console, go to *Policies* and click *Create policy*.
+. Enter a name in the *Policy Name* field, and click *Create policy* at the bottom.
+. In the IAM console, select your user, then select *Add Inline Policy* at the bottom of the screen.
+. Click on *Choose a service* and select S3.
+. Go to the *JSON* tab. Copy the JSON sample text from step 5.1.2.g of the AWS walkthrough into the JSON box.
+. Replace the _companybucket_ and _Development_ fields in the JSON with your S3 information.
+. Click *Review Policy* to review your policy settings.

@@ -1,0 +1,26 @@
+---
+permalink: config-admin/acquisition-unit-status.html
+sidebar: sidebar
+keywords: 
+summary: 'The Acquisition Unit screen provides a view of all your acquisition units, including status and any errors present.'
+---
+= Acquisition unit status
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Acquisition Unit screen provides a view of all your acquisition units, including status and any errors present.
+
+The status of the Insight acquisition units connected to your server is displayed in the *Admin* > *Acquisition Units* table. This table displays the following information for each acquisition unit:
+
+* *Name*
+* *IP*
+* *Status* is the operating status of the acquisition unit.
+* **Last reported**displays the last time a data source connected to the acquisition unit reported.
+* *Note* displays a user-entered note related to the AU.
+
+If an acquisition unit in the list has a problem, the Status field will show a red circle with brief information about the problem. You should investigate any acquisition unit problems, as they likely affect data collection.
+
+To restart an acquisition unit, hover over the unit and click on the _Restart Acquisition Unit_ button that appears..
+
+To add a text note, hover over an acquisition unit and click the _Add Note_ button that appears. Only the most recently entered note is displayed.

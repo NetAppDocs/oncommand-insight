@@ -1,0 +1,28 @@
+---
+permalink: config-admin/configuring-client-settings.html
+sidebar: sidebar
+keywords: 
+summary: 'You can configure options for the OnCommand Insight Java UI Client on the server.'
+---
+= Configuring Client settings
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can configure options for the OnCommand Insight Java UI Client on the server.
+
+== Steps
+
+. On the Insight toolbar, click *Admin* and select *Troubleshooting*.
+. At the bottom of the page in the Other tasks area, click the *Advanced Troubleshooting* link.
+. In the Advanced menu on the next page, click the *Advanced Settings* tab.
+. In the *Acquisition Dynamic Attributes* enter the number of hours to ignore dynamic attribute changes.
+. In the *Configure Client Settings* enter the following information.
+ ** *Initial Heap Size* is the size of the heap that is created when the VM (Virtual Machine) is started to run the client. This number is used to construct the``-Xms<size>`` parameter to `java`. Decreasing this number means Java takes up less memory when it starts up. (However, it is then more likely that Java will need to reallocate the heap when it exceeds this number, which is an expensive operation, so you do not want to make this number too small.)
+ ** *Max Heap Size* is the largest that Java will allow the heap to grow in the VM that is running the client. This number is used to construct the``-Xmx<size>`` parameter to `java`.
+ ** Log Level controls the amount of detail that is generated in the client logs. There are two possible values:
+  *** INFO - generates a "normal" amount of information.
+  *** DEBUG - generates more detailed information to the client log to help with debugging.
+. Configure your data source alerts.
+. Configure the Login Warning Message displayed by the client.
+. Click *Save*.

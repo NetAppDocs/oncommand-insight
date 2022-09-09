@@ -1,0 +1,18 @@
+---
+permalink: config-admin/topology.html
+sidebar: sidebar
+keywords: 
+summary: 'The Topology section, if application to an asset, enables you to see how a base asset is connected to its related assets.'
+---
+= Topology
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Topology section, if application to an asset, enables you to see how a base asset is connected to its related assets.
+
+The following shows an example of what might display in the Topology section of a virtual machine asset page.
+
+image::../media/topology-section.gif[]
+
+If the topology for the asset is larger than will fit in the section, the *Click link to see the topology* hyperlink is displayed instead.

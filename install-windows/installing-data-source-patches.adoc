@@ -1,0 +1,32 @@
+---
+permalink: install-windows/installing-data-source-patches.html
+sidebar: sidebar
+keywords: 
+summary: 'If applicable, you should install the latest patches available for your data sources to take advantage of the latest features and enhancements. After uploading a data source patch, you can install it on all of the data sources of the same type.'
+---
+= Installing data source patches
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If applicable, you should install the latest patches available for your data sources to take advantage of the latest features and enhancements. After uploading a data source patch, you can install it on all of the data sources of the same type.
+
+== Before you begin
+
+You must have contacted technical support and obtained the `.zip` file that contains the latest data source patches by providing them with the version you are upgrading from and the version you want to upgrade to.
+
+== Steps
+
+. Place the patch file on the Insight server.
+. On the Insight toolbar, click *Admin*.
+. Click *Patches*.
+. From the Actions button, select *Apply patch*.
+. In the *Apply data source patch* dialog box, click *Browse* to locate the uploaded patch file.
+. Review the *Patch name*, *Description*, and *Impacted data source types*.
+. If the selected patch is correct, click *Apply Patch*.
++
+All data sources of the same type are updated with this patch. Insight automatically forces acquisition to restart when you add a data source. Discovery includes the detection of changes in network topology including the addition or deletion of nodes or interfaces.
+
+. To force the discovery process manually, click *Data Sources* and click *Poll Again* next to the data source to force it to collect data immediately.
++
+If the data source is already in an acquisition process, Insight ignores the poll again request.

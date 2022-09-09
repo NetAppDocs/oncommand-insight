@@ -1,0 +1,29 @@
+---
+permalink: howto/file-system-utilization-chargeback.html
+sidebar: sidebar
+keywords: 
+summary: 'Chargeback for file systems is always performed from the storage perspective. Storage arrays associated with virtual machines annotated for a particular compute resource group will be included in chargeback reports for that resource group.'
+---
+= File system chargeback and reporting
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Chargeback for file systems is always performed from the storage perspective. Storage arrays associated with virtual machines annotated for a particular compute resource group will be included in chargeback reports for that resource group.
+
+== Before you begin
+
+Any virtual machines which you wish to include in file system utilization chargeback must be annotated with the appropriate compute resource group name. Storage arrays associated with those virtual machines must be annotated with the appropriate Tier annotations. ETL to data warehouse must have occurred after these annotations are in place.
+
+== Steps
+
+. Open a browser to your Reporting server, usually `https://<host or IP>:9300/p2pd``http://<host or IP\>:9300/bi (7.3.3 or later)` and log in.
+. Choose the *File System Utilization* package and create a new report.
++
+image::../media/fs-util-pkg.gif[]
+
+. Drag and drop items from your data mart(s) to build your report.
++
+The example below is a very simple report. You can create complex reports built around your specific business needs.
++
+image::../media/fs-simple-rpt.gif[]

@@ -1,0 +1,75 @@
+---
+permalink: howto/creating-a-simple-chargeback-report.html
+sidebar: sidebar
+keywords: 
+summary: 'Chargeback reports allow administrators and managers to evaluate capacity usage by application, business entity, service level, and tier. The chargeback reports include capacity accountability, historical capacity accountability, and trending data. The data for these reports are built and scheduled from the OnCommand Insight Data Warehouse.'
+---
+= Creating a simple Chargeback report
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Chargeback reports allow administrators and managers to evaluate capacity usage by application, business entity, service level, and tier. The chargeback reports include capacity accountability, historical capacity accountability, and trending data. The data for these reports are built and scheduled from the OnCommand Insight Data Warehouse.
+
+== Before you begin
+
+To create the sample report your system must be configured to report costs for storage tiers. The following tasks need to be completed:
+
+* Define annotations for tiers.
+* Assign costs to annotations.
+* Define the applications you want to track data for.
+* Assign applications to assets.
+
+== About this task
+
+This example uses the Cognos Workspace Advanced reporting tool to create the Chargeback report. With Workspace Advanced, you create reports by dragging and dropping data elements into a report pallet.
+
+== Steps
+
+. In the OnCommand Insight web UI, click the reporting icon.
+. Log in to the Reporting Portal.
+. In the IBM Cognos Connection toolbar, click *Launch* > *Cognos Worksapce Advanced*
++
+The Workspace Advanced package screen opens.
+
+. Click *Packages* > *Chargeback*
++
+The IBM Workspace Advanace screen is displayed.
+
+. Click *New*
+. In the *New* report dialog Click *List* to specify a list report.
++
+The report palette is displayed and the Chargeback "`Simple data mart`" and "`Advanced data mart`" are displayed under the Source heading.
+
+. Click the arrows next to each data mart to expand them.
++
+The full contents of the data marts are displayed.
+
+. Drag "`Application`" from the "`Simple Data Mart `" into the far left column of the report palette.
++
+When you drag an item into the palette the column shrinks and is highlighted. Dropping the application data into the highlighted columns results in all of the applications being listed correctly in the column.
+
+. Drag "`Tier`" from the "`Simple Data Mart `" into the next column of the report palette.
++
+The storage tier associated with each application is added to the palette.
+
+. Drag "`Tier Cost`" from the "`Simple Data Mart `" into the next column of the report palette.
+. Drag "`Provisioned capacity`" from the "`Simple Data Mart `" into the next column of the report palette.
+. Hold down the *Ctrl* key and select the "`Tier cost`" and "`Provisioned capacity`" columns in the pallet.
+. Right-click the mouse in either of the selected columns.
+. Click *Calculate* > *Tier cost * Provisioned capacity DB*
++
+A new column is added to the pallet with the title "Tier Cost * Provision Capacity GB".
+
+. Right click the *Tier Cost * Provision Capacity GB* column.
+. Click *Style* > *Data Type*
+. Click *Format type* > *Currency*
+. Click *OK*
++
+The column data is now formatted as US currency.
+
+. Right click "`Tier Cost * Provision Capacity GB`" and select *Edit Data Item Label*
+. Replace the Name field with "`Provisioned Capacity Cost`"
+. To run the report, click *Run* > *Run report - HTML*
++
+A report similar to the following is displayed. image:../media/insight-chargeback-report.gif[]

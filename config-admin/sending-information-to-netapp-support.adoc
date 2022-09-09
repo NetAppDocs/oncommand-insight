@@ -1,0 +1,21 @@
+---
+permalink: config-admin/sending-information-to-netapp-support.html
+sidebar: sidebar
+keywords: 
+summary: 'The NetApp automated support \(ASUP\) facility sends troubleshooting information directly to the NetApp Customer Support team. You can force a special report to be sent.'
+---
+= Sending information to NetApp Support
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The NetApp automated support (ASUP) facility sends troubleshooting information directly to the NetApp Customer Support team. You can force a special report to be sent.
+
+== Steps
+
+. On the Insight toolbar, click *Admin*.
+. Click *Setup*.
+. Click the *Backup/ASUP* tab.
+. In the Send/Collect data area, click *Send ASUP now* to submit your logs, recordings, and backup to NetApp Support.
++
+image::../media/oci-7-backup-restore-gif.gif[backup and restore page]

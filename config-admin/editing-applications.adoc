@@ -1,0 +1,37 @@
+---
+permalink: config-admin/editing-applications.html
+sidebar: sidebar
+keywords: 
+summary: 'You might want to change an application’s priority, the business entity associated with an application, or the status of volume sharing.'
+---
+= Editing applications
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You might want to change an application's priority, the business entity associated with an application, or the status of volume sharing.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Click *Manage* and select *Applications*.
+. Position your cursor over the application you want to edit and click image:../media/edit-recipient-icon.gif[].
++
+The Edit Application dialog box displays.
+
+. Do any of the following:
+ ** Click *Priority* and select a different priority.
++
+[NOTE]
+====
+You cannot change the application's name.
+====
+
+ ** Click *Business Entity* and select a different business entity to associate the application with or select *None* to remove the association of the application with the business entity.
+ ** Click to clear or select *Validate volume sharing*.
++
+[NOTE]
+====
+This option is only available if you have the Assure license.
+====
+. Click *Save*.

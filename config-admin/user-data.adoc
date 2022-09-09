@@ -1,0 +1,16 @@
+---
+permalink: config-admin/user-data.html
+sidebar: sidebar
+keywords: 
+summary: 'The User Data section of an asset page displays and enables you to change any user-defined data such as applications, business entities, and annotations.'
+---
+= User Data
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The User Data section of an asset page displays and enables you to change any user-defined data such as applications, business entities, and annotations.
+
+The following shows an example of what might display in the User Data section of a virtual machine asset page when an application, business entity, and annotation are assigned to the asset:
+
+image::../media/user-data-section.bmp[]

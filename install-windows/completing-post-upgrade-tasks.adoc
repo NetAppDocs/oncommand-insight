@@ -1,0 +1,12 @@
+---
+permalink: install-windows/completing-post-upgrade-tasks.html
+sidebar: sidebar
+keywords: 
+summary: 'After you upgrade to the latest version of Insight, you must complete additional tasks.'
+---
+= Completing post-upgrade tasks
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After you upgrade to the latest version of Insight, you must complete additional tasks.

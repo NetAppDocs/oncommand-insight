@@ -1,0 +1,51 @@
+---
+permalink: config-admin/defining-applications.html
+sidebar: sidebar
+keywords: 
+summary: 'If you want to track data associated with specific applications running in your environment, you need to define those applications.'
+---
+= Defining applications
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you want to track data associated with specific applications running in your environment, you need to define those applications.
+
+== Before you begin
+
+If you want to associate the application with a business entity, you must have already created the business entity.
+
+== About this task
+
+You can associate applications with the following assets: hosts, virtual machines, volumes, internal volumes, qtrees, shares, and hypervisors.
+
+== Steps
+
+. Log in to the OnCommand Insight web UI.
+. Click *Manage* and select *Applications*.
++
+After you define an application, the Applications page displays the application's name, its priority, and, if applicable, the business entity associated with the application.
++
+[NOTE]
+====
+If the anomaly detection engine is installed, the Applications Dashboard page also shows an Anomaly Score for the application. For more information about installing and configuring the anomaly detection engine, see the _OnCommand Insight Configuration and Administration Guide_.
+====
+
+. Click *Add*.
++
+The Add Application dialog box displays.
+
+. Enter a unique name for the application in the *Name* box.
+. Click *Priority* and select the priority (critical, high, medium, or low) for the application in your environment.
+. If you plan to use this application with a business entity, click *Business Entity* and select the entity from the list.
+. *Optional*: If you do not use volume sharing, click to clear the *Validate volume sharing* box.
++
+This requires the Assure license. Set this when you want to ensure each host has access to the same volumes in a cluster. For example, hosts in high-availability clusters often need to be masked to the same volumes to allow for failover; however, hosts in unrelated applications usually have no need to access the same physical volumes. Additionally, regulatory policies might require you to explicitly disallow unrelated applications from accessing the same physical volumes for security reasons.
+
+. Click *Save*.
++
+The application appears in the Applications page. If you click the application's name, Insight displays the asset page for the application.
+
+== After you finish
+
+After defining an application, you can go to an asset page for host, virtual machine, volume, internal volume, or hypervisor to assign an application to an asset.

@@ -1,0 +1,21 @@
+---
+permalink: config-admin/checking-the-status-of-server-resources.html
+sidebar: sidebar
+keywords: 
+summary: 'This option displays the OnCommand Insight Server’s information including server memory, disk space, OS, and CPU and OnCommand Insight database information including innoDB data size and the disk free space where the database resides.'
+---
+= Checking the status of server resources
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This option displays the OnCommand Insight Server's information including server memory, disk space, OS, and CPU and OnCommand Insight database information including innoDB data size and the disk free space where the database resides.
+
+== Steps
+
+. On the Insight toolbar, click *Admin* and select *Troubleshooting*.
+. At the bottom of the page in the Other tasks area, click the *OnCommand Insight Portal* link.
+. On the next page in the Advanced menu, click the *Troubleshooting* link.
+. Click *Server Resources Status*.
++
+*For advanced OnCommand Insight users:* The administrator can run some SQL tests to check the database and server's response time from the button at the end of the information summary. This option displays a warning if server resource is low.
