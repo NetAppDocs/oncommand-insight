@@ -9,6 +9,9 @@ sidebar:
   entries:
     - title: OnCommand Insight docs
       url: /index.html
+    - title: Installation
+      - section: install-linux
+      - section: install-windows
     - section: config-admin
     - section: dwh
     - section: faq
