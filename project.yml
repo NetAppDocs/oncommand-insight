@@ -12,8 +12,9 @@ sidebar:
     - section: config-admin
     - section: dwh
     - section: faq
+    - section: howto    
     - section: install-linux
-    - section: intall-windows
+    - section: install-windows
     - section: reporting
 
 homepage:
