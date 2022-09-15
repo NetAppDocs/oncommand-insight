@@ -1,0 +1,60 @@
+section: reporting
+title: Reporting
+entries:
+    - title: Welcome to OnCommand Insight reporting
+      url: "/reporting/welcome-to-oncommand-insight-reporting.html"
+      entries:
+      - title: Accessing the OnCommand Insight Reporting Portal
+        url: "/reporting/accessing-the-oncommand-insight-reporting-portal.html"
+      - title: Variations due to installed licenses
+        url: "/reporting/variations-due-to-installed-licenses.html"
+      - title: Reporting user roles
+        url: "/reporting/reporting-user-roles.html"
+      - title: Enabling Security Headers
+        url: "/reporting/enabling-security-headers.html"
+    - title: Reporting made easy
+      url: "/reporting/reporting-made-easy.html"
+      entries:
+      - title: Navigating to pre-defined OnCommand Insight reports
+        url: "/reporting/navigating-to-the-pre-defined-oncommand-insight-reports-and-dashboards.html"
+      - title: What the Storage Manager Dashboard enables you to do
+        url: "/reporting/storage-manager-dashboard.html"
+      - title: Using predefined reports to answer common questions
+        url: "/reporting/which-report-answers-your-question.html"
+      - title: Creating a report using Cognos 11
+        url: "/reporting/creating-a-report-cognos-11.html"
+    - title: Managing reports
+      url: "/reporting/managing-reports.html"
+      entries:
+      - title: Customizing a report&#8217;s output format and delivery
+        url: "/reporting/customizing-a-report-s-output-format-and-delivery.html"
+      - title: Copying a report to the clipboard
+        url: "/reporting/copying-a-report-to-the-clipboard.html"
+      - title: Opening reports (xml) from the clipboard
+        url: "/reporting/importing-existing-reports-to-cognos-11.html"
+    - title: Creating custom ad hoc reports
+      url: "/reporting/creating-custom-ad-hoc-reports.html"
+      entries:
+      - title: What you need to do before you design your report
+        url: "/reporting/what-you-need-to-do-before-you-design-your-report.html"
+      - title: Process of creating reports
+        url: "/reporting/process-of-creating-custom-reports.html"
+        entries:
+        - title: How to plan the results of your custom report
+          url: "/reporting/how-to-plan-the-results-of-your-custom-report.html"
+        - title: Tips for designing reports
+          url: "/reporting/tips-for-designing-reports.html"
+    - title: Reporting data model
+      url: "/reporting/reporting-data-model.html"
+      entries:
+      - title: Data model overview
+        url: "/reporting/data-model-overview.html"
+        entries:
+        - title: OnCommand Insight data models
+          url: "/reporting/oncommand-insight-data-model-descriptions.html"
+        - title: Data model fact and dimension tables
+          url: "/reporting/data-model-fact-and-dimension-tables.html"
+        - title: Colors used in data model elements
+          url: "/reporting/colors-used-in-data-model-elements.html"
+        - title: Using multiple data models in one report
+          url: "/reporting/using-multiple-data-models-in-one-report.html"
