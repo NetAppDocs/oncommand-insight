@@ -1,6 +1,6 @@
 ---
 settings:
-  name: OnCommand Insight 7.3
+  name: OnCommand Insight
   internal:
     pdf_enabled: true
   prod:
