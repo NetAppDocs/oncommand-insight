@@ -2,7 +2,6 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: Fix this in index.adoc (repo root). While you are there, fix the summary that is on the next line.
 summary: OnCommand Insight simplifies operational management of hybrid IT infrastructures in on-premise environment and on public and private clouds
 ---
 
@@ -14,6 +13,7 @@ summary: OnCommand Insight simplifies operational management of hybrid IT infras
 :linkattrs:
 :imagesdir: ./media/
 
+lead:
 OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
 
 Insight provides intelligent operations and business insights across the enterprise. The software enables rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
