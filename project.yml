@@ -9,6 +9,8 @@ sidebar:
   entries:
     - title: OnCommand Insight docs
       url: /index.html
+#    - section: install
+#    - title: Installation
     - section: install-linux
     - section: install-windows
     - section: config-admin
@@ -24,5 +26,5 @@ homepage:
     - title: Get started
       links:
         - title: Configuration and administration
-          summary: This is the description of the link target
+          summary: Get the most out of OnCommand Insight
           url: config-admin/index.html
