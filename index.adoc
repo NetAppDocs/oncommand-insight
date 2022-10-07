@@ -13,7 +13,6 @@ summary: OnCommand Insight simplifies operational management of hybrid IT infras
 :linkattrs:
 :imagesdir: ./media/
 
-lead:
 OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
 
 Insight provides intelligent operations and business insights across the enterprise. The software enables rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
