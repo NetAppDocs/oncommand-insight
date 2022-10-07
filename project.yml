@@ -9,7 +9,6 @@ sidebar:
   entries:
     - title: OnCommand Insight docs
       url: /index.html
-#    - section: install
     - section: install-linux
     - section: install-windows
     - section: config-admin

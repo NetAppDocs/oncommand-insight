@@ -2,8 +2,7 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: Fix this in index.adoc (repo root). While you are there, fix the summary that is on the next line.
-summary: OnCommand Insight simplifies operational management of hybrid IT infrastructures in on-premise environment and on public and private clouds
+summary: OnCommand Insight simplifies operational management of hybrid IT infrastructures for on-premise environments and on public and private clouds
 ---
 
 = OnCommand Insight Documentation
