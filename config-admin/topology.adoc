@@ -9,7 +9,7 @@ summary: 'The Topology section, if application to an asset, enables you to see h
 :imagesdir: ../media/
 
 [.lead]
-The Topology section, if application to an asset, enables you to see how a base asset is connected to its related assets.
+The Topology section, if applicable to an asset, enables you to see how a base asset is connected to its related assets.
 
 The following shows an example of what might display in the Topology section of a virtual machine asset page.
 
