@@ -61,7 +61,9 @@ image::../media/nodeutiltablesettings.gif[]
 
 . Repeat the steps to create a table for Node Latency, showing *Latency - Max*, *Latency - Total*, or other columns as desired.
 . To round out your dashboard, you might add additional chart and table widgets for some or all of the following:
- ** |===
+
+
+|===
 | Chart| Table
 a|
 Storage Pool Utilization
@@ -80,6 +82,8 @@ Volume IOPS
 a|
 Volume Peak and Avg IOPS
 |===
+
+
 . You can move and resize the widgets in whatever placement you want on your dashboard. When finished, be sure to *Save* the dashboard.
 +
 Your final dashboard will look something like this:
