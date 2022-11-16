@@ -1,0 +1,7 @@
+indexpage:
+  lead: OnCommand Insight simplifies operational management of hybrid IT infrastructures for on-premise environments and on public and private clouds.
+  tiles:
+  - title: Get started
+    links:
+      - title: Configuration and administration
+        url: config-admin/index.html
