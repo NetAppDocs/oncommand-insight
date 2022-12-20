@@ -29,7 +29,6 @@ When your Insight system contains non-default security configurations (you have 
 
 == Managing keys in a complex service provider environment
 
-[.lead]
 A service provider can host multiple OnCommand Insight customers collecting data. The keys protect customer data from unauthorized access by multiple customers on the Insight server. Each customer's data is protected by their specific key pairs.
 
 This implementation of Insight could be configured as shown in the following illustration.
