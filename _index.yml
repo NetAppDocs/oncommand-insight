@@ -4,21 +4,21 @@ indexpage:
   - title: Get started
     links:
       - title: Installation (Windows)
-        url: install-windows/index.html
+        url: install-windows/installation-prerequisites.html
       - title: Installation (Linux)
-        url: install-linux/index.html
+        url: install-linux/installation-prerequisites.html
       - title: Configuration and administration
-        url: config-admin/index.html
+        url: config-admin/setting-up-insight.html
   - title: Reporting
     links:
       - title: Data Warehouse Administration
-        url: /dwh/index.html
+        url: dwh/welcome-to-data-warehouse.html
       - title: Reporting
-        url: /reporting/index.html
+        url: reporting/welcome-to-oncommand-insight-reporting.html
   - title: How-To's and FAQ
     links:
       - title: How-To's
-        url: howto/index.html
+        url: howto/getting-started-with-insight.html
       - title: Frequently-Asked Questions
-        url: faq/index.html
+        url: faq/faq-general-insight-questions.html
   
