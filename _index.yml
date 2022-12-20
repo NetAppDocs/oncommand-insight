@@ -3,5 +3,9 @@ indexpage:
   tiles:
   - title: Get started
     links:
+      - title: Installation (Windows)
+        url: install-windows/index.html
+      - title: Installation (Linux)
+        url: install-linux/index.html
       - title: Configuration and administration
         url: config-admin/index.html
