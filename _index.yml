@@ -9,3 +9,16 @@ indexpage:
         url: install-linux/index.html
       - title: Configuration and administration
         url: config-admin/index.html
+  - title: Reporting
+    links:
+      - title: Data Warehouse Administration
+        url: /dwh/index.html
+      - title: Reporting
+        url: /reporting/index.html
+  - title: How-To's and FAQ
+    links:
+      - title: How-To's
+        url: howto/index.html
+      - title: Frequently-Asked Questions
+        url: faq/index.html
+  
