@@ -14,7 +14,7 @@ After OnCommand Insight has been installed and properly licensed, there are a nu
 Some of the tasks performed in a typical environment include the following:
 
 . *Annotating your assets* to prepare them for querying and reporting. Useful initial annotations typically include data Center, Tier, and Service Level.
-. **Creating queries**to show important data and help troubleshooting
+. **Creating queries** to show important data and help troubleshooting
 . *Assigning applications* and *business entities* to assets
 . *Creating performance policies* and *alerts* for violations against those policies
 . *Creating custom dashboards* to highlight data according to need or user role
