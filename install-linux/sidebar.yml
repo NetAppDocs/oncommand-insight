@@ -1,13 +1,13 @@
 section: install-linux
 title: Installation for Linux
 entries:
-    - title: OnCommand Insight overview
-      url: "/install-linux/oncommand-insight-overview.html"
-      entries:
-      - title: Insight architecture
-        url: "/install-linux/insight-architecture.html"
-      - title: How Insight is used by administrators, managers, and planners
-        url: "/install-linux/insight-for-administrators-and-planners.html"
+#    - title: OnCommand Insight overview
+#      url: "/install-linux/oncommand-insight-overview.html"
+#      entries:
+#      - title: Insight architecture
+#        url: "/install-linux/insight-architecture.html"
+#      - title: How Insight is used by administrators, managers, and planners
+#        url: "/install-linux/insight-for-administrators-and-planners.html"
     - title: Installation prerequisites
       url: "/install-linux/installation-prerequisites.html"
       entries:

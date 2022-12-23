@@ -1,13 +1,13 @@
 section: config-admin
 title: Configuration and administration
 entries:
-    - title: OnCommand Insight overview
-      url: "/config-admin/oncommand-insight-overview.html"
-      entries:
-      - title: Insight architecture
-        url: "/config-admin/insight-architecture.html"
-      - title: How Insight is used by administrators, managers, and planners
-        url: "/config-admin/insight-for-administrators-and-planners.html"
+#    - title: OnCommand Insight overview
+#      url: "/config-admin/oncommand-insight-overview.html"
+#      entries:
+#      - title: Insight architecture
+#        url: "/config-admin/insight-architecture.html"
+#      - title: How Insight is used by administrators, managers, and planners
+#        url: "/config-admin/insight-for-administrators-and-planners.html"
     - title: Setting up Insight
       url: "/config-admin/setting-up-insight.html"
       entries:
