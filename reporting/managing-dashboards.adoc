@@ -1,0 +1,22 @@
+---
+permalink: reporting/managing-dashboards.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight provides report groupings in the form of dynamic dashboards to show different views of data relating to a specific management concern. Clicking elements in the dashboards displays more detailed information.'
+---
+= Managing Dashboards
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight provides report groupings in the form of dynamic dashboards to show different views of data relating to a specific management concern. Clicking elements in the dashboards displays more detailed information.
+
+About this task
+The dashboards group information on a subject of interest and provide these dynamic features:
+
+Click on chart elements to regenerate charts showing more details for the selected items.
+Links to other reports and more detailed information.
+If you have a favorite dashboard, you can add a tab for it using one of these methods:
+
+Add the dashboard tab from the public folders.
+Add the dashboard tab from User Preferences.
