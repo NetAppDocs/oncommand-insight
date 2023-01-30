@@ -37,7 +37,7 @@ entries:
       url: "/reporting/managing-dashboards.html"
       entries:
       - title: Storage Manager Dashboard
-        url: "reporting/storage-manager-dashboard.html"
+        url: "/reporting/storage-manager-dashboard.html"
       - title: Adding a dashboard from user preferences  
         url: "/reporting/adding_a_dashboard.html"        
 
