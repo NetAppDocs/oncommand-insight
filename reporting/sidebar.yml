@@ -33,13 +33,13 @@ entries:
       - title: Opening reports (xml) from the clipboard
         url: "/reporting/importing-existing-reports-to-cognos-11.html"
 
-    - title: Managing Dashboards
-      url: "/reporting/managing-dashboards.html"
-      entries:
-      - title: Storage Manager Dashboard
-        url: "/reporting/storage-manager-dashboard.html"
-      - title: Adding a dashboard from user preferences  
-        url: "/reporting/adding_a_dashboard.html"        
+#    - title: Managing Dashboards
+#      url: "/reporting/managing-dashboards.html"
+#      entries:
+#      - title: Storage Manager Dashboard
+#        url: "/reporting/storage-manager-dashboard.html"
+#      - title: Adding a dashboard from user preferences  
+#        url: "/reporting/adding_a_dashboard.html"        
 
     - title: Creating custom ad hoc reports
       url: "/reporting/creating-custom-ad-hoc-reports.html"
