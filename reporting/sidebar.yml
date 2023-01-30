@@ -34,7 +34,7 @@ entries:
         url: "/reporting/importing-existing-reports-to-cognos-11.html"
 
     - title: Managing Dashboards
-      url: "/reporting/managing-dashboards.html
+      url: "/reporting/managing-dashboards.html"
       entries:
       - title: Storage Manager Dashboard
         url: "reporting/storage-manager-dashboard.html"
