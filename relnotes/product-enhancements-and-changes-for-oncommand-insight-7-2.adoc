@@ -1,0 +1,411 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-2.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight 7.2 provides customer-requested enhancements, changes to data sources, and updates to some non-NetApp software. Becoming familiar with these changes enables you to take advantage of their benefits more efficiently.'
+---
+= Product enhancements and changes for OnCommand Insight 7.2
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight 7.2 provides customer-requested enhancements, changes to data sources, and updates to some non-NetApp software. Becoming familiar with these changes enables you to take advantage of their benefits more efficiently.
+
+== Query language
+
+Query language is a new feature that enables users to find objects in their system by using filters:
+
+* Filter based on an object's attributes, such as 'Name', 'Capacity', 'Model', 'Disk Speed'.
+* Filter based on performance characteristics, such as IOPS, throughput, latency.
+* Filter based on user-defined annotation values, such as 'DataCenter', 'EOL date'.
+
+Queries may be built and saved for later use in other dependent areas of the system, including annotation rules and dashboard widgets. Query results may be used as input for bulk actions in the system--for example, bulk annotation value assignment or bulk application assignment.
+
+This feature is available for all licensing types. If a Perform license is not applied, performance values are not available for query filters.
+
+== Anomaly detection
+
+Machine-learning anomaly detection analytics identifies the normal operating workload range for an application, and then identifies when changes in performance are outside the expected levels. The application anomaly detection engine ingests the performance metrics collected by Insight, and identifies anomalies in the application infrastructure.
+
+Anomaly analysis provides proactive visibility about the infrastructure that supports business critical applications, and can inform you about performance anomalies before they become service disruptions.
+
+The anomaly detection software is installed separately on a dedicated server or virtual machine (VM).
+
+== Custom dashboards with configurable widgets
+
+You can create custom dashboards that contain only the specific data that you want to view for your network. You can view the custom dashboards that you created from the Dashboards menu.
+
+You can add multiple widgets to custom dashboards; you can also add the same widget multiple times. There is no limit to the number of widgets that a dashboard can contain.
+
+Custom dashboards enable you to analyze information according to any criteria, enable the creation of custom visualizations with flexible graphical or tabular views, and provide a quick and intuitive way to answer your questions.
+
+== Reporting portal and data warehouse
+
+The following enhancements have been added to the data warehouse and the reporting portal:
+
+* The data warehouse provides performance data at the VMDK level to help customers make better workload placement and resource planning decisions.
+* A federated license usage report is provided in the data warehouse.
+* VM Performance is available in Cognos to enable drag and drop reporting.
+* The volume capacity mart stores historical data to enable trend reporting.
+* The data warehouse supports scheduled backups.
+* CAC is supported for Cognos.
+
+== Annotation improvements
+
+You can add metadata to any object in the system, whether it is an individual resource or multiple resources:
+
+* You can set annotations that are based on rules to automate the process.
+* You can provide context and relevance to the machine-generated data in reports and dashboards, and integrate your business process.
+
+== Application assignment changes
+
+The ability to assign storages and switches directly to applications is no longer available; however, you can still annotate storages and switches with business entities.
+
+== Annotation import tool
+
+The REST API based import tool has been improved. If you maintain annotations on SAN objects (such as storage, hosts, and virtual machines) in a `.csv` file, you can import that information into OnCommand Insight.
+
+Prior to OnCommand Insight 7.2, types included underscores ("`Data_Center`", "`Service_Level`", or "`Switch_Level`"). In OnCommand Insight 7.2, both SOAP and REST require spaces instead of underscores in the types. When using the annotation import tool, you must change the following column headers in the `.csv` files.
+
+|===
+a|
+*Previous header*
+a|
+*OCI 7.2 header*
+a|
+Data_Center
+a|
+Data Center
+a|
+Switch_Level
+a|
+Switch Level
+a|
+Service_Level
+a|
+Service Level
+|===
+
+== Performance counter updates
+
+Internal volumes for devices in both NetApp clustered and 7-Mode environments will now report Total IOPS directly retrieved from ONTAP ZAPI. In addition to read and write IOPS, this counter will include "`other IOPS`", representing IOPS specific to the NFS protocol for GETATTR, READDIR, and so on.
+
+Insight uses "`system: constituent`" counters to retrieve storage node latency, IOPS, and throughput directly from ZAPI for Data ONTAP 8.3.1 and later releases.
+
+== Additional features
+
+* Mainframe volumes are recognized on HDS and Symmetrix/Vmax arrays, enabling capacity planning and management.
+* The ability to view audit trails in the web UI has been added.
+* Support for compression and de-duplication for XtremIO and clustered Data ONTAP is supported in this release.
+* You can simultaneously compare metrics between reads, writes, and totals.
+* Resource tables in landing pages have options to create graphs for any chosen metric.
+* IO Density counters can be visualized through dashboards and widgets in the web UI.
+* Port channels that have configured speeds outside of the schema values of Insight report the performance for those ports.
+* Violations of related assets are available in the host/VM landing pages.
+* Datasource time and failure information is indicated on the landing pages.
+* Host Utilization supports Red Hat Enterprise Linux 5.
+* Configuration of alert methods (SNMP, syslog, email) and recipients are supported in the web UI.
+
+== Customer-requested enhancements
+
+The following customer-requested enhancements are included in this release.
+
+|===
+| Request ID| Description
+a|
+IFR-1488
+a|
+When VM latency is not available, correlations of VM IOPS with Hypervisor CPU, VM IOPS with Hypervisor latency, and VM IOPS with Hypervisor IOPS are provided for performance troubleshooting and analysis.
+a|
+IFR-1847
+a|
+Reporting portal is available only via HTTPS.
+a|
+IFR-1441
+a|
+All annotations that are created in the web UI can be associated with any asset.
+a|
+IFR-1764
+a|
+Counters and performance metrics for ports can be visualized in expert view.
+a|
+IFR-2051
+a|
+Query results and tables in asset pages can be exported to `.csv` format.
+a|
+IFR-2079
+a|
+Widgets are added to utilize queries for custom visualizations.
+a|
+IFR-2134
+a|
+Object storages such as Centera and Atmos have their own asset pages showing the data that OnCommand Insight collects. The list of these devices is displayed on the data source landing page.
+a|
+IFR-2290
+a|
+Positioning the mouse over the timeseries graphs displays the value of all the metrics across different graphs, showing the exact values for each metric.
+a|
+IFR-2372
+a|
+Performance violation email alerts have a descriptive subject line including the breach and its reason.
+a|
+IFR-2376
+a|
+Zooming in on one graph aligns the rest of the graphs to the same timeline.
+a|
+IFR-1325
+a|
+Database restoration in the OnCommand Insight server displays the progress of the restore activity.
+a|
+IFR-1790
+a|
+VMware datasources have an option to specify a list of VMs that must be included for monitoring and data collection.
+a|
+IFR-1939
+a|
+Custom certificates that were applied to OnCommand Insight server installation are backed up and restored during upgrade from OnCommand Insight 7.1.2 or later to the current version.
+[NOTE]
+====
+Any upgrade from previous versions of OnCommand Insight to OnCommand Insight 7.1.2 will require users to manually back up these custom certificates.
+====
+
+a|
+IFR-2006
+a|
+The OnCommand Insight upgrade and restoration process has been optimized, resulting in time and space savings during upgrade.
+a|
+IFR-2049
+a|
+New data sources, updates to existing data sources, and service packs can be applied via patch mechanism in OnCommand Insight. This eliminates the need to restart the server.
+a|
+IFR-2242
+a|
+REST API allows paging while fetching large amounts of data.
+a|
+IFR-2438
+a|
+Added a dashboard widget to display devices monitored by multiple data sources.
+|===
+
+== Data source enhancements
+
+The following new data sources are supported:
+
+* Amazon S3 (Beta for Cloud)
+* EMC Centera Viewer
+* EMC VNXe (UnisphereCLI) (Beta for Inventory)
+* HDS HNAS (CLI)
+* HUAWEI OceanStor (REST/HTTPS) (Beta for Inventory)
+* KVM for OpenStack (Beta for Inventory and Performance)
+* NetApp SolidFire 8.1+ (Beta for Inventory)
+* PureStorage
+
+The following changes have been made to existing data sources:
+
+* The Fujitsu Eternus data source supports S3 devices.
+* The 3PAR data source supports storage nodes and storage node performance.
+* The Brocade data source enables MPR by default.
+* The EMC Isilon data source supports reporting disk groups.
+* The EMC Symmetrix data source supports reporting disk groups.
+
+For more information about how to configure data sources, see the _OnCommand Insight Configuration and Administration Guide_.
+
+== Non-NetApp software changes
+
+The following non-NetApp software changes are included in this release:
+
+* Upgrade to Java version 8
+* Upgrade to Cassandra 2.1.9
+* Upgrade to Cassandra client 2.1.4
+
+== Java 8 Runtime Environment is required to run the Java client application
+
+Java 7 is no longer supported by OnCommand Insight or Oracle. The Java 8 Runtime Environment (JRE) must be installed on all computers that are used to run the OnCommand Insight Java Client application. You can install or validate the JRE by visiting http://java.com on your Windows, Macintosh, and Linux systems.
+
+== Corrected issues in OnCommand Insight 7.2
+
+OnCommand Insight 7.2 corrects issues that you might have encountered in previous releases.
+
+|===
+| Issue number| Description| Resolution
+a|
+ICI-3028
+a|
+Remote acquisition unit (RAU) fails when the Insight server is offline.
+a|
+RAU retries indefinitely by keeping the connection to Insight server active.
+a|
+ICI-2376
+a|
+If you export a view from the Java UI, the host name has a comma. However, if you export a view to CSV, the host name has a semi-colon. This was by design so that the exported .csv file would be correctly delimited.
+a|
+When a comma appears in an asset name, the export encloses the name in quotes, preserving the asset name and the proper .csv format.
+a|
+ICI-3086
+a|
+Cognos does not recognise dwh_inventory.hv_virtual_machine.ips as a text field. The ips column was introduced as a text field because of the potentially long IP addresses that customers may have (for example, if customers have multiple IP addresses tied to a virtual machine (VM)). While this text field validates in the SQL query, the field could not be added in the report because Cognos does not recognise this field as a text field.
+a|
+dwh_inventory.hv_virtual_machine.ips is changed to type varchar(4096).
+a|
+ICI-2721
+a|
+Unable to add content to a "`IBM Cognos Viewer`" portlet in the reporting engine.
+a|
+This issue is fixed in Cognos 10.2.2 that is available in OnCommand Insight7.2.
+a|
+ICI-1376
+a|
+Customers could create annotations by using the names identical to Insight keywords and import them.
+a|
+The following keywords are reserved and prevent users from specifying them as annotation types:
+
+* Application
+* Application_Priority
+* Tenant
+* Line_Of_Business
+* Business_Unit
+* Project
+
+Errors are generated if the user attempts to import an annotation type using one of the reserved keywords. For those customer who have created annotation names using these keywords, they must modify them so that the import utility tool can work correctly.
+
+|===
+
+== Known issues
+
+Known issues identify some unexpected and potentially undesired behaviors that affect functionality in this OnCommand Insight release. You must be aware of these issues to avoid or troubleshoot them.
+
+== MySQL installation fails under certain conditions related to SELinux being enabled
+
+OnCommand Insight running on Red Hat Enterprise Linux 7 can operate with SELinux enabled or disabled. The default setting for SELinux is enabled.
+
+When SELinux is enabled, and either `/var/lib/netapp` or `/var/log/netapp` is a symbolic link, MySQL installation fails.
+
+To work around this problem, you must keep SELinux enabled and provision enough disk space for `/var/lib/netapp` and `/var/log/netapp`. If symbolic links are required because of disk space issues, then disable SELinux.
+
+== Enabling auto-logout for the Java client on Red Hat Enterprise Linux systems
+
+On Linux systems, the Java client depends on an X-Windows library to determine when to log out if the auto-logout option is enabled. The X-Windows library is not installed by default on most of the Linux systems. To install this library, enter the following command in a terminal window: `sudo yum install libXScrnSaver`
+
+This library is not required to use the Java client. When the client starts, it checks whether the library is installed. If it is not installed, the auto-logout feature is disabled for the session.
+
+== Query bar chart widget
+
+When you select an application type query in the query bar chart, you are unable to save the Widget Settings because it was created with no fields; there are no fields in the drop down. An error messages is generated when you attempt to save the Widget Settings.
+
+== OnCommand Insight installation enables you to specify an HTTP port
+
+When installing OnCommand Insight on a Windows system, you are able to specify HTTP port values. However, you must use the default port values. Assigning any port value other than the default value causes the installation to fail.
+
+== HTTPS is recommended for Phonehome
+
+You must use HTTPS for delivery of AutoSupport (Phonehome) to provide the best security and to support the latest AutoSupport features. Although AutoSupport supports FTP and email for delivery of AutoSupport messages, HTTPS is recommended.
+
+== Qtree annotations require the JavaUI
+
+Qtrees cannot be annotated from the web UI. You must continue to use the Java client when annotating qtrees.
+
+== Adding application to shares and qtrees requires the JavaUI
+
+Applications cannot be added to shares and qtrees using the web UI. You must continue to use the Java client when adding applications to shares and qtrees.
+
+== "dwhuser" account given read-only access to custom DWH tables
+
+OnCommand Insight 7.2 enables customers to create their own tables in a new schema. To address security concerns related to this, the `dwhuser` account is given read-only access to the custom schema.
+
+== Changes to published documentation
+
+Additional information has become available after the documentation provided with this release was published. You should use the updated information in conjunction with the materials that were originally published.
+
+== Importing SSL certificates
+
+You can add SSL certificates to enable enhanced authentication and encryption for enhancing the security of your OnCommand Insight environment. See the OnCommand Insight Configuration and Administration Guide for information on this procedure.
+
+== Correction to user/guest permission table
+
+The following table shows the correct features available in OnCommand Insight 7.2 for user and guest roles with and without Perform license:
+
+|===
+| Feature| User - with Perform| Guest - with Perform| User - without Perform| Guest - without Perform
+a|
+Assets dashboard
+a|
+Yes
+a|
+Yes
+a|
+Partially available (storage IOPs and VM IOPs widgets are hidden)
+a|
+Partially available (storage IOPs and VM IOPs widgets are hidden)
+a|
+Custom dashboard
+a|
+View only (no create, edit or save options)
+a|
+View only (no create, edit or save options)
+a|
+View only (no create, edit or save options)
+a|
+View only (no create, edit or save options)
+a|
+Manage performance policies
+a|
+Yes
+a|
+Hidden
+a|
+Hidden
+a|
+Hidden
+a|
+Manage annotations
+a|
+Yes
+a|
+Hidden
+a|
+Yes
+a|
+Hidden
+a|
+Manage applications
+a|
+Yes
+a|
+Hidden
+a|
+Yes
+a|
+Hidden
+a|
+Manage business entities
+a|
+Yes
+a|
+Hidden
+a|
+Yes
+a|
+Hidden
+a|
+Queries
+a|
+Yes
+a|
+View and edit only (no save option)
+a|
+Yes
+a|
+View and edit only (no save option)
+|===
+
+== Updating annotations in OnCommand Insight reports
+
+The _OnCommand Insight Data Warehouse Administration Guide_ contains a procedure that describes how to include annotations in reports that you create using the Reporting Portal. This procedure is no longer supported.
+
+If you want to include annotations in reports, you should contact NetApp Customer Support for assistance.
+
+== Hyper-V data source field description is misleading
+
+In the OnCommand Insight Configuration and Administration Guide, the NT Domain field of the Hyper-V data source is incorrectly described as "`The NT domain for which the physical host (hypervisor) is configured.`"
+
+The field should be described as "`The DNS name used by the nodes in the cluster.`"

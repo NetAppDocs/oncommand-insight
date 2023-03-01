@@ -1,0 +1,169 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-3-11.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.'
+---
+= Product enhancements and changes for OnCommand Insight 7.3.11
+:experimental:
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
+
+Insight provides intelligent operations and business insights across the enterprise. The software enables rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
+
+== Improved ETL Processing
+
+Data Warehouse ETL (Extract, Transform, Load) now processes most jobs in parallel, resulting in faster overall processing time.
+
+== Improved DWH Performance
+
+This release of OnCommand Insight includes Data Warehouse timing optimizations that may increase performance for some customers. (ICI-7967, ICI-7961)
+
+== Custom Login Message
+
+OnCommand Insight allows administrators to set a custom text message that is displayed when users log in.
+
+To set the message in the OnCommand Insight Server, go to menu:Admin[Troubleshooting > Advanced Troubleshooting > Advanced Settings] and click the "Client displays login warning message" checkbox. Enter your login message in the text area and click Save. The message will display upon login for all users.
+
+To set the message in the Data Warehouse (DWH), go to *System Information* and click the "Login Warning" tab. Enter your login message in the text area and click Save. The message will display upon DWH login for all users.
+
+Custom Login message is not supported for Cognos.
+
+== Time zone shift for ASUP/Backup
+
+This release adds the ability to set a time zone shift to better coordinate Insight Server ASUP/Daily Backup timing in your environment. Contact NetApp Support to enable. (IFR-4112)
+
+== Absolute session timeouts in Server and DWH
+
+Configurable absolute session timeout support has been added to Insight Server and DWH. Contact NetApp Support to enable. (IFR-4268)
+
+== Reporting URLs are subject to change
+
+Note that with Cognos version 11.1.2 onward, reporting URLs are not considered "stable" and are subject to change. If you have bookmarked reporting URLs, these bookmarks may subsequently fail.
+
+More information can be found here: http://queryvision.com/ibm-analytics-11-x-urls-they-are-a-changing/
+
+== Upgrading from 7.2.x to 7.3.11
+
+The inline upgrade of OnCommand Insight on Linux from version 7.2.x to 7.3.11 will fail with an error: "Job for mysqld.service failed because the control process exited with error code."
+
+Do one of the following to upgrade from 7.2.x to 7.3.11:
+
+* Upgrade from 7.2.x to 7.3.10, then upgrade to 7.3.11.
+* Perform a backup of your current Insight 7.2.x installation and uninstall, then install 7.3.11 (i.e. as a new installation). When installation is complete, restore the backup.
+
+== ASUP using EMAIL, FTP and HTTP protocols are retiring, will be received by HTTPS only
+
+With the release of OnCommand Insight 7.3.10, Autosupport (ASUP) information is sent through HTTPS protocol only. Beginning on March 31, 2021, NetApp will _receive_ ASUP through HTTPS protocol only. If you are running an earlier version of Insight and have not configured your ASUP for HTTPS protocol, you must switch to HTTPS before March 31, 2021.
+
+== Updated EMC Isilon Data Source
+
+This release contains an enhancement to the EMC Isilon data source that will result in OnCommand Insight running more CLI commands. If you are using a non-root user within your data source, you will likely have configured a "sudoers" file to grant that user account the ability to run specific CLI commands via SSH.
+
+In order for Insight to understand EMC's "Access Zones" feature, Insight will now additionally run the following new CLI commands:
+
+* `sudo isi zone zones list --format json –verbose`
+* `sudo isi zone zones list`
+
+Insight parses the output of these commands, and runs more instances of existing commands, to obtain the logical configuration of objects like qtrees, quotas and NAS shares/exports that reside in non-default Access Zones. Insight now reports those objects for non-default Access Zones as the result of this enhancement. As Insight obtains that data by running existing commands (with different options) no sudoers file change is required in order for those to work; it is only with the introduction of the new commands above that the change is required.
+
+Please update your sudoers file to allow your Insight service account to run those commands before upgrading to this Insight release. Failure to do so will result in your Isilon data sources failing.
+
+== Additional Operating System support
+
+This release of OnCommand Insight supports the following operating systems, in addition to those currently supported:
+
+* Red hat Enterprise Linux 7.8 and 8.2
+* CentOS 7.8 and 8.2
+* Oracle Enterprise Linux 7.8 and 8.2
+
+== Third-party software library changes
+
+The following third-party software changes are included in this release:
+
+* ElasticSearch has been upgraded to 6.8.12
+* Wildfly has been updated to 20.0.1
+* Cognos has been upgraded to 11.1.7 FP1
+* DB2 has been upgraded to 11.1.4_FP5_862 (special build 40159)
+* Java has been upgraded to 8u271
+* MySQL has been upgraded to 8.0.22-enterprise-commercial-advanced
+
+== Data Source changes
+
+The following data source changes are included in this release:
+
+* Azure NetApp Files - support for performance
+* EMC Isilon Access Zone support -- all shares, exports and qtrees from all Access Zones are now reported
+* EMC Isilon 8.2.x support
+* HPE Nimble -- reports volume compression and encryption status
+* EMC Vplex -- reports replication ports
+* HDS HiCommand + HP Command View AE -- supports Export Tools-based performance collection for HDS VSP 5xxx and HP XP8 arrays
+* Microsoft Azure Compute - supports virtual disk performance
+* NetApp Clustered Data ONTAP - supports internal volume junction path
+* NetApp SolidFire - supports storage utilization and volume utilization, account name, and account identifier
+
+Deprecated / No longer supported data sources:
+
+* Brocade EFCM
+* Brocade Sphereon/Intrepid
+* Ceph
+* EMC StorageScope
+* Generic FSLU
+* IBM Tivoli
+* NetApp Clustered Data ONTAP 8.1.1+ (Unified Manager 6.0+)
+* Violin
+
+== Known issues
+
+|===
+a|
+Updating the email settings for an LDAP user in DWH or Server fails with an error message. However, after canceling out of this error message the user management table shows that the email updated successfully.
+a|
+The failure message is displayed in error. You can ignore the message and verify your settings updated correctly.
+|===
+
+== Corrected issues
+
+This version of OnCommand Insight corrects issues that you might have encountered in previous releases.
+
+|===
+| Number| Problem| Resolution
+a|
+ICI-7502
+a|
+Changing an Insight account from domain user to local user or vice-versa could cause role confusion or lockout.
+a|
+OnCommand Insight no longer allows modification of a domain user through the user interface. To modify a domain user you must make the change in Active Directory.
+a|
+ICI-7699
+a|
+Port attributes not merged as expected. When Insight receives data about the same port from multiple data sources, the data collected may not contain the same information. For example, Data source 1 reports: type=N-Port, name=NULL
+
+While Data source 2 reports: type=NULL, name=vc1_rx200_fcs23:fc4
+
+Insight may show this with either the name or type still showing NULL, even though both fields contain a value.
+
+a|
+Data sources are now merged with all values in place, so for the example here you will see type=N-Port, name=vc1_rx200_fcs23:fc4.
+a|
+ICI-7709
+a|
+Data Warehouse installation fails if the path contains a space.
+a|
+Installation now properly processes spaces in the path.
+a|
+ICI-7646
+a|
+Unable to change the maximum allowed number of partitions for QTree Daily performance table in DWH
+a|
+Fixed the handling of settings in QTree performance tables.
+a|
+ICI-7538
+a|
+DWH Installation fails on some non-English Operating Systems, due to incorrect handling of log messages.
+a|
+The DWH installation batch file contains a correction in the handling of log messages that will avoid this failure.
+|===

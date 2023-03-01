@@ -1,0 +1,309 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-3-1.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.'
+---
+= Product enhancements and changes for OnCommand Insight 7.3.1
+:experimental:
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
+
+OnCommand Insight provides intelligent operations and business insights across the enterprise. The software enables the rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
+
+== What's new?
+
+Insight 7.3.1 enhances the ability to analyze and troubleshoot an environment by providing visualizations to graph and plot historic capacity data in the operational web UI.
+
+OnCommand Insight's new widget enhancements and new data sets are available in context with, and alongside of existing objects in OCI, with a customizable landing pages feature that simplifies and increases the usability of the product.
+
+== UI enhancements
+
+The following improvements and enhancements have been added to the Insight web UI:
+
+* *Expressions in timeseries widgets*
++
+Expressions in timeseries widgets allow you to display data based on calculations with personalized metrics. For example, you can use an expression to show Read IOPS as a percentage of total IOPS for all storage. You can create a time series graph of "`Other IOPS`" or "`Block Size`", using the versatile new expressions feature.
+
+* *Customizable asset landing pages*
++
+Additional asset data can be displayed in customizable widgets on a dashboard. Customizing the dashboard for an asset of a given type applies that dashboard to all assets of that type. $this variables are predefined variables specific to each asset.
+
+* *NOT operator in queries*
++
+The NOT operator allows you to exclude text from search results. You can use NOT * to display fields that contain no value.
+
+* *Scrollable tables*
++
+Data in query results and table widgets is now displayed on a single scrollable table, allowing users to scroll instead of paginating through the data.
+
+* *Legends for widgets*
++
+Dashboard customization now includes the option to display a legend on time-series widgets. The legend identifies the data highlighted in the widget.
+
+== Security enhancements
+
+Changes to Insight security include the following:
+
+* Password-based encryption has been replaced with asymmetric encryption.
+* SHA-256 replaces SHA-1 hashing.
+* Hard-coded passwords and keys are no longer present in the software.
+* Passwords for internal user accounts can be changed.
+* By default, all installations share the same keys.
++
+Customers that want to change the security configuration of their site can do so using a tool provided with the Insight software.
+
+All released Windows .exe (self-extracting) installer files and .msi (standalone) installer files are signed by a Trusted Certificate Authority. The files are also timestamped.
+
+== Internationalization support
+
+OnCommand Insight 7.3.1 provides support for non-English locales. This support provides date, time and number format support for non-English languages.
+
+== New assets available in the web UI
+
+* *Fabrics*
++
+Fabrics can be displayed in dashboards and used in queries.
+
+* *Qtrees*
++
+Qtrees can be used in queries, are available in landing pages, and support custom landing page creation.
+
+* *Quotas*
++
+Quotas can be displayed in dashboards and used in queries.
+
+* *Shares*
++
+Shares can be displayed in dashboards and used in queries.
+
+== Changes to existing assets
+
+* *VVOL support*
++
+This release of Insight includes VVOL support, providing more comprehensive information for Host, VM, VMDK and Volume Landing pages:
+
+ ** In the Virtual Machine landing page, the VMDKs table lists the VVOLs in the Storage Resources table.
+ ** In the Hypervisor landing pages, the OS Mounted Resources table lists the names of the VVOLs.
+
+== Capacity as a time series
+
+With this release, capacity information is reported and charted as time series data. Previously, capacity information acquired from data sources has been "point-in-time" (PIT) data, meaning it could not be used in time series charts or tables. Now, capacity values for all asset types can be graphed in tables, widgets, expert views, and any place where time series data is displayed, and can be applied to performance thresholds with violations.
+
+== Mapping AWS tags to annotations
+
+The AWS data source includes an option that allows you to populate Insight annotations with tags configured on AWS. The annotations must be named exactly as the AWS tags. Insight will always populate same-named text-type annotations, and will make a "best attempt" to populate annotations of other types (number, boolean, etc). If your annotation is of a different type and the data source fails to populate it, it may be necessary to remove the annotation and re-create it as a text type.
+
+== HTTPS is the default protocol for ASUP
+
+The default protocol for a newly installed Insight server or a new ASUP configuration is HTTPS. Although ASUP supports other protocols for the delivery of ASUP data, you should use HTTPS because it provides the best security, and supports the latest ASUP features.
+
+== Third-party software library changes
+
+The following third-party software changes are included in this release:
+
+* Java has been updated to 8u141
+* MySQL has been updated to 5.7.19
+* mysql-connector-java-commercial has been upgraded to 5.1.42
+* ElasticSearch has been upgraded to 5.4.2
+* Cognos has been updated to 10.2.2.FP8
+
+== Send usage information
+
+This release of Insight provides the option of sending usage information to NetApp. The information is a minimal payload separate from the other Phone Home data.
+
+To support the Consumption licensing model, which covers a base capacity for term and includes monthly overage calculations, sending usage data to corporate ASUP daily from each insight instance is required.
+
+== Data Warehouse enhancements
+
+The following changes have been made to the Data Warehouse:
+
+* The Data Warehouse health monitor now reports when a connection is lost between the Data Warehouse and the Insight server.
++
+Alarm messages are displayed on the Connectors and Jobs pages of the DWH, as well as sent to the connected Insight server, where they are displayed on the Admin > Health page. Email notification is sent when it is enabled for health monitor events.
+
+* The DWH backup file name now includes the product version for easy identification of backups.
+
+== Known problems and limitations
+
+The following are known problems and limitations found in this release of OnCommand Insight.
+
+* *Linux inline upgrade from 7.3 to 7.3.1 requires reconfiguration of Email notifications if passwords are present*
++
+When upgrading a system that was configured with passwords for Notifications, accessing the *Notifications* page (*Admin* > *Notifications*), fails with the following error message: `Cannot retrieve email settings from the server.`
++
+Use the one of the following procedures to work around this problem:``Option 1``
+
+ .. Edit the `/var/lib/netapp/oci/.systemPrefs/com/onaro/sanscreen/server/sessions/prefs.xml` file.
+ .. Remove the password entry from the file, leaving the entry as follows:``<entry key="password" value=""/>``
+`Option 2`
+ .. Delete the `/var/lib/netapp/oci/.systemPrefs/com/onaro/sanscreen/server/sessions/prefs.xml` file.
+ .. Restart the server.
+ .. Go to *Admin* > *Notifications* and re-enter Email notifications information.
+
+* *Known problem when no 64-bit JRE is installed*
++
+Under some conditions, the Java client fails to start when you are using a 32-bit version of the JRE. To work around this problem, you should use the 64-bit version of the JRE (NetApp recommended) or use the following steps to change the max heap size for the 32-bit JRE.
+
+ .. Access the Insight Legacy Portal: *Admin* > *Troubleshooting* > *OnCommand Insight Portal* (at the bottom of the page).
+ .. Go to *Troubleshooting* > *Configure client settings*
+ .. Change *Max Heap Size* to *1024* and *Save Settings*
+If you continue to experience failures contact NetApp support.
+
+* *Java client restriction*
++
+When upgrading from an older version of Insight to version 7.3.1, you must delete the `client.truststore` file in the user directory on the client machine before launching the Java client. Failing to do this will result in failure during login to the Java client.
+
+* *Inline Upgrade to 7.3.x fails with custom certificates*
++
+If you are upgrading OCI and your system uses custom certificates, you cannot perform an inline upgrade. You need to use the following procedure to upgrade to OCI 7.3.x:
+
+ .. Backup the OCI database to a safe location outside of the install path
+ .. Uninstall the old OCI version
+ .. Install OCI version 7.3
+ .. Restore the backup you created in step 1
+ .. Build and import a new custom certificate
+
+* *Internationalization restriction*
++
+The use of custom time ranges in non-English locales is not supported. To use custom time ranges, you must be in the English locale.
+
+* *Password change fails after upgrade*
++
+After upgrading to Insight version 7.3.1, if an existing user attempts to change their password with the *User icon**> Change password* menu option, it will result in a "`Could not change password for user`" error.
++
+To work around this problem, an Administrator must log in and go to menu:Admin[User], select the appropriate user and change his/her password. The user will then be able to change their password normally on their next login.
++
+Note that this applies to non-LDAP users only. LDAP users are not allowed to change their passwords in Insight.
+
+== Data Source changes
+
+The following new data sources are supported:
+
+* EMC ScaleIO provides beta support for inventory
+* EMC VNXe provides beta support for Unity performance
+
+The following changes have been made to existing data sources:
+
+* EMC VNXe adds FC support in VNXe Gen2 and Unity
+* IBM XIV adds support for A9000 FlashSystem
+* NetApp Clustered Data ONTAP adds support for LDAP netgroup
+* NetApp SolidFire adds support for latency for volume, node, and cluster
+
+The following data sources were promoted out of beta status in 7.3.0 SP1
+
+* Amazon AWS EC2
+* HUAWEI OceanStor
+* OpenStack
+* RedHat RHEV
+
+== Corrected issues in OnCommand Insight 7.3.1
+
+OnCommand Insight 7.3.1 corrects issues that you might have encountered in previous releases.
+
+|===
+| Issue number| Description| Resolution
+a|
+ICI-4429
+a|
+Data Source report states inventory collecting on conflicting device while Widget does not.
+a|
+Verified that the report is not giving wrong information regarding conflicting devices reported by data sources.
+a|
+ICI-4674
+a|
+Query language missing "Is Active" for hosts
+a|
+isActive added to Hosts query, allows filtering by isActive in host queries. Table widgets group by isActive and line charts display isActive.
+a|
+ICI-4735
+a|
+3Par with duplicate IP address reporting LUN's on wrong array
+a|
+Acquisition now uses the serial number and not the IP as the key for 3PAR arrays.
+a|
+ICI-4373
+a|
+Least performing disk field shows SSD - which is "Not Mapped" to the storage pool
+a|
+A correction was made to MySQL databse to properly calculate disk types.
+a|
+ICI-4846
+a|
+Elastic search does not fully initialize after reboot of VM.
+a|
+Increased time for Elasticsearch server to initialize .
+a|
+ICI-4892
+a|
+Attempting to import a CSV file for manual identification into Device resolution resulted in "Failed to validate FC identifications" error.
+a|
+Fixed NPE caused when FC identification's hash codes collide.
+a|
+ICI-4881
+a|
+A memory leak in the Acquisition unit caused the exhaustion of memory in the unit.
+a|
+Corrected a problem with log files not clearing data in the Acquisition Unit.
+a|
+ICI-4865
+a|
+Files created with a Unicode (UTF16LE) format cannot be imported using the annotation tool.
+a|
+Corrected a problem with detecting the encoding correctly on input.
+a|
+ICI-4826
+a|
+"Reset Reporting Content" in the DWH admin portal deletes two visualization libraries.
+a|
+Reset reporting content now imports the visualization libraries correctly.
+a|
+ICI-4819
+a|
+PhoneHome with HTTPS+Proxy fails.
+a|
+Fixed incorrectly hard-coded Proxy credentials that resulted in authentication failure.
+a|
+ICI-4749
+a|
+Annotation rules not running.
+a|
+A third party component used by OCI had a bug that could not handle fully qualified domain names with capitalized domain suffixes. Updating the component corrected the issue.
+a|
+ICI-4856
+a|
+DWH backups are not completing
+a|
+This bug is fixed by a patch created from US33429 (Add option to use MySql backup tool for creating DR backups).
+a|
+ICI-4779
+a|
+VMDK performance data is not in DWH.
+a|
+VMDK performance is available for all counters in DWH.
+a|
+ICI-4845
+a|
+ETL jobs are failing on regular basis
+a|
+DWH did not correctly process references to datastores that were deleted.
+a|
+ICI-4900
+a|
+SNMP datasource fails to send trap notifications
+a|
+Removed the int cast; now sending the time in seconds.
+|===
+
+== Documentation notes
+
+For this release of OnCommand Insight, the on-line help has been removed from the system. The Insight Documentation Center contains all of the published user documentation. For secure sites that do not allow unlimited access to the Internet, you can download PDF or EPUB versions of the documents.
+
+New documentation has been added to the documentation center:
+
+* A new Notification topic has been added to the "Getting Started" How-to
+* A new Analytics topic has been added to the How-to guides.
+* The installation guides have been updated to provide insight into new sizing requirements when upgrading from Insight 7.2.x to Insight 7.3.x.

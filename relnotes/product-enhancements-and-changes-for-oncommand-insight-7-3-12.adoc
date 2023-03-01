@@ -1,0 +1,200 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-3-12.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.'
+---
+= Product enhancements and changes for OnCommand Insight 7.3.12
+:experimental:
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
+
+Insight provides intelligent operations and business insights across the enterprise. The software enables rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
+
+== Data Migration Tool for upgrading to 7.3.12
+
+[NOTE]
+====
+Prior to upgrading from OnCommand Insight 7.3.5 - 7.3.11 to version 7.3.12 or later, you *must* run the OCI Data Migration Tool. Attempting to upgrade Insight with incompatible indexes present will cause the upgrade to fail.
+====
+
+OnCommand Insight version 7.3.12 utilizes underlying software that may be incompatible with previous versions. Insight version 7.3.12 includes a *Data Migration Tool* to assist with upgrading.
+
+Note that OnCommand Insight versions 7.3.4 and earlier are no longer supported. If you are running one of these versions you must upgrade to Insight version 7.3.5 or later (7.3.11 is strongly recommended) prior to upgrading to 7.3.12.
+
+The migration tool performs an initial compatibility check and then follows one of three different upgrade paths, based on what it discovers about the compatibility of your previous version.
+
+See the *Upgrade* section of the appropriate Insight Installation Guide for more information and instructions for running the Data Migration Tool.
+
+== New Performance Counters for Datamarts
+
+The following performance counters are available for use in the noted VM and Volume datamarts.
+
+|===
+| Datamart| Counter| Name
+a|
+dwh_performance.vm_daily_performance_fact dwh_performance.vm_hourly_performance_fact
+
+a|
+cpuCoSchedulingDelayTimePercent
+a|
+CPU Co-Stop Time (%)
+a|
+cpuDemandToEntitlementPercent
+a|
+CPU Demand-To-Entitlement Ratio (%)
+a|
+cpuIdleTimePercent
+a|
+CPU Idle Time (%)
+a|
+waitingToBeScheduledTimePercent
+a|
+CPU Ready Time (%)
+a|
+cpuTotalWaitTimePercent
+a|
+CPU Wait Time (%)
+a|
+dwh_performance.application_volume_hourly_performance_fact dwh_performance.host_volume_hourly_performance_fact
+
+dwh_performance.volume_hourly_performance_fact
+
+dwh_performance.volume_daily_performance_fact
+
+a|
+compressionSavingsPercent
+a|
+Compression savings (%).
+a|
+compressionSavingsSpace
+a|
+Compression savings space.
+|===
+
+== Audit log messages can be sent to syslog
+
+New audit log messages can now be sent to syslog in addition to being displayed on the Audit page. Note that existing audit log messages will not be sent to syslog; only newly-generated log messages will be sent. To enable, on the menu:Admin[Notifications] page, ensure that both *Enable syslog* and *Send audit* checkboxes are selected.
+
+== Custom login message for Cognos Reporting
+
+The custom login message that can be set for Data Warehouse (DWH) will also appear when users log in to Cognos Reporting.
+
+To set the message for DWH and Cognos, in DWH navigate to *System Information* and click the "Login Warning" tab. Enter your login message in the text area and click *Save*. The message will display upon DWH and Cognos login for all users.
+
+== CAC PrincipalName extracted from Subject Alternative Name
+
+With this release of OnCommand Insight, it is possible to extract CAC PrincipalName from the provided certificate's "Subject Alternative Name" attribute instead of "Subject" attribute.
+
+Insight provides a configuration parameter to configure attribute name (e.g. "Subject Alternative Name") which when set would be used to extract LDAP user name.
+
+== MySQL 8.x and Data Warehouse
+
+OnCommand Insight versions 7.3.11 and 7.3.12 use MySQL version 8.x. If you are performing any SQL-level integrations with the OnCommand Insight Data Warehouse (DWH), you will want to perform testing to ensure those integrations are able to successfully speak to MySQL 8.x. Previous Insight versions 7.3.10 and earlier used MySQL 5.7 or below.
+
+== Additional Operating System support
+
+This release of OnCommand Insight supports the following operating systems, in addition to those currently supported:
+
+* Red hat Enterprise Linux 7.9 and 8.3
+* CentOS 7.9 and 8.3
+* Oracle Enterprise Linux 7.9 and 8.3
+* openSUSE 15.2 (for Anomaly Detection server/VM only)
+* SUSE Linux Enterprise Server 15.2 (for Anomaly Detection server/VM only)
+
+== Third-party software library changes
+
+The following third-party software changes are included in this release:
+
+* ElasticSearch has been upgraded to 7.10.2
+* Wildfly has been upgraded to 23.0.0
+* Cognos has been upgraded to 11.1.7. FP2
+* DB2 has been upgraded to 11.1.4_FP6
+* Java has been upgraded to 8u281
+* MySQL has been upgraded to 8.0.23-enterprise-commercial-advanced
+* Grails has been upgraded to 4.0.7
+
+== Data Source changes
+
+The following data source changes are included in this release:
+
+* EMC ECS provides beta support for performance
+* EMC PowerMax supports NVMe over fabric configurations
+* EMC PowerStore provides beta support for inventory and performance
+* EMC Isilon introduces "File System" statistics on the node object for EMC Isilon. The existing node statistics reported by OnCommand Insight are "disk" based - i.e, for IOPs and throughput of a storage node, what are the disks in this node doing in aggregate? But for workloads where reads are cached in memory and/or compression is in use, the file system workload may be substantially higher than what actually hits the disks - a data set that compresses 5:1 could therefore have a "File System Read Throughput" value 5x the storage node Read Throughput, as the latter measures the reads off of disk, which expand 5x when the node uncompresses the data to service the client's read request.
+* Hitachi Content Platform provides beta support for inventory and performance
+* Hitachi Ops Center provides beta support for inventory and performance
+* Microsoft Hyper-V supports improved password security
+
+Deprecated / No longer supported data sources:
+
+* Dell Compellent is no longer supported.
+
+== Ethernet Monitoring support removed
+
+Ethernet Monitoring Unit (EMU) support is removed in OnCommand Insight version 7.3.12.
+
+== Known issues
+
+* Cognos continuously attempts to send e-mail to mobile.administrator@cognos.ibm.com. The email address is not valid and you may receive return email notifications stating that the mail could not be delivered.
+* OnCommand Insight logout after thirty minutes of inactivity sometimes does not happen when Data Warehouse is set to auto-refresh. To allow the timeout to occur, disable the DWH auto-refresh.
+
+== Corrected issues
+
+This version of OnCommand Insight corrects issues that you might have encountered in previous releases.
+
+|===
+| Number| Problem| Resolution
+a|
+ICI-8467, ICI-8500
+a|
+When viewing an asset landing page using a custom time range, columns in tables could not be sorted.
+a|
+Previous API limitations that prevented column sorting when using custom time range have been resolved. Tables on landing pages can be sorted by selected column regardless of the time range set.
+a|
+ICI-8334
+a|
+DWH ETL jobs occasionally stuck in pending status for an extended period.
+a|
+The health monitor in previous versions of Insight would sometimes detect when there are pending jobs but no running jobs, and would trigger "run next job" command, leaving the pending job in the pending state.This has been corrected in the current version of Insight.
+a|
+ICI-8263
+a|
+Auto Resolution identification handling.
+a|
+This version of Insight includes changes to auto resolution handling:
+
+1) More robust handling of the dns positive cache so the validator can better understand groups of related resolutions.
+
+2) Allow a collection of identifications to drop an IP if the dns service reduces the number of supported IPs.
+
+a|
+ICI-8163
+a|
+DWH database backup may fail to restore Cognos content store.
+a|
+When Cognos backup consists of more than one file, Previous versions of Insight only packed one file into the dwh .zip, causing restore to fail. The current version of Insight corrects includes all necessary files in the backup .zip.
+a|
+ICI-8417
+a|
+Installation of DWH fails on Windows with Japanese locale
+a|
+Prior to Insight 7.3.12, Cognos would not start if there are special characters in the startup script and the language is not English. Cognos startup now handles non-English locale without this error. As a workaround for similar issues, change the Windows language/locale to English, install DWH, and then change back to the original locale.
+
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ICI-8140
+a|
+ETL applies MAX function to calculate internal_volume_daily_performance_fact.totalResponseTime and other fields
+a|
+In the _internal_volume_daily_performance_ fact, the fields _readResponseTime_, _writeResponseTime_, and _totalResponseTime_ were previously calculated as the max of the hourly values. The fields _readResponseTime_, _writeResponseTime_, and _totalResponseTime_ are now calculated as weighed averages. _totalResponseTimeMax_ is still calculated as max.
+
+|===

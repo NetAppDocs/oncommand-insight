@@ -1,0 +1,206 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-1.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight 7.1 provides some enhancements based on customer requests, data sources, the Data Warehouse, and non-NetApp software. Becoming familiar with these changes enables you to take advantages of their benefits more efficiently.'
+---
+= Product enhancements and changes for OnCommand Insight 7.1
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight 7.1 provides some enhancements based on customer requests, data sources, the Data Warehouse, and non-NetApp software. Becoming familiar with these changes enables you to take advantages of their benefits more efficiently.
+
+== Customer-requested enhancements
+
+Customers requested the following enhancements, which are included in this release:
+
+|===
+| Request ID| Description
+a|
+IFR-1679, IFR-1680
+a|
+For asset pages, the time option, *All data*, is changed to *Custom*, which enables you to display any 7-day segment of data instead of all the data that is available for that asset.
+a|
+IFR-1540
+a|
+Data Warehouse has an OCI Scorecard report that provides a high-level representation of your environment.
+a|
+IFR-1496, IFR-1495, IFR-1247
+a|
+You use a World Wide Name (WWN) in the *Search* assets box.
+a|
+IFR-1439, IFR-1221
+a|
+You can use a wildcard search in the *Search* assets box, substituting an asterisk (*) for a word within a key phrase, and keywords.
+a|
+IFR-1401
+a|
+Traffic Frame Size Avg (Tx) and Traffic Frame Size (Rx) are collected for ports to identify if there are any overhead frames in a fabric.
+a|
+IFR-1338, IFR-1480
+a|
+If you have a data source in production that needs maintenance, you can postpone its data collection for 3, 7, or 30 days.
+a|
+IFR-1326, IFR-688, IFR-1282, IFR-1343, IFR-664
+a|
+For a given asset, Data Warehouse shows the last time data was acquired, ensuring that the reported data is the most current.
+a|
+IFR-1321, IFR-1373
+a|
+Performance counters for storage and virtual machines are shown in double precision instead of integer. This enables you to understand the nuances of the device behavior, especially in cases of flash devices for which the latency values are in microseconds.
+a|
+IFR-1287
+a|
+Insight collects link failure events for ports, which helps identify any flickering GBICs.
+a|
+IFR-1228
+a|
+You can edit most of the information for multiple data sources of the same vendor and model at one time. For example, if these data sources share a user name and password, you can change the password in one place and thereby update the password for all the selected data sources.
+a|
+IFR-712
+a|
+The widget library has a Recently Failed Data Sources widget that, when added to a custom dashboard, enables you to view the data sources that have failed in your network in the past 24 hours, 3 days, or 7 days.
+a|
+IFR-607
+a|
+The widget library has a Recently Discovered Devices widget that, when added to a custom dashboard, enables you to view the recently discovered devices in your network in the past 24 hours, 3 days, or 7 days.
+a|
+IFR-522
+a|
+The storage and storage pool capacity data marts support historical trending of unmapped and unmasked capacity.
+a|
+IFR-1546, IFR-1389, IFR-199
+a|
+The storage asset page displays overall array-level cache usage statistics (the total cache that is write pending), which enables you to determine if the array's workload is configured appropriately or if you should reconfigure the array or move it to a different storage.
+a|
+IFR-303
+a|
+After Data Warehouse is uninstalled, the server automatically reboots.
+a|
+IFR-743
+a|
+The Data Warehouse resolves the FlexVol SnapMirror relationships (or internal volume synchronizations) in 7-Mode environments and clustered Data ONTAP when end points are acquired by different Insight servers.
+a|
+IFR-748
+a|
+Insight collects the soft pool limits for EMC VMAX to aid capacity planning.
+a|
+IFR-1341
+a|
+There is an additional column in the Data sources table for Acquisition Unit.
+a|
+IFR-145
+a|
+Masking and mapping information is added to Storage and Storage Pool Capacity data mart to enable you to create reports of orphaned capacity (per your definition) at the storage or storage pool level and to also enable you to trend the same.
+|===
+
+== Data source enhancements
+
+* The NetApp clustered Data ONTAP data sources are enhanced to support clustered Data ONTAP 8.3 in inventory and performance.
++
+This includes disk efficiency and the retrieval of internal volume performance counters using the QoS workload statistics in Data ONTAP.
+
+* The EMC CLARiiON (NaviCLI) data source reports a storage node for each storage processor and storage node performance.
+* The VMware vSphere (Web Services) data source reports the rate at which memory is swapped in from disk into active memory (Swap In Rate) and the rate at which memory is swapped out (Swap Out Rate) from active memory to disk during the current interval.
+
+== Beta data sources
+
+Support for the following beta data sources is included in this release: EMC XtremIO (HTTP).
+
+== Deprecated data sources
+
+You can see the list of deprecated data sources on the web at http://mysupport.netapp.com/info/communications/ECMP1387432.html.
+
+== Removed data sources
+
+The following data sources are removed in this release:
+
+|===
+| Vendor| Data sources
+a|
+Brocade
+a|
+
+* Brocade (HTTP)
+* Brocade SNMP Firmware 4.2x and 4.4x
+* Brocade MPR (SSH)
+
+[NOTE]
+====
+Brocade CLI remains. SNMP is still used for performance.
+====
+
+a|
+McData
+a|
+
+* EFCM 7 (GUI API)
+* EFCM 8.1, 8.6, 8.7, 8.8, 9.0, and 9.1 (API)
+
+a|
+EMC
+a|
+
+* EMC Connectrix 7
+* EMC Connectrix 8.1, 8.6, 8.7, 8.8, 9.0, 9.1
+* EMC Solution Enabler (CLI) with CLI Performance
+
+[NOTE]
+====
+EMC Connectrix 9.5 and EMC Solution Enabler (CLI) with SMIS Performance remain.
+====
+
+a|
+Engenio
+a|
+Engenio arrays firmware 5.x (SANtricity API)
+[NOTE]
+====
+Engenio arrays firmware 6 and 7 remain.
+====
+
+a|
+HP
+a|
+HP XP (CVCLI)
+a|
+IBM
+a|
+IBM ESS Shark (ESSCLI)
+|===
+
+[NOTE]
+====
+Any instances of these data sources and their associated data are removed during the upgrade.
+====
+
+== Data Warehouse changes
+
+The following changes were made to the Data Warehouse:
+
+* The Storage Capacity data mart and Storage Capacity fact table (dwh_capacity.capacity_fact) are removed.
++
+[NOTE]
+====
+If you have custom reports that use these data marts, the reports will not work after you install this release. For reports that use the Storage Capacity data mart, you can rewrite the reports to collect data from the following data marts instead:
+    -   You can use the Storage and Storage Pool Capacity data mart for pools (aggregates) or storage array data.
+    -   You can use the Chargeback data mart to associate costs to business entities, applications, or both.
+    -   You can use the Volume Capacity data mart, Inventory data mart, or both to understand which host has access to which volumes.
+    -   You can use the Internal Volume Capacity data mart for information about internal volumes.
+    -   You can use the Inventory data mart if you are interested only in point-in-time data for storage, storage pool, and internal volume metrics.
++
+====
+
+* The Capacity Efficiency data mart and Capacity Efficiency fact table (dwh_capacity_efficiency.efficiency_fact) are deprecated.
+
+== Non-NetApp software changes
+
+The following non-NetApp software changes are included in this release:
+
+* Upgraded to Java version 7 update 67
+* Upgraded Cassandra to 2.0.9
+
+== Insight VirtualCenter plug-in
+
+The Insight VirtualCenter plug-in was used to show the storage information collected by Insight from the vCenter Server Client. This plug-in has been removed and is no longer available.

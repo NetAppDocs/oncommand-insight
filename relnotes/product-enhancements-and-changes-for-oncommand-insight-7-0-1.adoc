@@ -1,0 +1,118 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-0-1.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight 7.0.1 provides some enhancements based on customer requests and changes to Data Warehouse, data sources, and non-NetApp software.'
+---
+= Product enhancements and changes for OnCommand Insight 7.0.1
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight 7.0.1 provides some enhancements based on customer requests and changes to Data Warehouse, data sources, and non-NetApp software.
+
+== Customer-requested enhancements
+
+The following customer-requested enhancements are included in the OnCommand Insight 7.0.1 release.
+
+|===
+| Request ID| Description
+a|
+303
+a|
+After Data Warehouse is uninstalled, the server automatically reboots.
+a|
+743
+a|
+Data Warehouse resolves the FlexVol Snap Mirrors (or internal volume synchronizations) on Data ONTAP where the end points are acquired by different servers.
+a|
+748
+a|
+Insight supports user-defined storage pool soft limit metrics in Insight Plan. Reports can include EMC Symmetrix storage pool data for capacity planning.
+|===
+
+== Data Warehouse changes
+
+The Storage Capacity datamart and capacity fact table (dwh_capacity.capacity_fact) are deprecated.
+
+== Non-NetApp software changes
+
+The following changes to non-NetApp software are included in this release:
+
+* Upgrade to Java version 7 U55
+* Upgrade to MySQL version 5.5.38
+* Discontinued support for Windows XP
+* Upgrade to Cognos version 10.2.1
++
+Because of the Cognos upgrade, Business Insight is now called _Workspace_, and Business Insight Advanced is now called _Workspace Advanced_.
+
+== New data sources
+
+* NetApp Host and VM file systems
+* IBM XIV Array Performance support
+* EMC DataDomain
+
+As part of your installation and configuration planning, you should verify that the devices in your environment can be monitored by Insight. You should check the OnCommand Insight interoperability matrix and data source support matrix for details about operating systems, specific devices, and protocols. Refer to the _OnCommand Insight Installation Guide_ to view these matrices.
+
+== New beta data sources
+
+Violin Memory
+
+== Removed data sources
+
+EMC Connectrix 7: Any instances of this data source and its associated data are removed during the upgrade.
+
+== Data source enhancements
+
+The OnCommand Insight7.0 release provides new data source management tools that enable you to rapidly set up and easily maintain your data sources.
+
+The Insight data source wizard simplifies your data source setup process by listing the essential setup information in the Configuration section and the less significant setup details in the Advanced Configuration section. You can find descriptions of all possible setup information in the _OnCommand Insight Configuration and Administration Guide_ and in the web UI Help.
+
+image::../media/oci-7-data-source-wizard-gif.gif[Data source wizard in Insight release 7.0]
+
+You can use the new clone facility to quickly add a data source that has the same credentials and attributes as a previously added data source.
+
+After installation, you can access a detailed data source matrix from the Insight web UI by clicking the *Help* icon on the toolbar, and then selecting the *Data source support matrix* option.
+
+== Issues corrected in OnCommand Insight 7.0.1
+
+OnCommand Insight 7.0.1 corrects issues that were found in previous releases.
+
+|===
+| Defect number| Description
+a|
+1746
+a|
+The web UI shows the data source acquired time and the Java UI shows the originator access or last report time in the time zone of the local system and not in the time zone of the server collecting the data.
+
+a|
+1764
+a|
+Spaces are not removed from license key text after it is uploaded to the server, which causes the license update to fail.
+
+a|
+1812
+a|
+The data source wizard does not accept a community string with a quote (") in it.
+
+a|
+1840
+a|
+The data source report for acquisition status shows a status of `Datasource Package has not finished after 1 hours` and some failure messages appear green instead of red.
+
+a|
+1871
+a|
+The Data Warehouse Extract, Transform, and Load (ETL) process fails when HDS storage has different IP addresses and therefore appears as multiple storage.
+
+a|
+2008
+a|
+After installing the Java 7 Update 65, the Java UI does not start.
+
+a|
+2031
+a|
+Data source names can include only alphanumeric characters and the underscore character.
+
+|===

@@ -1,0 +1,155 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-2-5.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight 7.2.5 includes new and enhanced features, changes to data sources, updates to non-NetApp software, and corrected issues. Becoming familiar with these changes enables you to take advantage of their benefits more efficiently.'
+---
+= Product enhancements and changes for OnCommand Insight 7.2.5
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight 7.2.5 includes new and enhanced features, changes to data sources, updates to non-NetApp software, and corrected issues. Becoming familiar with these changes enables you to take advantage of their benefits more efficiently.
+
+== New and enhanced features
+
+The following new features and changes are included in this release:
+
+== Data Warehouse health monitor
+
+The Data Warehouse (DWH) now includes a health monitor to capture information about the state of DWH. Metrics are collected every ten minutes and events are logged in a new `dwh_troubleshoot.log` file in the following location:
+
+* Windows: `<install dir>\SANscreen\jboss\server\onaro\log`
+* Linux: `/var/log/netapp/oci/jboss/`
+
+Some of the events which are captured in the log are as follows:
+
+* Disk utilization greater than 90%
+* Reporting (Cognos) service is down
+* A query holds a lock on any table for a prolonged time
+* A maintenance job is disabled
+
+== CPU Count for hosts is now searchable
+
+With this release of OnCommand Insight, the "CPU Count" for hosts is now searchable as an integer attribute in queries.
+
+== The default validity of "`keypairs`" has changed
+
+The Java keytool default validity of a keypair has been changed to 90 days. When generating a new key for CAC support or certificate login support, you should specify a longer default validity:
+
+`<install dir>\SANscreen\java\bin\keytool.exe -genkey -alias OCI.hostname.com -keyalg RSA -keysize 2048 -validity 365.`
+
+== Non-NetApp software changes
+
+The following non-NetApp software changes are included in this release:
+
+* MySQL is upgraded to 5.5.54
+* MySQL JDBC Connector is upgraded to 5.1.40
+* Java is upgraded to 1.8.121
+
+== Upgrading from 7.1 to 7.2
+
+The upgrade from Insight 7.1.x versions to 7.2.x is an in-place upgrade and includes upgrading RAU's as part of the upgrade process.
+
+== Data Source Enhancements
+
+The following new data sources are supported:
+
+* The Amazon AWS EC2 data source provides beta support for Inventory and Performance
+* The HDS HCP data source provides beta support for Inventory
+* The Microsoft Azure Compute data source provides beta support for Inventory and Performance
+* The Oracle ZFS data source provides beta support for Inventory
+
+The following changes have been made to existing data sources:
+
+* The EMC Solutions Enabler data source now supports all VMAX3 (250F, 450F, 850F) All Flash models
+* The EMC RecoverPoint data source support for inventory has moved out of beta release status
+
+*Change to EMC Isilon data source*
+
+The EMC Isilon datasource has made 2 CLI commands mandatory in OCI 7.2.x and higher. If you are not using a root level user in your Isilon datasources and are using a `sudoers` file to grant permissions, you will need to edit your `sudoers` file to grant the data source's user account the ability to run the following CLI commands:
+
+* `isi storagepool nodepools list -v --format json`
+* `isi storagepool health -v`
+
+== Corrected Issues in OnCommand Insight 7.2.5
+
+OnCommand Insight 7.2.5 corrects issues that you might have encountered in previous releases.
+
+|===
+| Issue number| Description| Resolution
+a|
+ICI-4345
+a|
+DWH: Inventory acq_data_source table is not being updated correctly. Changing the site name can cause the acquisition unit (a "chassis" in DWH) to change its natural_key. DWH understands this as a new acquisition unit (a new chassis is created) and does not delete the old chassis and its parts (data sources).
+a|
+DWH now unloads a chassis if natural key doesn't match, and updates the global id in chassis_local.
+a|
+ICI-4365
+a|
+Datamart Preparation "Data truncation: Out of range value for column '(null)' at row 1", Values bigger than 10 digits are truncated during conversion of floating values to decimal, resulting in a warning.
+a|
+Conversion of floating to decimal now occurs without the truncation and warning.
+a|
+ICI-4221
+a|
+ETL occasionally times out during scheduled ETL timeframe.
+a|
+Increased ETL timeout.
+a|
+ICI-4267
+a|
+No CPU count available in host query. CPU Count is a string data type, which doesn't allow for number-range filtering.
+a|
+CPU Count has been changed to integer data type. See "REST requests for CPU Count may fail" below.
+
+a|
+ICI-4325
+a|
+Import Utility case sensitive parameter not working. Attempting to import an application with the same name but different case as an existing application results in a Null pointer exception.
+a|
+Import will now preserve case in cases where name already exists.
+|===
+
+== Known problems and limitations
+
+Known issues identify some unexpected and potentially undesired behaviors that affect functionality in this OnCommand Insight release. You must be aware of these issues to avoid or troubleshoot them.
+
+*REST requests for CPU Count may fail*
+
+In previous versions of Insight, CPU Count for hosts was a string data type, and Insight search filters treated this as a text search instead of a number range filter. Insight 7.2.5 corrects this data type from string to integer, to allow for proper value and number-range searching in queries.
+
+Custom /assets/hosts REST calls should be updated to accept this counter as an *integer* data type.
+
+Please refer to REST documentation for details: https://<insight server>/rest/v1/documentation/#!/assets.hosts
+
+*Login to Java client by MacOS users results in hidden login dialog*
+
+Java 8 update 131 contains a bug in the MacOS user interface. The bug causes the Java client login dialog for username and password to initially appear behind the splash screen instead of on top of it.
+
+Use one of the following methods to work around this problem:
+
+* Swipe to another desktop, then back to the desktop with the splash screen.
+* Right-click on the NetApp icon in the taskbar, select *Show All Windows*, and click on the login dialog.
+
+Visit the Oracle Web site for more information about bug JDK-8178996.
+
+== Changes to published documentation
+
+Additional information has become available after the documentation provided with this release was published. You should use the updated information below in conjunction with the materials that were originally published.
+
+The OnCommand Insight 7.2.3 Installation Guide incorrectly states the disk space requirements for Anomaly Detection. The correct disk space requirements are as follows:
+
+The server requires 200 GB of free disk space with the following partitioning:
+
+* 150 GB in /var/lib
+* 25 GB in /var/log
+* 25 GB in /opt
+
+Software installation requires the following disk space:
+
+* 5 GB in /var/lib
+* 25 GB in /var/log
+* 25 GB in /opt
+
+It is a best practice to mount /opt and /var on separate disks from the root file system (/).

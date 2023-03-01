@@ -1,0 +1,52 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-1-1.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight 7.1.1 provides some enhancements to data sources and to the threshold policies, and some updates to some non-NetApp software. Becoming familiar with these changes enables you to take advantage of their benefits more efficiently.'
+---
+= Product enhancements and changes for OnCommand Insight 7.1.1
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight 7.1.1 provides some enhancements to data sources and to the threshold policies, and some updates to some non-NetApp software. Becoming familiar with these changes enables you to take advantage of their benefits more efficiently.
+
+== Customer-requested enhancement
+
+Customers requested the following enhancement, which is included in this release:
+
+|===
+| Request ID| Description
+a|
+IFR-1847, IFR-1783
+a|
+By default, the Reporting portal accesses Cognos using HTTPS.
+|===
+
+== Change to threshold behavior for performance policies
+
+OnCommand Insight 7.1 created an alert when any of the thresholds related to a performance policy was crossed; that is, if a policy had four thresholds and two were crossed, Insight would create two alerts. In OnCommand Insight 7.1.1, the *Add Policy* dialog box enables you to continue with previous product behavior by accepting the default, which is *Create alert if any of the following are true*; however, you can now specify that Insight create an alert when only all of the thresholds are crossed.
+
+In OnCommand Insight 7.1.1, the first threshold you create for a performance policy is now referred to as the _primary rule_. You must ensure that the primary rule threshold is the violation that you are most concerned about for the performance policy.
+
+== Data source enhancements
+
+The following data source enhancements have been made:
+
+* The EMC Symmetrix data source is changed so that it retrieves storage latency from EMC SMI-S Provider that communicates to a running instance of the EMC Unisphere for VMAX application.
++
+When you use the data source, you might notice that Insight does not acquire storage latency. By default, the EMC SMI-S Provider does not communicate with EMC Unisphere. To retrieve storage latency, you must configure the EMC SMI-S Provider to communicate with EMC Unisphere by adding the EMC Unisphere for VMAX credentials to the EMC SMI-S Provider.
+
+* The EMC Symmetrix data source now supports automatic tiering on VMAX 3 devices.
+* The EMC VPLEX data source has beta support for performance.
+* The Dell Compellent data source is new and has beta support for inventory and performance.
+
+For more information about how to configure data sources, see the _OnCommand Insight Configuration and Administration Guide_.
+
+== Non-NetApp software changes
+
+The following non-NetApp software changes are included in this release:
+
+* Upgrade to Java version 8 update 45
+* Upgrade to MySQL version 5.5.43
+* Upgrade to IBM Cognos BI 10.2.1.FixPack6

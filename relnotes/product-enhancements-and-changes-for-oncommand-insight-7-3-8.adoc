@@ -1,0 +1,42 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-3-8.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.'
+---
+= Product enhancements and changes for OnCommand Insight 7.3.8
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
+
+OnCommand Insight provides intelligent operations and business insights across the enterprise. The software enables the rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
+
+== MySQL SSL Certificates Expired on September 21, 2019
+
+NetApp has identified an issue with the MySQL SSL certificates installed with OnCommand Insight (OCI) 7.3.7 and prior versions and the Data Warehouse when running on Linux. The certificates were issued with an expiration that ended on September 21, 2019, causing Insight to stop monitoring or recording data.
+
+OnCommand Insight 7.3.8 provides an updated certificate. To upgrade an existing Insight installation, you must first reissue a new 10-year certificate using the Windows or Linux process as noted in the following NetApp Knowledgebase article: https://kb.netapp.com/app/answers/answer_view/a_id/1093806. You will need to sign in with your NetApp Support credentials to view the full article. Once you have reissued the certificate, you can then upgrade to Insight 7.3.8.
+
+New installations of OnCommand Insight 7.3.8 will not see this issue.
+
+NOTE: If you have installed and manage custom MySQL certificates, these versions are not susceptible to this issue. This issue also does not affect the Data Warehouse when running on Windows.
+
+Aside from the updated certificate, there are no other changes from OnCommand Insight 7.3.7.
+
+== Data Warehouse ETL May Fail After Upgrade
+
+After performing an in-line upgrade from OnCommand Insight version 7.3.4 or earlier on a Linux system, Data Warehouse (DWH) ETL may fail due to a backwards compatibility issue in the Wildfly component. Persistent data from the previous Wildfly release is not handled correctly.
+
+To resolve this issue: on the DWH server, stop OCI services, remove all files under wildfly/standalone/data/activemq, and then start the OCI services:
+
+----
+sudo oci-service.sh stop all
+sudo rm -rf /opt/netapp/oci/wildfly/standalone/data/activemq/*
+sudo oci-service.sh start all
+----
+
+This problem is not seen on Windows.
+
+This problem is not seen when upgrading from Insight 7.3.5 or later.

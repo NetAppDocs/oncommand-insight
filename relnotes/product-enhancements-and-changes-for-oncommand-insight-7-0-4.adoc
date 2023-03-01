@@ -1,0 +1,46 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-0-4.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight 7.0.4 provides an update to non-NetApp software and provides corrections to issues that were found in previous releases. Becoming familiar with changes to your environment enables you to take advantage of their benefits more efficiently.'
+---
+= Product enhancements and changes for OnCommand Insight 7.0.4
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight 7.0.4 provides an update to non-NetApp software and provides corrections to issues that were found in previous releases. Becoming familiar with changes to your environment enables you to take advantage of their benefits more efficiently.
+
+== Non-NetApp software changes
+
+The following non-NetApp change is included in this release:
+
+* Upgraded to MySQL version 5.5.45
+
+== Corrected Issues
+
+This release corrects issues that were found in previous releases.
+
+|===
+a|
+Issue
+a|
+Description
+a|
+Resolution
+a|
+ICI-2659
+a|
+Default cookie properties might allow client-side scripts to read cookie data.
+a|
+The following new default settings are implemented:``JSESSIONID (secured,httponly)``
+
+`JSESSIONIDSSO(secured,NOT httponly)`
+
+a|
+ICI-2878
+a|
+Installing the Data Warehouse to a path that does not contain spaces results in the Cognos Server not starting after the installation finishes.
+a|
+The Cognos server starts properly regardless of spaces in the installation path.
+|===

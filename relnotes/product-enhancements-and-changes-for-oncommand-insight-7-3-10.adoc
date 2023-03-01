@@ -1,0 +1,258 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-3-10.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.'
+---
+= Product enhancements and changes for OnCommand Insight 7.3.10
+:experimental:
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
+
+Insight provides intelligent operations and business insights across the enterprise. The software enables rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
+
+== Single Sign-On (SSO) configuration in Server UI
+
+Single Sign-On (SSO) for OnCommand Insight Server can now be configured in the Insight UI. With SSO configured, any user with the domain email address can log into Insight using their corporate credentials. To configure the Insight Server for SSO, go to menu:Admin[Setup] and select the *Users* tab. (IFR-3401)
+
+To allow secure communication between the Insight Server and the identity provider, you must import the root certificate of your identity provider's SSL certificate chain. To do so, download the root certificate associated with the host name of the token endpoint (for Azure Active Directory, this is _login.microsoftonline.com_) and save it to a file. Then click the "`Certificates`" button and, using the "`Manual`" tab, select the file and supply an alias such as "`sso-root`" to import it.
+
+Note that SSO is available for the Insight Server web-based UI only. SSO is not available for Data Warehouse, Reporting, or Java Client UI components.
+
+== Db2 replaces Informix for Reporting
+
+IBM Db2 replaces the previous Informix component of OnCommand Insight Reporting, allowing you to define a local or domain account with your own naming convention. Note that the installation process for DWH with Reporting has changed. See the https://docs.netapp.com/oci-73/topic/com.netapp.doc.oci-ig-win/GUID-19BF10A9-7B53-48F0-9CC9-6C66E8CB57FB.html[Windows Installation Guide] for instructions. (IFR-4038)
+
+== ASUP sent through HTTPS
+
+To adhere to modern security demands, Autosupport (ASUP) information is now sent through HTTPS protocol only. If you upgrade from a previous version of OnCommand Insight and ASUP was previously set to email, FTP, or HTTP protocol, these will be set to HTTPS. It is recommended to validate your ASUP settings following the upgrade. To validate your ASUP settings, go to menu:Admin[Setup] and select the *ASUP* tab, and click the _Test Connection_ button, or wait for the Health page to update with ASUP status.
+
+== Secure CAC logout
+
+When logged in with Common Access Card (CAC, also called Smart Card), the user can now securely log out from Server, DWH, and Cognos by clicking logout and then closing the browser . Logging out clears session ID's and other application footprints, and the SSL session is invalidated, meaning no new connections can be formed on that SSL session. To complete secure logout, be sure to close your browser windows. (IFR-4257)
+
+== Audit changes
+
+The following events are added to the OnCommand Insight Audit page (IFR-4258):
+
+* CAC user logon / logoff
+* CAC user session timeout
+
+Additionally, an Audit Log view has been added to the Data Warehouse. On the DWH system, go to Troubleshooting and click the _Audit Log_ link.
+
+== API changes
+
+*API for iSCSI sessions*: Added a new REST API interface to improve retrieval of iSCSI sessions: _/rest/v1/assets/iSCSISessions/\{id}/targetVolumes_. See menu:Help[REST API Documentation] for details and usage. (IFR-4207)
+
+*Updated powershell API sample*: The powershell API sample available in menu:Help[REST API Documentation] has been improved.
+
+== Device Resolution error handling
+
+Handling of device resolution error processing has been improved, making Insight more resilient to resolution errors. (IFR-4197)
+
+== Data Warehouse multiple email recipients
+
+You can now specify multiple recipients for email notifications in the Data Warehouse. Simply separate multiple email addresses with commas. (IFR-4155)
+
+== "Duplicate WWN" system-level alerts
+
+You can now configure system alerts in the event of a data source reporting duplicate WWNs. (IFR-4226)
+
+== Metric/Counter updates
+
+* The following capacity counters are available for use in the Server UI and REST API. Previously these counters were only available to DWH. (IFR-4142, IFR-4216):
++
+|===
+a|
+*Object Type*
+a|
+*Counter*
+a|
+Storage
+a|
+Capacity - Spare raw    Capacity - Failed raw
+a|
+Storage Pool
+a|
+Data capacity - Used    Data capacity - Total
++
+Other capacity - Used
++
+Other capacity - Total
++
+Capacity - Raw
++
+Capacity - Soft limit
+a|
+Internal Volume
+a|
+Data capacity - Used    Data capacity - Total
++
+Other capacity - Used
++
+Other capacity - Total
++
+Clone saved capacity - Total
++
+|===
+
+* Virtual Machine Peak Memory and CPU utilization values are available for use in the Data Warehouse. (IFR-4134)
+
+== Port count on Switch landing page
+
+To avoid confusion, port count is no longer shown in the summary section of the Switch landing page. You can view this information in the Ports table on the landing page. (IFR-4072)
+
+== Text notes for Acquisition Units
+
+The menu:Admin[Acquisition Units] page now allows a user to enter a text note for each acquisition unit (AU). To add a note, hover over an AU and click the _Add Note_ button that appears. Only the most recently added note is displayed. (IFR-4241)
+
+== Operating System support
+
+This release of OnCommand Insight supports the following additional operating systems:
+
+* Red Hat Enterprise Linus (RHEL) 7.7, 8.1
+* CentOS 7.7, 8.1
+* Oracle Enterprise Linus 7.7, 8.1
+* SUSE 15.1 - Anomaly Detection Engine only (IFR-4222)
+* openSUSE 15.1 - Anomaly Detection Engine only (IFR-4222)
+
+Windows 2008 R2 support has been removed.
+
+== Third-party software library changes
+
+The following third-party software changes are included in this release:
+
+* ElasticSearch has been upgraded to 6.8.7
+* Wildfly has been updated to 19.0.0
+* Cognos has been upgraded to 11.1.5
+* Java has been upgraded to 8u251
+* MySQL has been upgraded to 5.7.30
+
+== Data Source changes
+
+The following data source changes are included in this release:
+
+* AWS EC2: Support for subscription id for virtual disk and data store
+* Azure NetApp Files: Support for inventory
+* EMC ECS for OCI 7.3.3+: Support for inventory (as a storage device)
+* EMC ScaleIO: Support for storage pool used capacity
+* EMC ScaleIO: Support for performance
+* HPE Nimble: Inventory support for Nimble 3.7 through 4.0 devices.
+* IBM Cleversafe: Support for inventory
+* IBM XIV: Report volume Compression Savings Percent and Compression Savings Space
+* NetApp Clustered Data ONTAP: Support for Storage Other IOPS
+* NetApp E-Series: Reports node throughput (r/w/total), IOPs (r/w/total), and response time (r/w/total) for volumes bound to a given node. Response time values are calculated using an IOPS-weighted formula
+* NetApp StorageGrid: Moved out of beta, and support for performance added (IFR-4225)
+* Dell Compellent: Deprecated
+
+== Known issues
+
+|===
+a|
+Db2 install fails when there is no C: drive.
+a|
+Installation of the Db2 component of the OnCommand Insight Data Warehouse will fail if there is no C: drive present, even if you are not installing it to the C: drive.
+a|
+Java Client icon does not display on macOS.
+a|
+The OnCommand Insight Java Client icon does not display in the desktop toolbar on macOS 10.14 Mojave.
+a|
+Error displayed during DWH Uninstall script.
+a|
+The DWH uninstall script may produce a "batch file cannot be found" or "system cannot find the path specified" error. However, the uninstall succeeds and the error can be ignored.
+a|
+Annotations with number type wrongly display a value of zero for empty/null/undefined annotations.
+a|
+Number-type annotations with empty values are rendered as "0.00". Empty/null values in number-type annotations should display as empty.
+a|
+If certain special characters are used in the Db2 user password, the installation script may fail to scrub the installer response file to remove Db2 user password.
+a|
+At the end of DWH installation, you may see messages generated by the installation script similar to the following. These messages are benign and installation is successful. However these messages are an indication that the installer-generated response file located in *<download folder>\oci_dwh_installer\db2\db2server.rsp* may not have been scrubbed to remove the Db2 user password. Please examine the response file and manually remove the Db2 user password.Message:
+
+The regular expression pattern +link:mailto:Z9@MXs[Z9@MXs]!7VZn6? is not valid.
+
+At line:1 char:1
+
+* (Get-Content 'C:\Users\installer\Downloads\oci_dwh_installer\db2\db2ser ...
+* CategoryInfo : InvalidOperation: (+link:mailto:Z9@MXs[Z9@MXs]!7VZn6?:String) [], RuntimeException
+* FullyQualifiedErrorId : InvalidRegularExpression
+
+|===
+
+== Corrected issues
+
+This version of OnCommand Insight corrects issues that you might have encountered in previous releases.
+
+|===
+| Number| Problem| Resolution
+a|
+ICI-5156
+a|
+Imported LDAP certificates were not reflected in DWH until after reboot
+a|
+Improvements have been made to LDAP handling with DWH. Reboot is no longer necessary.
+a|
+ICI-5669, ICI-6353
+a|
+Increase security handling with Cognos reporting.
+a|
+Insight 7.3.10 includes a number of security improvements for communicating with the Cognos engine.
+a|
+ICI-6617
+a|
+Wrong status in "Is replica source" and "Is replica target" for paired volumes. This was only likely to occur in environments where both the source and destination arrays were not discovered within the same OCI operational instance.
+a|
+Fixed logic in API calls with regard to "Is replica source" and "Is replica target" fields, so they now return more accurate status.
+a|
+ICI-6727
+a|
+Intermittent read timeouts for DWH
+a|
+Improved overall efficiency and scale handling with DWH.
+a|
+ICI-6790
+a|
+Mapping of unrecognized disk values to "`OTHER`".
+a|
+OCI used to map disk type, disk role and disk status into a limited set of values, mapping all the unrecognized values to "`OTHER`". Insight 7.3.10 removes this limitation; values that couldn't be mapped to predefined values now appear as-is.
+
+a|
+ICI-6796
+a|
+Unable to use widget expression with Null Values
+a|
+Improved handling of null values in calculations.
+a|
+ICI-6841
+a|
+Non-English chars in password breaks LDAP authentication in OCI
+a|
+Improved Insight's handling of non-English characters with LDAP. This fix affects the Insight Server only. Non-English characters in DWH passwords may still cause failures.
+a|
+ICI-6920
+a|
+OCI on Linux not starting with IPv6 disabled
+a|
+OCI now correctly installs and starts on systems with IPv6 disabled.
+a|
+ICI-6990
+a|
+Exception processing annotations starting or ending with "."
+a|
+Annotation handling has been improved to better process names with "."
+a|
+ICI-7017
+a|
+Data source stuck in polling state.
+a|
+The problem happened during EJB polling. Added a timeout on the acquisition unit's remote EJB calls and the server's related HTTP calls.
+a|
+ICI-7071
+a|
+Inline upgrade 30-minute timeout
+a|
+The default timeout has been increased to 60 minutes.
+|===

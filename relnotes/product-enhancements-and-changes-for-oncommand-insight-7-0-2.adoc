@@ -1,0 +1,270 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-0-2.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight 7.0.2 includes customer-requested enhancements, changes to data sources and the Data Warehouse, and updates to some non-NetApp software. Becoming familiar with these changes enables you to take advantage of their benefits more efficiently.'
+---
+= Product enhancements and changes for OnCommand Insight 7.0.2
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight 7.0.2 includes customer-requested enhancements, changes to data sources and the Data Warehouse, and updates to some non-NetApp software. Becoming familiar with these changes enables you to take advantage of their benefits more efficiently.
+
+== Customer-requested enhancement
+
+The following customer-requested enhancement is included in this release:
+
+|===
+| Request ID| Description
+a|
+IFR1341
+a|
+There is an additional column in the Data sources table for Acquisition Unit.
+|===
+
+== Data source enhancements
+
+The NetApp Host and VM File Systems data source discovers file system details and storage resource mappings for all Red Hat Enterprise Linux 7.0 virtual machines (those that are virtually mapped only) that exist in the Insight server.
+
+== Data Warehouse changes
+
+The Capacity Efficiency datamart and Capacity Efficiency fact table (dwh_capacity_efficiency.efficiency_fact) are deprecated.
+
+== Non-NetApp software changes
+
+The following non-NetApp software changes are included in this release:
+
+* Upgrade to Java version 7 U67
+* Upgrade to MySQL Server version 5.5.40
+* Upgrade to Cassandra version 1.2.19
+* Upgrade to Microsoft Windows Server 2012 R2
+
+== Corrected issues
+
+|===
+| Issue number| Description| Resolution
+a|
+IBG-4755
+a|
+Volumes with the same name but with a different case are considered as one volume.
+a|
+Volumes that have the same name but with a different case are considered separate volumes.
+a|
+IBG-5147
+a|
+Old Cassandra files accumulate on disk and in backups, which might significantly increase the size of backups that include performance data.
+a|
+Database files that are older than the Time to Live (TTL) when the server starts are deleted and are not backed up.
+a|
+ICI-1382
+a|
+Data Warehouse uses the Windows `Temp` directory when restoring the database, which might cause the server to run out of space.
+a|
+The database restore operation uses a different location, in the `SANScreen` installation folder.
+a|
+ICI-1499
+a|
+The `volume_daily_performance_fact.totalRespo nseTime` variable that is used in Data Warehouse reports shows the time as the maximum value derived from the day instead of the hourly average from the day.
+a|
+The description in the Data Warehouse schema documentation is `The maximum for average response time` instead of `The total response time average.`
+a|
+ICI-2057
+a|
+The upgrade process fails when trying to restore the database from a directory that has a name that contains a space.
+a|
+The upgrade process can restore the database from a directory with a name that contains a space.
+a|
+ICI-2072
+a|
+The getPorts web API method is very slow.
+a|
+The method's internal algorithm is modified to be more efficient.
+a|
+ICI-2083
+a|
+Applications annotated with "`VM`" do not display in the Applications section of the Storage Manager dashboard.
+a|
+The Storage Manager dashboard displays applications annotated with "`VM`" in the Applications section of the dashboard.
+a|
+ICI-2131
+a|
+During datasource cloning during an installation, the *Clone this data source* dialog box is removed when the window refreshes.
+a|
+A window refresh does not close the *Clone this data source* dialog box.
+a|
+ICI-2136
+a|
+The Storage asset page does not contain the serial number of the array.
+a|
+The Summary section of the Storage asset page displays the serial number of the array.
+a|
+ICI-2145
+a|
+The Storage Tiers Capacity section of the Storage Manager dashboard displays a tier with an N/A status.
+a|
+Tiers with an usable capacity of 0 are not displayed in the dashboard.
+a|
+ICI-2147
+a|
+The Extract Transform and Load (ETL) process fails when a host has "`Data_Center`" as an annotation, and the corresponding database field is named anything other than "`dataCenter`".
+a|
+The upgrade process modifies all instances of "`Data_Center`" to "`dataCenter`".
+a|
+ICI-2155
+a|
+When using LDAP to log in to Insight and the Data Warehouse, the tab for the Storage Manager dashboard is not displayed.
+a|
+The Storage Manager dashboard is available to all user accounts.
+a|
+ICI-2163
+a|
+When a corrupted `.zip` file is created by the backup process, the backup process succeeds without any warning.
+a|
+The `.zip` file is verified during the backup process, and the backup process fails with a warning if the `.zip` file is corrupted.
+a|
+ICI-2211
+a|
+After installing Insight 7.0.1, it is not possible to log in to the Reporting Portal.
+a|
+The installer is updated with the missing languages packs that prevented access to the Reporting Portal.
+a|
+ICI-2232
+a|
+The installation fails, indicating an issue with the Microsoft Windows installer package.
+a|
+The installer waits longer (20 minutes currently; 6 minutes previously) for the server to start.
+a|
+ICI-2251
+a|
+After Insight is installed in an environment with large amounts of configuration objects, memory and CPU resource issues occur. This happens when a data source page is viewed; it displays all the changes for the data source by default, which consumes these resources.
+
+a|
+The data source pages do not display all changes; this is performed on demand, and not by default.
+a|
+ICI-2294
+a|
+The Storage Manager dashboard excludes all virtual, back-end, and replicated LUNs in virtualized environments.
+a|
+Orphaned Capacity and % Orphaned Capacity are now calculated against all the provisioned LUNs.
+|===
+
+== NetApp Host and VM File Systems data source
+
+You can use the NetApp Host and VM File Systems data source to retrieve file system details and storage resource mappings for all Microsoft Windows host and VM (virtual machine) file systems, and for all supported Linux VMs (those that are virtually mapped only) in the Insight server that are annotated with the configured Compute Resource Group (CRG).
+
+|===
+| Field| Description
+a|
+User Name
+a|
+Operating system user with appropriate rights to retrieve file system data For Windows operating system users, the user name must include the domain prefix.
+
+a|
+Password
+a|
+Password for the operating system user
+a|
+Compute Resource Group
+a|
+Annotation value that is used to flag host and virtual machines for the data source that discovers file systems A blank value indicates that the data source discovers file systems for all hosts and virtual machines that are not currently annotated with any CRG.
+
+|===
+
+* This feature must be purchased separately.
++
+You can contact your Insight representative for assistance.
+
+* You should check the Insight support matrix to verify that your host or virtual machine operating system is supported.
++
+To verify that links from the file systems to the storage resources are created, check that the relevant storage or virtualization vendor type and version report the volume or virtual disk identification data required.
++
+[NOTE]
+====
+No non-NetApp software is required.
+====
+
+* This data source uses Window Management Instrumentation (WMI) data structures to retrieve data.
++
+This service must be operational and available remotely. In particular, port 135 must be accessible and must be opened if behind a firewall.
+
+* Windows domain users must have the appropriate permissions to access WMI structures.
+* Administrator permissions are required.
+* This data source uses a Secure Shell (SSH) connection to execute commands on Linux VMs.
++
+The SSH service must be operational and available remotely. In particular, port 22 must be accessible and must be opened if behind a firewall.
+
+* SSH users must have sudo permissions to execute read-only commands on Linux VMs.
++
+You must use the same password to log in to SSH and to answer any sudo password challenge.
+
+|===
+| Field| Description
+a|
+Inventory poll interval (min)
+a|
+Interval (in minutes) at which the data source should poll the device.
+|===
+
+* `root\cimv2 SELECT * FROM Win32_BIOS`
+* `root\cimv2 SELECT * FROM Win32_ComputerSystem`
+* `root\cimv2 SELECT * FROM Win32_OperatingSystem`
+* `root\cimv2 SELECT * FROM Win32_NetworkAdapter WHERE AdapterTypeId=0`
+* `root\cimv2 SELECT * FROM Win32_DiskDrive`
+* `root\cimv2 SELECT * FROM Win32_DiskDriveToDiskPartition`
+* `root\cimv2 SELECT * FROM Win32_LogicalDiskToPartition`
+* `root\cimv2 SELECT * FROM Win32_LogicalDisk`
+* `root\cimv2 SELECT * FROM Win32_Volume`
+* `root\default StdRegProv:\HKEY_LOCAL_MACHINE\SYSTEM\MountedDevices`
+* `root\default StdRegProv:\HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\Scsi\Scsi Port <port_number>\Scsi Bus <bus_number>\Target Id <target_id>\Logical Unit Id <logical_id>`
+
+The last command runs for each discovered block device, as in the following example:
+
+`root\default StdRegProv:\HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\Scsi\Scsi Port 2\Scsi Bus 0\Target Id 0\Logical Unit Id 0`
+
+`root\default StdRegProv:\HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\Scsi\Scsi Port 2\Scsi Bus 0\Target Id 0\Logical Unit Id 1`
+
+* `/bin/hostname`
+* `/bin/domainname`
+* `/bin/dnsdomainname`
+* `/bin/uname -m`
+* `/bin/cat /etc/os-release`
+* `/bin/cat /sys/devices/virtual/dmi/id/product_name`
+* `/bin/cat /sys/devices/virtual/dmi/id/chassis_vendor`
+* `/bin/cat /sys/devices/virtual/dmi/id/sys_vendor`
+* `/bin/cat /proc/cpuinfo`
+* `/bin/cat /proc/meminfo`
+* `/sbin/ifconfig -a`
+* `/usr/bin/sudo /sbin/mii-tool <interface_name\>`
++
+This command runs for each interface.
+
+* `/bin/df -T -BK`
+* `/bin/ls -l /sys/class/scsi_device`
+* `/bin/cat /proc/swaps`
+* `/bin/cat /proc/mdstat`
+* `/bin/cat /proc/partitions`
+* `/bin/ls -l /dev/mapper`
+* `/bin/ls -l /dev/block`
+* `/bin/ls -l /sys/block`
+* `/bin/ls -l /dev/disk/by-id`
+* `/bin/ls -l /dev/disk/by-uuid`
+* `/bin/ls -l /dev/disk/by-path`
+* `/bin/ls -l /dev/disk/by-label`
+* `/usr/bin/sudo /sbin/pvdisplay -v`
+* `/usr/bin/sudo /sbin/vgdisplay -v`
+* `/usr/bin/sudo /sbin/lvdisplay -v`
+* `/sbin/udevadm info --query=property --name=sda # for each SCSI device`
++
+This command is run for each SCSI device.
+
+* `/bin/cat /sys/devices/pci0000:00/0000:00:07.1/host1/target1:0:0/1:0:0:0/vendor`
+* `/bin/cat /sys/devices/pci0000:00/0000:00:07.1/host1/target1:0:0/1:0:0:0/model`
++
+This command is run for each SCSI device.
+
+* You should annotate a group of hosts and virtual machines that have common operating system credentials using the same CRG annotation.
++
+Each group has an instance of this data source discovering the file system details from those hosts and virtual machines.
+
+* If you have an instance of this data source for which the success rate is low (for example, OnCommand Insight is discovering file system details for only 50 of 1000 hosts and virtual machines in a group), you should move the hosts and virtual machines for which discovery is successful into a separate CRG.

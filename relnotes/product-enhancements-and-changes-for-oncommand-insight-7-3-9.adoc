@@ -1,0 +1,143 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-3-9.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.'
+---
+= Product enhancements and changes for OnCommand Insight 7.3.9
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
+
+OnCommand Insight provides intelligent operations and business insights across the enterprise. The software enables rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
+
+== Anomaly Detection Engine Inline Upgrade
+
+The Anomaly Detection Engine now supports inline upgrades. Inline upgrades remove the requirement to uninstall and reinstall software during upgrade, and preserves modeling and learning data. The system must be running OnCommand Insight 7.3.7 or later to perform an inline upgrade.
+
+== Autosupport (ASUP) Changes
+
+The following changes have been made to reduce the amount of data sent by ASUP:
+
+* Scheduled Data Warehouse (DWH) ASUP only sends Cognos backup to the server
+* Ad hoc DWH ASUP sends DWH and Cognos backups to the server
+* Scheduled OnCommand Insight (OCI) ASUP doesn't send performance data
+* Ad hoc OCI ASUP sends data as specified in the WebUI
+* OCI ASUP only includes the most recent Cognos/DWH backup per site
+
+== Emailed System Notifications
+
+OnCommand Insight can be configured to send event notifications by email to preconfigured addresses when system-level events occur. Notification email includes a subject and body with details of the event.
+
+The system-level events include the following:.
+
+* Data Collection:
+ ** Missing disk model error for specific datasource
+ ** General datasource collection errors
+ ** Acquisition Unit failure
+* Version and Service Pack:
+ ** Service Pack update available
+ ** OnCommand Insight update available
+
+See the OnCommand Insight Configuration and Administration Guide for more information.
+
+== Rebuild Failed Connectors Button
+
+A Rebuild Failed Connectors button is displayed when there are failures in ETL. Pressing the button re-runs the inventory job on failed connectors and then runs all post-inventory jobs. The button is not displayed when there are no failures in ETL.
+
+== Rest API Calls for Device Resolution
+
+The following Device Resolution Rest API calls are available:
+
+* GET /rest/v1/identifications/fc
+* GET /rest/v1/identifications/ip
+* PATCH /rest/v1/identifications/ip/\{Address}
+* PATCH /rest/v1/identifications/fc/ \{WWN}
+
+== Schedule ETL for a Specific Time Each Day
+
+The Data Warehouse supports setting ETL to run at a specific hour on each day. See the Data Warehouse Administration guide for configuration steps.
+
+== Storage Savings Reporting
+
+Compaction, compression, and deduplication have been added to the Data Warehouse.
+
+== Third-party software library changes
+
+The following third-party software changes are included in this release:
+
+* ElasticSearch has been upgraded to 6.8.3
+* Wildfly has been updated to 17.0.1
+* Cognos has been upgraded to 11.1.3
+* Java has been upgraded to 8u231
+* MySQL has been upgraded to 5.7.28
+
+== Data Source changes
+
+The following new data source is supported in this release:
+
+* Generic Database Host Resolver - Support for inventory
+
+The following data source changes are included in this release:
+
+* EMC ScaleIO - Support multiple Gateway IP addresses
+* Microsoft Hyper-V - Support Windows Server 2019
+* OpenStack - Reduce OpenStack permission restrictions
+* IBM SVC -- Support models 9840-AE3, 9843-AE3, and 9843-UF3
+
+NetApp Clustered Data ONTAP Internal Volume and Storage Pool Compression savings (%) and Deduplication savings (%) are deprecated. New counters have replaced them and should be used instead.
+
+The following performance data has been added for Internal Volumes. Time-series savings are always reported when savings are found. These values reflect savings incurred in the past, even when savings technology is disabled.
+
+* Compression Savings Space
+* Compression Savings Percent
+* Deduplication Savings Percent
+* Deduplication Savings Space
+
+The following inventory data has been added for Storage Pools
+
+* Compaction Enabled
+
+The following performance data has been added for Storage Pools
+
+* Compression Savings Space
+* Compression Savings Percent
+* Deduplication Savings Space
+* Deduplication Savings Percent
+
+== Corrected issues
+
+This version of OnCommand Insight corrects issues that you might have encountered in previous releases.
+
+|===
+a|
+ICI-6664
+a|
+Unable to launch the Java client more than once after upgrading to 7.3.8
+a|
+ICI-6458
+a|
+ZFS Internal volume drops the SVM name once you drill down
+a|
+ICI-6436
+a|
+Failed backup filling up ``download.war``folder
+a|
+ICI-6430
+a|
+RAU Acquisition service starts manually as root, fails otherwise
+a|
+ICI-6425
+a|
+OCI PowerVM datasource -- view CPU/Memory config on hosts
+a|
+ICI-6046
+a|
+OCI 24hr graphs missing data
+a|
+ICI-6022
+a|
+Improved DWH ETL time for systems collecting large number of masks
+|===

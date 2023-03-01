@@ -1,0 +1,187 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-3-14.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.'
+---
+= Product enhancements and changes for OnCommand Insight 7.3.14
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
+
+Insight provides intelligent operations and business insights across the enterprise. The software enables rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
+
+== Your security is important
+
+Customer security is a top priority at NetApp. This release of OnCommand Insight includes a number of security enhancements to keep your environment and data protected from ever-present security threats.
+
+== Data Warehouse requires Visual Studio Redistributables
+
+To avoid installation failure, ensure that Visual Studio 2019 https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist[redistributables] are installed before installing Data Warehouse with Reporting on Windows.
+
+== Database tables in utf8mb4 format
+
+Upgrade from previous versions of OnCommand Insight to version 7.3.14 may take longer than usual on large databases, due to the conversion of each database table to utf8mb4 format.
+
+== Support for ECS tags
+
+The EMC ECS data collector takes the headache out of creating OnCommand Insight annotations from ECS tags by automatically providing this service for you, transferring ECS tags to internal volume annotations.
+
+As an added bonus, ECS storage pools are converted to OnCommand Insight disk groups.
+
+== Flexgroup support for Data Warehouse
+
+OnCommand Insight's Data Warehouse now provides support for Flexgroups, with qtrees of the FlexGroup internal volume appearing in the _qtrees_, _chargeback_, and _qtrees performance_ facts.
+
+== Extended performance counters for Data Warehouse
+
+The following extended metadata performance counters are available for use in Data Warehouse datamarts.
+
+|===
+| Datamart| Counters
+a|
+dwh_performance.internal_volume_daily_performance_fact dwh_performance.internal_volume_hurly_performance_fact
+
+a|
+objectCount
+a|
+dwh_performance.storage_node_daily_performance_fact dwh_performance.storage_node_hourly_performance_fact
+
+a|
+ReadFileSystemIops
+
+WriteFileSystemIops
+
+ReadFileSystemThroughput
+
+WriteFileSystemThroughput
+
+|===
+
+== Third-party software library changes
+
+The following third-party software changes are included in this release:
+
+* ElasticSearch has been upgraded to 7.16.3
+* Cognos has been upgraded to 11.2.2, which removes log4j 1.x
+* MySQL ODBC Connector for Cognos has been upgraded to 8.0.28
+* IBM Db2 has been upgraded to 11.5.7
+* Java has been upgraded to 8u333
+* MySQL has been upgraded to 8.0.29
+* Wildfly has been upgraded to 24.0.1
+* Grails has been upgraded to 5.0.2
+
+== Browser support
+
+This version of OnCommand Insight supports newer, non-beta versions of the Microsoft Edge browser.
+
+Microsoft Internet Explorer 11 is no longer supported with OnCommand Insight.
+
+== Additional Operating System support
+
+This release of OnCommand Insight includes support for the following Operating Systems, in addition to those already supported:
+
+* Red Hat Enterprise Linux 8.5
+* Oracle Enterprise Linux 8.5
+* SUSE Enterprise Linux 15.3 (for Anomaly Detection server/VM only)
+* openSUSE 15.3 (for Anomaly Detection server/VM only)
+
+== Data Collector Changes
+
+The following data source changes are included in this release:
+
+* EMC ECS - Support for performance collection, report ECS Storage Pools as OCI Disk Groups
+* EMC PowerStore - Support for performance collection, report iSCSI maps and masks
+* Microsoft Hyper-V - Upgrade to using Powershell, deprecated WMIC usage
+* NetApp StorageGRID - Add SAML authentication
+* Azure NetApp Files - Add throughput performance metrics for pool and volume
+* HP Nimble - Support for federated Nimble configuration and iSCSI
+* EMC Data Domain - Support for VM configuration
+
+== Corrected issues
+
+This version of OnCommand Insight corrects issues that you might have encountered in previous releases.
+
+|===
+| Number| Problem| Resolution
+a|
+ICI-10401, ICI-10437, ICI-10317, ICI-9568,
+a|
+ETL sometimes takes a long time to complete, or times out before completing.
+a|
+This version of OnCommand Insight improves ETL handling for the Data Warehouse, including performance and timeout improvements.
+a|
+ICI-9929
+a|
+Elasticsearch service fails to start when /tmp is mounted with "noexec"
+a|
+Insight 7.3.14 handles this during installation so that the service will start properly.
+a|
+ICI-9714
+a|
+Export of connected ports from NPV switch port page gives an error.
+a|
+The API call that was resulting in the error has been corrected.
+a|
+ICI-9539
+a|
+Data Migration tool occasionally times out.
+a|
+Timeout values have been increased.
+a|
+ICI-9397
+a|
+in Data Warehouse, LDAP users who are members of the "Insight administrators group" cannot see any users other than the user itself, and therefore cannot administer the LDAP configuration, add users, or set passwords.
+a|
+"Insight administrators group" users can now perform user functions in DWH.
+a|
+ICI-9133
+a|
+Restore fails with very large backup file.
+a|
+Maximum file size is increased to 60GB.
+a|
+TBD
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+|===

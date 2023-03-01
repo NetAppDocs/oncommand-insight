@@ -1,0 +1,102 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-3-13.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.'
+---
+= Product enhancements and changes for OnCommand Insight 7.3.13
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
+
+Insight provides intelligent operations and business insights across the enterprise. The software enables rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
+
+== This version of Insight addresses the Apache Log4j vulnerabilities
+
+Customer security is a top priority at NetApp. OnCommand Insight version 7.3.13 includes an update to its software libraries to address the recent Apache Log4j vulnerabilities.
+
+[NOTE]
+====
+It is strongly recommended to upgrade to OnCommand Insight 7.3.13 or later.
+====
+
+Please refer to the following on NetApp's Product Security Advisory website:
+
+* https://security.netapp.com/advisory/ntap-20211210-0007/[CVE-2021-44228]
+* https://security.netapp.com/advisory/ntap-20211215-0001/[CVE-2021-45046]
+* https://security.netapp.com/advisory/ntap-20211218-0001/[CVE-2021-45105]
+
+You can read more about these vulnerabilities and NetApp's response at the https://www.netapp.com/newsroom/netapp-apache-log4j-response/[NetApp Newsroom].
+
+== How to upgrade to 7.3.13 or later using the Data Migration Tool
+
+[NOTE]
+====
+Prior to upgrading from OnCommand Insight 7.3.5 - 7.3.11 to version 7.3.13 or later, you *must* run the OCI Data Migration Tool. Attempting to upgrade Insight with incompatible indexes present will cause the upgrade to fail. You do not need to run the Data Migration Tool if upgrading from Insight 7.3.12.
+====
+
+Insight version 7.3.13 and later, as with 7.3.12, utilize underlying software that that is incompatible with versions 7.3.11 and earlier. Insight version 7.3.13 and later therefore include a *Data Migration Tool* to assist with upgrading.
+
+The migration tool performs an initial compatibility check and then follows one of three different upgrade paths, based on what it discovers about the compatibility of your previous version.
+
+See the *Upgrade* section of the appropriate Insight Installation Guide for more information and instructions for running the Data Migration Tool.
+
+== Third-party software library changes
+
+The following third-party software changes are included in this release:
+
+* Log4j has been upgraded to 2.17.1
+* ElasticSearch has been upgraded to 7.16.2 which includes log4j 2.17
+* Cognos has been upgraded to 11.1.7_IF8 which includes log4j 2.17.1
+* Java has been upgraded to 8u311
+* MySQL has been upgraded to 8.0.27
+
+== Additional Operating System support
+
+This release of OnCommand Insight includes the following Operating System support change:
+
+* CentOS 8 Stream support has replaced CentOS 8.x support. CentOS 8.x reached End-of-Life on December 31, 2021.
+
+== Known issues
+
+|===
+| Number| Issue
+a|
+ICI-9785
+a|
+The default anomaly detection job does not prune results, causing disk space to fill. See the https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Insight/How_to_set_the_retention_period_in_the_ADE_indexes_to_avoid_ADE_server_run_out_of_space[NetApp KnowledgeBase] for more information.
+|===
+
+== Corrected issues
+
+This version of OnCommand Insight corrects issues that you might have encountered in previous releases.
+
+|===
+| Number| Problem| Resolution
+a|
+ICI-9115
+a|
+DWH ETLs taking a long time (11+ hours)
+a|
+OCI 7.3.13 handles datamart preparation queries more efficiently, greatly reducing their impact on ETL.
+a|
+ICI-9124
+a|
+Handling of temporary files during database restore.
+a|
+OCI 7.3.13 includes improvements to the handling of temporary files and database restores.
+a|
+ICI-9568
+a|
+DWH ETL for inventory fails
+a|
+7.3.13 includes modified SQL handling to allow for more efficient processing, avoiding these failures.
+a|
+ICI-9579
+a|
+DWH partitions job is not working
+a|
+7.3.13 fixes an edge case in which old partitions are kept for a year instead of 30 days.
+|===

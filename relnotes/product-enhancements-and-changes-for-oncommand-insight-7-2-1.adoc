@@ -1,0 +1,38 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-2-1.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight 7.2.1 provides corrections to issues that were found in previous releases. Becoming familiar with changes to your environment enables you to take advantage of their benefits more efficiently.'
+---
+= Product enhancements and changes for OnCommand Insight 7.2.1
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight 7.2.1 provides corrections to issues that were found in previous releases. Becoming familiar with changes to your environment enables you to take advantage of their benefits more efficiently.
+
+== Corrected Issues in OnCommand Insight 7.2.1
+
+OnCommand Insight 7.2.1 corrects issues that you might have encountered in previous releases.
+
+|===
+| Issue| Description| Resolution
+a|
+ICI-3824
+a|
+Congos is not communicating with its components that require passwords.
+a|
+Fixed the issue by avoiding expiration of Cognos encryption key configuration and SSL certificate.
+a|
+ICI-3820
+a|
+If the customer has a non-enum annotation value on multiple objects from the same object type (for example, adding a Note annotation "my storage" for five storage arrays), and has a performance policy configured based on this annotation, the upgrade to 7.2.0 fails.
+a|
+Upgrades to 7.2.1 consolidate annotation values that have the same type and value.
+a|
+ICI-3811
+a|
+If the HDS HiCommand Device Manager or the HP CommandView AE data sources are configured with the performance package disabled and the inventory package enabled, you cannot save the data source using the web UI.
+a|
+This issue is fixed. You can now save either of these data sources, regardless of their configuration.
+|===

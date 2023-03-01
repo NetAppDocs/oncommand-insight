@@ -1,0 +1,79 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-3-4.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.'
+---
+= Product enhancements and changes for OnCommand Insight 7.3.4
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
+
+OnCommand Insight provides intelligent operations and business insights across the enterprise. The software enables the rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
+
+== Compatibility with previous versions
+
+OnCommand Insight 7.3.3 and 7.3.4 are version-compatible. Some component or sub-component information may reflect a "7.3.3" version stamp after upgrading to or installing version 7.3.4.
+
+Note that you must still upgrade all Insight products (Server, RAU, DWH, etc.) to version 7.3.4.
+
+== Oracle Enterprise Linux
+
+OnCommand Insight 7.3.3 and 7.3.4 have been qualified and are supported on Oracle Enterprise Linux 7.5.
+
+== Informix domain user
+
+With OnCommand Insight 7.3.3 and above, the Cognos reporting engine creates an "Informix" user account and services as part of the installation. The DWH installer creates the following elements:
+
+|===
+a|
+User
+a|
+Informix
+a|
+Group
+a|
+Informix-Admin
+a|
+Services
+a|
+Informix IDS -- ol_cognoscmInformix IDS Message Service
+
+|===
+You must have local administrator permissions to install the OnCommand Insight software.
+
+Additional information can be found in the NetApp https://kb.netapp.com/app/answers/answer_view/a_id/1083108/loc/en_US[Knowledgebase]
+
+== Corrected issues in OnCommand Insight 7.3.4
+
+OnCommand Insight 7.3.4 corrects issues that you might have encountered in previous releases.
+
+* *Reporting services to fail to start*
++
+ICI-5611, ICI-5632, ICI-5633, ICI-5646, ICI-5662, ICI-5663
++
+With OnCommand Insight 7.3.3, the Data Warehouse (DWH) installation may fail to complete, or may complete but Reporting (Cognos) services may fail to start.
++
+During installation, the Cognos Reporting engine creates an "Informix" user. In environments where this user is created as a domain user instead of a local user, Cognos services may fail to start properly.
++
+OnCommand Insight 7.3.4 corrects this problem by creating the Informix user as a local user and adding it to a local group. This allows Cognos services to start properly.
+
+* *Non-default Reporting port may cause some installations to fail*
++
+During Data Warehouse installation, specifying a non-default Reporting Engine Port may cause the installation to fail to complete. If this occurs in your environment, you can correct this by installing with the default port of 9300. If port 9300 is not available in your environment, contact NetApp Support.
+
+* *Storage Manager Dashboard documentation*
++
+The documentation for the Storage Manager Dashboard is not included in the OnCommand Insight reporting Guide for 7.3.3. However, this documentation is still available in the OnCommand Insight Reporting Guide content and is applicable to the 7.3.3 guide.
+
+* *Remote Acquisition Unit connection timeout*
++
+ICI-5595
++
+With previous versions of OnCommand Insight 7.3, the remote acquisition unit (RAU) may experience connection timeouts, leading to no data being collected from that RAU's data sources.
++
+This can be caused by a busy server or slow network, or by a disruption to the Java virtual machine (JVM) for acquisition, which causes the JVM threads to become blocked so that RAU is not functional until the RAU service is restarted.
++
+These issues are fixed in Insight 7.3.4, so that both RAU timeout and blocked JVM scenarios no longer occur.

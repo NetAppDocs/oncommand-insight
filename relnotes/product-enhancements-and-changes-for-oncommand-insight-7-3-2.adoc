@@ -1,0 +1,410 @@
+---
+permalink: product-enhancements-and-changes-for-oncommand-insight-7-3-2.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.'
+---
+= Product enhancements and changes for OnCommand Insight 7.3.2
+:icons: font
+:imagesdir: ./media/
+:pp: {plus}{plus}
+
+[.lead]
+OnCommand Insight is designed to simplify operational management of hybrid IT infrastructures on public and private clouds as well as traditional on-premise environments.
+
+OnCommand Insight provides intelligent operations and business insights across the enterprise. The software enables the rationalization and optimization of costs, reduces risks, and provides advanced troubleshooting and analytics across the multi-vendor infrastructure of systems, networks, and storage.
+
+== Business insights for cloud
+
+OnCommand Insight 7.3.2 extends business insight capabilities into the hybrid environment, providing:
+
+* A consolidated view of all assets so you can track, analyze and optimize usage and cost of cloud-based as well as on-prem services as they dynamically scale in your environment.
+* Cloud infrastructure-to-cost correlation, giving clear and actionable reporting so you can ensure right-sizing through focused capacity planning and waste detection.
+
+Business insight measures are collected by the new AWS Cloud Cost data source, and made available in the Cloud Cost datamart for Insight reporting.
+
+Plan and Perform licenses are required for Cloud Cost collection and reporting.
+
+== Performance policies for applications
+
+You can create performance policies for applications monitored by Anomaly Detection. When policy thresholds are crossed, alerts are triggered to notify you about issues related to the application's resources. Violations are also displayed on the application landing page and the violations dashboard, where you can filter them. You can also create a dashboard, add a violation table widget, and filter on your performance policy name to identify application violations.
+
+== New assets available in the web UI
+
+The following assets are now available in the web UI:
+
+* *Generic Devices*
++
+Generic devices can be displayed in dashboards and used in queries.
+
+* *iSCSI Network portals*
++
+Network portal information can be displayed in dashboards and used in queries.
+
+* *iSCSI Sessions*
++
+iSCSI session information can be displayed in dashboards and used in queries.
+
+* *Mapping/Masking*
++
+Masking data is displayed in tables on Zone, Volume, VM, and Host/Hypervisor landing pages.
+
+* *Paths*
++
+Paths can be displayed in dashboards and used in queries.
+
+* *Tapes*
++
+Tapes can be displayed in dashboards and used in queries.
+
+* *Zones*
++
+Zones and zone members can be displayed in dashboards and used in queries. Additionally, new Zone asset landing pages are available to highlight zone and zone member information. Zone information is also displayed in tables on Storage, Virtual Machine, Host, Hypervisor, and Switch asset landing pages.
+
+== UI enhancements
+
+The following improvements and enhancements have been added to the Insight web UI:
+
+* *Single value widget*
++
+Insight now includes a widget allowing you to display a single value, which is derived either directly from a counter or calculated using a query or expression. For example, you can display the sum of total IOPS for all storage in your environment as a single value at the top of your dashboard.
+
+* *Default filters for violation table widget*
++
+The Violation Table widget has been enhanced to allow users to configure default text filters for the table.
+
+* *Expert view in Qtree landing page*
++
+An expert view has been added to the Qtree landing page to enhance troubleshooting.
+
+* *Aggregation by minute, hour, or day*
++
+When creating or editing time series widgets, you can choose to aggregate data points into minute, hour, or day buckets before that data is subsequently rolled up by attribute (if chosen). You can choose to aggregate data points according to their Avg, Max, Min, or Sum, or by the Last data point collected during the chosen time frame.
++
+In widget edit mode, select *More options* to see the aggregation settings.
++
+The minimum allowed interval is ten minutes. A small interval combined with a long time range may result in a "Aggregation interval resulted in too many data points." warning. You might see this if you have a small interval and increase the dashboard time frame to 7 days. In this case, Insight will temporarily increase the aggregation interval to 1 hour.
+
+* *Legacy Server portal functions moved*
++
+Functions previously only available from the legacy Insight Server portal UI have moved to the new UI platform. To access these functions, click *Admin* > *Troubleshooting* > *Advanced Troubleshooting*.
++
+The Capacity Request Portal has been removed and these functions are no longer available.
+
+* *Displayed columns exported to .CSV*
++
+Previous versions of Insight exported all of the attributes for all of the objects in a table, regardless of which columns were selected for display. Insight 7.3.2 changes this behavior to only export the attributes for the columns you have selected for display.
++
+This change does not apply to performance attributes. Exporting performance attributes results in all of the objects in a table to be exported.
+
+* *Clipboard option for long table fields*
++
+In tables, values are sometimes truncated with ellipses (...) when the values are too long for the displayed column width. In these cases, it is not possible to select the value with the mouse in order to copy it to the search box or clipboard. Insight now provides a "copy" icon in these cases, allowing you to copy the field text to the clipboard.
++
+Note that only values that are links to assets can be copied. Note also that only fields that include single values (i.e. non-lists) have the copy icon.
+
+* *Port speed counter changed to numeric*
++
+The port speed counter in Insight is now a numeric counter, which allows for proper display and use of port speed values previously unavailable in Insight (for example, 32 Gb/s for FC ports).
+
+== collectd metrics in Insight
+
+collectd is third-party open source software that collects system and application performance metrics. OnCommand Insight 7.3.2 supports an output writer plugin for collectd, which allows users to send information collected by any collectd discovery/collection plugin into Insight via our integration API.
+
+You can access the output writer plugin software and documentation for collectd at NetApp's GitHub site: https://github.com/NetApp/OCI_collectd
+
+== Bulk edit of business entities
+
+You can assign or remove business entities on multiple assets, in the same manner as for applications and annotations. In a query results table, select the assets on which you wish to assign or remove a business entity, then click the *Actions* button and select the business entity desired. Only one business entity can be assigned to an asset. An asset can have multiple business entities associated with it only if the asset has multiple applications (with business entities) assigned.
+
+== Delete inactive devices
+
+You can now delete inactive hosts, switches, storages, tapes, or generic devices on the query results page in the web UI. To delete an inactive device, on the query page search for the desired asset type. Filter for devices where "`is active`" is *No*, and select the devices you wish to delete. Click the *Actions* button and select *Delete Inactive Devices*.
+
+== Retention of inventory/foundation history
+
+Previous versions of Insight keep all inventory change history, from the time of installation. This results in large amounts of historical data, which can degrade performance over time. After upgrading to the current version of OnCommand Insight, history will be pruned to the most recent 90 days. Insight prunes the history in 30-day chunks, occurring once a day, starting with the oldest, until 90 days' worth of history is present. Then, history is pruned daily, to keep only 90 days`' worth of inventory change history.
+
+== Changes to Data Warehouse
+
+* *Data warehouse Health Monitor changes*
++
+A new warning is displayed when automatic backup is disabled.
++
+Health monitor warnings in the data warehouse (DWH) can now be suppressed for 30 days. Each warning group can be suppressed individually.
+
+* *cDOT node Optimal Utilization*
++
+NetApp cDOT 9.2+ storage node Optimal Utilization is now available as a counter for use and reporting.
+
+* *UUID for cDOT internal volumes in DWH*
++
+The UUID attribute for cDOT internal volumes has been added to the Data Warehouse.
+
+* *Flexgroup capacity information*
++
+Flexgroup names can now be used to reflect capacity information for volumes.
+
+* *Qtree performance support available in DWH*
++
+Qtree performance is available in asset pages as well as in daily and hourly datamarts in DWH and Reporting.
+
+* *VVOL objects in DWH*
++
+VVOL objects are mapped to proper assets in DWH, making them available in Insight reporting.
+
+== New Integration API
+
+OnCommand Insight version 7.3.2 includes a new API for gathering performance counters and attributes from any source of data.
+
+This data can be displayed along with other data coming from OnCommand Insight data sources, in dashboard widgets, landing page custom view, and queries. For example, you can write a script to send performance data from an Oracle database, to be displayed side by side with other resources supporting this database instance, such as VM and Volume performance data.
+
+== REST API preview flag
+
+Insight includes a number of preview REST APIs. In the REST API help, these are shown with a yellow exclamation mark ("!") stating that the preview API is subject to change. When including these APIs in your scripts, be aware that future releases of Insight may change the syntax of these APIs, which can cause scripts to fail.
+
+== Warning before license expires
+
+Insight displays a license expiration warning starting 90 days before a license is set to expire, along with other license warnings. Warnings display for administrator users on all Insight pages and can be dismissed for up to 30 days, based on the warning type. To remove the warnings, contact your NetApp sales representative to obtain a new license.
+
+== Warning if using default security key pairs
+
+Insight detects if your configuration is using default encryption keys, and displays warning messages on the Server health page and the Data Warehouse health monitor, recommending that you change the encryption keys. The message is also displayed at the completion of an upgrade or installation. After the keys have been changed, the warning messages will no longer be displayed.
+
+== Installation and upgrade requirements for non-default security configurations
+
+If you are performing a full installation as an upgrade or as a migration to new hardware and your existing system contains a non-default security configuration, you must back up the security configuration before you perform the installation. After the installation is complete, you must restore the security configuration before you restore the Server (which includes the local acquisition unit) or Data Warehouse database.
+
+You must restore the security configuration to all of your Insight servers before you restore the DWH Database.
+
+For in-place upgrade (available for Insight Server only), the security configuration is properly handled and you do not need to restore it.
+
+You use the `securityadmin` tool to create a backup of the configuration and to restore the saved configuration. For more information, search for `securityadmin` in the OnCommand Insight Documentation Center: http://docs.netapp.com/oci-73/index.jsp
+
+== Under-sized memory displayed on Health page
+
+The Server health page will display a message if memory for one or more Insight processes is under-sized for current system memory.
+
+== Third-party software library changes
+
+The following third-party software changes are included in this release:
+
+* Java has been updated to 8u162
+* MySQL has been updated to 5.7.21
+* ElasticSearch has been upgraded to 5.6.3
+* Wildfly has been updated to 11.0.0
+* Cognos has been upgraded to 10.2.2 FP 9
+
+== Data Source changes
+
+The following new data sources are supported:
+
+* AWS Cloud Cost, for Amazon billing data
+* Ceph inventory support
+* Nutanix inventory support
+* Huawei OceanStor/Dorado V3 REST Performance and improve Inventory's Quota, Qtree, FileShare, iSCSI
+
+The following changes have been made to existing data sources:
+
+* Oracle ZFS performance support
+* Huawei: Performance has been added for Oceanstor.
++
+This capability requires new firmware (from the year 2018) that supports the new performance archive API.
+
+* cDOT encryption available for disk, volume and storage pool
+* HP 3PAR supports release version 3.3.1+
++
+This release adds support for 3PAR node utilization statistics, provided your 3PAR array is running recent firmware ( 3.3.1 and higher, 3.2.x MU 4 and higher, or 3.1.x MU5 and higher).
+
+* Fujitsu Eternus supports Fujitsu s3 variations
+* Red Hat RHEV supports Red Hat OS version 4.x
+* The EMC RecoverPoint datasource now supports RecoverPoint versions 5.[0-1].x
+* The Dell VMAX 950F is supported
+
+== Corrected issues in OnCommand Insight 7.3.2
+
+OnCommand Insight 7.3.2 corrects issues that you might have encountered in previous releases.
+
+|===
+| Issue number| Description| Resolution
+a|
+ICI-5046
+a|
+Connection to LDAP may fail with multiple LDAP servers, multiple certificates.
+a|
+Certificates from comma separated server IP:Port are now imported using separate API calls.
+a|
+ICI-5036
+a|
+Extreme number of FC paths may cause FcLogicalRunner updater transaction to timeout.
+a|
+FcLogicalRunner transaction timeout has been increased.
+a|
+ICI-5025
+a|
+ETL failure at dimensions due to tmp_table "Row size too large", due to identifier size and count.
+a|
+Fixed the handling of identifiers to avoid the large row size failure.
+a|
+ICI-5014, ICI-5095, ICI-5039, ICI-4856
+a|
+Temporary files not cleaned up properly, causing disk space issues.
+a|
+Insight 7.3.2 provides better handling and cleanup of temporary files.
+a|
+ICI-4973
+a|
+Search function is sometimes missing information on Shares.
+a|
+Because there is no asset landing page for Shares, the Search function was sometimes ignoring Share results. 7.3.2 changes the algorithm to more accurately show search results in this case.
+a|
+ICI-4955
+a|
+VM duplicate entries when shares exported to a VM from storage, using host name. Device resolution does not validate if the host name resolves to an IP address used by a VM.
+a|
+Device resolution validation now covers this instance, avoiding duplicate entries.
+a|
+ICI-5189
+a|
+Custom from/to date does not work in German browser locale
+a|
+German locale formats now work in custom time range selectors.
+a|
+ICI-4886
+a|
+Storage Resource Capacity missing from Host landing page summary.
+a|
+The Storage Resource Capacity information was missing in some previous versions of Insight. This information is properly shown in 7.3.2.
+|===
+OnCommand Insight 7.3.2 contains several customer-requested enhancements.
+
+|===
+| Issue number| Description| Resolution
+a|
+IFR-3591
+a|
+Port speed not available in dashboard widgets
+a|
+Port speed counters are now available for use in dashboard widgets
+a|
+IFR-3579
+a|
+NOT * query only works on text value
+a|
+"None" option has been added to the Boolean and Enum List filter dropdowns.
+a|
+IFR-3525, IFR-3510, IFR-3427, IFR-3165
+a|
+Exporting tables to .CSV includes every column regardless of whether it is displayed.
+a|
+Insight now only exports the columns you have selected for display. All sub-attributes for each column are included in the export.
+a|
+IFR-3524
+a|
+Pull cloud cost data to facilitate chargeback
+a|
+Business Insight data for cloud environments can be collected and used in Insight reporting.
+a|
+IFR-3519
+a|
+Hourly aggregation in time-series widgets is not granular enough.
+a|
+Time-series data can now be aggregated into minute, hour, or day buckets.
+a|
+IFR-3250
+a|
+Enormous masking history causes performance issues
+a|
+Insight now prunes history to 90 days, preventing this type of performance problem
+a|
+IFR-3161
+a|
+Thresholds for Anomaly Detection scores
+a|
+Insight now allows you to set performance policies and alerts for anomaly detection.
+a|
+IFR-2253
+a|
+Additional Counters for NetApp systems for performance analysis
+a|
+Integration now allows for counters to be collected in Insight that are not included in standard data source acquisition.
+a|
+IFR-2240
+a|
+REST API does not support Shares
+a|
+Additional asset types, including Shares, are now available for annotation and other use in Insight.
+a|
+IFR-2175
+a|
+Capacity Assurance Policies: Allow Configurable Severity Level for Global and Local Policies
+a|
+Capacity data is now collected and reported in Insight, including for use in performance policies.
+a|
+IFR-2169
+a|
+Introduce other_ops aka metadata iops on the internal volume object
+a|
+Using Expressions, Insight allows the calculation, reporting and trending of non-traditional counters, such as "Other" IOPS.
+|===
+
+== 64-bit JRE requirement for Java client
+
+The OnCommand Insight 7.3.2 Java client requires prior installation of the 64-bit version of the Java Runtime Environment (JRE). If you only have a 32-bit JRE installed on the host or virtual machine on which you are installing or upgrading OnCommand Insight, the Insight Java client will fail to launch, and no messages or errors will be displayed.
+
+You must also use the 64-bit JRE for _any_ OCI version if you have set the Client Max Heap Size to a value larger than 1024. The Client Max Heap Size value is set in *Admin* > *Troubleshooting* > *Advanced Troubleshooting*. The default value is set to 2048 in Insight version 7.2.6 as well as 7.3.1 or later. If the value in an existing database is less than or equal to 1024, it will be increased to 2048 when upgrading to 7.3.1 or later.
+
+== Known problems and limitations
+
+The following are known problems and limitations found in this release of OnCommand Insight.
+
+* *No mouse control in Java client login dialog on Mac*
++
+On some Mac systems, the mouse cursor may be missing in the Java client login dialog. You can still type in the fields, and use Tab and Shift-Tab to move between fields, and the Space bar to select.
+
+* *Stacked area charts may show gaps*
++
+When rendering a stacked area chart with 'Top N' data series, Insight may display gaps in the chart. Hovering the mouse over those gaps may still show the data points underneath.
+
+* *LDAP certificate import doesn't validate or import certificate chain*
++
+During LDAP certificate import, the full certificate chain may not be imported. If this happens, you can import each section of the chain individually.
+
+* *Changing encryption keys causes email notifications errors*
++
+Changing encryption keys on the server when email notifications are configured and empty email passwords are present will cause errors when sending notification emails. To avoid this, set email passwords before changing encryption keys. You can also remove and then re-configure your email notifications, which will then work with the new encryption keys.
+
+* *Installing DWH on Windows 2016 may give paging error*
++
+When installing DWH on Windows 2016, you may be presented with an error related to virtual paging, and Windows 2016 may prompt you to change the virtual paging size.
+
+* *Incorrect "Internal error" message*
++
+When restoring a database, you may see an "Internal error" message on the screen, but there is no error shown in the upgrade.log. There is no problem in this case, and you can ignore the message. The restore will complete successfully and refreshing the page after the error is shown will redirect the user to the login screen as expected.
++
+Any true error will always be shown in the upgrade.log.
+
+* *Insight reporting restarts without warning on Windows 2008 R2*
++
+On Windows 2008 R2, you may see the Insight reporting application restarting without warning. Applying the latest Microsoft Visual C{pp} 2008 SP1 Redistributable Package may fix this issue.
+
+* *Storage Manager Dashboard error after resetting reporting content*
++
+After resetting reporting content in the data warehouse (DWH), when you log into the Reporting Portal you will see an internal error when opening the Storage Manager Dashboard.
++
+To work around this issue, run the `<install_path>\SANscreen\cognos\c10_64\bin\SANscreenReportingUtils\SANscreenReportingImportDefault.bat` file, and log into the Reporting Portal again.
+
+== Documentation notes
+
+The Insight Documentation Center contains all of the published user documentation. For secure sites that do not allow unlimited access to the Internet, you can download PDF or EPUB versions of the documents.
+
+New documentation has been added to the documentation center:
+
+* The How-to for creating custom dashboards has an added example of using variables in widgets
+* How-to's have been added for the following:
+ ** Collecting Host and VM file system utilization data
+ ** Thin provisioning
+ ** Analyzing and application performance problem (with greedy/degraded assets)
+ ** Collecting AWS billing data
+ ** Working with collectd data collection
+* An FAQ has been added to explain why Total is sometimes not equal to Read plus Write
