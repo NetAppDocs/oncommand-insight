@@ -1,12 +1,13 @@
 ---
 permalink: relnotes/index.html
 sidebar: sidebar
-keywords: 
+keywords:
 summary: ''
 ---
 = Release Notes
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
+
 
 * xref:how-to-use-these-release-notes.adoc[OnCommand Insight Release Notes]
 * xref:product-enhancements-and-changes-for-oncommand-insight-7-3-14.adoc[Product enhancements and changes for OnCommand Insight 7.3.14]
