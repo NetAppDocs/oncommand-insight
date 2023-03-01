@@ -1,0 +1,8 @@
+section: relnotes
+title: Release Notes
+entries:
+    - title: How to use these release Notes
+      url: "relnotes/how-to-use-these-release-notes.html"
+    - title: Product Enhancements and Changes for OnCommand Insight 7.3.14
+      url: "relnotes/product-enhancements-and-changes-for-oncommand-insight-7-3-14.html"
+      
