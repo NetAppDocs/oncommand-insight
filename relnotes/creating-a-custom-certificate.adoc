@@ -1,0 +1,76 @@
+---
+permalink: creating-a-custom-certificate.html
+sidebar: sidebar
+keywords: 
+summary: 'You can add custom certificates to enable enhanced authentication and encryption for your OnCommand Insight 7.2.x environment. When a custom certificate is present in an upgrade from 7.2.x to 7.3.x, the certificate alias must be correctly configured \(-alias "ssl certificate"\) or the upgrade will fail.'
+---
+= Creating a custom certificate for 7.2.x Releases
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+You can add custom certificates to enable enhanced authentication and encryption for your OnCommand Insight 7.2.x environment. When a custom certificate is present in an upgrade from 7.2.x to 7.3.x, the certificate alias must be correctly configured (-alias "ssl certificate") or the upgrade will fail.
+
+== Before you begin
+
+You must ensure that your system meets the minimum required bit level (1024 bits).
+
+== About this task
+
+Before you attempt to perform this procedure, you should back up the existing `server.keystore` file, and name the backup `server.keystore.old`. Corrupting or damaging the server.keystore file may result in an inoperable Insight server after it is restarted. If you create a backup, you can revert to the old file if problems occur.
+
+== Steps
+
+. Make a copy of the current keystore: `"c:\Program Files\SANscreen\jboss\server\onaro\cert\server.keystore" "c:\Program Files\SANscreen\jboss\server\onaro\cert\server.keystore.old"`
+. List the existing cert``"C:\Program Files\SANscreen\java\bin\keytool.exe" -list -v -keystore "c:\Program Files\SANscreen\jboss\server\onaro\cert\server.keystore"``
+. The system responds: ``Enter keystore password:``Enter the following: `changeit`
+. Delete the existing certificate: `"C:\Program Files\SANscreen\java\bin\keytool.exe" -delete -alias "ssl certificate" -keystore "c:\Program Files\SANscreen\jboss\server\onaro\cert\server.keystore"`
+. The system responds: ``Enter keystore password:``Enter the following: `changeit`
+. Generate a new private key: `"C:\Program Files\SANscreen\java\bin\keytool.exe" -genkey -alias "ssl certificate" -keyalg RSA -keysize 2048 -keystore "c:\Program Files\SANscreen\jboss\server\onaro\cert\server.keystore"`
+ .. The system responds: ``Enter keystore password:``Enter the following: `changeit`
+ .. What is your first and last name?`[Unknown]: WIN2K12R2IMAGE.na.ead.netapp.com`
+ .. What is the name of your organizational unit? `[Unknown]: QA`
+ .. What is the name of your organization? `[Unknown]: NetApp`
+ .. What is the name of your City or Locality? `[Unknown]: Waltham`
+ .. What is the name of your State or Province? `[Unknown]: MA`
+ .. What is the two-letter country code for this unit? `[Unknown]: US`
+ .. Is CN=WIN2K12R2IMAGE.na.ead.netapp.com, OU=QA, O=NetApp, L=Waltham, ST=MA, C=US correct? `[no]: yes`
+ .. The system responds: `Enter key password for <ssl certificate>:``(return if same as keystore password):`
+. Export a Certificate Signing Request: `"C:\Program Files\SANscreen\java\bin\keytool.exe" -certreq -alias "ssl certificate" -keystore "c:\Program Files\SANscreen\jboss\server\onaro\cert\server.keystore" -file c:\WIN2K12R2IMAGE3.csr"`
+. The system responds: ``Enter keystore password:``Enter the following: `changeit`
+. *(Certificate Authority Steps)* Transfer the CSR to the CA server and copy the CSR to the correct folder: `cp /root/WIN2K12R2IMAGE3.csr /root/ca/intermediate/csr/WIN2K12R2IMAGE3.csr.pem`
+. Generate the signed certificate: `openssl ca -config intermediate/openssl.cnf -extensions server_cert -days 375 -notext -md sha256 -in intermediate/csr/WIN2K12R2IMAGE3.csr.pem -out intermediate/certs/WIN2K12R2IMAGE3.cert.pem` Enter pass phrase for /root/ca/intermediate/private/intermediate.key.pem: `changeit`
+. Show the signed certificate: `openssl x509 -noout -text -in intermediate/certs/WIN2K12R2IMAGE3.cert.pem`
++
+The system displays information about the certificate.
+
+. Verify the certificate: `openssl verify -CAfile intermediate/certs/ca-chain.cert.pem intermediate/certs/WIN2K12R2IMAGE3.cert.pem`
++
+For a successful verification, the system responds: `intermediate/certs/WIN2K12R2IMAGE3.cert.pem: OK`
+
+. Generate the DER file: `cat intermediate/certs/WIN2K12R2IMAGE3.cert.pem intermediate/certs/intermediate.cert.pem certs/ca.cert.pem > ~/WIN2K12R2IMAGE3.der`
+. Transfer the DER file from the CA server *(End of Certificate Authority Steps)*
+. Import the DER file into the server.truststore: `"C:\Program Files\SANscreen\java\bin\keytool.exe" -importcert -alias "WIN2K12R2IMAGE.na.ead.netapp.com" -file C:\WIN2K12R2IMAGE3.DER -keystore "c:\Program Files\SANscreen\jboss\server\onaro\cert\server.trustore"`
+. The system responds: ``Enter keystore password:``Enter the following: `changeit`
++
+The system displays information about the certificate.
+
+. The system responds: `Trust this certificate [no]:``yes`
+. Import the certificate into the server keystore: `"C:\Program Files\SANscreen\java\bin\keytool.exe" -importcert -alias "ssl certificate" -file c:\WIN2K12R2IMAGE3.DER -keystore "c:\Program Files\SANscreen\jboss\server\onaro\cert\server.keystore`
+. The system responds: ``Enter keystore password:``Enter the following: `changeit`
++
+The system displays information similar to the following: `Top-level certificate in reply:`
++
+`Owner: OU=Support, O=NetApp Inc., L=Waltham, ST=MA, C=US`
++
+`Issuer: OU=Support, O=NetApp Inc., L=Waltham, ST=MA, C=US`
++
+`Serial number: 919fa103f7326a68`
++
+`Valid from: Mon Mar 27 13:11:25 EDT 2017 until: Sun Mar 22 13:11:25 EDT 2037`
++
+`+Certificate fingerprints: MD5:.........+`
++
+`+... is not trusted. Install reply anyway? [no]:+``Yes`
+
+. Restart the SANscreen server service
