@@ -1,0 +1,12 @@
+---
+permalink: howto/finding-assets-querying.html
+sidebar: sidebar
+keywords: 
+summary: 'You can easily find and display assets in your environment using powerful queries.'
+---
+= Finding assets: Querying
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can easily find and display assets in your environment using powerful queries.

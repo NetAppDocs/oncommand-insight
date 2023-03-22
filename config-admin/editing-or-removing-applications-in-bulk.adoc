@@ -1,0 +1,43 @@
+---
+permalink: config-admin/editing-or-removing-applications-in-bulk.html
+sidebar: sidebar
+keywords: 
+summary: 'You can assign multiple applications to or remove multiple application from assets by using a query instead of having to manually assign or remove them.'
+---
+= Assigning multiple applications to or removing multiple applications from assets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can assign multiple applications to or remove multiple application from assets by using a query instead of having to manually assign or remove them.
+
+== Before you begin
+
+You must have already created a query that finds all the assets that you to edit.
+
+== Steps
+
+. Click *Queries* and select *Show all queries*.
++
+The Queries page displays.
+
+. Click the name of the query that finds the assets.
++
+The list of assets associated with the query displays.
+
+. Select the desired assets in the list or click image:../media/select-assets.gif[] to select *All*.
++
+The *Actions* button displays.
+
+. To add an application to the selected assets, click image:../media/actions-button.gif[], and select *Edit Application*.
+ .. Click *Application* and select one or more applications.
++
+You can select multiple applications for hosts, internal volumes, and virtual machines; however, you can select only one application for a volume.
+
+ .. Click *Save*.
+. To remove an application assigned to the assets, click image:../media/actions-button.gif[] and select *Remove Application*.
+ .. Select the application or applications you want to remove.
+ .. Click *Delete*.
+
++
+Any new applications you assign override any applications on the asset that were derived from another asset. For example, volumes inherit applications from hosts, and when new applications are assigned to a volume, the new application takes precedence over the derived application.

@@ -1,0 +1,38 @@
+---
+permalink: install-windows/restoring-custom-data-warehouse-reports.html
+sidebar: sidebar
+keywords: 
+summary: 'If applicable, you can manually restore any custom reports you backed up before the upgrade; however, you only need to do this if you lose reports of if they have become corrupted.'
+---
+= Restoring custom Data Warehouse reports
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If applicable, you can manually restore any custom reports you backed up before the upgrade; however, you only need to do this if you lose reports of if they have become corrupted.
+
+== Steps
+
+. Open your report with a text editor, and then select and copy its contents.
+. Log in to the Reporting portal at `+https://fqdn/reporting+`.
+. On the Data Warehouse toolbar, click image:../media/oci-reporting-portal-icon.gif[] to open the Insight Reporting portal.
+. From the Launch menu, select *Report Studio*.
+. Select any package.
++
+Report Studio displays.
+
+. Click *Create new*.
+. Select *List*.
+. From the Tools menu, select *Open Report from Clipboard*.
++
+The *Open Report from Clipboard* dialog box displays.
+
+. From the File menu, select *Save As* and save the report to the Custom Reports folder.
+. Open the report to verify that it was imported.
++
+Repeat this task for each report.
++
+[NOTE]
+====
+You may see an "`Expression parsing error`" when you load a report. This means that the query contains a reference to at least one object that does not exist, which means there is no package selected in the Source window to validate the report against. In this case, right-click on a data mart dimension in the Source window, select Report Package, and then select the package associated with the report (for example, the inventory package if it is an inventory report or one of the performance packages if it's a performance report) so Report Studio can validate it and then you can save it.
+====

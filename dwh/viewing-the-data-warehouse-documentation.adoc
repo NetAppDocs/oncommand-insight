@@ -1,0 +1,17 @@
+---
+permalink: dwh/viewing-the-data-warehouse-documentation.html
+sidebar: sidebar
+keywords: 
+summary: 'You can review Data Warehouse database schema information.'
+---
+= Viewing the Data Warehouse database schema documentation
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can review Data Warehouse database schema information.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. On the Data Warehouse toolbar, click image:../media/oci-7-help-icon-gif.gif[] and select *Schema*.

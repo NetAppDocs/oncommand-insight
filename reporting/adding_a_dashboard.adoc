@@ -1,0 +1,23 @@
+---
+permalink: reporting/adding_a_dashboard.html
+sidebar: sidebar
+keywords: 
+summary: 'You might want to display a dashboard group of reports in a tab for easy access. You can add the tab from User Preferences.'
+---
+= Adding a dashboard from User Preferences
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+
+You might want to display a dashboard group of reports in a tab for easy access. You can add the tab from User Preferences.
+
+.Steps
+
+. Open the OnCommand Insight Reporting Portal.
+. At the upper right, click the Person icon to show a drop-down menu.
+. Select My Preferences.
+. In the Set preferences view, click the Portal Tabs tab.
+. In the Portal Tabs tab, click the Add link.
+. In the Public Folders and Dashboard folder, locate the dashboard that you want as a tab and check it.
+. Click the arrow to move it to the Selected Entries box, and click OK.

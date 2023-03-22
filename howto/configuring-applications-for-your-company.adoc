@@ -1,0 +1,98 @@
+---
+permalink: howto/configuring-applications-for-your-company.html
+sidebar: sidebar
+keywords: 
+summary: 'Understanding the applications used in your company’s environment helps you to keep track of asset usage and report on costs. Here we will configure your company’s applications and associate them with the appropriate assets.'
+---
+= Configuring applications for your company
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Understanding the applications used in your company's environment helps you to keep track of asset usage and report on costs. Here we will configure your company's applications and associate them with the appropriate assets.
+
+== About this task
+
+In the _Configuring business entities for your company_ section, we created some business entities, and recommended that you list out all the applications you associate with each business entity. OnCommand Insight allows us to then track data associated with those applications for things like usage or cost reporting.
+
+Before you can track data associated with the applications running in your environment, you must first define those applications and associate them with the appropriate assets. You can associate applications with the following assets: hosts, virtual machines, volumes, internal volumes, qtrees, shares, and hypervisors.
+
+In this walkthrough, we want to track the usage of virtual machines that the Marketing Team uses for its Exchange email. You will remember the following table we created while defining our business entities. Let's add a column to this worksheet listing the applications used by each business entity. (This table is a worksheet example only. You will not see an "`Applications`" column in the business entities table in Insight.)
+
+|===
+| Tenant| Line of Business| Business Unit| Project| Applications
+a|
+NetApp
+a|
+Data Storage
+a|
+Legal
+a|
+Patents
+a|
+Oracle Identity Manager, Oracle On Demand, PatentWiz
+a|
+NetApp
+a|
+Data storage
+a|
+Marketing
+a|
+Sales Events
+a|
+Exchange, Oracle Shared DataBase, BlastOff Event Planner
+a|
+N/A
+a|
+N/A
+a|
+Safety and Security
+a|
+N/A
+a|
+N/A
+a|
+...
+a|
+ 
+a|
+ 
+a|
+ 
+a|
+ 
+|===
+*Creating applications in Insight:*
+
+== Steps
+
+. Log in to Insight as a user with administrative permissions.
+. Select *Manage* > *Applications*
+. Click the *+Add* button
+. Enter the name of the application (for our example, enter "`Exchange`")
+. Select a priority for the application
+. If you wish to associate the application to a business entity, select one from the *Business Entity* drop-down. Otherwise, you can leave this as "`None`".
+. If you want to ensure each host has access to the same volumes in a cluster, ensure that the *Validate volume sharing* box is checked. For example, hosts in high-availability clusters often need to be masked to the same volumes to allow for failover; however, hosts in unrelated applications usually have no need to access the same physical volumes. Additionally, regulatory policies might require you to explicitly disallow unrelated applications from accessing the same physical volumes for security reasons. If you do not use volume sharing, clear the *Validate volume sharing* box. This requires the Assure license.
+. Click Save.
+. Repeat for all other Applications in your environment.
+
+== After you finish
+
+We see that the Marketing Team uses the Exchange application. We want to see their virtual machine utilization for Exchange, in order to predict when we will need to add more storage. Let's associate the Exchange application with all of Marketing's VM's. The easiest way to accomplish this is through a query.
+
+By following these steps, you can associate each of your applications with their appropriate assets.
+
+*Associating Applications to assets:*
+
+Now that you have created your applications (and tied them to business entities, as desired), we can now associate those applications with assets in your environment. In this example, we will associate the Exchange application with a number of virtual machines in your company. The easiest way to do this is what a query.
+
+. Select *Queries* > *+New query*.
+. In the *Select Resource Type* drop-down, choose _Virtual Machine_
+. We will assume the Marketing team names their assets with the string "`_mktg_`". In the Name filter box, enter "`_mktg_ `"(without quotes) and click the apply (checkmark) button.
+. The list of all VM's with the "`_mktg_ `"string is shown.
+. If desired, click the *More* drop-down and add additional filters.
+. Select the VM's used for Exchange by clicking in the checkbox beside each desired VM Name, or select all VMs by clicking the checkbox at the top of the column.
+. When the desired VM's are selected, click the *Actions* button and choose *Add Application*.
+. In the Assign Application dialog, click the *Application* drop-down and select "`Exchange`".
+. Click *Save*.
+. Repeat as necessary to associate the Exchange application with other assets (hosts, volumes, etc.)

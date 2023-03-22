@@ -1,0 +1,30 @@
+---
+permalink: config-admin/how-annotations-are-assigned.html
+sidebar: sidebar
+keywords: 
+summary: 'You can assign annotations manually or automatically using annotation rules. OnCommand Insight also automatically assigns some annotations on acquisition of assets and by inheritance. Any annotations that you assign to an asset appear in the User Data section of the asset page.'
+---
+= How annotations are assigned
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can assign annotations manually or automatically using annotation rules. OnCommand Insight also automatically assigns some annotations on acquisition of assets and by inheritance. Any annotations that you assign to an asset appear in the User Data section of the asset page.
+
+Annotations are assigned in the following ways:
+
+* You can assign an annotation manually to an asset.
++
+If an annotation is assigned directly to an asset, the annotation appears as normal text on an asset page. Annotations that are assigned manually always take precedence over annotations that are inherited or assigned by annotation rules.
+
+* You can create an annotation rule to automatically assign annotations to assets of the same type.
++
+If the annotation is assigned by rule, Insight displays the rule name next to the annotation name on an asset page.
+
+* Insight automatically associates a tier level with a storage tier model to expedite the assignment of storage annotations to your resources on acquisition of assets.
++
+Certain storage resources are automatically associated with a predefined tier (Tier 1 and Tier 2). For example, the Symmetrix storage tier is based on the Symmetrix and VMAX family and is associated with Tier 1. You can change the default values to match your tier requirements. If the annotation is assigned by Insight (for example, Tier), you see "`System-defined`" when you position your cursor over the annotation's name on an asset page.
+
+* A few resources (children of an asset) can derive the predefined Tier annotation from their asset (parent).
++
+For example, if you assign an annotation to a storage, the Tier annotation is derived by all the storage pools, internal volumes, volumes, qtrees, and shares belonging to the storage. If a different annotation is applied to an internal volume of the storage, the annotation is subsequently derived by all the volumes, qtrees, and shares. "`Derived`" appears next to the annotation name on an asset page.

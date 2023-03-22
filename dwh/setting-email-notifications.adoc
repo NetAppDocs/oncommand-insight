@@ -1,0 +1,45 @@
+---
+permalink: dwh/setting-email-notifications.html
+sidebar: sidebar
+keywords: 
+summary: 'You can have Data Warehouse send email to a specific email address when Data Warehouse jobs do not complete successfully.'
+---
+= Setting email notifications
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can have Data Warehouse send email to a specific email address when Data Warehouse jobs do not complete successfully.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *Email Notification*.
+. Enter the following:
+ ** SMTP server address
++
+Specifies the server that is acting as the SMTP server in your organization, identified using either a hostname or an IP address using the nnn.nnn.nnn.nnn format. If you specify a host name, ensure that DNS can resolve it.
+
+ ** SMTP server username and password
++
+Specifies the user name to access the email server and is required only if your SMTP server requires a user to log into the server. This is the same user name you use to log in to the application and access your email.
+
+ ** Notifications enabled
++
+*Yes* enables the notifications; *No* disables the notifications.
+
+ ** Sender's Email
++
+Specifies the email address that is used to send the notifications. This must be a valid email address in your organization.
+
+ ** Recipient's Email
++
+Specifies the email address or addresses of the person or people who will always receive the email. Separate multiple addresses with commas.
+
+ ** Email subject
++
+Specifies the subject for the notification.
+
+ ** Email signature
++
+Specifies the information that displays at the bottom of the email, for example, the department name.

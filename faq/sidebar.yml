@@ -1,0 +1,21 @@
+section: faq
+title: FAQ
+entries:
+    - title: General Questions
+      url: "/faq/faq-general-insight-questions.html"
+    - title: OnCommand Insight Licensing
+      url: "/faq/faq-insight-licensing.html"
+    - title: Configuration and Supported devices
+      url: "/faq/faq-configuration-and-supported-devices.html"
+    - title: Scale and Ease of Use
+      url: "/faq/faq-scale-and-ease-of-use.html"
+    - title: Performance troubleshooting
+      url: "/faq/faq-performance-troubleshooting.html"
+    - title: Managing your environment
+      url: "/faq/faq-environment-management.html"
+    - title: Integrating Insight with other tools
+      url: "/faq/faq-integrating-insight-and-third-party-tools.html"
+    - title: Data ONTAP Storage IOPS
+      url: "/faq/oci-faq-netapp-storage-iops.html"
+    - title: Anomaly detection
+      url: "/faq/faq-anomaly-detection.html"

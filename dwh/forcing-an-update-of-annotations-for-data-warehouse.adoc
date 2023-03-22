@@ -1,0 +1,25 @@
+---
+permalink: dwh/forcing-an-update-of-annotations-for-data-warehouse.html
+sidebar: sidebar
+keywords: 
+summary: 'You can initiate an update of annotations from OnCommand Insight to Data Warehouse.'
+---
+= Forcing an update of annotations for Data Warehouse
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can initiate an update of annotations from OnCommand Insight to Data Warehouse.
+
+== About this task
+
+You can update annotations using one of two options:
+
+* Including deleted objects: This includes data about devices that no longer exist such as hosts, storage arrays, or switches that were removed. This is needed if you want to build Data Warehouse data with historical data points.
+* Not including deleted objects: Choose this option if you want to exclude deleted objects.
+
+== Steps
+
+. Log in to the OnCommand Insight Portal as administrator `+https://hostname+`, where `hostname` is the name of the system where OnCommand Insight is installed.
+. Click on *Admin* > *Troubleshooting*. At the bottom of the page, click on *Advanced Troubleshooting*.
+. In the *Actions* tab, click *Update DWH Annotations (include deleted)*.

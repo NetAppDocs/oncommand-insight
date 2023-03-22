@@ -1,0 +1,50 @@
+---
+permalink: faq/faq-additional-information.html
+sidebar: sidebar
+keywords: redhat,Linux
+summary: 'Where can I find additional information?'
+---
+= Additional Information
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Where can I final additional information for OnCommand Insight?
+
+
+== Data source support
+
+Information on Insight-supported data sources can be found in the OnCommand Insight Data Source Support Matrix. You will be prompted to log in using your NetApp Support Site credentials.
+
+link:https://mysupport.netapp.com/api/content-service/staticcontents/content/products/oncommandinsight/DatasourceSupportMatrix_7.3.x.pdf[OnCommand Insight Data Source Support Matrix]
+Support matrix for the current supported versions of OnCommand Insight.
+
+== Support
+
+link:https://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool (IMT)]
+Describes devices and platforms supported by OnCommand Insight.
+
+link:https://mysupport.netapp.com/site/products/all/details/oncommand-insight/guideme-tab[NetApp Guided Problem Solving]
+Guided Problem Solving provides curated technical content, how-to resources, and troubleshooting steps that are organized by products, features, and tasks. Chat enables you to quickly resolve issues without opening a case or calling technical support.
+
+NetApp Knowledgebase
+Enables you to access technical articles for managing and administering products. A small subset of the Knowledgebase is available to the public. A registered user has access to a broader range of technical Knowledgebase articles.
+
+NetApp Global Services Contacts
+Contact your regional support center.
+
+== Community
+
+NetApp Storefront
+Download from an extensive collection of NetApp featured Report templates, Solution Packs, Data Collectors and Scripting examples for OnCommand Insight.
+
+OnCommand Insight Videos
+Watch videos on a variety of topics from our OnCommand Insight product video playlist.
+
+Insight Community Discussions
+Join the discussion of OnCommand Insight.
+
+== Other
+
+IBM Cognos Documentation
+Documentation for IBM Cognos on the web.

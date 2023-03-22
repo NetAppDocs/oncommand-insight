@@ -1,0 +1,9 @@
+---
+permalink: reporting/index.html
+sidebar: sidebar
+keywords:
+summary: ''
+---
+= Reporting Guide for OnCommand Insight 7.3.3 and Later
+:icons: font
+:imagesdir: ../media/

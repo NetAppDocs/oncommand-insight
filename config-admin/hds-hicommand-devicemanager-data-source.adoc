@@ -1,0 +1,181 @@
+---
+permalink: config-admin/hds-hicommand-devicemanager-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'The HDS HiCommand and HiCommand Lite data sources support the HiCommand Device Manager server. OnCommand Insight communicates with the HiCommand Device Manager server using the standard HiCommand API.'
+---
+= HDS HiCommand Device Manager data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The HDS HiCommand and HiCommand Lite data sources support the HiCommand Device Manager server. OnCommand Insight communicates with the HiCommand Device Manager server using the standard HiCommand API.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the HDS HiCommand and HiCommand Lite data sources. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+PDEV
+a|
+Disk
+a|
+Journal Pool
+a|
+Disk Group
+a|
+Storage Array
+a|
+Storage
+a|
+Port Controller
+a|
+Storage Node
+a|
+Array Group, DP Pool
+a|
+Storage Pool
+a|
+Logical Unit, LDEV
+a|
+Volume
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Inventory Requirements
+
+* IP address of the HiCommand Device Manager server
+* Read-only user name and password for the HiCommand Device Manager software and peer privileges
+* Port requirements: 2001 (http) or 2443 (https)
+* Validate access:
+ ** Log in to the HiCommand Device Manager software using peer user name and password.
+ ** Verify access to the HiCommand Device Manager API: `telnet <HiCommand Device_Manager_server_ip\> 2001`
+
+== Performance Requirements
+
+* HDS USP, USP V, and VSP performance
+ ** Performance Monitor must be licensed.
+ ** Monitoring switch must be enabled.
+ ** The Export Tool (`Export.exe`) must be copied to the OnCommand Insight Server.
+ ** The Export Tool version must match the microcode version of the target array.
+* HDS AMS performance
+ ** Performance Monitor needs to be licensed.
+ ** The Storage Navigator Modular 2 (SNM2) CLI utility needs to be installed on the OnCommand Insight Server.
+ ** You must register all AMS, WMS, SMS storage arrays whose performance needs to be acquired by OnCommand Insight by using the following command:
++
+`auunitaddauto.exe -ip``<IP address of Controller0>``IP address of Controller1>`
+
+ ** You must ensure that all the arrays that you registered are listed in the output of this command: `auunitref.exe`.
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+HiCommand Server
+a|
+IP address or fully-qualified domain name of the HiCommand Device Manager server
+a|
+User Name
+a|
+User name for the HiCommand Device Manager server.
+a|
+Password
+a|
+Password used for the HiCommand Device Manager server.
+a|
+Devices - VSP G1000 (R800), VSP (R700), HUS VM (HM700) and USP storages
+a|
+Device list for VSP G1000 (R800), VSP (R700), HUS VM (HM700) and USP storages. Each storage requires:
+
+* Array's IP: IP address of the storage
+* User Name: User name for the storage
+* Password: Password for the storage
+* Folder Containing Export Utility JAR Files: The folder containing the Export utility `.jar` files
+
+a|
+SNM2Devices - WMS/SMS/AMS Storages
+
+a|
+Device list for WMS/SMS/AMS storages. Each storage requires:
+
+* Array's IP: IP address of the storage
+* Storage Navigator CLI Path: SNM2 CLI path
+* Account Authentication Valid: Select to choose valid account authentication
+* User Name: User name for the storage
+* Password: Password for the storage
+
+a|
+Choose Tuning Manager for Performance
+a|
+Choose Tuning Manager for performance and override other performance options
+a|
+Tuning Manager Host
+a|
+IP address or fully-qualified domain name of tuning manager
+a|
+Tuning Manager Port
+a|
+Port used for Tuning Manager
+a|
+Tuning Manager Username
+a|
+User name for Tuning Manager
+a|
+Tuning Manager Password
+a|
+password for Tuning Manager
+|===
+
+[NOTE]
+====
+In HDS USP, USP V, and VSP, any disk can belong to more than one array group.
+====
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+HiCommand Server Port
+a|
+Port used for the HiCommand Device Manager
+a|
+HTTPs Enabled
+a|
+Select to enable HTTPs
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 40 minutes)
+a|
+Choose 'Exclude' or 'Include' to specify a list
+a|
+Specify whether to include or exclude the array list below when collecting data
+a|
+Exclude or Include Devices
+a|
+Comma-separated list of device ID's or array names to include or exclude
+a|
+Query Host Manager
+a|
+Select to query host manager
+a|
+HTTP Timeout (sec)
+a|
+HTTP connection timeout (default 60 seconds)
+a|
+Performance Polling Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+a|
+Export timeout in seconds
+a|
+Export utility timeout (default 300 seconds)
+|===

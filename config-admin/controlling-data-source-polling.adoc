@@ -1,0 +1,25 @@
+---
+permalink: config-admin/controlling-data-source-polling.html
+sidebar: sidebar
+keywords: 
+summary: 'After making a change to a data source, you might want it to poll immediately to check your changes, or you might want to postpone the data collection on a data source for one, three, or five days while you work on a problem.'
+---
+= Controlling data source polling
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+After making a change to a data source, you might want it to poll immediately to check your changes, or you might want to postpone the data collection on a data source for one, three, or five days while you work on a problem.
+
+== Steps
+
+. Click *Admin* and navigate to the data source list view
+. Select the data source for which you want to control the polling.
+. Click the data source name link.
+. On the data source summary page, check the information and click one of these two polling options:
+ ** *Poll again* to force the data source to collect data immediately.
+ ** *Postpone* and select the length of the polling delay from 3, 7, or 30 days.
+
+== After you finish
+
+If you postponed the data collection on a data source and want to restart collection, click *Resume* on the summary page.

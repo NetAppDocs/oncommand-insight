@@ -1,0 +1,86 @@
+---
+permalink: config-admin/creating-custom-annotations.html
+sidebar: sidebar
+keywords: 
+summary: 'Using annotations, you can add custom business-specific data that matches your business needs to assets. While OnCommand Insight provides a set of default annotations, you might find that you want to view data in other ways. The data in custom annotations supplements device data already collected, such as switch manufacturer, number of ports, and performance statistics. The data you add using annotations is not discovered by Insight.'
+---
+= Creating custom annotations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Using annotations, you can add custom business-specific data that matches your business needs to assets. While OnCommand Insight provides a set of default annotations, you might find that you want to view data in other ways. The data in custom annotations supplements device data already collected, such as switch manufacturer, number of ports, and performance statistics. The data you add using annotations is not discovered by Insight.
+
+== Steps
+
+. Log in to the Insight web UI.
+. Click *Manage* and select *Annotations*.
++
+The Annotations page displays the list of annotations.
+
+. Click image:../media/add-annotation-icon.gif[].
++
+The *Add Annotation* dialog box displays.
+
+. Enter a name and a description in the *Name* and *Description* fields.
++
+You can enter up to 255 characters in these fields.
++
+[NOTE]
+====
+Annotation names beginning or ending with a dot "." are not supported.
+====
+
+. Click *Type* and then select one of the following options that represents the type of data allowed in this annotation:
+ ** Boolean
++
+This creates a drop-down list with the choices of yes and no. For example, the "`Direct Attached`" annotation is Boolean.
+
+ ** Date
++
+This creates a field that holds a date. For example, if the annotation will be a date, select this.
+
+ ** List
++
+This can create either of the following:
+
+  *** A drop-down fixed list
++
+When others are assigning this annotation type on a device, they cannot add more values to the list.
+
+  *** A drop-down flexible list
++
+If you select the *Add new values on the fly* option when you create this list, when others are assigning this annotation type on a device, they can add more values to the list.
+
+ ** Number
++
+This creates a field where the user assigning the annotation can enter a number. For example, if the annotation type is "`Floor`", the user could select the Value Type of "`number`" and enter the floor number.
+
+ ** Text
++
+This creates a field that allows free-form text. For example, you might enter "`Language`" as the annotation type, select "`Text`" as the value type, and enter a language as a value.
+
++
+[NOTE]
+====
+After you set the type and save your changes, you cannot change the type of the annotation. If you need to change the type, you have to delete the annotation and create a new one.
+====
+. If you select **List**as the annotation type, do the following:
+ .. Select *Add new values on the fly* if you want the ability to add more values to the annotation when on an asset page, which creates a flexible list.
++
+For example, suppose you are on an asset page and the asset has the City annotation with the values Detroit, Tampa, and Boston. If you selected the *Add new values on the fly* option, you can add additional values to City like San Francisco and Chicago directly on the asset page instead of having to go to the Annotations page to add them. If you do not choose this option, you cannot add new annotation values when applying the annotation; this creates a fixed list.
+
+ .. Enter a value and a name in *Value* and *Description* fields.
+ .. Clickimage:../media/edit-annotation-dialog-box-add-icon.gif[] to add additional values.
+ .. Click image:../media/trash-can-query.gif[] to remove a value.
+. Click *Save*.
++
+Your annotations appear in the list on the Annotations page.
+
+== After you finish
+
+In the web UI, the annotation is available immediately for use. To use the annotation in the Java client, you must restart any running Java client before you can apply the annotation. If you are adding or changing annotation values, or deleting an annotation type, you do not need to restart the Java client.
+
+*Related information*
+
+link:importing-and-exporting-user-data.md#[Importing and Exporting user data]

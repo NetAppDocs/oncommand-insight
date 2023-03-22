@@ -1,0 +1,9 @@
+---
+permalink: howto/index.html
+sidebar: sidebar
+keywords:
+summary: ''
+---
+= "How To" Guides
+:icons: font
+:imagesdir: ../media/

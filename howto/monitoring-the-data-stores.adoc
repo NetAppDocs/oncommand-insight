@@ -1,0 +1,38 @@
+---
+permalink: howto/monitoring-the-data-stores.html
+sidebar: sidebar
+keywords: 
+summary: 'The Datastore landing page identifies over-subscription ratios, LUN and disk utilization, correlated resources, and shows policy breeches and violations that have occurred with the Datastore.'
+---
+= Monitoring the Datastores
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Datastore landing page identifies over-subscription ratios, LUN and disk utilization, correlated resources, and shows policy breeches and violations that have occurred with the Datastore.
+
+Use this landing page to identify problems with your virtual infrastructure. You can track capacity and capacity ratio trending to anticipate changes in your capacity.
+
+* *Summary*
++
+Use this section to understand:
+
+ ** Datastore capacity information including physical capacity and the overcommitted capacity.
+ ** The percentage of overcommitted capacity.
+ ** Metrics for latency, IOPS, and throughput.
+
+* *VMDKs*
++
+The VMDKs section shows virtual disk capacity and performance.
+
+* *Storage resources*
++
+This section shows the capacity used and the performance metrics for the internal volume correlated to the Datastore.
+
+* *Resources*
++
+Use this section to understand the VMDKs to LUNs correlation, and understand the storage to VM application path.
+
+* *Violations section*
++
+The violations section identifies any breaches to performance policies that have been set for the Datastore.

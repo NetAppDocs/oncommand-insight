@@ -1,0 +1,34 @@
+---
+permalink: config-admin/nas-path-for-vms.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight 7.3 supports NAS paths for Virtual Machines to storage shares. These paths are similar to NAS paths for hosts to storage shares. When a VM’s IP address is allowed to access a share, a NAS path is created.'
+---
+= NAS path for VMs
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight 7.3 supports NAS paths for Virtual Machines to storage shares. These paths are similar to NAS paths for hosts to storage shares. When a VM's IP address is allowed to access a share, a NAS path is created.
+
+NAS paths for virtual machines are displayed on the Internal Volumes landing page. This page contains a Guest Mounted Storage Resources widget which identifies the Internal Volumes that VMs have access to.
+
+* NAS paths are created when virtual machines have access to the backend shares. There is no acknowledgment of whether the virtual machines access the shares or not.
+* Correlation calculation is based on latencies and IOPs, and do not include cases where VMs have NAS paths to the backend storage.
+* User can query the share by initiator IP address, but querying by path is not supported.
+
+The Compute Resources table of the Internal Volume now also displays VM's with NAS paths. For each VM, CPU and memory, utilization and performance data is provided.
+
+== Data warehouse impact
+
+Changes to the Data Warehouse that are present after upgrading to OnCommand Insight 7.3 include the following:
+
+* The dwh_inventory.nas_logical table is removed from the Inventory data mart and replaced with a view.
++
+Any Insight 7.2.x reports containing the NFS path table are preserved.
+
+* The dwh_inventory.nas_cr_logical table is added to the Inventory data mart and includes the following:
+ ** Compute resource
+ ** Internal volume
+ ** Storage
+ ** NAS share

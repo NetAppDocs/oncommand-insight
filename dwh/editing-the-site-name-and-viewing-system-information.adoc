@@ -1,0 +1,23 @@
+---
+permalink: dwh/editing-the-site-name-and-viewing-system-information.html
+sidebar: sidebar
+keywords: 
+summary: 'You can view system, module, license, and Data Warehouse upgrade information.'
+---
+= Viewing system information
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can view system, module, license, and Data Warehouse upgrade information.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *System Information*.
+. On the *System* tab, review the system information and edit it the site name, if needed, by doing the following:
+ .. Click *Edit Site Name*
+ .. Enter the new site name and click *Save*.
+. To see application information (application name, module, version, and install date), click the *Application Info* tab.
+. To see license information (protocol, code, expiration date, and quantity), click the *Licenses* tab.
+. To see application upgrade information (application name, from date, to date, time, user, and file size), click *Upgrade History*.

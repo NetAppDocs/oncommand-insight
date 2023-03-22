@@ -1,0 +1,24 @@
+---
+permalink: dwh/data-warehouse-processes.html
+sidebar: sidebar
+keywords: 
+summary: 'Data Warehouse performs many types of processes.'
+---
+= Data Warehouse processes
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Data Warehouse performs many types of processes.
+
+* *ETL process*
++
+The Extract Transform and Load (ETL) process retrieves data from multiple OnCommand Insight databases, transforms the data, and saves it into the data mart. The Data Warehouse build process is an ETL process.
+
+* *Jobs*
++
+Data Warehouse performs and reports on jobs such as these: inventory, dimensions, capacity, port capacity, VM capacity, file system utilization, performance, capacity efficiency, licenses, history build, dynamic annotations, connector removal, skipped build, ASUP option, and maintenance jobs.
+
+* *Consolidation process*
++
+Data Warehouse supports the consolidation of multiple OnCommand Insight servers into the same Data Warehouse database. In many configurations it might happen that the same object is reported from multiple connectors (that is, the same switch exists in two OnCommand Insight instances). In that case, Data Warehouse consolidates the multiple objects into one (a primary connector is chosen and the object's data is taken from that connector only).

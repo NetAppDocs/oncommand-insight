@@ -1,0 +1,99 @@
+---
+permalink: config-admin/microsoft-hyper-v-wmi-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'For configuration, the Microsoft Hyper-V data source requires the IP address or the resolvable DNS name for the physical host \(hypervisor\). This data source uses Powershell \(previously used WMI\).'
+---
+= Microsoft Hyper-V data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+For configuration, the Microsoft Hyper-V data source requires the IP address or the resolvable DNS name for the physical host (hypervisor). This data source uses Powershell (previously used WMI).
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the Hyper-V data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Virtual hard Disk
+a|
+Virtual Disk
+a|
+Host
+a|
+Host
+a|
+Virtual Machine
+a|
+Virtual Machine
+a|
+Cluster Shared Volumes (CSV), Partition Volume
+a|
+Data Store
+a|
+Internet SCSI Device, Multi Path SCSI LUN
+a|
+LUN
+a|
+Fiber Channel Port
+a|
+Port
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+* The Hyper-V requires port 5985 opened for data collection and remote access/management.
+* IP address of Clustering group node
+* Local Administrator user & password on the hypervisor
+* Administrative-level user account
+* Port requirements: Port 135 and Dynamic TCP ports assigned 1024-65535 for Windows 2003 and older and 49152-65535 for Windows 2008.
+* DNS resolution must succeed, even if the data collector is pointed at only an IP address.
+* Each Hyper-V hypervisor must have "`Resource Metering`" turned on for every VM, on every host. This allows each hypervisor to have more data available for Cloud Insights on each guest. If this is not set, fewer performance metrics are acquired for each guest. More information on Resource metering can be found in the microsoft documentation:
++
+https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831661(v=ws.11)[Hyper-V Resource Metering Overview]
++
+https://docs.microsoft.com/en-us/powershell/module/hyper-v/enable-vmresourcemetering?view=win10-ps[Enable-VMResourceMetering]
+
+== Configuration
+
+|===
+| *Field*| *Description*
+a|
+Physical Host IP Address
+a|
+The IP address or fully-qualified domain name for the physical host (hypervisor)
+a|
+User Name
+a|
+Administrator user name doe the hypervisor
+a|
+Password
+a|
+Password for the hypervisor
+a|
+NT Domain
+a|
+The DNS name used by the nodes in the cluster
+|===
+
+== Advanced configuration
+
+|===
+| *Field*| *Description*
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 20 minutes)
+a|
+Connection Timeout (ms)
+a|
+Connection timeout (default 60000 ms)
+|===

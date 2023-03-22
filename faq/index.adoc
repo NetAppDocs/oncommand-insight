@@ -1,0 +1,9 @@
+---
+permalink: faq/index.html
+sidebar: sidebar
+keywords:
+summary: ''
+---
+= Frequently Asked Questions
+:icons: font
+:imagesdir: ../media/

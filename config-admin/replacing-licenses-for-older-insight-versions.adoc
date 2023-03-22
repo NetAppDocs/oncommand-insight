@@ -1,0 +1,14 @@
+---
+permalink: config-admin/replacing-licenses-for-older-insight-versions.html
+sidebar: sidebar
+keywords: 
+summary: 'If you have purchased a new Insight version that is not backward compatible with your older version of the product, you must replace the older licenses with the new licenses.'
+---
+= Replacing licenses for older Insight versions
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+If you have purchased a new Insight version that is not backward compatible with your older version of the product, you must replace the older licenses with the new licenses.
+
+When you are installing the new licenses, you must select the *Replace* operation before you save the license key text.

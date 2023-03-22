@@ -1,0 +1,46 @@
+---
+permalink: howto/configure-custom-environment-annotations.html
+sidebar: sidebar
+keywords: 
+summary: 'The Environment annotation is a custom annotation for associating assets with their respective environmental location or use, for example, Lab, R&D, Production, etc. By creating the Environment annotation and setting it onto these assets, you can easily find, filter and report on your Lab assets separately from your Production assets, for example.'
+---
+= Configure custom Environment annotations
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Environment annotation is a custom annotation for associating assets with their respective environmental location or use, for example, Lab, R&D, Production, etc. By creating the Environment annotation and setting it onto these assets, you can easily find, filter and report on your Lab assets separately from your Production assets, for example.
+
+Steps:
+
+* Select *Manage* > *Annotations*.
+* Click the *+Add* button at the top of the page.
+* For *Name*, enter '`*Environment*`'.
+* For *Description*, enter '`*Asset environment type*`'.
+* For *Type*, select *List*. New fields are displayed for you to create your list.
+* For now, leave *Add new assets on the fly* unchecked. You will check this on if you want to be able to add new Environments to the list of choices at the same time you are associating them with assets.
+* Enter the Name and Description of your first environment.
+* Click *+Add* and do the same for your other environments.
+* When finished, click *Save*.
+
+Example Environment annotations:
+
+|===
+| Name| Description
+a|
+Lab
+a|
+Lab
+a|
+Dev
+a|
+Development
+a|
+Prd
+a|
+Production
+a|
+...
+a|
+ 
+|===

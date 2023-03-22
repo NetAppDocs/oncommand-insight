@@ -1,0 +1,18 @@
+---
+permalink: config-admin/advanced-troubleshooting.html
+sidebar: sidebar
+keywords: Legacy portal
+summary: 'To complete your OnCommand Insight configuration, you must use the advanced troubleshooting tools. These tools run in the browser and are opened from the Admin \> Troubleshooting page.'
+---
+= Advanced troubleshooting
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+To complete your OnCommand Insight configuration, you must use the advanced troubleshooting tools. These tools run in the browser and are opened from the *Admin* > *Troubleshooting* page.
+
+To open the advanced troubleshooting tools in the browser, click the *Advanced Troubleshooting* link at the bottom of the page.
+
+The advanced troubleshooting tools allow you to view various reports, system information, installed packages, and logs, as well as perform numerous actions such as restarting the server or acquisition units, update DWH annotations, and import annotations.
+
+See the Advanced Troubleshooting page for all available options.

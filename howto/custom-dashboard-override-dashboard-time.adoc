@@ -1,0 +1,18 @@
+---
+permalink: howto/custom-dashboard-override-dashboard-time.html
+sidebar: sidebar
+keywords: 
+summary: 'You can override the main dashboard time frame setting in individual widgets. These widgets will display data based on their set time frame, not the dashboard time frame.'
+---
+= Overriding dashboard time for individual widgets
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can override the main dashboard time frame setting in individual widgets. These widgets will display data based on their set time frame, not the dashboard time frame.
+
+To override the dashboard time and force a widget to use a its own time frame, in the widget's edit mode set the *Override dashboard time* to *On*, and select a time frame for the widget. *Save* the widget to the dashboard.
+
+The widget will display its data according to the time frame set, regardless of the time frame you select on the dashboard itself.
+
+The time frame you set for one widget will not affect any other widgets on the dashboard.

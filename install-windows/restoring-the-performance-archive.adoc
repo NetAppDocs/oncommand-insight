@@ -1,0 +1,23 @@
+---
+permalink: install-windows/restoring-the-performance-archive.html
+sidebar: sidebar
+keywords: 
+summary: 'For systems that perform performance archiving, the upgrade process only restores seven days of archive data. You can restore the remaining archive data after the upgrade is competed.'
+---
+= Restoring the performance archive
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+For systems that perform performance archiving, the upgrade process only restores seven days of archive data. You can restore the remaining archive data after the upgrade is competed.
+
+== About this task
+
+To restore the performance archive, follow these steps.
+
+== Steps
+
+. On the toolbar, click *Admin* > *Troubleshooting*
+. In the Restore section, under *Load performance archive*, click *Load*.
++
+Archive loading is handled in the background. Loading the full archive can take a long time as each day's archived performance data is populated into Insight. The status of the archive loading is displayed in the archive section of this page.

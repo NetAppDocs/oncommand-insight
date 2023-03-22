@@ -1,0 +1,25 @@
+---
+permalink: dwh/managing-user-accounts.html
+sidebar: sidebar
+keywords: 
+summary: 'You can configure user accounts, user authentication, and user authorization from the Data Warehouse portal. Each user account is assigned a role with one of the following permission levels. The number of users is limited by the number of Reporting licenses attached to each role.'
+---
+= Managing user accounts
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can configure user accounts, user authentication, and user authorization from the Data Warehouse portal. Each user account is assigned a role with one of the following permission levels. The number of users is limited by the number of Reporting licenses attached to each role.
+
+== Steps
+
+. Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system where OnCommand Insight Data Warehouse is installed.
+. From the navigation pane on the left, click *User Management*.
++
+image::../media/user-admin-dwh.gif[]
+
+. Do one of the following:
+ ** To edit an existing user, select the row for the user and click *Edit*.
+ ** To change a user's password, select the row for the user and click *Change password*.
+ ** To delete a user, select the row for the user and click *Delete*
+. To activate or deactivate a user, select the row for the user and click *Activate* or *Deactivate*.

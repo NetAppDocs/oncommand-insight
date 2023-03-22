@@ -1,0 +1,9 @@
+---
+permalink: config-admin/index.html
+sidebar: sidebar
+keywords:
+summary: ''
+---
+= Configuration and Administration Guide
+:icons: font
+:imagesdir: ../media/

@@ -1,0 +1,118 @@
+---
+permalink: config-admin/emc-vnxe-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'The EMC VNXe data source provides inventory support for EMC VNXe and Unity unified storage arrays.'
+---
+= EMC VNXe data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The EMC VNXe data source provides inventory support for EMC VNXe and Unity unified storage arrays.
+
+This data source is CLI-based and requires that you install the Unisphere for VNXe CLI (uemcli.exe) on the acquisition unit that the VNXe data source resides on. uemcli.exe uses HTTPS as the transport protocol, so the acquisition unit must be able to initiate HTTPS connections to the VNXe/Unity arrays. You must have at least a read-only user for use by the data source.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the EMC VNXe data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Disk
+a|
+Disk
+a|
+Storage Array
+a|
+Storage
+a|
+Processor
+a|
+Storage Node
+a|
+Storage Pool
+a|
+Storage Pool
+a|
+General iSCSI Block info, VMWare VMFS
+a|
+Volume
+a|
+Shared Folder
+a|
+Internal Volume
+a|
+CIFS Share, NFS Share, Share from VMWare NFS datastore
+a|
+Share
+a|
+Replication Remote System
+a|
+Synchronization
+a|
+iSCSI Node
+a|
+iSCSI Target Node
+a|
+iSCSI Initiator
+a|
+iSCSI Target Initiator
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+The following are requirements to configure and use this data source:
+
+* The VNXe data collector is CLI based; you must install the Unisphere for VNXe CLI, (uemcli.exe) onto the acquisition unit where your VNXe data collector resides.
+* uemcli.exe uses HTTPS as the transport protocol, so the acquisition unit will need to be able to initiate HTTPS connections to the VNXe.
+* You must have at least a read-only user for use by the data source.
+* IP address of the managing Solutions enabler server.
+* HTTPS on Port 443 is required
+* The EMC VNXe data collector provides NAS and iSCSI support for inventory; fibre channel volumes will be discovered, but Insight does not report on FC mapping, masking, or storage ports.
+
+== Configuration
+
+|===
+| Field| Description
+a|
+VNXe Storage
+a|
+IP address or fully-qualified domain name of the VNXe device
+a|
+User Name
+a|
+User name for the VNXe device
+a|
+Password
+a|
+Password for the VNXe device
+a|
+Full path to the uemcli executable
+a|
+Full path to the `uemcli.exe` executable
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 40 minutes)
+a|
+VNXe CLI Port
+a|
+Port used for the VNXe CLI
+a|
+Inventory External Process Timeout (sec)
+a|
+External process timeout (default 1800 seconds)
+|===

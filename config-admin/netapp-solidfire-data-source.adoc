@@ -1,0 +1,114 @@
+---
+permalink: config-admin/netapp-solidfire-data-source.html
+sidebar: sidebar
+keywords: 
+summary: 'The NetApp SolidFire data source supports both iSCSI and Fibre Channel SolidFire configurations, for both inventory and performance collection.'
+---
+= NetApp SolidFire data source
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The NetApp SolidFire data source supports both iSCSI and Fibre Channel SolidFire configurations, for both inventory and performance collection.
+
+The SolidFire data source utilizes the SolidFire REST API. The acquisition unit where the data source resides needs to be able to initiate HTTPS connections to TCP port 443 on the SolidFire cluster management IP address. The data source needs credentials capable of making REST API queries on the SolidFire cluster.
+
+== Terminology
+
+OnCommand Insight acquires the following inventory information from the NetApp SolidFire data source. For each asset type acquired by Insight, the most common terminology used for this asset is shown. When viewing or troubleshooting this data source, keep the following terminology in mind:
+
+|===
+| Vendor/Model Term| Insight Term
+a|
+Drive
+a|
+Disk
+a|
+Cluster
+a|
+Storage
+a|
+Node
+a|
+Storage Node
+a|
+Volume
+a|
+Volume
+a|
+Fibre Channel Port
+a|
+Port
+a|
+Volume Access Group, LUN Assignment
+a|
+Volume Map
+a|
+iSCSI Session
+a|
+Volume Mask
+|===
+
+[NOTE]
+====
+These are common terminology mappings only and might not represent every case for this data source.
+====
+
+== Requirements
+
+The following are requirements for configuring this data source:
+
+* Management Virtual IP Address
+* Port 443
+
+== Configuration
+
+|===
+| Field| Description
+a|
+Management Virtual IP Address (MVIP)
+a|
+Management Virtual IP address of the SolidFire Cluster
+a|
+User Name
+a|
+Name used to log into the SolidFire cluster
+a|
+Password
+a|
+Password used to log into the SolidFire cluster
+|===
+
+== Advanced configuration
+
+|===
+| Field| Description
+a|
+Inventory Poll Interval (min)
+a|
+Interval between inventory polls (default 60 minutes)
+a|
+TCP Port
+a|
+TCP Port used to connect to SolidFire Server (default 443 )
+a|
+Connection Timeout (sec)
+a|
+Connection timeout (default 60 seconds)
+a|
+Performance Poll Interval (sec)
+a|
+Interval between performance polls (default 300 seconds)
+|===
+
+== Troubleshooting
+
+When SolidFire reports an error it is displayed in OnCommand Insight as follows:
+
+`An error message was received from a SolidFire device while trying to retrieve data. The call was <method> (<parameterString> ). The error message from the device was (check the device manual): <message>`
+
+Where:
+
+* The <method> is an HTTP method, such as GET or PUT.
+* The <parameterString> is a comma separated list of parameters that were included in the REST call.
+* The <message> is whatever the device returned as the error message.

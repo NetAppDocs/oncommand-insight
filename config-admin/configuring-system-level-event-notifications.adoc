@@ -1,0 +1,30 @@
+---
+permalink: config-admin/configuring-system-level-event-notifications.html
+sidebar: sidebar
+keywords: 
+summary: 'OnCommand Insight supports notifications for system-level events such as acquisition unit failures or data source errors. To receive notifications you must configure Insight to send email when one or more of these events occur.'
+---
+= Configuring system-level event notifications
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight supports notifications for system-level events such as acquisition unit failures or data source errors. To receive notifications you must configure Insight to send email when one or more of these events occur.
+
+== Before you begin
+
+You must have configured email recipients for receiving notifications in *Admin* > *Notifications* > *Sending Methods*.
+
+== Steps
+
+. Click *Admin* > *Notifications*.
+. Click *Events*.
+. In the *System Alert Events* Email section, select the severity level (*Warning and above* or *Critical*) for the notification, or choose *Do not send* if you do not wish to receive notifications of system-level events.
+. Click *Save*.
+. Click *Admin* > *System Alerts* to configure the alerts themselves.
+. To Add a new alert, click *+Add* and give the alert a unique *Name*. You can also click the right-side icon to *Edit* an existing alert.
+. Choose the *Event type* on which to alert, for example _Acquisition Unit Failure_.
+. Choose a *Snooze* interval to suppress notifications on duplicate events of the selected type for the selected time interval. If you select _Never_, you will receive repeat notifications once a minute until the event is no longer happening.
+. Choose a *Severity* (Warning or Critical) for the event notification.
+. Email notifications will be sent to the global email recipient list by default, or you can click the link provided to override the global list and send notifications to specific recipients.
+. Click Save to add the alert.
