@@ -1,0 +1,101 @@
+---
+sidebar: sidebar
+permalink: collector_hds_ops_center.html
+keywords: data collector, Hitachi Ops Center
+summary: Configuring HDS Ops Center data collector.
+---
+
+= Hitachi Ops Center data collector
+
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+
+[.lead] 
+
+This data collector uses Hitachi Ops Center's integrated suite of applications to access inventory and performance data of multiple storage devices. For inventory and capacity discovery, your Ops Center installation must include both the "Common Services" and "Administrator" components. For performance collection, you must additionally have "Analyzer" deployed.
+
+== Terminology 
+
+OnCommand Insight acquires the following inventory information from this data collector. For each asset type acquired, the most common terminology used for this asset is shown. When viewing or troubleshooting this data collector, keep the following terminology in mind:
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Vendor/Model Term|OnCommand Insight Term 
+|Storage Systems|Storage
+|Volume|Volume
+|Parity Groups|Storage Pool(RAID), Disk Groups
+|Disk|Disk
+|Storage Pool|Storage Pool(Thin, SNAP)
+|External Parity Groups|Storage Pool(Backend), Disk Groups
+|Port|Storage Node → Controller Node → Port
+|Host Groups|Volume Mapping and Masking
+|Volume Pairs|Storage Synchronization
+|===
+
+Note: These are common terminology mappings only and might not represent every case for this data collector. 
+
+== Inventory Requirements
+
+You must have the following in order to collect inventory data:
+
+* IP address or hostname of the Ops Center server hosting the "Common Services" component
+* Root/sysadmin user account and password that exist on all servers hosting Ops Center components. HDS did not implement REST API support for usage by LDAP/SSO users until Ops Center 10.8+
+
+
+== Performance requirements 
+
+The following requirements must be met in order to collect performance data:
+
+* The HDS Ops Center "Analyzer" module must be installed
+* Storage arrays must be feeding the Ops Center "Analyzer" module
+
+
+== Configuration
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Field|Description
+|Hitachi Ops Center IP Address |IP address or fully-qualified domain name of the Ops Center server hosting the "Common Services" component
+|User Name |User name for the Ops Center server. 
+|Password|Password used for the Ops Center server. 
+|===
+
+== Advanced configuration
+
+|===
+|Field|Description
+|Connection Type|HTTPS (port 443) is the default
+|Override TCP Port |Specify the port to use if not the default 
+|Inventory Poll Interval (min)|	Interval between inventory polls. The default is 40.  
+|Choose 'Exclude' or 'Include' to specify a list|Specify whether to include or exclude the array list below when collecting data.
+|Filter device List|Comma-separated list of device serial numbers to include or exclude
+|Performance Poll Interval (sec)|Interval between performance polls. The default is 300.
+|===
+
+////
+== Troubleshooting
+Some things to try if you encounter problems with this data collector:
+
+==== Inventory
+
+[cols=2*, options="header", cols"50,50"]
+|===
+|Problem:|Try this:
+|Error: Error message seen showing a IP/hostname and port number the collector is not set to use
+|This will be indicative that the collector is able to speak to Common Services, learns where Administrator and Analyzer are, 
+| and is subsequently having difficulty to speak to them. If a HTTP 40x error is observed, this likely means you are attempting to use a non root/sysadmin account
+| If a HTTP 5xx error is observed, that is likely a problem with the Ops Center module in question
+|===
+
+
+////
+
+Additional information may be found from the link:concept_requesting_support.html[Support] page or in the link:https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf[Data Collector Support Matrix].
+
