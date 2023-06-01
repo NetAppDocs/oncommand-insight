@@ -453,14 +453,18 @@ entries:
         - title: HDS HiCommand Device Manager data source
           url: "/config-admin/hds-hicommand-devicemanager-data-source.html"
           entries:
+          - title: HDS Ops Center
+            url: /collector_hds_ops_center.html
           - title: HDS Storage
             url: "/config-admin/hds-landing-page-terminology-storage.html"
           - title: HDS Storage Pool
             url: "/config-admin/hds-landing-page-terminology-storage-pool.html"
           - title: HDS Storage Node
             url: "/config-admin/hds-landing-page-terminology-storage-node.html"
+
         - title: HDS Ops Center
           url: /collector_hds_ops_center.html
+
         - title: HDS NAS (HNAS) data source
           url: "/config-admin/hds-hnas-data-source.html"
         - title: HP CommandView AE data source
