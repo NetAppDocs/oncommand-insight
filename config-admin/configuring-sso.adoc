@@ -10,9 +10,11 @@ summary: 'Single Sign-On \(SSO\) allows users in your organization to use OnComm
 :imagesdir: ../media/
 
 [.lead]
-Single Sign-On (SSO) allows users in your organization to use OnCommand Insight without needing a special account.
+Single Sign-On (SSO) allows users in your organization to use OnCommand Insight without needing a special account. 
 
 Administrators can configure the OnCommand Insight Server for *Single Sign-On* (SSO) access for users in their corporate domain. With SSO configured, any user with the domain email address can log into Insight using their corporate credentials. OnCommand Insight supports the OpenID Connect (OIDC) protocol for SSO.
+
+OnCommand Insights supports SSO with *Azure Active Directory*.
 
 [NOTE]
 ====
