@@ -14,11 +14,13 @@ Single Sign-On (SSO) allows users in your organization to use OnCommand Insight 
 
 Administrators can configure the OnCommand Insight Server for *Single Sign-On* (SSO) access for users in their corporate domain. With SSO configured, any user with the domain email address can log into Insight using their corporate credentials. OnCommand Insight supports the OpenID Connect (OIDC) protocol for SSO.
 
-OnCommand Insights supports SSO with *Azure Active Directory*.
+
 
 [NOTE]
 ====
 SSO is available for the Insight Server web-based UI only. SSO is not available for Data Warehouse, Reporting, or Java Client UI components.
+
+OnCommand Insights supports SSO with *Azure Active Directory* only.
 ====
 
 == Steps to Configure SSO
