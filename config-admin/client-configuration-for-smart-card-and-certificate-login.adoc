@@ -33,6 +33,7 @@ The following are the common client configuration requirements:
 * Modifying the IE browser (see http://militarycac.com/files/Making_AKO_work_with_Internet_Explorer_color.pdf)
 * Modifying the Firefox browser (see https://militarycac.com/firefox2.htm)
 
+////
 Additional configuration steps include the following:
 
 == Steps
@@ -52,3 +53,4 @@ Additional configuration steps include the following:
 
 +
 Similar steps are required to configure the Internet Explorer and Firefox browsers.
+////
