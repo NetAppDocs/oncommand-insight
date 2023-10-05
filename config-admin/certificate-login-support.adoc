@@ -13,7 +13,6 @@ OnCommand Insight supports use of Smart Cards (CAC) and certificates to authenti
 
 After configuring the system to support CAC and certificates, navigating to a new session of OnCommand Insight results in the browser displaying a native dialog providing the user with a list of personal certificates to choose from. These certificates are filtered based on the set of personal certificates that have been issued by CAs trusted by the OnCommand Insight server. Most often, there is a single choice. By default, Internet Explorer skips this dialog if there is only one choice.
 
-For the Java client, a custom dialog appears with all personal certificates, regardless of issuer.
 
 [NOTE]
 ====
