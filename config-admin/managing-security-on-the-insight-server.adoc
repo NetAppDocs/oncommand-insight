@@ -21,7 +21,10 @@ You use the `securityadmin` tool to manage security:
 == Steps
 
 . Perform a remote login to the Insight server.
-. Start the security admin tool in interactive mode: `securityadmin -i`
+. Start the security admin tool in interactive mode: 
+
+* Windows - `C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat -i`
+* Linux - `/bin/oci-securityadmin.sh -i`
 +
 The system requests login credentials.
 
