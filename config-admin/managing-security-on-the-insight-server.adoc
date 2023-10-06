@@ -50,7 +50,6 @@ Restore can be used to synchronize passwords and keys on multiple servers, for e
         -   Change the server encryption key on one server
         -   Create a backup of the vault
         -   Restore the vault backup to the second server
-+
 ====
 
  ** *Change Encryption Key*
@@ -74,7 +73,6 @@ Change password for the internal accounts that are used by Insight. The followin
   *** inventory
   *** root
 
-+
 [NOTE]
 ====
 Some accounts need to be synchronized when passwords are changed. For example, if you change the password for the 'acquisition' user on the server, you need to change the password for the 'acquisition' user on the LAU, RAU, and DWH to match. Also, when you change passwords, you should backup your new security configuration so that you can restore it after an upgrade or installation.
