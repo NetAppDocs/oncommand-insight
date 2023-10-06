@@ -91,4 +91,4 @@ This means that if your Active Directory administrators push your organization's
 
  ** Java and Mozilla Firefox have their own certificate stores.
 +
-If your system administrators do not automate ingesting the CA certificates into these applications' trusted certificates stores, using the Insight Java client or Firefox browser might continue to generate certificate warnings because of an untrusted certificate, even when the self-signed certificate has been replaced. Getting your organization's certificate chain installed into the trustore is an additional requirement.
+If your system administrators do not automate ingesting the CA certificates into these applications' trusted certificates stores, using the Firefox browser might continue to generate certificate warnings because of an untrusted certificate, even when the self-signed certificate has been replaced. Getting your organization's certificate chain installed into the trustore is an additional requirement.
