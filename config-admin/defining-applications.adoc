@@ -25,11 +25,7 @@ You can associate applications with the following assets: hosts, virtual machine
 . Click *Manage* and select *Applications*.
 +
 After you define an application, the Applications page displays the application's name, its priority, and, if applicable, the business entity associated with the application.
-+
-[NOTE]
-====
-If the anomaly detection engine is installed, the Applications Dashboard page also shows an Anomaly Score for the application. For more information about installing and configuring the anomaly detection engine, see the _OnCommand Insight Configuration and Administration Guide_.
-====
+
 
 . Click *Add*.
 +
