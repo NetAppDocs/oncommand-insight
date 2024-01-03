@@ -14,7 +14,7 @@ A typical installation of OnCommand Insight includes data acquisition and data w
 The major components of the Insight architecture are shown in the following diagram:
 
 //image::../media/oci-architecture-2022.gif[]
-image::../media/OCIArchitecture2024.png.png[]
+image::../media/OCIArchitecture2024.png[]
 
 * *OnCommand Insight Server*
 +
