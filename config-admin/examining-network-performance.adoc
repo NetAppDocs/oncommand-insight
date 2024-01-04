@@ -32,7 +32,6 @@ Insight Servers can have software firewalls installed. The "holes" that would ne
 * Remote Acquisition Units seeking to connect to the Insight server
 * OCI DWH servers with connectors to this Insight server.
 * Any programmatic interactions with the Insight REST API
-* Anomaly Detection Engine seeking to source Insight performance data for rendering anomaly information
 
 Our general recommendation for anyone looking to implement Insight server host-level firewalling is to allow HTTPS access to all corporate network IP blocks.
 
