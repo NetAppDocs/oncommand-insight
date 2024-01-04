@@ -23,8 +23,6 @@ The Autosupport package includes the following:
 * Backup location settings
 * Archive location settings
 * Notification settings
-* Anomaly detection scores and devices
-* Anomaly detection application settings
 * Users
 * Performance policies
 * Business entities and applications
