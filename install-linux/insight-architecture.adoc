@@ -33,7 +33,6 @@ An API allows the collection of data from external agents. Integration data can 
 +
 The HTML5 web-based user interface for Insight enables you to set up data sources and your monitoring environment, including policies, thresholds and alerts. You then use the web UIAsset Dashboard and asset pages to identify and research potential problems. You can create custom dashboards with a variety of widgets, each of which provides extensive flexibility in displaying, analyzing, and charting your data.
 
-
 * *Data Warehouse*
 +
 The OnCommand Insight Data Warehouse is a centralized repository that stores data from multiple Insight servers and transforms data into a common, multidimensional data model for querying and analysis.

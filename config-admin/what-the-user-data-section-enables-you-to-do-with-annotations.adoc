@@ -28,7 +28,7 @@ The Add Annotation dialog box displays.
  ** If the annotation type is text, type a value.
 . Click *Save*.
 +
-The annotation is assigned to the asset. You can later filter assets by annotation using a query. If you want to group assets by annotations, you must use the Java UI.
+The annotation is assigned to the asset. You can later filter assets by annotation using a query. 
 
 . If you want to change the value of the annotation after you assign it, click image:../media/change-annotation-value.gif[] and select a different value.
 +

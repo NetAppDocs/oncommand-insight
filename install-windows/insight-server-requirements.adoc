@@ -56,7 +56,7 @@ a|
 a|
 Operating system
 a|
-A computer running 64-bit Microsoft Windows Server 2012, 2012 R2, 2016, or 2019 with the latest service pack.
+A computer running 64-bit Microsoft Windows Server 2016, 2019, or 2022, with the latest service pack.
 
 The Resilient File System (ReFS) introduced with Windows Server 2012 is not compatible with OnCommand Insight. Windows installation of OnCommand Insight is only supported on the NTFS file system.
 
