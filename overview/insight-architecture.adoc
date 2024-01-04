@@ -13,7 +13,7 @@ A typical installation of OnCommand Insight includes data acquisition and data w
 
 The major components of the Insight architecture are shown in the following diagram:
 
-image::../media/oci-architecture-2022.gif[]
+image::../media/oci-architecture-2024.png[]
 
 * *OnCommand Insight Server*
 +
@@ -32,10 +32,6 @@ An API allows the collection of data from external agents. Integration data can 
 * *Web UI*
 +
 The HTML5 web-based user interface for Insight enables you to set up data sources and your monitoring environment, including policies, thresholds and alerts. You then use the web UIAsset Dashboard and asset pages to identify and research potential problems. You can create custom dashboards with a variety of widgets, each of which provides extensive flexibility in displaying, analyzing, and charting your data.
-
-* *Anomaly Detection*
-+
-Anomalies are performance change events in application infrastructure that do not conform to previously observed and expected patterns. Anomaly detection targets the infrastructure servicing an application, identifying changes in processing patterns and behaviors. These cyclical processing patterns include historical "ebbs and flows" in a workloads performance during hours of business operation and non-business operation.
 
 * *Data Warehouse*
 +
