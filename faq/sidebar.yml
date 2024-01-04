@@ -17,5 +17,4 @@ entries:
       url: "/faq/faq-integrating-insight-and-third-party-tools.html"
     - title: Data ONTAP Storage IOPS
       url: "/faq/oci-faq-netapp-storage-iops.html"
-    - title: Anomaly detection
-      url: "/faq/faq-anomaly-detection.html"
+
