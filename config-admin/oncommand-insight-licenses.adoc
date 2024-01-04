@@ -84,7 +84,7 @@ Application
 a|
 Yes
 a|
-No performance data or charts; no anomaly detection-related widgets
+No performance data or charts
 a|
 Virtual machine
 a|
