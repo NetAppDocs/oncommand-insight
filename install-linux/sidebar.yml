@@ -28,8 +28,7 @@ entries:
         url: "/install-linux/data-warehouse-server-requirements-linux.html"
       - title: Remote Acquisition Unit server requirements
         url: "/install-linux/remote-acquisition-unit-server-requirements.html"
-      - title: Anomaly detection requirements
-        url: "/install-linux/anomaly-detection-requirements.html"
+
       - title: Insight Java UI requirements
         url: "/install-linux/insight-java-ui-requirements.html"
       - title: Browsers supported by OnCommand Insight
@@ -48,8 +47,7 @@ entries:
         entries:
         - title: Validating the remote acquisition unit installation
           url: "/install-linux/validating-the-rau-installation.html"
-      - title: Installing the anomaly detection software
-        url: "/install-linux/installing-the-anomaly-detection-software.html"
+
       - title: Installing an Ethernet Monitoring Unit
         url: "/install-linux/installing-an-ethernet-monitoring-unit-linux.html"
       - title: Checking the installation
@@ -84,8 +82,7 @@ entries:
         url: "/install-linux/upgrading-data-warehouse.html"
       - title: Upgrading Remote Acquisition Unit software
         url: "/install-linux/upgrading-remote-acquisition-units.html"
-      - title: Upgrading the anomaly detection engine
-        url: "/install-linux/upgrading-the-anomaly-detection-engine.html"
+
       - title: Upgrading Ethernet Monitoring Unit software
         url: "/install-linux/upgrading-ethernet-monitoring-units.html"
       - title: Migrating from Windows to Linux
@@ -101,5 +98,4 @@ entries:
         url: "/install-linux/uninstalling-a-remote-acquisition-unit-rau.html"
       - title: Uninstalling an Ethernet Monitoring Unit
         url: "/install-linux/uninstalling-an-ethernet-monitoring-unit-emu-linux.html"
-      - title: Uninstalling the anomaly detection engine
-        url: "/install-linux/uninstalling-the-anomaly-detection-engine-linux.html"
+
