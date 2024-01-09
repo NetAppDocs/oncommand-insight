@@ -2,15 +2,14 @@
 permalink: install-windows/oncommand-insight-installation-instructions.html
 sidebar: sidebar
 keywords: 
-summary: 'Installation requires you to install several OnCommand Insight components, including Insight Server, Data Warehouse and Reporting, and Anomaly Detection.'
+summary: 'Installation requires you to install several OnCommand Insight components, including Insight Server, and Data Warehouse and Reporting.'
 ---
 = Insight installation instructions
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Installation requires you to install several OnCommand Insight components, including Insight Server, Data Warehouse and Reporting, and Anomaly Detection.
-
+Installation requires you to install several OnCommand Insight components, including Insight Server, and Data Warehouse and Reporting. 
 The installation includes the following major tasks:
 
 * Downloading the OnCommand Insight installer
