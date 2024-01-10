@@ -2,7 +2,7 @@
 permalink: install-windows/insight-server-requirements.html
 sidebar: sidebar
 keywords: redhat
-summary: 'A dedicated server is recommended. Do not install Insight on a server that has any other applications installed. Both physical and virtual servers are supported, provided that the product requirements are met.'
+summary: 'Installation of OnCommand Insight Server component.'
 ---
 = Insight Server requirements
 :icons: font
