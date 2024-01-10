@@ -2,7 +2,7 @@
 permalink: install-windows/insight-server-requirements.html
 sidebar: sidebar
 keywords: redhat
-summary: 'Installation of OnCommand Insight Server component.'
+summary: 'Requirements for installation of OnCommand Insight Server component.'
 ---
 = Insight Server requirements
 :icons: font
