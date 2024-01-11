@@ -18,7 +18,7 @@ You must have local administrator permissions to install the OnCommand Insight S
 Sizing for OnCommand Insight has multiple dependencies, such as data source type and size, number of assets in your environment, polling intervals, and more. The following sizing examples are guidelines only; they represent some of the environments in which Insight has been tested. Changing any of these or other factors in the environment can change the sizing requirements for Insight. These guidelines include disk space for up to 90 days of performance archive data.
 ====
 
-It is recommended to contact your Sales Engineer for detailed sizing guidance before installing or upgrading Insight.
+It is recommended to contact your Sales Engineer for detailed sizing guidance before installing or upgrading Insight. 
 
 *Examples:*
 
