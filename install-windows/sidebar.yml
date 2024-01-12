@@ -28,9 +28,6 @@ entries:
         url: "/install-windows/data-warehouse-and-reporting-server-requirements.html"
       - title: Remote Acquisition Unit server requirements
         url: "/install-windows/remote-acquisition-unit-server-requirements.html"
-
-      - title: Insight Java UI requirements
-        url: "/install-windows/insight-java-ui-requirements.html"
       - title: Browsers supported by OnCommand Insight
         url: "/install-windows/insight-browser-support.html"
     - title: Insight installation instructions
