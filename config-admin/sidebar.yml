@@ -34,8 +34,6 @@ entries:
           url: "/config-admin/editing-a-user-definition.html"
         - title: Deleting a user account
           url: "/config-admin/deleting-a-user-account.html"
-        - title: Configuring Single Sign-On (SSO)
-          url: "/config-admin/configuring-sso.html"
       - title: Setting a Login Warning Message
         url: "/config-admin/configuring-a-login-warning-message.html"
       - title: Insight Security
