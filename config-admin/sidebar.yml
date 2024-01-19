@@ -640,8 +640,7 @@ entries:
             url: "/config-admin/moving-mysql-data-using-the-command-line.html"
         - title: Forcing annotation updates
           url: "/config-admin/forcing-annotation-updates.html"
-        - title: Configuring Client settings
-          url: "/config-admin/configuring-client-settings.html"
+
         - title: Checking the status of server resources
           url: "/config-admin/checking-the-status-of-server-resources.html"
         - title: Finding ghost data sources
