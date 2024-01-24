@@ -17,7 +17,7 @@ To validate proper installation of the Remote Acquisition Unit, you can view the
 . Click *Acquisition Units*.
 . Verify that the new Remote Acquisition Unit was registered correctly and that it has a Connected status.
 +
-If it does not have a Connected status, tru restarting the service. Log into the Remote Acquisition Unit system and execute the following command:
+If it does not have a Connected status, try restarting the service. Log into the Remote Acquisition Unit system and execute the following command:
 +
  oci-service.sh restart acquisition
 +
