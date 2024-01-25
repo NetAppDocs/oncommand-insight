@@ -18,7 +18,6 @@ The Autosupport package includes the following:
 * Data sources and data source settings
 * Integration packs
 * Remote acquisition units
-* Ethernet monitoring units
 * ASUP/proxy settings
 * Backup location settings
 * Archive location settings

@@ -52,8 +52,6 @@ entries:
         - title: Validating the remote acquisition unit installation
           url: "/install-windows/validating-the-rau-installation.html"
 
-      - title: Installing an Ethernet Monitoring Unit
-        url: "/install-windows/installing-an-ethernet-monitoring-unit-linux.html"
       - title: Checking the installation
         url: "/install-windows/checking-the-installation.html"
         entries:

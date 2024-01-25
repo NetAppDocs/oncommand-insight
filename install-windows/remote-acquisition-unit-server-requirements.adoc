@@ -2,7 +2,7 @@
 permalink: install-windows/remote-acquisition-unit-server-requirements.html
 sidebar: sidebar
 keywords: redhat
-summary: 'You must install a Remote Acquisition Unit \(RAU\) to acquire information from SAN devices that are behind a firewall, at a remote site, on a private network, or in different network segments. Before you install the RAU, you should ensure that your environment meets RAU operating system, CPU, memory, and disk space requirements.'
+summary: 'You must install a Remote Acquisition Unit (RAU) to acquire information from SAN devices that are behind a firewall, at a remote site, on a private network, or in different network segments. Before you install the RAU, you should ensure that your environment meets RAU operating system, CPU, memory, and disk space requirements.'
 ---
 = Remote Acquisition Unit server requirements
 :icons: font
