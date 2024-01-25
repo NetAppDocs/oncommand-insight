@@ -29,8 +29,7 @@ entries:
       - title: Remote Acquisition Unit server requirements
         url: "/install-linux/remote-acquisition-unit-server-requirements.html"
 
-      - title: Insight Java UI requirements
-        url: "/install-linux/insight-java-ui-requirements.html"
+
       - title: Browsers supported by OnCommand Insight
         url: "/install-linux/insight-browser-support.html"
     - title: Insight installation instructions
@@ -48,8 +47,6 @@ entries:
         - title: Validating the remote acquisition unit installation
           url: "/install-linux/validating-the-rau-installation.html"
 
-      - title: Installing an Ethernet Monitoring Unit
-        url: "/install-linux/installing-an-ethernet-monitoring-unit-linux.html"
       - title: Checking the installation
         url: "/install-linux/checking-the-installation.html"
         entries:
@@ -83,8 +80,6 @@ entries:
       - title: Upgrading Remote Acquisition Unit software
         url: "/install-linux/upgrading-remote-acquisition-units.html"
 
-      - title: Upgrading Ethernet Monitoring Unit software
-        url: "/install-linux/upgrading-ethernet-monitoring-units.html"
       - title: Migrating from Windows to Linux
         url: "/install-linux/migrating-from-windows-to-linux.html"
     - title: Uninstalling OnCommand Insight
@@ -96,6 +91,5 @@ entries:
         url: "/install-linux/uninstalling-data-warehouse.html"
       - title: Uninstalling a Remote Acquisition Unit
         url: "/install-linux/uninstalling-a-remote-acquisition-unit-rau.html"
-      - title: Uninstalling an Ethernet Monitoring Unit
-        url: "/install-linux/uninstalling-an-ethernet-monitoring-unit-emu-linux.html"
+
 

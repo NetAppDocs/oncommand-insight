@@ -28,9 +28,6 @@ entries:
         url: "/install-windows/data-warehouse-and-reporting-server-requirements.html"
       - title: Remote Acquisition Unit server requirements
         url: "/install-windows/remote-acquisition-unit-server-requirements.html"
-
-      - title: Insight Java UI requirements
-        url: "/install-windows/insight-java-ui-requirements.html"
       - title: Browsers supported by OnCommand Insight
         url: "/install-windows/insight-browser-support.html"
     - title: Insight installation instructions
@@ -55,8 +52,6 @@ entries:
         - title: Validating the remote acquisition unit installation
           url: "/install-windows/validating-the-rau-installation.html"
 
-      - title: Installing an Ethernet Monitoring Unit
-        url: "/install-windows/installing-an-ethernet-monitoring-unit-linux.html"
       - title: Checking the installation
         url: "/install-windows/checking-the-installation.html"
         entries:
