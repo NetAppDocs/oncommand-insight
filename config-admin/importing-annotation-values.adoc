@@ -11,6 +11,7 @@ summary: 'If you maintain annotations on SAN objects \(such as storage, hosts, a
 [.lead]
 If you maintain annotations on SAN objects (such as storage, hosts, and virtual machines) in a CSV file, you can import that information into OnCommand Insight. You can import applications, business entities, or annotations such as tier and building.
 
+
 == About this task
 
 The following rules apply:
@@ -131,3 +132,7 @@ The following keywords are reserved and prevent users from specifying them as an
     Errors are generated if you attempt to import an annotation type using one of the reserved keywords. If you have created annotation names using these keywords, you must modify them so that the import utility tool can work correctly.
 +
 ====
+
+NOTE: The Annotation Import utility requires Java 8 or Java 11. Ensure that one of those is installed prior to running the import utility. It is recommended to use the latest OpenJDK 11.
+
+
