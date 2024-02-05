@@ -129,8 +129,7 @@ The following keywords are reserved and prevent users from specifying them as an
     -   Business_Unit
     -   Project
     Errors are generated if you attempt to import an annotation type using one of the reserved keywords. If you have created annotation names using these keywords, you must modify them so that the import utility tool can work correctly.
-+
 ====
-
++
 NOTE: The Annotation Import utility requires Java 8 or Java 11. Ensure that one of those is installed prior to running the import utility. It is recommended to use the latest OpenJDK 11.
 
