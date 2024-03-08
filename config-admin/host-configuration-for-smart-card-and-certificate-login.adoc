@@ -49,6 +49,8 @@ For the most up to date CAC and Certificate instructions, see the following Know
 Repeat this step for all intermediate certificates.
 
 . Specify the domain in LDAP to match this example.
+
+////
 . On the OnCommand Insight server, the `wildfly/standalone/configuration/standalone-full.xml` file needs to be modified by updating verify-client to "REQUESTED" in ``/subsystem=undertow/server=default-server/https-listener=default-https``to enable CAC. Run the appropriate command:
 +
 |===
@@ -63,5 +65,6 @@ a|
 /opt/netapp/oci/wildfly/bin/enableCACforRemoteEJB.sh
 |===
 After executing the script, wait until the reload of the wildfly server is complete before proceeding to the next step.
+////
 
 . Restart the server.

@@ -24,7 +24,7 @@ Ensuring annotations entered in OnCommand Insight are included in Data Warehouse
 +
 To do this, you can manually run the *Troubleshooting* > *Force Update of Annotations for Data Warehouse* option or wait until the next scheduled transient data run process. When you force the update of annotations, you force the OnCommand Insight server to calculate and place the transient data (such as annotation values) into database tables so that the Data Warehouse ETL process can read the data. The update of annotations data occurs automatically every fifteen minutes; however, you can force it to happen more frequently.
 
-* You then import annotations into Data Warehouse by using Data Warehouse**Annotations** option.
+* You then import annotations into Data Warehouse by using the Data Warehouse **Annotations** option.
 * If you want to include annotations in reports that you create by using the OnCommand Insight Reporting Portal report authoring tools, you must update the OnCommand Insight reporting metadata model.
 
 When you upgrade Data Warehouse, the annotations job runs automatically during the database restore process. The annotations job runs automatically also when WildFly starts up.

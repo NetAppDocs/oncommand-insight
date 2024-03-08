@@ -28,10 +28,6 @@ entries:
         url: "/install-windows/data-warehouse-and-reporting-server-requirements.html"
       - title: Remote Acquisition Unit server requirements
         url: "/install-windows/remote-acquisition-unit-server-requirements.html"
-      - title: Anomaly detection requirements
-        url: "/install-windows/anomaly-detection-requirements.html"
-      - title: Insight Java UI requirements
-        url: "/install-windows/insight-java-ui-requirements.html"
       - title: Browsers supported by OnCommand Insight
         url: "/install-windows/insight-browser-support.html"
     - title: Insight installation instructions
@@ -55,10 +51,7 @@ entries:
           url: "/install-windows/verifying-the-rau-service.html"
         - title: Validating the remote acquisition unit installation
           url: "/install-windows/validating-the-rau-installation.html"
-      - title: Installing the anomaly detection software
-        url: "/install-windows/installing-the-anomaly-detection-software.html"
-      - title: Installing an Ethernet Monitoring Unit
-        url: "/install-windows/installing-an-ethernet-monitoring-unit-linux.html"
+
       - title: Checking the installation
         url: "/install-windows/checking-the-installation.html"
         entries:
@@ -117,8 +110,7 @@ entries:
           url: "/install-windows/back-up-the-security-configuration.html"
         - title: Upgrading remote acquisition unit servers
           url: "/install-windows/upgrading-remote-acquisition-servers.html"
-        - title: Upgrading the anomaly detection engine
-          url: "/install-windows/upgrading-the-anomaly-detection-engine.html"
+
       - title: Completing post-upgrade tasks
         url: "/install-windows/completing-post-upgrade-tasks.html"
         entries:
@@ -155,5 +147,4 @@ entries:
         url: "/install-windows/uninstalling-the-data-warehouse-software.html"
       - title: Uninstalling the remote acquisition unit software
         url: "/install-windows/uninstalling-the-remote-acquisition-unit-software.html"
-      - title: Uninstalling the anomaly detection engine
-        url: "/install-windows/uninstalling-the-anomaly-detection-engine-linux.html"
+

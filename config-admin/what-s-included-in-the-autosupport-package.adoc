@@ -18,13 +18,10 @@ The Autosupport package includes the following:
 * Data sources and data source settings
 * Integration packs
 * Remote acquisition units
-* Ethernet monitoring units
 * ASUP/proxy settings
 * Backup location settings
 * Archive location settings
 * Notification settings
-* Anomaly detection scores and devices
-* Anomaly detection application settings
 * Users
 * Performance policies
 * Business entities and applications

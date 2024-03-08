@@ -20,11 +20,6 @@ You use the `securityadmin` tool to manage security:
 
 One scenario for updating the security configuration for the LAU, RAU is to update the 'acquisition' user password when the password for that user has been changed on the server. All of the RAUs, and the LAU use the same password as that of the server 'acquisition' user to communicate with the server.
 
-[NOTE]
-====
-
-====
-
 The 'acquisition' user only exists on the Insight server. The RAU or LAU logs in as that user when they connect to the server.
 
 Use the following steps to manage security options on an RAU:
@@ -32,7 +27,10 @@ Use the following steps to manage security options on an RAU:
 == Steps
 
 . Perform a remote login to the server running the RAU
-. Start the security admin tool in interactive mode: `Windows - C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat -i``Linux - /bin/oci-securityadmin.sh -i`
+. Start the security admin tool in interactive mode: 
+
+* Windows - `C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat -i`
+* Linux - `/bin/oci-securityadmin.sh -i`
 +
 The system requests login credentials.
 
@@ -57,7 +55,6 @@ Restore can be used to synchronize passwords and keys on multiple servers, for e
         -   Change encryption keys on one server
         -   Create a backup of the vault
         -   Restore the vault backup to the second server
-+
 ====
 
  ** *Change Encryption Keys*
