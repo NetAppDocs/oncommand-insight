@@ -32,22 +32,7 @@ a|
 Status of local acquisition unit
 a|
 "`OK`" if number of concurrently-polling data sources is less than 75% of execution pool maximum (default maximum is 30).     "`Acquisition is busy`" if usage is greater than 75%, and recommends increasing polling interval or adding more remote acquisition units.
-a|
-Anomaly Detection Engine
-a|
-Engine capacity
-a|
-Count of applications monitored for anomaly detection
-a|
-Number and percentage of applications being monitored out of 48 possible applications.
-a|
-Anomaly Detection Engine
-a|
-Engine status
-a|
-Status of anomaly detection engine
-a|
-"`OK`" if no errors are detected, otherwise displays information about any error found.     See the `prelert.log` file for more information.
+
 a|
 DWH
 a|
@@ -200,10 +185,4 @@ a|
 "`OK`" if weekly backup is enabled, otherwise displays "`Weekly backup is not enabled`".
 |===
 +
-[NOTE]
-====
-If the anomaly detection engine displays an error, see the `prelert.log` file in the following location for more information:
-    -   Windows: `disk drive:\install directory\SANscreen\Wildfly\Standalone\Logs`
-    -   Linux: `/var/log/netapp/oci/wildfly/`
-+
-====
+

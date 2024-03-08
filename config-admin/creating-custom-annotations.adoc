@@ -77,9 +77,7 @@ For example, suppose you are on an asset page and the asset has the City annotat
 +
 Your annotations appear in the list on the Annotations page.
 
-== After you finish
 
-In the web UI, the annotation is available immediately for use. To use the annotation in the Java client, you must restart any running Java client before you can apply the annotation. If you are adding or changing annotation values, or deleting an annotation type, you do not need to restart the Java client.
 
 *Related information*
 

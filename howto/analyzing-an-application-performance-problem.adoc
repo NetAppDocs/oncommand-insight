@@ -28,7 +28,7 @@ When performing a search, you can add an object descriptor before the object nam
 
 . When you select "Exchange 2016" from the search results, the system displays the Application landing page.
 +
-image::../media/exch2016-land-page.gif[]
+image::../media/exch2016-land-page.png[]
 +
 In the Application landing page, the following information is of interest:
 

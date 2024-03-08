@@ -34,8 +34,6 @@ entries:
           url: "/config-admin/editing-a-user-definition.html"
         - title: Deleting a user account
           url: "/config-admin/deleting-a-user-account.html"
-        - title: Configuring Single Sign-On (SSO)
-          url: "/config-admin/configuring-sso.html"
       - title: Setting a Login Warning Message
         url: "/config-admin/configuring-a-login-warning-message.html"
       - title: Insight Security
@@ -140,17 +138,7 @@ entries:
           url: "/config-admin/editing-applications.html"
         - title: Deleting applications
           url: "/config-admin/deleting-an-application.html"
-      - title: How OnCommand Insight anomaly detection works
-        url: "/config-admin/about-oncommand-insight-anomaly-detection.html"
-        entries:
-        - title: Configuring applications for anomaly detection
-          url: "/config-admin/configuring-anomaly-detection-for-applications.html"
-        - title: Using the Anomalies section
-          url: "/config-admin/what-the-anomalies-section-enables-you-to-do.html"
-        - title: Anomaly detection monitoring status
-          url: "/config-admin/anomaly-detection-monitoring-status.html"
-        - title: Creating an application performance policy
-          url: "/config-admin/creating-an-application-performance-policy.html"
+
       - title: Your business entities hierarchy
         url: "/config-admin/your-business-entities-hierarchy.html"
         entries:
@@ -300,17 +288,7 @@ entries:
       url: "/config-admin/importing-ca-signed-ssl-certificates-for-cognos-and-dwh-insight-7-3-10-and-later.html"
     - title: Importing SSL certificates
       url: "/config-admin/importing-an-ssl-certificate.html"
-    - title: How OnCommand Insight anomaly detection works
-      url: "/config-admin/about-oncommand-insight-anomaly-detection.html"
-      entries:
-      - title: Configuring applications for anomaly detection
-        url: "/config-admin/configuring-anomaly-detection-for-applications.html"
-      - title: Using the Anomalies section
-        url: "/config-admin/what-the-anomalies-section-enables-you-to-do.html"
-      - title: Anomaly detection monitoring status
-        url: "/config-admin/anomaly-detection-monitoring-status.html"
-      - title: Creating an application performance policy
-        url: "/config-admin/creating-an-application-performance-policy.html"
+
     - title: Your business entities hierarchy
       url: "/config-admin/your-business-entities-hierarchy.html"
       entries:
@@ -665,8 +643,7 @@ entries:
             url: "/config-admin/moving-mysql-data-using-the-command-line.html"
         - title: Forcing annotation updates
           url: "/config-admin/forcing-annotation-updates.html"
-        - title: Configuring Client settings
-          url: "/config-admin/configuring-client-settings.html"
+
         - title: Checking the status of server resources
           url: "/config-admin/checking-the-status-of-server-resources.html"
         - title: Finding ghost data sources
@@ -718,11 +695,7 @@ entries:
               url: "/config-admin/what-the-user-data-section-enables-you-to-do-with-business-entities.html"
             - title: Using the User Data section to assign or modify annotations
               url: "/config-admin/what-the-user-data-section-enables-you-to-do-with-annotations.html"
-          - title: Anomalies
-            url: "/config-admin/anomalies.html"
-            entries:
-            - title: Using the Anomalies section
-              url: "/config-admin/what-the-anomalies-section-enables-you-to-do.html"
+
           - title: Expert view
             url: "/config-admin/expert-view.html"
             entries:

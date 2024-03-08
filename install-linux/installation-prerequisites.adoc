@@ -20,6 +20,4 @@ Before installing OnCommand Insight, ensure that you have the following:
 The current product might consume additional hardware resources (due to enhanced OnCommand Insight product functionality) that were not consumed with earlier versions of the OnCommand Insight product.
 
 * A deployment plan that includes the hardware and network configurations for the OnCommand Insight Server, Data Warehouse and Reporting, and remote acquisition units.
-* Java 8 for the OnCommand Insight Java UI.
-+
-NOTE: OnCommand Insight includes a paid Oracle license for Java SE 8. Customers do not have to buy any additional Java SE 8 licenses. This license covers use of Java SE 8 with all OCI components. Please refer to the link:legal-notices.html[Notices] page for specific details.
+
