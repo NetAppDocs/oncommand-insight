@@ -32,4 +32,8 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[^]
 
 Notice files provide information about third-party copyright and licenses used in NetApp software.
 
-https://library.netapp.com/ecm/ecm_download_file/ECMLP2683210[Notice for OnCommand Insight 7.3^]
+//https://library.netapp.com/ecm/ecm_download_file/ECMLP2683210[Notice for OnCommand Insight 7.3.15^]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2887138[Notice for OnCommand Insight 7.3.15^]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2882721[Notice for OnCommand Insight 7.3.14^]
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2881199[Notice for OnCommand Insight 7.3.13^]
