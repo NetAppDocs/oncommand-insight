@@ -106,8 +106,8 @@ entries:
           entries:
           - title: Preserving custom Cognos settings during a Data Warehouse upgrade
             url: "/install-windows/preserving-custom-settings-when-upgrading-data-warehouse.html"
-        - title: Backing up the security configuration
-          url: "/install-windows/back-up-the-security-configuration.html"
+ #       - title: Backing up the security configuration
+ #         url: "/install-windows/back-up-the-security-configuration.html"
         - title: Upgrading remote acquisition unit servers
           url: "/install-windows/upgrading-remote-acquisition-servers.html"
 
