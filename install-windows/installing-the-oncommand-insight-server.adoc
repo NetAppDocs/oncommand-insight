@@ -65,3 +65,17 @@ Port used internally by the PC where the OnCommand Insight Server is running, to
 The installation should take approximately 20 minutes, depending on the applications installed.
 
 . Click *Finish*.
+
+
+== Synchronize Server with DWH and RAU
+
+IMPORTANT: After installing the Remote Acquisition Unit and/or the Data Warehouse, you *must* synchronize the RAU/DWH with the OnCommand Insight Server. Follow the steps as noted below:
+
+link:install-windows/installing-a-remote-acquisition-unit-rau.html#synchronize-server-and-rau[Synchronize Server and RAU (Windows)]
+
+link:install-windows/installing-the-oncommand-insight-data-warehouse-and-reporting.html#synchronize-server-and-dwh[Synchronize Server and DWH (Windows)]
+
+link:install-linux/installing-a-remote-acquisition-unit-rau-linux.html#synchronize-server-and-rau[Synchronize Server and RAU (Linux)]
+
+link:install-linux/installing-oncommand-insight-data-warehouse-linux.html#synchronize-server-and-dwh[Synchronize Server and DWH (Linux)]
+

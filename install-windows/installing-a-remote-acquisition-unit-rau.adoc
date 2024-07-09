@@ -42,3 +42,23 @@ Wait for the installation to complete. This should take approximately 5 to 10 mi
 == After you finish
 
 When the installation is complete, a final window appears. Click the *Start Remote Acquisition Service* box to start the RAU, and click *Finish* to end this operation.
+
+== Synchronize Server and RAU
+
+IMPORTANT: After installing the Remote Acquisition Unit, you *must* synchronize the RAU with the OnCommand Insight Server. Follow these steps:
+
+. On the OnCommand Insight Server system, start the *SecurityAdmin* tool in interactive mode
++
+ securityadmin -i
+ 
+. Change the password for the _acquisition_ user for both Server and Local Acquisition Unit (LAU) to a password of your choice. *Make note of this password* as you will require it below. 
+
+. Restart the server/LAU.
+
+. On the Remote Acquisition Unit (RAU) system, start the *SecurityAdmin* tool in interactive mode. You will need the password you noted from step 2 above.
++
+ securityadmin -i
+ 
+. Change the password for the _acquisition_ user to the password used in step 2.
+
+. Restart the RAU.

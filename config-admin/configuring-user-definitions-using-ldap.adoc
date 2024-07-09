@@ -29,9 +29,9 @@ LDAP users display along with the locally defined users in the *Admin* > menu:Se
 . On the Insight toolbar, click *Admin*.
 . Click *Setup*.
 . Click the *Users* tab.
-. Scroll to the LDAP section, as shown here.
-+
-image::../media/ldap-setup.gif[]
+. Scroll to the LDAP section.
+
+//image::../media/ldap-setup.gif[]
 
 . Click *Enable LDAP* to allow the LDAP user authentication and authorization.
 . Fill in the fields:
