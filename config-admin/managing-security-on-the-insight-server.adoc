@@ -47,7 +47,6 @@ Restore can be used to synchronize passwords and keys on multiple servers, for e
         -   Change the server encryption key on one server
         -   Create a backup of the vault
         -   Restore the vault backup to the second server
-+
 ====
 
  ** *Change Encryption Key*
