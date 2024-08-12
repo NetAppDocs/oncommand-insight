@@ -1,0 +1,558 @@
+---
+permalink: config-admin/securityadmin-tool.html
+sidebar: sidebar
+keywords: SecurityAdmin, security, password, keystore, truststore, trustore, 
+summary: 'OnCommand Insight's SecurityAdmin Tool includes features that allow Insight environments to operate with enhanced security, including encryption, password hashing, and the ability to change internal user passwords and key pairs that encrypt and decrypt passwords. '
+---
+
+= Insight Security
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+OnCommand Insight provides features that allow Insight environments to operate with enhanced security. These features include encryption, password hashing, and the ability to change internal user passwords and key pairs that encrypt and decrypt passwords. You can manage these features on all servers in the Insight environment using the SecurityAdmin Tool.
+
+== What is the SecurityAdmin Tool?
+
+The security admin tool supports making changes to the contents of the vaults as well as making coordinated changes to the OnCommand Insight installation.
+
+The tool provides both *interactive* and *command line* modes.
+
+Many SecurityAdmin Tool operations change the contents of the vault and also make changes to the installation, ensuring that the vault and the installation remain in sync.
+
+For example,
+
+* when you change an Insight user password, the user's entry in the sanscreen.users table will be updated with the new hash.
+* when you change a mySQL user's password, the appropriate SQL statement will be executed to update the user's password in the mySQL instance.
+
+In some situations, there will be multiple changes made to the installation:
+
+* when you modify the dwh mySQL user, in addition to updating the password in the mySQL database, multiple registry entries for ODBC will be updated as well.
+
+In the following sections the term "coordinated changes" is used to describe these changes.
+
+== Execution Modes
+
+* Normal/Default Operation - SANscreen Server Service must be running
++
+For the default execution mode, the SecurityAdmin Tool requires that the *SANscreen Server service* is running. The server is used for authentication, and many coordinated changes to the installation are made by making calls to the server.
+
+* Direct Operation - SANscreen Server Service may be running or stopped.
++
+When run on an OCI Server or DWH installation, the tool may also be run in "direct" mode.  In this mode authentication and coordinated changes are performed using the database.  The Server service is not used.
++
+Operation is the same as normal mode with the following exceptions:
++
+* Authentication is supported only for non-domain admin users.  (Users whose password and roles are in the database, not LDAP).
+* The "replace keys" operation is not supported.
+* The re-encryption step of vault restore is skipped.
+
+
+* Recovery Mode
+The tool may also be run even when access to both the server and the database is not possible (for example because the root password in the vault is incorrect).
++
+When run in this mode, authentication is not possible and, hence, no operation with a coordinated change to the installation may be performed.
++
+Recovery mode may be used to:
++
+* determine which vault entries are wrong (using the verify operation)
+* replace the incorrect root password with the correct value. (This does not change the password.  The user must enter the current password.)
+
+NOTE: If the root password in the vault is incorrect and the password is not known and there is no backup of the vault with the correct root password, the installation cannot be recovered using the SecurityAdmin Tool. 
+The only way to recover the installation is to reset the mySQL instance's password following the procedure documented at https://dev.mysql.com/doc/refman/8.4/en/resetting-permissions.html.  After performing the reset procedure, use the correct-stored-password operation to enter the new password into the vault.
+
+== Commands
+
+=== Unrestricted Commands
+
+Unrestricted commands make any coordinated changes to the installation (except trust stores). Unrestricted commands may be performed without user authentication.
+
+[cols="25a,75a"]
+|===
+
+|Command|Description
+
+|backup-vault	
+|Create a zip file containing the vault.  The relative path to the vault files will match the vaults path relative to the installation root.
+
+* wildfly/standalone/configuration/vault/*
+* acq/conf/vault/*
+
+|check-for-default-keys
+|Check to see if the vault's keys match those of the default vault used in pre-7.3.16 instances.
+|correct-stored-password
+|Replace an (incorrect) password stored in the vault with the correct password known to the user.
+
+This may be used when the vault and installation are not consistent. *Note that it does not change the actual password in the installation.*
+
+||change-trust-store-password
+Change the password used for a trust-store and store the new password in the vault.  The trust-store's current password must be "known".
+
+|verify-keystore
+|check whether the values in the vault are correct:
+
+* for OCI users, does the hash of the password match the value in the database
+* for mySQL users, can a database connection be made
+* for keystores, can the keystore be loaded and its keys (if any) read
+
+|list-keys
+|list the entries in the vault (without showing the stored value)
+|===
+
+
+=== Restricted Commands 
+
+Authentication is required for any non-hidden command which makes coordinated changes to the installation:
+
+[cols="25a,75a"]
+|===
+
+|Command|Description
+
+|restore-vault-backup
+|Replaces the current vault with the vault contained in the specified vault backup file. 
+
+Performs all the coordinated actions to update the installation to match the passwords in the restored vault:
+
+* update the OCI communication user passwords
+* update the mySQL user passwords, including root
+* for each keystore, if the keystore password is "known", update the keystore using the passwords from the restored vault.
+
+When run in normal mode, also reads each encrypted value from the instance, decrypts it using the current vault's encryption service, re-encrypts it using the restored vault's encryption service, and stores the re-encrypted value.
+
+|synchronize-with-vault
+|Performs all the coordinated actions to update the installation to match the user passwords in the restored vault:
+
+* updates the OCI communication user passwords
+* updates the mySQL user passwords, including root
+
+|change-password
+|Changes the password in the vault and performs the coordinated actions.
+|replace-keys
+|Create a new empty vault (which will have different keys than the existing vault).  Then copy the entries from the current vault to the new vault.  Then reads each encrypted value from the instance, decrypt it using the current vault's encryption service, re-encrypt it using the restored vault's encryption service, and store the re-encrypted value.
+|===
+
+
+=== Hidden Commands
+
+The SA tool provides the following commands which do not require authentication but do make coordinated changes to the installation.
+
+[cols="25a,75a"]
+|===
+
+|list-keys	
+upgrade (server)
+|If user hasn't authenticated, authenticate using the _internal account and password in the current vault.  Then replace the current vault with the vault in the backup file and perform the coordinated actions.
+|upgrade (acquisition)
+|Replace the current vault with the vault in the backup file and perform the coordinated actions.
+|===
+
+////
+== Coordinated Actions
+
+=== Server Vault
+
+_internal	update password hash for user in database
+acquisition	
+update password hash for user in database
+
+if acquisition vault is present, also update the entry in the acquisition vault
+
+dwh_internal	update password hash for user in database
+cognos_admin	
+update password hash for user in database
+
+if DWH and windows, update SANscreen/cognos/analytics/configuration/SANscreenAP.properties to set the cognos.admin property to the password.
+
+root	execute SQL to update the user password in mySQL instance
+inventory	execute SQL to update the user password in mySQL instance
+dwh	
+execute SQL to update the user password in mySQL instance
+
+if DWH and windows, update the windows registry to set the following ODBC related entries to the new password:
+
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_capacity\PWD
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_capacity_efficiency\PWD
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_fs_util\PWD
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_inventory\PWD
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_performance\PWD
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_ports\PWD
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_sa\PWD
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_cloud_cost\PWD
+dwhuser	execute SQL to update the user password in mySQL instance
+hosts	execute SQL to update the user password in mySQL instance
+keystore_password	rewrite the keystore with the new password - wildfly/standalone/configuration/server.keystore
+truststore_password	rewrite the keystore with the new password - wildfly/standalone/configuration/server.trustore
+key_password	rewrite the keystore with the new password - wildfly/standalone/configuration/sso.jks
+cognos_archive	none
+Acquisition Vault
+acquisition	none
+truststore_password	rewrite the keystore with the new password (if it exists) - acq/conf/cert/client.keystore
+////
+
+
+
+
+
+
+== Running the Security Admin Tool - Command Line
+
+The syntax to run the SA tool in command line mode is:
+
+----
+securityadmin [-s | -au] [-db] [-lu <user> [-lp <password>]] <additional-options>
+ 
+where
+ 
+-s                      selects server vault
+-au                     selects acquisition vault
+ 
+-db                     selects direct operation mode
+ 
+-lu <user>              user for authentication
+-lp <password>          password for authentication
+<addition-options>      specifies command and command arguments as described below
+----
+
+Notes:
+
+* The "-i" option may not be present on the command line (as this selects interactive mode).
+* for the "-s" and "-au" options:
+** "-s" is not allowed on an RAU
+** "-au" is not allowed on DWH
+** if neither is present, then
+*** the server vault is selected on Server, DWH, and Dual
+*** the acquisition vault is selected on RAU
+* The -lu and -lp options are used for user authentication. 
+** If <user> is specified and <password> is not, then user will be prompted for the password. 
+** If <user> is not supplied and authentication is required, then the user will be prompted for both <user> and <password>.
+
+=== Commands:
+
+[cols="25a,75a"]
+|===
+
+|Command|Usage
+
+|correct-stored-password	
+|
+----
+securityadmin [-s \| -au] [-db] -pt <key> [<value>]
+ 
+ where
+ 
+-pt             specifies the command ("put")
+<key>           is the key
+<value>         is the value.  If not present, user will be prompted for value
+----
+
+|backup-vault	
+|
+----
+securityadmin [-s \| -au] [-db] -b [<backup-dir>]
+ 
+where
+ 
+-b              specified command
+<backup-dir>    is the output directory.  If not present, default location of SANscreen/backup/vault is used
+                The backup file will be named ServerSecurityBackup-yyyy-MM-dd-HH-mm.zip
+----
+
+|backup-vault	
+|
+----
+securityadmin [-s \| -au] [-db] -ub <backup-file>
+ 
+where
+ 
+-ub             specified command ("upgrade-backup")
+<backup-file>   The location to write the backup file
+----
+
+|list-keys	
+|
+----
+securityadmin [-s \| -au] [-db] -l
+ 
+where
+ 
+-l              specified command
+----
+
+|check-keys	
+|
+----
+securityadmin [-s \| -au] [-db] -ck
+ 
+where
+ 
+-ck             specified command
+ 
+exit code:
+  1     error
+  2     default key(s)
+  3     unique keys
+----
+
+|verify-keystore (server)	
+|
+----
+securityadmin [-s] [-db] -v
+ 
+where
+ 
+-v              specified command
+----
+
+|upgrade	
+|
+----
+securityadmin [-s \| -au] [-db] [-lu <user>] [-lp <password>] -u
+ 
+where
+ 
+-u              specified command
+ 
+For server vault, if -lu is not present, then authentication will be performed for <user> =_internal and <password> = _internal's password from vault. 
+For acquisition vault, if -lu is not present, then no authentication will be attempted
+----
+
+|replace-keys	
+|
+----
+securityadmin [-s \| -au] [-db] [-lu <user>] [-lp <password>] -rk
+ 
+where
+ 
+-rk              specified command
+----
+
+|restore-vault-backup	
+|
+----
+securityadmin [-s \| -au] [-db] [-lu <user>] [-lp <password>] -r <backup-file>
+ 
+where
+ 
+-r               specified command
+<backup-file>    the backup file location
+----
+
+
+|change-password (server)	
+|
+----
+securityadmin [-s] [-db] [-lu <user>] [-lp <password>] -up -un <user> -p [<password>] [-sh]
+ 
+where
+ 
+-up             specified command ("update-password")
+-un <user>        entry ("user") name to update
+-p <password> new password.  If <password not supplied, user will be prompted.
+-sh             for mySQL user, use strong hash
+----
+
+|change-password for acquisition user (acquisition)	
+|
+----
+securityadmin [-au] [-db] [-lu <user>] [-lp <password>] -up -p [<password>]
+ 
+where
+ 
+-up             specified command ("update-password")
+-p <password> new password.  If <password not supplied, user will be prompted.
+----
+
+|change-password for truststore-_password  (acquisition)	
+|
+----
+securityadmin [-au] [-db] [-lu <user>] [-lp <password>] -utp -p [<password>]
+ 
+where
+ 
+-utp            specified command ("update-truststore-password")
+-p <password> new password.  If <password not supplied, user will be prompted.
+----
+
+|synchronize-with-vault (server)	
+|
+----
+securityadmin [-s] [-db] [-lu <user>] [-lp <password>] -sv <backup-file>
+ 
+where
+ 
+-sv              specified command
+----
+|===
+
+
+
+== Running the Security Admin Tool - Interactive Mode
+
+=== Interactive - Main Menu
+To run the SA tool in interactive mode, enter the following command:
+
+ securityadmin -i
+
+On a server or dual install, SecurityAdmin will prompt the user to select either the server or local acquisition unit.
+
+Server and Acquisition Unit nodes Detected!  Select the node whose security needs to be re-configured:
+
+----
+1 - Server
+ 
+2 - Local Acquisition Unit
+ 
+9 - Exit
+ 
+Enter your choice:
+----
+
+On DWH, "Server" is automatically selected.  On a remote AU, "Acquisition Unit" will automatically be selected.
+
+=== Interactive - Server: Root password recovery
+
+In Server mode, the SecurityAdmin Tool will first check that the stored root password is correct.  If not, the tool will display the root password recovery screen.
+
+----
+ERROR: Database is not accessible
+ 
+1 - Enter root password
+ 
+2 - Get root password from vault backup
+ 
+9 - Exit
+ 
+Enter your choice:
+----
+
+If option 1 is selected, the user will be prompted for the correct password.
+
+ Enter password (blank = don't change)
+
+ Enter correct password for 'root':
+
+If the correct password is entered, the following will be displayed.
+
+ Password verified.  Vault updated
+
+Pressing enter will display the server unrestricted menu.
+
+If the wrong password is entered, the following will be displayed
+
+ Password verification failed - Access denied for user 'root'@'localhost' (using password: YES)
+
+Pressing enter will return to the recovery menu.
+
+If option 2 is selected, the user will be prompted to provide the name of a backup file from which to read the correct password:
+
+ Enter Backup File Location:
+
+If the password from the backup is correct, the following will be displayed.
+
+ Password verified.  Vault updated
+
+Pressing enter will display the server unrestricted menu.
+
+If the password in the backup is incorrect, the following will be displayed
+
+ Password verification failed - Access denied for user 'root'@'localhost' (using password: YES)
+
+Pressing enter will return to the recovery menu.
+
+=== Interactive - Server: Correct Password
+
+The "Correct Password" action is used to change the password stored in the vault so that it matches the actual password required by the installation.  This command is useful in situations where a change to the installation has been made by something other than the securityadmin tool.  Examples include:
+
+* The password for a SQL user was modified by direct access to mySQL.
+* A keystore is replaced or a keystore's password is changed using keytool.
+* An OCI database has been restored and that database has different passwords for the internal users
+
+"Correct Password" will first prompt the user to select which password to store the correct value.
+
+----
+Replace incorrect stored password with correct password.  (Does not change the required password)
+Select User:  (Enter 'b' to go Back)
+ 
+1 - _internal
+ 
+2 - acquisition
+ 
+3 - cognos_admin
+ 
+4 - cognos keystore
+ 
+5 - dwh
+ 
+6 - dwh_internal
+ 
+7 - dwhuser
+ 
+8 - hosts
+ 
+9 - inventory
+ 
+10 - sso keystore
+ 
+11 - server keystore
+ 
+12 - root
+ 
+13 - server truststore
+ 
+14 - AU truststore
+ 
+Enter your choice:
+----
+
+After selecting which entry to correct, the user is prompted for how they wish to provide the value.
+
+----
+1 - Enter {user} password
+ 
+2 - Get {user} password from vault backup
+ 
+9 - Exit
+ 
+Enter your choice:
+----
+
+If option 1 is selected, the user will be prompted for the correct password.
+
+ Enter password (blank = don't change)
+ 
+ Enter correct password for '{user}':
+
+If the correct password is entered, the following will be displayed.
+
+ Password verified.  Vault updated
+
+Pressing enter will return to the server unrestricted menu.
+
+If the wrong password is entered, the following will be displayed
+
+ Password verification failed - {additional information}
+ Vault entry not updated.
+
+Pressing enter will return to the server unrestricted menu.
+
+If option 2 is selected, the user will be prompted to provide the name of a backup file from which to read the correct password:
+
+ Enter Backup File Location:
+
+If the password from the backup is correct, the following will be displayed.
+
+ Password verified.  Vault updated
+
+Pressing enter will display the server unrestricted menu.
+
+If the password in the backup is incorrect, the following will be displayed
+
+ Password verification failed - {additional information}
+ Vault entry not updated.
+
+Pressing enter will display the server unrestricted menu.
+
+===
+
+
