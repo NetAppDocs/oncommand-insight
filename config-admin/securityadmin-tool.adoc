@@ -553,6 +553,231 @@ If the password in the backup is incorrect, the following will be displayed
 
 Pressing enter will display the server unrestricted menu.
 
-===
+=== Interactive - Server: Verify Vault Contents
+
+Verify Vault Contents will check whether the vault has keys which match the default vault distributed with earlier OCI versions and will check whether each value in the vault matches the installation.  
+
+The possible results for each key are:
+
+|===
+|OK |The vault value is correct
+|Not Checked |The value cannot be checked against the installation
+|BAD |The value does not match the installation
+|Missing |An expected entry is missing.
+|===
+
+----
+Encryption keys secure: unique, non-default encryption keys detected
+ 
+             cognos_admin: OK
+                    hosts: OK
+             dwh_internal: OK
+                inventory: OK
+                  dwhuser: OK
+        keystore_password: OK
+                      dwh: OK
+      truststore_password: OK
+                     root: OK
+                _internal: OK
+          cognos_internal: Not Checked
+             key_password: OK
+              acquisition: OK
+           cognos_archive: Not Checked
+ cognos_keystore_password: Missing
+ 
+ 
+Press enter to continue
+----
+
+=== Interactive - Server: Backup
+Backup will prompt for the directory into which the backup zip file should be stored.  The directory must already exist, and the file name will be ServerSecurityBackup-yyyy-mm-dd-hh-mm.zip.
+
+----
+Enter backup directory location [C:\Program Files\SANscreen\backup\vault] :
+ 
+Backup Succeeded!   Backup File: C:\Program Files\SANscreen\backup\vault\ServerSecurityBackup-2024-08-09-12-02.zip
+----
+
+=== Interactive - Server: Login
+The login action is used to authenticate a user and gain access to operations which modify the installation.  The user must have admin privileges.  When running with the server, any admin user may be used; when running in direct mode, the user must be a local user rather than an LDAP user.
+
+----
+Authenticating via server. Enter user and password
+ 
+UserName: admin
+ 
+Password:
+----
+
+or
+
+----
+Authenticating via database.  Enter local user and password.
+ 
+UserName: admin
+ 
+Password:
+----
+
+If the password is correct and the user is an admin user, the restricted menu will be displayed.
+
+If the password is incorrect, the following will be displayed:
+
+----
+Authenticating via database.  Enter local user and password.
+ 
+UserName: admin
+ 
+Password:
+ 
+Login Failed!
+----
+
+If the user is not an admin, the following will be displayed:
+
+----
+Authenticating via server. Enter user and password
+ 
+UserName: user
+ 
+Password:
+ 
+User 'user' does not have 'admin' role!
+----
+
+
+=== Interactive - Server: Restricted Menu
+Once the user logs in, the tool displays the Restricted Menu.
+
+----
+Logged in as: admin
+Select Action:
+ 
+2 - Change Password
+ 
+3 - Verify Vault Contents
+ 
+4 - Backup
+ 
+5 - Restore
+ 
+6 - Change Encryption Keys
+ 
+7 - Fix installation to match vault
+ 
+9 - Exit
+ 
+Enter your choice:
+----
+
+=== Interactive - Server: Change Password
+The "Change Password" action is used to change an installation password to a new value.
+
+"Change Password" will first prompt the user to select which password to change.
+
+----
+Change Password
+Select User:  (Enter 'b' to go Back)
+ 
+1 - _internal
+ 
+2 - acquisition
+ 
+3 - cognos_admin
+ 
+4 - cognos keystore
+ 
+5 - dwh
+ 
+6 - dwh_internal
+ 
+7 - dwhuser
+ 
+8 - hosts
+ 
+9 - inventory
+ 
+10 - sso keystore
+ 
+11 - server keystore
+ 
+12 - root
+ 
+13 - server truststore
+ 
+14 - AU truststore
+ 
+Enter your choice:
+----
+
+After selecting which entry to correct, if the user is a mySQL user, the user will be asked whether to strong hashing for the password
+
+----
+MySQL supports SHA-1 and SHA-256 password hashes. SHA-256 is stronger but requires all clients use SSL connections
+ 
+Use strong password hash? (Y/n): y
+----
+
+Next, the user is prompted for the new password.
+
+----
+New Password for '{user}':
+If the password is empty, the operation is cancelled.
+
+Password is empty - cancelling operation
+----
+
+If a non-empty password is entered, the user is prompted to confirm the password.
+
+----
+New Password for '{user}':
+ 
+Confirm New Password for '{user}':
+ 
+Password successfully updated for 'dwhuser'!
+----
+
+If the change is unsuccessful, the error or exception will be displayed.
+
+
+=== Interactive - Server: Restore
+
+
+=== Interactive - Server: Change Encryption Keys
+
+The Change Encryption Keys action will replace the encryption key used to encrypt the vault entries and replace the encryption key used for the vault's encryption service.  Because the encryption service's key is changed, encrypted values in the database will be re-encrypted; they will be read, decrypted with the current key, encrypted with the new key, and saved back to the database.
+
+This action is not supported in direct mode as the server provides the re-encryption operation for some database content.
+
+----
+Replace encryption key with new key and update encrypted database values
+ 
+Confirm (y/N): y
+ 
+Change Encryption Keys succeeded! Restart 'Server' Service!
+----
+
+=== Interactive - Server: Fix Installation
+
+The Fix Installation action will update the installation.  All installation passwords that are changeable via the securityadmin tool, except root, will be set to the passwords in the vault.
+
+* The OCI internal users' passwords will be updated.
+* mySQL users' passwords, except root, will be updated.
+* The keystores' passwords will be updated.
+
+----
+Fix installation - update installation passwords to match values in vault
+ 
+Confirm:  (y/N): y
+ 
+Installation update succeeded! Restart 'Server' Service.
+----
+
+The action will stop at the first unsuccessful update and display the error or exception.
+
+
+
+
+
 
 
