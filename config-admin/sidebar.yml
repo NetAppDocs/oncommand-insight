@@ -89,8 +89,8 @@ entries:
 #      - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight 7.3.5
 #          to 7.3.9)
 #        url: "/config-admin/importing-ca-signed-ssl-certificates-for-cognos-and-dwh-insight-7-3-5-to-7-3-9.html"
-      - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight 7.3.10
-          and later)
+#      - title: Importing CA-signed SSL certificates for Cognos and DWH (Insight 7.3.10
+#         and later)
 #        url: "/config-admin/importing-ca-signed-ssl-certificates-for-cognos-and-dwh-insight-7-3-10-and-later.html"
       - title: Importing SSL certificates
         url: "/config-admin/importing-an-ssl-certificate.html"
