@@ -37,7 +37,8 @@ You must have admin privileges to perform this procedure.
 . Create backups of the `..\SANScreen\cognos\analytics\configuration` and `..\SANScreen\cognos\analytics\temp\cam\freshness` folders.
 . Generate a Certificate Encryption Request from Cognos. In an Admin CMD window, run:
  .. cd `“\Program Files\sanscreen\cognos\analytics\bin”`
- .. `ThirdPartyCertificateTool.bat -java:local -c -e -p NoPassWordSet -a RSA -r c:\temp\encryptRequest.csr -d “CN=server.domain.com,O=NETAPP,C=US” -H “server.domain.com” -I “ipaddress”`. Note: here -H and -I are to add subjectAltNames like dns and ipaddress.
+ .. `ThirdPartyCertificateTool.bat -java:local -c -e -p <password> -a RSA -r c:\temp\encryptRequest.csr -d “CN=server.domain.com,O=NETAPP,C=US” -H “server.domain.com” -I “ipaddress”`. Note: here -H and -I are to add subjectAltNames like dns and ipaddress.
+  .. For <password>, use the password from the _/SANscreen/bin/cognos_info.dat_ file.
 . Open the `c:\temp\encryptRequest.csr` file and copy the generated content.
 . Input the encryptRequest.csr content and generate certificate using CA signing portal.
 . Download the chain certificates by including root certificate by using PKCS7 format
@@ -69,7 +70,8 @@ This will download fqdn.p7b file
  .. Restart Cognos
 . Export the latest Cognos certificate into cognos.crt using the Admin CMD prompt:
  .. cd "`C:\Program Files\SANscreen"
- .. java\bin\keytool.exe -exportcert -file c:\temp\cognos.crt -keystore cognos\analytics\configuration\certs\CAMKeystore -storetype PKCS12 -storepass NoPassWordSet -alias encryption
+ .. java\bin\keytool.exe -exportcert -file c:\temp\cognos.crt -keystore cognos\analytics\configuration\certs\CAMKeystore -storetype PKCS12 -storepass <password> -alias encryption
+  .. For <password>, use the password from the _/SANscreen/bin/cognos_info.dat_ file.
 . Back up the DWH server trustore at``..\SANscreen\wildfly\standalone\configuration\server.trustore``
 . Import the "`c:\temp\cognos.crt`" into DWH trustore to establish SSL communication between Cognos and DWH, using the Admin CMD prompt window.
  .. cd "`C:\Program Files\SANscreen"
