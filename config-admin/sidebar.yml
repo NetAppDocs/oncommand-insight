@@ -37,7 +37,8 @@ entries:
       - title: Setting a Login Warning Message
         url: "/config-admin/configuring-a-login-warning-message.html"
       - title: Insight Security
-        url: "/config-admin/security-management.html"
+#        url: "/config-admin/security-management.html"
+        url: "/config-admin/securityadmin-tool.html"
         entries:
         - title: Managing security on the Insight server
           url: "/config-admin/managing-security-on-the-insight-server.html"

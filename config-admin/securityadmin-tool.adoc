@@ -147,48 +147,62 @@ upgrade (server)
 |Replace the current vault with the vault in the backup file and perform the coordinated actions.
 |===
 
-////
+
+
+
+
+
+
 == Coordinated Actions
 
 === Server Vault
 
-_internal	update password hash for user in database
-acquisition	
-update password hash for user in database
+[cols="25a,75a"]
+|===
+|_internal	|update password hash for user in database
+|acquisition	
+|update password hash for user in database
 
 if acquisition vault is present, also update the entry in the acquisition vault
 
-dwh_internal	update password hash for user in database
-cognos_admin	
-update password hash for user in database
+|dwh_internal	|update password hash for user in database
+|cognos_admin	
+|update password hash for user in database
 
 if DWH and windows, update SANscreen/cognos/analytics/configuration/SANscreenAP.properties to set the cognos.admin property to the password.
 
-root	execute SQL to update the user password in mySQL instance
-inventory	execute SQL to update the user password in mySQL instance
-dwh	
-execute SQL to update the user password in mySQL instance
+|root	|execute SQL to update the user password in mySQL instance
+|inventory	|execute SQL to update the user password in mySQL instance
+|dwh	
+|execute SQL to update the user password in mySQL instance
 
 if DWH and windows, update the windows registry to set the following ODBC related entries to the new password:
 
-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_capacity\PWD
-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_capacity_efficiency\PWD
-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_fs_util\PWD
-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_inventory\PWD
-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_performance\PWD
-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_ports\PWD
-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_sa\PWD
-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_cloud_cost\PWD
-dwhuser	execute SQL to update the user password in mySQL instance
-hosts	execute SQL to update the user password in mySQL instance
-keystore_password	rewrite the keystore with the new password - wildfly/standalone/configuration/server.keystore
-truststore_password	rewrite the keystore with the new password - wildfly/standalone/configuration/server.trustore
-key_password	rewrite the keystore with the new password - wildfly/standalone/configuration/sso.jks
-cognos_archive	none
-Acquisition Vault
-acquisition	none
-truststore_password	rewrite the keystore with the new password (if it exists) - acq/conf/cert/client.keystore
-////
+* HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_capacity\PWD
+* HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_capacity_efficiency\PWD
+* HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_fs_util\PWD
+* HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_inventory\PWD
+* HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_performance\PWD
+* HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_ports\PWD
+* HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_sa\PWD
+* HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_cloud_cost\PWD
+
+|dwhuser	|execute SQL to update the user password in mySQL instance
+|hosts	|execute SQL to update the user password in mySQL instance
+|keystore_password	|rewrite the keystore with the new password - wildfly/standalone/configuration/server.keystore
+|truststore_password	|rewrite the keystore with the new password - wildfly/standalone/configuration/server.trustore
+|key_password	|rewrite the keystore with the new password - wildfly/standalone/configuration/sso.jks
+|cognos_archive	|none
+|===
+
+=== Acquisition Vault
+
+[cols="25a,75a"]
+|===
+|acquisition	|none
+|truststore_password	|rewrite the keystore with the new password (if it exists) - acq/conf/cert/client.keystore
+|===
+
 
 
 
