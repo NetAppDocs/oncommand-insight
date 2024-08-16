@@ -36,7 +36,7 @@ entries:
           url: "/config-admin/deleting-a-user-account.html"
       - title: Setting a Login Warning Message
         url: "/config-admin/configuring-a-login-warning-message.html"
-      - title: Insight Security (SecurityAdmin Tool)
+      - title: Insight Security (SecurityAdmin Tool) 
         url: "/config-admin/securityadmin-tool.html"
         entries:
         - title: Managing security on the Insight server
