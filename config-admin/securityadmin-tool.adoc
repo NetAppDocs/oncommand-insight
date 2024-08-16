@@ -1,16 +1,16 @@
 ---
-permalink: config-admin/security-management.html
+permalink: config-admin/securityadmin-tool.html
 sidebar: sidebar
 keywords: SecurityAdmin, security, password, keystore, truststore, trustore, 
 summary: OnCommand Insight's SecurityAdmin Tool includes features that allow Insight environments to operate with enhanced security, including encryption, password hashing, and the ability to change internal user passwords and key pairs that encrypt and decrypt passwords.
 ---
 
-= Insight Security
+= SecurityAdmin Tool
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-OnCommand Insight provides features that allow Insight environments to operate with enhanced security. These features include encryption, password hashing, and the ability to change internal user passwords and key pairs that encrypt and decrypt passwords. You can manage these features on all servers in the Insight environment using the SecurityAdmin Tool.
+OnCommand Insight provides features that allow Insight environments to operate with enhanced security. These features include encryption, password hashing, and the ability to change internal user passwords and key pairs that encrypt and decrypt passwords. You can manage these features on all servers in the Insight environment using the *SecurityAdmin Tool*.
 
 == What is the SecurityAdmin Tool?
 
