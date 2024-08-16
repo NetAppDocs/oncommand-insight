@@ -55,8 +55,6 @@ entries:
             url: "/config-admin/changing-passwords-in-the-server-connection-configuration-ui.html"
           - title: Changing the dwh password using the ODBC Administration tool
             url: "/config-admin/changing-the-dwh-password-using-the-odbc-administration-tool.html"
-        - title: Security Notes
-          url: "/config-admin/security-management.html"
       - title: Smart Card and certificate login support
         url: "/config-admin/certificate-login-support.html"
         entries:
