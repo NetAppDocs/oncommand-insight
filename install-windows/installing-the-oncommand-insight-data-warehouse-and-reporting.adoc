@@ -29,7 +29,7 @@ Please note the following before installing or upgrading.
  ** [NOTE]
 ====
 The Db2 user name as well as the Windows login name have the following restrictions:
-* Valid characters are: 'A' through 'Z'; 'a' through 'z'; '0' through '9'; '#'; '@'; '_'; '!'; ' '('; ')'; '{'; '}'; '-'; and '.'.
+* Valid characters are: 'A' through 'Z'; 'a' through 'z'; '0' through '9'; '@'; '_'; '!'; ' '('; ')'; '{'; '}'; '-'; and '.'.
 * If using the special characters '!'; ' '('; ')'; '{'; '}'; '-'; and '.' you must use all uppercase letters for the user name.
 * The first character in the string must be an alphabetic character, @, #, or $; it cannot be a number or the letter sequences _SYS_, _DBM_, or _IBM_
 * It cannot exceed 128 bytes in length.
