@@ -67,6 +67,7 @@ A computer running a licensed version of one of the following, that is running n
 
 A licensed version ensures that dependencies required by the installation are resolved automatically by the operating system.
 
+
 You must uninstall MariaDB before installing Insight.
 
 [NOTE]
