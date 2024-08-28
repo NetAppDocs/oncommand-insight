@@ -22,12 +22,12 @@ Many SecurityAdmin Tool operations change the contents of the vault and also mak
 
 For example,
 
-* when you change an Insight user password, the user's entry in the sanscreen.users table will be updated with the new hash.
-* when you change a mySQL user's password, the appropriate SQL statement will be executed to update the user's password in the mySQL instance.
+* When you change an Insight user password, the user's entry in the sanscreen.users table will be updated with the new hash.
+* When you change a mySQL user's password, the appropriate SQL statement will be executed to update the user's password in the mySQL instance.
 
 In some situations, there will be multiple changes made to the installation:
 
-* when you modify the dwh mySQL user, in addition to updating the password in the mySQL database, multiple registry entries for ODBC will be updated as well.
+* When you modify the dwh mySQL user, in addition to updating the password in the mySQL database, multiple registry entries for ODBC will be updated as well.
 
 In the following sections the term "coordinated changes" is used to describe these changes.
 
@@ -85,8 +85,8 @@ Unrestricted commands make any coordinated changes to the installation (except t
 
 This may be used when the vault and installation are not consistent. *Note that it does not change the actual password in the installation.*
 
-||change-trust-store-password
-Change the password used for a trust-store and store the new password in the vault.  The trust-store's current password must be "known".
+|change-trust-store-password
+|Change the password used for a trust-store and store the new password in the vault.  The trust-store's current password must be "known".
 
 |verify-keystore
 |check whether the values in the vault are correct:
@@ -159,24 +159,24 @@ upgrade (server)
 
 [cols="25a,75a"]
 |===
-|_internal	|update password hash for user in database
+|_internal	|Update password hash for user in database
 |acquisition	
-|update password hash for user in database
+|Update password hash for user in database
 
-if acquisition vault is present, also update the entry in the acquisition vault
+If acquisition vault is present, also update the entry in the acquisition vault
 
-|dwh_internal	|update password hash for user in database
+|dwh_internal	|Update password hash for user in database
 |cognos_admin	
-|update password hash for user in database
+|Update password hash for user in database
 
-if DWH and windows, update SANscreen/cognos/analytics/configuration/SANscreenAP.properties to set the cognos.admin property to the password.
+If DWH and windows, update SANscreen/cognos/analytics/configuration/SANscreenAP.properties to set the cognos.admin property to the password.
 
-|root	|execute SQL to update the user password in mySQL instance
-|inventory	|execute SQL to update the user password in mySQL instance
+|root	|Execute SQL to update the user password in mySQL instance
+|inventory	|Execute SQL to update the user password in mySQL instance
 |dwh	
-|execute SQL to update the user password in mySQL instance
+|Execute SQL to update the user password in mySQL instance
 
-if DWH and windows, update the windows registry to set the following ODBC related entries to the new password:
+If DWH and windows, update the windows registry to set the following ODBC related entries to the new password:
 
 * HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_capacity\PWD
 * HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_capacity_efficiency\PWD
@@ -187,20 +187,20 @@ if DWH and windows, update the windows registry to set the following ODBC relate
 * HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_sa\PWD
 * HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\ODBC\ODBC.INI\dwh_cloud_cost\PWD
 
-|dwhuser	|execute SQL to update the user password in mySQL instance
-|hosts	|execute SQL to update the user password in mySQL instance
-|keystore_password	|rewrite the keystore with the new password - wildfly/standalone/configuration/server.keystore
-|truststore_password	|rewrite the keystore with the new password - wildfly/standalone/configuration/server.trustore
-|key_password	|rewrite the keystore with the new password - wildfly/standalone/configuration/sso.jks
-|cognos_archive	|none
+|dwhuser	|Execute SQL to update the user password in mySQL instance
+|hosts	|Execute SQL to update the user password in mySQL instance
+|keystore_password	|Rewrite the keystore with the new password - wildfly/standalone/configuration/server.keystore
+|truststore_password	|Rewrite the keystore with the new password - wildfly/standalone/configuration/server.trustore
+|key_password	|Rewrite the keystore with the new password - wildfly/standalone/configuration/sso.jks
+|cognos_archive	|None
 |===
 
 === Acquisition Vault
 
 [cols="25a,75a"]
 |===
-|acquisition	|none
-|truststore_password	|rewrite the keystore with the new password (if it exists) - acq/conf/cert/client.keystore
+|acquisition	|None
+|truststore_password	|Rewrite the keystore with the new password (if it exists) - acq/conf/cert/client.keystore
 |===
 
 
