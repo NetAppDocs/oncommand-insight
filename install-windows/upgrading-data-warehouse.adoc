@@ -17,27 +17,38 @@ Inline upgrade is not supported by the Data Warehouse (DWH). Use the following s
 
 [NOTE]
 ====
-When upgrading DWH, the folder containing the _securityadmin_ tool vault backup is deleted. It is highly recommended to back up the vault prior to upgrading DWH. For reference, the default vault folders are as follows:
+*You must back up the vault* prior to upgrading DWH. 
+
+////
+For reference, the default vault folders are as follows:
 
 * Vault folder (vaults in use):``%SANSCREEN_HOME%\wildfly\standalone\configuration\vault``
 * Vault backups: `%SANSCREEN_HOME%\backup\vault`
+////
 
-See http://ie-docs.rtp.openeng.netapp.com/oci-73_ram/topic/com.netapp.doc.oci-acg/GUID-E3351676-2088-4767-AAB5-CB1D8476291C.html?resultof=%22%76%61%75%6c%74%22%20[Managing security on the Data Warehouse] for more information.
+See the link:../config-admin\/security-management[SecurityAdmin Tool] instructions for more information.
 
 ====
 
 == Steps
 
+When upgrading the Data Warehouse, you must perform the following actions:
+
+
+. After you install DWH 7.3.16, restore the vault and database in this order:
+.. Vault
+.. Database
+
 . Log in to the DWH server using an account that has Windows local administrator permissions.
 . Back up the DWH DB and Reports using the DWH portal interface.
-. Back up the security configuration if the server is using a non-default security configuration.
+. Back up the vault. See the link:../config-admin/security-management.html[SecurityAdmin] documentation.
 . Uninstall the DWH software from the server.
 . Reboot the server to remove components from memory.
 . Install the new version of DWH on the server.
 +
 The installation takes approximately 2 hours. It is a best practice to leave all the defaults selected.
 
-. Restore the non-default security configuration to the DWH server.
+. Restore the vault to the DWH server.
 . Restore the DWH database to the server.
 
 == After you finish
