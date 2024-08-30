@@ -36,11 +36,11 @@ Ensure that you check the version number of the installation file; the version n
 +
 `sudo ./oci-dwh-<version>-linux-x86_64/oci-install.sh`
 +
-Note: When installing on *Red Hat Enterprise Linux version 9.4* or *Oracle Linux 9.4*, the _install-mysql-dependencies_ option must be included on the command line:
- +
-`sudo ./oci-<version>-linux-x86_64/oci-install.sh --install-mysql-dependencies`
+When installing Insight Server or Data Warehouse on CentOS 9 Stream, Red Hat Enterprise Linux 9.4, or Oracle Linux 9.4, you must first change to the directory containing the installer file and then execute the install command using the "--install-mysql-dependencies" command-line option:
 
-
+ cd /tmp/oci-7.3.16.1.297-linux-x86_64
+ sudo ./oci-install.sh --install-mysql-dependencies 
+ 
 . Read the License Agreement, accept it, and follow the prompts.
 
 == Results
