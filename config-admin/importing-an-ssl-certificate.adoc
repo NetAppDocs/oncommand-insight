@@ -26,7 +26,6 @@ Before you attempt to perform this procedure, you should back up the existing `s
 
 . Create a copy of the original keystore file: `cp c:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore "c:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore.old`
 . List the contents of the keystore: `C:\Program Files\SANscreen\java64\bin\keytool.exe -list -v -keystore "c:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore"`
- .. When prompted for a password, enter `changeit`.
 
 +
 The system displays the contents of the keystore. There should be at least one certificate in the keystore, `"ssl certificate"`.
