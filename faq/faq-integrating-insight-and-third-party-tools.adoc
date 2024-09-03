@@ -39,7 +39,7 @@ Yes, OCI incorporates a method of metadata tagging called Annotations. Business 
 
 == Does OCI work with Work Flow Automator (WFA)?
 
-OCI's integration capabilities with 3rd party CMDB, Billing and Orchestration technologies are a key value to its success, and WFA is no exception. NetApp's Professional Services have performed a number of successful Integrations that exist today with WFA workflows and OCI . There is a WFA connector available for download for OCI on the NetApp Automation Storefront.
+OCI's integration capabilities with 3rd party CMDB, Billing and Orchestration technologies are a key value to its success, and WFA is no exception. NetApp's Professional Services have performed a number of successful Integrations that exist today with WFA workflows and OCI . 
 
 == How long are the OCI retention times for performance data?
 
@@ -51,4 +51,4 @@ Data Warehouse retains historical data based on the data marts and granularity o
 
 == Are there any performance planning reports?
 
-Yes, There are several reports provided with OCI and there are many others available in our Professional Services catalog, based on use case. The Data Warehouse module also comes with a suite of Cognos report authoring tools that allow users to create their own reports. There is also a complement of community-generated reporting templates and other downloads available from the NetApp Automation Storefront.
+Yes, There are several reports provided with OCI and there are many others available in our Professional Services catalog, based on use case. The Data Warehouse module also comes with a suite of Cognos report authoring tools that allow users to create their own reports. 
