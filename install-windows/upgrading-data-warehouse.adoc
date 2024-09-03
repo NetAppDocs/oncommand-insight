@@ -26,7 +26,7 @@ For reference, the default vault folders are as follows:
 * Vault backups: `%SANSCREEN_HOME%\backup\vault`
 ////
 
-See the link:../config-admin\/security-management[SecurityAdmin Tool] instructions for more information.
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information.
 
 ====
 
