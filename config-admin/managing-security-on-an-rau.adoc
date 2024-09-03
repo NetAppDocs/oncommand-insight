@@ -22,6 +22,9 @@ One scenario for updating the security configuration for the LAU/RAU is to updat
 
 The 'acquisition' user only exists on the Insight server. The RAU or LAU logs in as that user when they connect to the server.
 
+See the link:../config-admin/securityadmin-tool.html[SecurityAdmin] documentation for more information.
+
+////
 Use the following steps to manage security options on an RAU:
 
 == Steps
@@ -79,3 +82,4 @@ Resets encryption keys and passwords to default values. Default values are those
  ** *Exit*
 +
 Exit the `securityadmin` tool.
+////
