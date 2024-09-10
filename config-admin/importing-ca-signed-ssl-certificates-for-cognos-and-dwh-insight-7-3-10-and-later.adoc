@@ -76,8 +76,7 @@ This will download fqdn.p7b file
 . Import the "`c:\temp\cognos.crt`" into DWH trustore to establish SSL communication between Cognos and DWH, using the Admin CMD prompt window.
  .. cd "`C:\Program Files\SANscreen"
  .. java\bin\keytool.exe -importcert -file c:\temp\cognos.crt -keystore wildfly\standalone\configuration\server.trustore -storepass <password> -alias cognos3rdca
- +
-   For <password>, use the password from the _/SANscreen/bin/cognos_info.dat_ file.
+  .. For <password>, use the password from the _/SANscreen/bin/cognos_info.dat_ file.
 . Restart the SANscreen service.
 . Perform a backup of DWH to make sure DWH communicates with Cognos.
 . The following steps should be performed even when only the "`ssl certificate`" is changed and the default Cognos certificates are left unchanged. Otherwise Cognos may complain about the new SANscreen certificate or be unable to create a DWH backup.

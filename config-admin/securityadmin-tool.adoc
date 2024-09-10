@@ -16,6 +16,8 @@ OnCommand Insight provides features that allow Insight environments to operate w
 
 The security admin tool supports making changes to the contents of the vaults as well as making coordinated changes to the OnCommand Insight installation.
 
+The primary uses for the SecurityAdmin tool are for *Backup* and *Restore* of security configurations and passwords.
+
 The tool provides both *interactive* and *command line* modes.
 
 Many SecurityAdmin Tool operations change the contents of the vault and also make changes to the installation, ensuring that the vault and the installation remain in sync.
@@ -131,25 +133,6 @@ When run in normal mode, also reads each encrypted value from the instance, decr
 |replace-keys
 |Create a new empty vault (which will have different keys than the existing vault).  Then copy the entries from the current vault to the new vault.  Then reads each encrypted value from the instance, decrypt it using the current vault's encryption service, re-encrypt it using the restored vault's encryption service, and store the re-encrypted value.
 |===
-
-
-=== Hidden Commands
-
-The SA tool provides the following commands which do not require authentication but do make coordinated changes to the installation.
-
-[cols="25a,75a"]
-|===
-
-|list-keys	
-upgrade (server)
-|If user hasn't authenticated, authenticate using the _internal account and password in the current vault.  Then replace the current vault with the vault in the backup file and perform the coordinated actions.
-|upgrade (acquisition)
-|Replace the current vault with the vault in the backup file and perform the coordinated actions.
-|===
-
-
-
-
 
 
 

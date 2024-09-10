@@ -22,7 +22,7 @@ You use the `securityadmin` tool to manage security:
 * Windows - `C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat`
 * Linux - `/bin/oci-securityadmin.sh`
 
-See the link:../config-admin/securityadmin-tool.html[SecurityAdmin] documentation for more information.
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information.
 
 ////
 == Steps
