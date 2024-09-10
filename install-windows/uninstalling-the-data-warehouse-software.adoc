@@ -11,6 +11,14 @@ summary: 'You must uninstall the Data Warehouse software before you can upgrade.
 [.lead]
 You must uninstall the Data Warehouse software before you can upgrade.
 
+[NOTE]
+====
+*It is strongly recommended to back up the vault* before uninstalling OnCommand Insight. 
+*You must back up the vault* if you will be upgrading OnCommand Insight.
+
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information.
+====
+
 == Before you begin
 
 If you made changes to reports you want to keep, it is critical that you create a backup before you uninstall Data Warehouse. Uninstalling Data Warehouse permanently deletes all previously collected data and removes all reports, including any newly created or edited reports.

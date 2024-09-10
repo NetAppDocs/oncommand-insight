@@ -11,4 +11,12 @@ summary: 'Before you upgrade, you should back up both the Data Warehouse and OnC
 [.lead]
 Before you upgrade, you should back up both the Data Warehouse and OnCommand Insight databases. Upgrading requires a backup of the Data Warehouse database so that you can restore the database later in the upgrade process. The in-place upgrade for Insight backs up the database; however, you should back up the database before the upgrade as a best practice.
 
+[NOTE]
+====
+*You must back up the vault* prior to upgrading OnCommand Insight. 
+
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information.
+
+====
+
 To avoid misreporting data, you should back up the Data Warehouse database prior to backing up the Insight database. Additionally, if you have a test environment, it is recommended that you ensure you can restore the backup before you continue with the upgrade.
