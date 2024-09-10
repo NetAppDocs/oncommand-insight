@@ -34,6 +34,7 @@ The acquisition port defaults to 443, but it may have been changed during the se
  ** *OnCommand Insight* *Server Name or Address* - hostname or IP address to identify the OnCommand Insight Server. The RAU uses this name/IP to open a communications link with the server. If you specify a hostname, make sure it can be resolved through DNS.
  ** *Acquisition Unit Name* - unique name that identifies the RAU.
  ** *OnCommand Insight Secured Remote Acquisition Port (HTTPS)* - Port used by Remote Acquisition Units to send environment change information to the OnCommand Insight server. This setting should match the value entered when installing the OnCommand Insight server and must be the same on all RAUs.
+ ** Enter the _acquisition_ user password. 
 . Review your selections. Click *Back* to go back and make changes. Click *Next*.
 . Click *Install* to start the installation.
 +
@@ -43,6 +44,9 @@ Wait for the installation to complete. This should take approximately 5 to 10 mi
 
 When the installation is complete, a final window appears. Click the *Start Remote Acquisition Service* box to start the RAU, and click *Finish* to end this operation.
 
+If your data begins acquiring, you are all set; you do _not_ need to synchronize the Server and RAU as noted below.
+
+
 == Synchronize Server and RAU
 
 IMPORTANT: After installing the Remote Acquisition Unit, you *must* synchronize the RAU with the OnCommand Insight Server. Follow these steps:
@@ -51,7 +55,7 @@ IMPORTANT: After installing the Remote Acquisition Unit, you *must* synchronize 
 +
  securityadmin -i
  
-. Change the password for the _acquisition_ user for both Server and Local Acquisition Unit (LAU) to a password of your choice. *Make note of this password* as you will require it below. 
+. Change the password for the _acquisition_ user for the Insight Server to a password of your choice. *Make note of this password* as you will require it below. 
 
 . Restart the server/LAU.
 

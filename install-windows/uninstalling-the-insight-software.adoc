@@ -10,3 +10,11 @@ summary: 'You must uninstall the old versions of the Data Warehouse and Remote A
 
 [.lead]
 You must uninstall the old versions of the Data Warehouse and Remote Acquisition software to install the new versions. You should do this before you attempt to upgrade any of these components. The software on the Insight server is uninstalled during the in-place upgrade.
+
+[NOTE]
+====
+*It is strongly recommended to back up the vault* before uninstalling OnCommand Insight. 
+*You must back up the vault* if you will be upgrading OnCommand Insight.
+
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information.
+====
