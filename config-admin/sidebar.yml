@@ -695,3 +695,7 @@ entries:
         url: "/config-admin/nas-path-for-vms.html"
       - title: Capacity as Time Series
         url: "/config-admin/capacity-as-time-series.html"
+
+    - title: Data Collector Support Matrix
+      url: "/config-admin/reference_data_collector_support_matrix.html"
+
