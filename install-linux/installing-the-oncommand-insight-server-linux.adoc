@@ -44,6 +44,10 @@ When installing Insight Server on CentOS 9 Stream, Red Hat Enterprise Linux 9.4,
 
 After you answer all the prompts, the installation begins and should take approximately 10 minutes, depending on the applications installed.
 
+. If you will be installing a Remote Acquisition Unit (RAU), you must run the SecurityAdmin Tool to create a password for the _acquisition_ user. You will need this password when installing the RAU.
++
+Note: If you have created this password, you do _not_ need to Synchronize the Server and RAU as noted below.
+
 
 == Synchronize Server with DWH and RAU
 

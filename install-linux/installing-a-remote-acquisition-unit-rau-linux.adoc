@@ -47,6 +47,8 @@ For environments using Network Address Translation or Port Address Translation (
 +
 After you answer all the prompts, the installation begins and should take approximately 10 minutes, depending on the applications installed.
 
+If your data begins acquiring, you are all set; you do _not_ need to synchronize the Server and RAU as noted below.
+
 
 == Synchronize Server and RAU
 
@@ -56,7 +58,7 @@ IMPORTANT: After installing the Remote Acquisition Unit, you *must* synchronize 
 +
  securityadmin -i
  
-. Change the password for the _acquisition_ user for both Server and Local Acquisition Unit (LAU) to a password of your choice. *Make note of this password* as you will require it below. 
+. Change the password for the _acquisition_ user for the Insight Server to a password of your choice. *Make note of this password* as you will require it below. 
 
 . Restart the server/LAU.
 
