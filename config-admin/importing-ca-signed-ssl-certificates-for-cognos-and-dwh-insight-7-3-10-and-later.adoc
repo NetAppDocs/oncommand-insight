@@ -75,12 +75,14 @@ This will download fqdn.p7b file
 . Back up the DWH server trustore at``..\SANscreen\wildfly\standalone\configuration\server.trustore``
 . Import the "`c:\temp\cognos.crt`" into DWH trustore to establish SSL communication between Cognos and DWH, using the Admin CMD prompt window.
  .. cd "`C:\Program Files\SANscreen"
- .. java\bin\keytool.exe -importcert -file c:\temp\cognos.crt -keystore wildfly\standalone\configuration\server.trustore -storepass changeit -alias cognos3rdca
+ .. java\bin\keytool.exe -importcert -file c:\temp\cognos.crt -keystore wildfly\standalone\configuration\server.trustore -storepass <password> -alias cognos3rdca
+ +
+   For <password>, use the password from the _/SANscreen/bin/cognos_info.dat_ file.
 . Restart the SANscreen service.
 . Perform a backup of DWH to make sure DWH communicates with Cognos.
 . The following steps should be performed even when only the "`ssl certificate`" is changed and the default Cognos certificates are left unchanged. Otherwise Cognos may complain about the new SANscreen certificate or be unable to create a DWH backup.
  .. `cd “%SANSCREEN_HOME%cognos\analytics\bin\”`
- .. `“%SANSCREEN_HOME%java64\bin\keytool.exe” -exportcert -file “c:\temp\sanscreen.cer” -keystore “%SANSCREEN_HOME%wildfly\standalone\configuration\server.keystore” -storepass changeit -alias “ssl certificate”`
+ .. `“%SANSCREEN_HOME%java64\bin\keytool.exe” -exportcert -file “c:\temp\sanscreen.cer” -keystore “%SANSCREEN_HOME%wildfly\standalone\configuration\server.keystore” -storepass <password> -alias “ssl certificate”`
  .. `ThirdPartyCertificateTool.bat -java:local -i -T -r “c:\temp\sanscreen.cer”`
 
 +
