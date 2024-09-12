@@ -11,6 +11,14 @@ summary: 'After upgrading the Insight server software, you must upgrade your rem
 [.lead]
 After upgrading the Insight server software, you must upgrade your remote acquisition software.
 
+[NOTE]
+====
+It is strongly recommended to back up the vault and the database prior to upgrading DWH. 
+
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information about the vault.
+
+====
+
 == Steps
 
 . Log in to the Remote Acquisition Unit (RAU) server using an account with sudo privileges.

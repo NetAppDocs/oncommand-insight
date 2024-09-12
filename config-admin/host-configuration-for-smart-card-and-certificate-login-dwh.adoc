@@ -39,7 +39,9 @@ For the most up to date CAC and Certificate instructions, see the following Know
 For Linux, modify the `clientAuth` parameter in `/opt/netapp/oci/scripts/wildfly.server`
 . Add certificate authorities (CAs) to the Data Warehouse trustore:
  .. In a command window, go to `..\SANscreen\wildfly\standalone\configuration`.
- .. Use the `keytool` utility to list the trusted CAs: `C:\Program Files\SANscreen\java64\bin\keytool.exe -list -keystore server.trustore -storepass changeit`
+ .. Use the `keytool` utility to list the trusted CAs: `C:\Program Files\SANscreen\java64\bin\keytool.exe -list -keystore server.trustore -storepass <password>`
+ +
+See the link:../config-admin/securityadmin-tool.html[SecurityAdmin] documentation for more information about setting or changing the password for server_trustore.
 +
 The first word in each line indicates the CA alias.
 
