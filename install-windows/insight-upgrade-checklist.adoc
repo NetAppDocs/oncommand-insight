@@ -15,7 +15,7 @@ You can use the provided checklists to record your progress as you prepare for t
 
 [NOTE]
 ====
-*You must back up the vault* prior to upgrading OnCommand Insight server or Data Warehouse. 
+*You must back up the vault* prior to upgrading OnCommand Insight. 
 
 See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information.
 
