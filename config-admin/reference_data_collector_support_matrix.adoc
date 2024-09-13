@@ -1,0 +1,14 @@
+---
+permalink: config-admin/reference_data_collector_support_matrix.html
+sidebar: sidebar
+keywords: 
+summary: 'The Data Collector (Data Source) Support Matrix provides information on supported data collectors.'
+---
+= OnCommand Insight Data Collector Support Matrix
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The Data Collector Support Matrix provides reference for Data Collectors supported by OCI , including vendor and model information.
+
+This page is a placeholder.
