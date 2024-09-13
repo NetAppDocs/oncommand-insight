@@ -1,4 +1,5 @@
 ---
+
 permalink: config-admin/reference_data_collector_support_matrix.html
 sidebar: sidebar
 keywords: 
@@ -12,3 +13,4 @@ summary: 'The Data Collector (Data Source) Support Matrix provides information o
 The Data Collector Support Matrix provides reference for Data Collectors supported by OCI , including vendor and model information.
 
 This page is a placeholder.
+

@@ -11,6 +11,13 @@ summary: 'You can uninstall Data Warehouse if needed.'
 [.lead]
 You can uninstall Data Warehouse if needed.
 
+[NOTE]
+====
+*It is strongly recommended to back up the vault* before uninstalling OnCommand Insight. 
+
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information.
+====
+
 == Before you begin
 
 Back up the current version of the OnCommand Insight Data Warehouse (DWH) database.

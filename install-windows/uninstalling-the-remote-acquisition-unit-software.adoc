@@ -11,6 +11,14 @@ summary: 'You must uninstall the existing version of the remote acquisition unit
 [.lead]
 You must uninstall the existing version of the remote acquisition unit software before you can upgrade to a new version. You should perform this task on all remote acquisition unit servers in your environment.
 
+[NOTE]
+====
+*It is strongly recommended to back up the vault* before uninstalling OnCommand Insight. 
+*You must back up the vault* if you will be upgrading OnCommand Insight.
+
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information.
+====
+
 == Steps
 
 . Log in to the remote acquisition unit server.

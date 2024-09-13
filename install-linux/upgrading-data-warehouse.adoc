@@ -11,6 +11,16 @@ summary: 'After upgrading the Insight server software, you must upgrade your dat
 [.lead]
 After upgrading the Insight server software, you must upgrade your data warehouse software.
 
+== About this task
+
+[NOTE]
+====
+It is strongly recommended to back up the vault and the database prior to upgrading DWH. 
+
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information about the vault.
+
+====
+
 == Steps
 
 . Log in to the Data Warehouse (DWH) server using an account with sudo privileges.
@@ -30,3 +40,4 @@ Ensure that you have the correct the version number of the installation file.
 `sudo ./oci-dwh-<version>-linux-x86_64/oci-install.sh`
 
 . Accept the License Agreement and follow the prompts.
+

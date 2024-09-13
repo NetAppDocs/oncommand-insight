@@ -11,6 +11,14 @@ summary: 'You can check for OnCommand Insight server updates after you log into 
 [.lead]
 You can check for OnCommand Insight server updates after you log into the server.
 
+[NOTE]
+====
+It is strongly recommended to back up the vault and the database prior to upgrading OnCommand Insight. 
+
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information about the vault.
+
+====
+
 == Steps
 
 . On the Insight toolbar, click the *Help* icon.
