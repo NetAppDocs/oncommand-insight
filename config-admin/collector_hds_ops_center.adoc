@@ -79,23 +79,6 @@ The following requirements must be met in order to collect performance data:
 |Performance Poll Interval (sec)|Interval between performance polls. The default is 300.
 |===
 
-////
-== Troubleshooting
-Some things to try if you encounter problems with this data collector:
-
-==== Inventory
-
-[cols=2*, options="header", cols"50,50"]
-|===
-|Problem:|Try this:
-|Error: Error message seen showing a IP/hostname and port number the collector is not set to use
-|This will be indicative that the collector is able to speak to Common Services, learns where Administrator and Analyzer are, 
-| and is subsequently having difficulty to speak to them. If a HTTP 40x error is observed, this likely means you are attempting to use a non root/sysadmin account
-| If a HTTP 5xx error is observed, that is likely a problem with the Ops Center module in question
-|===
 
 
-////
-
-Additional information may be found from the link:concept_requesting_support.html[Support] page or in the link:https://docs.netapp.com/us-en/cloudinsights/CloudInsightsDataCollectorSupportMatrix.pdf[Data Collector Support Matrix].
 

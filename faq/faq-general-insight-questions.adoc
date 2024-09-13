@@ -51,9 +51,9 @@ Yes, OCI is used by the top 10 Fortune 500 companies and by leading banking, hea
 
 OnCommand Unified Manager operates at the storage array "`device management`" layer, providing in-depth incident and event-based analysis of Clustered Data ONTAP (cDOT) arrays and their cluster interconnects. OCI provides a holistic view of on-premise and globally-dispersed environments consisting of 7-mode, Clustered Data ONTAP and other 3rd party arrays. Its end-to-end visibility, from VM to spindle, allows for historical trending and forecasting of capacity, performance and cost modeling that promotes a proactive service quality approach to data center management.
 
-== What is the OnCommand Insight Secondary ETL mentioned on the Automation Storefront?
+== What is the OnCommand Insight Secondary ETL?
 
-The "Secondary ETL" requirement referenced in some OnCommand Insight Automation Storefront report downloads refers to a developed professional services implementation used for invoking additional Extract, Transform and Load (ETL) of captured data, for population into the OnCommand Insight data warehouse.
+The "Secondary ETL" refers to a developed professional services implementation used for invoking additional Extract, Transform and Load (ETL) of captured data, for population into the OnCommand Insight data warehouse.
 
 The Secondary ETL process primary purpose is to prefetch "batch" data allowing for more complex reports to generate faster, or to be scheduled to run on a daily basis.
 
