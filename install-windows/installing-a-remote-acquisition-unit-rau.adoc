@@ -49,7 +49,7 @@ If your data begins acquiring, you are all set; you do _not_ need to synchronize
 
 == Synchronize Server and RAU
 
-IMPORTANT: After installing the Remote Acquisition Unit, you *must* synchronize the RAU with the OnCommand Insight Server. Follow these steps:
+IMPORTANT: If data does not begin acquiring after installing the Remote Acquisition Unit, synchronize the RAU with the OnCommand Insight Server. Follow these steps:
 
 . On the OnCommand Insight Server system, start the *SecurityAdmin* tool in interactive mode
 +
