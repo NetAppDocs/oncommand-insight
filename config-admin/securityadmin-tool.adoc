@@ -16,7 +16,13 @@ OnCommand Insight provides features that allow Insight environments to operate w
 
 The security admin tool supports making changes to the contents of the vaults as well as making coordinated changes to the OnCommand Insight installation.
 
-The primary uses for the SecurityAdmin tool are for *Backup* and *Restore* of security configurations and passwords.
+The primary uses for the SecurityAdmin tool are for *Backup* and *Restore* of security configuration (i.e. vault) and passwords. For example, you can back up the vault on a Local Acquisition Unit and restore that on a Remote Acquisition Unit, ensuring password coordination throughout your environment. Or if you have multiple OnCommand Insight Servers in your environment, you may want to take a backup of the Server vault and restore that to other Servers to keep passwords the same.  These are just two examples of the ways SecurityAdmin can be used to ensure cohesion in your environments.
+
+[NOTE]
+====
+It is strongly recommended to *back up the vault* whenever you backup an OnCommand Insight database. Failure to do so may result in loss of access.
+====
+
 
 The tool provides both *interactive* and *command line* modes.
 
@@ -79,6 +85,8 @@ Unrestricted commands make any coordinated changes to the installation (except t
 
 * wildfly/standalone/configuration/vault/*
 * acq/conf/vault/*
+
+Note that it is strongly recommended to backup the vault whenever you back up an OnCommand Insight database.
 
 |check-for-default-keys
 |Check to see if the vault's keys match those of the default vault used in pre-7.3.16 instances.
