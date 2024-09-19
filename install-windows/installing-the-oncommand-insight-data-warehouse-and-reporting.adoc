@@ -29,7 +29,7 @@ Please note the following before installing or upgrading.
  ** [NOTE]
 ====
 The Db2 user name as well as the Windows login name have the following restrictions:
-* Valid characters are: 'A' through 'Z'; 'a' through 'z'; '0' through '9'; '#'; '@'; '_'; '!'; ' '('; ')'; '{'; '}'; '-'; and '.'.
+* Valid characters are: 'A' through 'Z'; 'a' through 'z'; '0' through '9'; '@'; '_'; '!'; ' '('; ')'; '{'; '}'; '-'; and '.'.
 * If using the special characters '!'; ' '('; ')'; '{'; '}'; '-'; and '.' you must use all uppercase letters for the user name.
 * The first character in the string must be an alphabetic character, @, #, or $; it cannot be a number or the letter sequences _SYS_, _DBM_, or _IBM_
 * It cannot exceed 128 bytes in length.
@@ -59,3 +59,25 @@ With OnCommand Insight 7.3.10 and later, you must run the script for proper DWH/
 . Following Db2 Installation, the DWH installation wizard will run. Follow its directions to install DWH with Reporting.
 +
 Data Warehouse with Reporting Installation may take up to an hour to complete.
+
+== Synchronize Server and DWH
+
+IMPORTANT: After installing the Data Warehouse, you *must* synchronize the Data Warehouse with the OnCommand Insight Server. Follow these steps:
+
+. On the OnCommand Insight Server system, start the *SecurityAdmin* tool in interactive mode
++
+ securityadmin -i
+ 
+. Change the password for the _inventory_ and _dwh_internal_ users to passwords of your choice. *Make note of these passwords* as you will require them below. 
+
+. Restart the DWH service.
+
+. On *each Connector* start the *SecurityAdmin* tool in interactive mode. You will need the passwords you noted from step 2 above.
++
+ securityadmin -i
+ 
+. Change the passwords for the _inventory_ and _dwh_internal_ users to the passwords used in step 2.
+
+. Restart services on the Connectors.
+
+. Add the Connectors to DWH, using the passwords for _inventory_ and _dwh_internal_ users from step 2

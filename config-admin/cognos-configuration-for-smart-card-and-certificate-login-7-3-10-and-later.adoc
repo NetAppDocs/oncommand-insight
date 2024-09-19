@@ -31,7 +31,9 @@ For the most up to date CAC and Certificate instructions, see the following Know
 
 . Add certificate authorities (CAs) to the Cognos trustore.
  .. In a command window, go to `..\SANscreen\cognos\analytics\configuration\certs\`
- .. Use the `keytool` utility to list the trusted CAs: `..\..\ibm-jre\jre\bin\keytool.exe -list -keystore CAMKeystore.jks -storepass NoPassWordSet`
+ .. Use the `keytool` utility to list the trusted CAs: `..\..\ibm-jre\jre\bin\keytool.exe -list -keystore CAMKeystore.jks -storepass <password> 
+
+
 +
 The first word in each line indicates the CA alias.
 
@@ -39,9 +41,9 @@ The first word in each line indicates the CA alias.
  .. To include customer's CAs with OnCommand Insight trusted CAs, go to `..\SANscreen\cognos\analytics\configuration\certs\`.
  .. Use the `keytool` utility to import the `.pem` file: `..\..\ibm-jre\jre\bin\keytool.exe -importcert -keystore CAMKeystore.jks -alias my_alias -file 'path/to/my.pem' -v -trustcacerts`
 +
-`my_alias` is usually an alias that would easily identify the CA in the``keytool -list`` operation.
+`my_alias` is usually an alias that would easily identify the CA in the ``keytool -list`` operation.
 
- .. When prompted for a password, enter `NoPassWordSet`.
+ .. When prompted for a password, enter the password from the _/SANscreen/bin/cognos_info.dat_ file.
  .. Answer `yes` when prompted to trust the certificate.
 . To enable CAC mode, do the following:
  .. Configure CAC logout page, using the following steps:

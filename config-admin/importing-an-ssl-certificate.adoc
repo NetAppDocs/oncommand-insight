@@ -17,16 +17,26 @@ You must ensure that your system meets the minimum required bit level (1024 bits
 
 == About this task
 
+
+////
 [NOTE]
 ====
 Before you attempt to perform this procedure, you should back up the existing `server.keystore` file, and name the backup `server.keystore.old`. Corrupting or damaging the `server.keystore` file may result in an inoperable Insight server after the Insight server is restarted. If you create a backup, you can revert to the old file if problems occur.
+
+====
+////
+
+[NOTE]
+====
+It is strongly recommended to back up the vault prior to upgrading. 
+
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information about the vault and password management.
 ====
 
 == Steps
 
 . Create a copy of the original keystore file: `cp c:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore "c:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore.old`
 . List the contents of the keystore: `C:\Program Files\SANscreen\java64\bin\keytool.exe -list -v -keystore "c:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore"`
- .. When prompted for a password, enter `changeit`.
 
 +
 The system displays the contents of the keystore. There should be at least one certificate in the keystore, `"ssl certificate"`.

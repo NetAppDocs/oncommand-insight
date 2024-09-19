@@ -18,10 +18,13 @@ You use the `securityadmin` tool to manage security:
 * Windows - `C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat`
 * Linux - `/bin/oci-securityadmin.sh`
 
-One scenario for updating the security configuration for the LAU, RAU is to update the 'acquisition' user password when the password for that user has been changed on the server. All of the RAUs, and the LAU use the same password as that of the server 'acquisition' user to communicate with the server.
+One scenario for updating the security configuration for the LAU/RAU is to update the 'acquisition' user password when the password for that user has been changed on the server. The LAU and all of the RAUs use the same password as that of the server 'acquisition' user to communicate with the server. 
 
 The 'acquisition' user only exists on the Insight server. The RAU or LAU logs in as that user when they connect to the server.
 
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information.
+
+////
 Use the following steps to manage security options on an RAU:
 
 == Steps
@@ -82,3 +85,4 @@ Resets encryption keys and passwords to default values. Default values are those
  ** *Exit*
 +
 Exit the `securityadmin` tool.
+////

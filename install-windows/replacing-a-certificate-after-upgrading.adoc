@@ -23,7 +23,7 @@ The certification warning does not impact the usability of the system. At the me
 
 . List the contents of the keystore: `C:\Program Files\SANscreen\java64\bin>keytool.exe -list -v -keystore "c:\Program Files\SANscreen\wildfly\standalone\configuration\server.keystore"`
 +
-When prompted for a password, enter `changeit`.
+See the link:../config-admin/securityadmin-tool.html[SecurityAdmin] documentation for more information about setting or changing the password for the keystore.
 +
 There should be at least one certificate in the keystore, `ssl certificate`.
 

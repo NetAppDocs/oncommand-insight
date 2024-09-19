@@ -47,6 +47,6 @@ For most data sources, these options will be Inventory and Performance. Inventor
 
 . Click the *Configuration* link and enter the basic setup information required for the data source with your selected data collection type.
 . If this type of data source usually requires more detailed information to set it up in your network, click the *Advanced configuration* link to enter additional information.
-. For details about configuration or advanced configuration information required or available for your specific data source, see the link:vendor-specific-data-source-reference.md#[Vendor-specific data source reference].
+. For details about configuration or advanced configuration information required or available for your specific data source, see the link:vendor-specific-data-source-reference.html[Vendor-specific data source reference].
 . Click the *Test* link to be certain that the data source is properly configured.
 . Click *Save*.

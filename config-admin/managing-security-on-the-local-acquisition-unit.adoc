@@ -22,6 +22,9 @@ You use the `securityadmin` tool to manage security:
 * Windows - `C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat`
 * Linux - `/bin/oci-securityadmin.sh`
 
+See the link:../config-admin\/security-management.html[SecurityAdmin Tool] instructions for more information.
+
+////
 == Steps
 
 . Perform a remote login to the Insight server.
@@ -83,3 +86,4 @@ Resets acquisition user password and acquisition user encryption keys to default
 Exit the `securityadmin` tool.
 
 . Chose the option you want configure and follow the prompts.
+////
