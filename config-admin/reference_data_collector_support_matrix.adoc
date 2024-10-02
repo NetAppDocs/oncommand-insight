@@ -239,13 +239,15 @@ Management APIs used by this data collector:
 :description: Support Matrix Asciidoc for Amazon AWS EC2
 
 Models and versions supported by this data collector:
-|===
-<.<|API versions 
 
-|2014-10-01
+API versions:
 
-|===
+* 2014-10-01
+
+
+
 Products supported by this data collector:
+
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
@@ -559,13 +561,13 @@ Management APIs used by this data collector:
 :description: Support Matrix Asciidoc for Brocade Network Advisor HTTP
 
 Models and versions supported by this data collector:
-|===
-<.<|API versions 
 
-|14.4.5
+API versions:
 
-|===
+* 14.4.5
+
 Products supported by this data collector:
+
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
@@ -5734,7 +5736,7 @@ Management APIs used by this data collector:
 
 Models and versions supported by this data collector:
 |===
-<.<|API versions 
+<.<|API versions: |API versions:
 
 |VMware vCenter Server 5.5.0 build-1750787
 VMware vCenter Server 5.5.0 build-3252642
@@ -5761,7 +5763,7 @@ VMware vCenter Server 6.7.0 build-20504362
 VMware vCenter Server 6.7.0 build-22509732
 VMware vCenter Server 6.7.0 build-22509751
 VMware vCenter Server 7.0.1 build-17491160
-VMware vCenter Server 7.0.3 build-19234570
+|VMware vCenter Server 7.0.3 build-19234570
 VMware vCenter Server 7.0.3 build-19717403
 VMware vCenter Server 7.0.3 build-20051473
 VMware vCenter Server 7.0.3 build-20150588
@@ -5788,7 +5790,9 @@ VMware vCenter Server 8.0.3 build-24022515
 VMware vCenter Server 8.0.3 build-24091160
 
 |===
+
 Products supported by this data collector:
+
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
