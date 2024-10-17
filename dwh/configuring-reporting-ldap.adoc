@@ -17,6 +17,8 @@ You must log in to Insight as an Administrator to perform this task.
 
 For all Secure Active Directory (i.e. LDAPS) users, you must use the AD server name exactly as it is defined in the certificate. You can not use IP address for secure AD login.
 
+NOTE: If you changed _server.keystore_ and/or _server.trustore_ passwords using link:../config-admin/security-management.html[securityadmin], restart the _sanscreen_ service before importing the LDAP certificate.
+
 == Steps
 
 . Log in to the Data Warehouse Portal at `+https://hostname/dwh+`, where `hostname` is the name of the system on which OnCommand Insight Data Warehouse is installed.
