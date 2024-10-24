@@ -24,7 +24,10 @@ See the link:../config-admin/securityadmin-tool.html[SecurityAdmin] documentatio
 == Steps
 
 . Perform a remote login to the Insight server.
-. Start the security admin tool in interactive mode: `securityadmin -i`
+. Start the security admin tool in interactive mode: 
+
+* Windows - `C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat -i`
+* Linux - `/bin/oci-securityadmin.sh -i`
 +
 The system requests login credentials.
 
@@ -73,7 +76,6 @@ Change password for the internal accounts that are used by Insight. The followin
   *** inventory
   *** root
 
-+
 [NOTE]
 ====
 Some accounts need to be synchronized when passwords are changed. For example, if you change the password for the 'acquisition' user on the server, you need to change the password for the 'acquisition' user on the LAU, RAU, and DWH to match. Also, when you change passwords, you should backup your new security configuration so that you can restore it after an upgrade or installation.

@@ -16,6 +16,8 @@ You must make modifications to the OnCommand Insight host configuration to suppo
 * LDAP must be enabled on the system.
 * The LDAP `User principal account name` attribute must match the LDAP field that contains a user's ID.
 
+NOTE: If you have changed _server.keystore_ and/or _server.trustore_ passwords using link:../config-admin/security-management.html[securityadmin], restart the _sanscreen_ service before importing the LDAP certificate.
+
 [NOTE]
 ====
 For the most up to date CAC and Certificate instructions, see the following Knowledgebase articles (Support login required):

@@ -240,6 +240,7 @@ API versions:
 
 
 Products supported by this data collector:
+
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
@@ -559,6 +560,7 @@ API versions:
 * 14.4.5
 
 Products supported by this data collector:
+
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
@@ -5781,6 +5783,7 @@ API versions:
 * VMware vCenter Server 8.0.3 build-24091160
 
 Products supported by this data collector:
+
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
 
