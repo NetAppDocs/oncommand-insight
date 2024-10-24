@@ -6,10 +6,7 @@ keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, H
 ---
 
 = OCI Data Collector Support Matrix 
-:toc: macro
-:toc-title: OCI  Data Collectors
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,12 +15,9 @@ keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, H
 
 The Data Collector Support Matrix provides reference for Data Collectors supported by OCI , including vendor and model information.
 
-[#top]
-
-toc::[]
 
 == HP Enterprise 3PAR / Alletra 9000 / Primera StoreServ Storage
-:description: Support Matrix Asciidoc for HP Enterprise 3PAR / Alletra 9000 / Primera StoreServ Storage
+
 
 Models and versions supported by this data collector:
 |===
@@ -233,18 +227,18 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Amazon AWS EC2
-:description: Support Matrix Asciidoc for Amazon AWS EC2
+
 
 Models and versions supported by this data collector:
-|===
-<.<|API versions 
 
-|2014-10-01
+API versions:
 
-|===
+* 2014-10-01
+
+
 Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
@@ -324,10 +318,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Brocade Fibre Channel Switches
-:description: Support Matrix Asciidoc for Brocade Fibre Channel Switches
+
 
 Models and versions supported by this data collector:
 |===
@@ -553,18 +547,17 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Brocade Network Advisor HTTP
-:description: Support Matrix Asciidoc for Brocade Network Advisor HTTP
+
 
 Models and versions supported by this data collector:
-|===
-<.<|API versions 
 
-|14.4.5
+API versions:
 
-|===
+* 14.4.5
+
 Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
@@ -619,10 +612,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Cisco MDS & Nexus Fabric Switches
-:description: Support Matrix Asciidoc for Cisco MDS & Nexus Fabric Switches
+
 
 Models and versions supported by this data collector:
 |===
@@ -825,10 +818,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC Celerra (SSH)
-:description: Support Matrix Asciidoc for EMC Celerra (SSH)
+
 
 Models and versions supported by this data collector:
 |===
@@ -943,10 +936,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC CLARiiON (NaviCLI)
-:description: Support Matrix Asciidoc for EMC CLARiiON (NaviCLI)
+
 
 Models and versions supported by this data collector:
 |===
@@ -1151,10 +1144,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC Data Domain (SSH)
-:description: Support Matrix Asciidoc for EMC Data Domain (SSH)
+
 
 Models and versions supported by this data collector:
 |===
@@ -1297,10 +1290,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC ECS
-:description: Support Matrix Asciidoc for EMC ECS
+
 
 Models and versions supported by this data collector:
 |===
@@ -1395,10 +1388,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Dell EMC Isilon / PowerScale (CLI)
-:description: Support Matrix Asciidoc for Dell EMC Isilon / PowerScale (CLI)
+
 
 Models and versions supported by this data collector:
 |===
@@ -1575,10 +1568,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC PowerStore REST
-:description: Support Matrix Asciidoc for EMC PowerStore REST
+
 
 Models and versions supported by this data collector:
 |===
@@ -1704,10 +1697,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC RecoverPoint (HTTP)
-:description: Support Matrix Asciidoc for EMC RecoverPoint (HTTP)
+
 
 Models and versions supported by this data collector:
 |===
@@ -1776,10 +1769,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC Symmetrix CLI
-:description: Support Matrix Asciidoc for EMC Symmetrix CLI
+
 
 Models and versions supported by this data collector:
 |===
@@ -2033,10 +2026,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Dell Unisphere REST
-:description: Support Matrix Asciidoc for Dell Unisphere REST
+
 
 Models and versions supported by this data collector:
 |===
@@ -2186,10 +2179,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC VNX (SSH)
-:description: Support Matrix Asciidoc for EMC VNX (SSH)
+
 
 Models and versions supported by this data collector:
 |===
@@ -2349,10 +2342,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC VNXe & Unity Unisphere (CLI)
-:description: Support Matrix Asciidoc for EMC VNXe & Unity Unisphere (CLI)
+
 
 Models and versions supported by this data collector:
 |===
@@ -2542,10 +2535,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC VPLEX
-:description: Support Matrix Asciidoc for EMC VPLEX
+
 
 Models and versions supported by this data collector:
 |===
@@ -2665,10 +2658,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == EMC XtremIO (HTTP)
-:description: Support Matrix Asciidoc for EMC XtremIO (HTTP)
+
 
 Models and versions supported by this data collector:
 |===
@@ -2836,10 +2829,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == NetApp E-Series
-:description: Support Matrix Asciidoc for NetApp E-Series
+
 
 Models and versions supported by this data collector:
 |===
@@ -3012,10 +3005,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == HDS HCP (HTTPS)
-:description: Support Matrix Asciidoc for HDS HCP (HTTPS)
+
 
 Models and versions supported by this data collector:
 |===
@@ -3102,10 +3095,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == HiCommand Device Manager
-:description: Support Matrix Asciidoc for HiCommand Device Manager
+
 
 Models and versions supported by this data collector:
 |===
@@ -3289,10 +3282,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == HDS HNAS (CLI)
-:description: Support Matrix Asciidoc for HDS HNAS (CLI)
+
 
 Models and versions supported by this data collector:
 |===
@@ -3404,10 +3397,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == HPE Nimble / Alletra 6000 Storage
-:description: Support Matrix Asciidoc for HPE Nimble / Alletra 6000 Storage
+
 
 Models and versions supported by this data collector:
 |===
@@ -3543,10 +3536,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Huawei OceanStor (REST/HTTPS)
-:description: Support Matrix Asciidoc for Huawei OceanStor (REST/HTTPS)
+
 
 Models and versions supported by this data collector:
 |===
@@ -3653,10 +3646,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == IBM SVC (CLI)
-:description: Support Matrix Asciidoc for IBM SVC (CLI)
+
 
 Models and versions supported by this data collector:
 |===
@@ -3868,10 +3861,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Infinidat Infinibox (HTTP)
-:description: Support Matrix Asciidoc for Infinidat Infinibox (HTTP)
+
 
 Models and versions supported by this data collector:
 |===
@@ -3997,10 +3990,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Microsoft Hyper-V
-:description: Support Matrix Asciidoc for Microsoft Hyper-V
+
 
 
 |===
@@ -4119,10 +4112,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == NetApp 7 Mode
-:description: Support Matrix Asciidoc for NetApp 7 Mode
+
 
 Models and versions supported by this data collector:
 |===
@@ -4388,10 +4381,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == NetApp Clustered Data ONTAP 8.1.1+
-:description: Support Matrix Asciidoc for NetApp Clustered Data ONTAP 8.1.1+
+
 
 Models and versions supported by this data collector:
 |===
@@ -4879,10 +4872,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == NetApp SolidFire 8.1+
-:description: Support Matrix Asciidoc for NetApp SolidFire 8.1+
+
 
 Models and versions supported by this data collector:
 |===
@@ -5087,10 +5080,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == NetApp StorageGRID (HTTPS)
-:description: Support Matrix Asciidoc for NetApp StorageGRID (HTTPS)
+
 
 Models and versions supported by this data collector:
 |===
@@ -5218,10 +5211,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Nutanix Storage (REST)
-:description: Support Matrix Asciidoc for Nutanix Storage (REST)
+
 
 Models and versions supported by this data collector:
 |===
@@ -5406,10 +5399,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Oracle ZFS (HTTPS)
-:description: Support Matrix Asciidoc for Oracle ZFS (HTTPS)
+
 
 Models and versions supported by this data collector:
 |===
@@ -5564,10 +5557,10 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == Pure Storage FlashArray (HTTP)
-:description: Support Matrix Asciidoc for Pure Storage FlashArray (HTTP)
+
 
 Models and versions supported by this data collector:
 |===
@@ -5727,67 +5720,66 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
 == VMware vSphere (Web Services)
-:description: Support Matrix Asciidoc for VMware vSphere (Web Services)
+
 
 Models and versions supported by this data collector:
-|===
-<.<|API versions 
 
-|VMware vCenter Server 5.5.0 build-1750787
-VMware vCenter Server 5.5.0 build-3252642
-VMware vCenter Server 5.5.0 build-4180647
-VMware vCenter Server 5.5.0 build-9911218
-VMware vCenter Server 6.0.0 build-13638472
-VMware vCenter Server 6.0.0 build-14510545
-VMware vCenter Server 6.0.0 build-4541947
-VMware vCenter Server 6.0.0 build-5318200
-VMware vCenter Server 6.0.0 build-9313458
-VMware vCenter Server 6.5.0 build-10964411
-VMware vCenter Server 6.5.0 build-17994927
-VMware vCenter Server 6.5.0 build-18499837
-VMware vCenter Server 6.5.0 build-18711281
-VMware vCenter Server 6.5.0 build-19757181
-VMware vCenter Server 6.5.0 build-22499743
-VMware vCenter Server 6.5.0 build-7515524
-VMware vCenter Server 6.5.0 build-9451637
-VMware vCenter Server 6.7.0 build-16046713
-VMware vCenter Server 6.7.0 build-18485185
-VMware vCenter Server 6.7.0 build-19299595
-VMware vCenter Server 6.7.0 build-19832280
-VMware vCenter Server 6.7.0 build-20504362
-VMware vCenter Server 6.7.0 build-22509732
-VMware vCenter Server 6.7.0 build-22509751
-VMware vCenter Server 7.0.1 build-17491160
-VMware vCenter Server 7.0.3 build-19234570
-VMware vCenter Server 7.0.3 build-19717403
-VMware vCenter Server 7.0.3 build-20051473
-VMware vCenter Server 7.0.3 build-20150588
-VMware vCenter Server 7.0.3 build-20395099
-VMware vCenter Server 7.0.3 build-20845200
-VMware vCenter Server 7.0.3 build-20990077
-VMware vCenter Server 7.0.3 build-21290409
-VMware vCenter Server 7.0.3 build-21477706
-VMware vCenter Server 7.0.3 build-21784236
-VMware vCenter Server 7.0.3 build-22357613
-VMware vCenter Server 7.0.3 build-22837322
-VMware vCenter Server 7.0.3 build-23788036
-VMware vCenter Server 7.0.3 build-24026615
-VMware vCenter Server 8.0.1 build-22368047
-VMware vCenter Server 8.0.1 build-22742005
-VMware vCenter Server 8.0.1 build-23525738
-VMware vCenter Server 8.0.1 build-24005165
-VMware vCenter Server 8.0.2 build-22385739
-VMware vCenter Server 8.0.2 build-22617221
-VMware vCenter Server 8.0.2 build-23319993
-VMware vCenter Server 8.0.2 build-23504390
-VMware vCenter Server 8.0.2 build-23929136
-VMware vCenter Server 8.0.3 build-24022515
-VMware vCenter Server 8.0.3 build-24091160
+API versions:
 
-|===
+* VMware vCenter Server 5.5.0 build-1750787
+* VMware vCenter Server 5.5.0 build-3252642
+* VMware vCenter Server 5.5.0 build-4180647
+* VMware vCenter Server 5.5.0 build-9911218
+* VMware vCenter Server 6.0.0 build-13638472
+* VMware vCenter Server 6.0.0 build-14510545
+* VMware vCenter Server 6.0.0 build-4541947
+* VMware vCenter Server 6.0.0 build-5318200
+* VMware vCenter Server 6.0.0 build-9313458
+* VMware vCenter Server 6.5.0 build-10964411
+* VMware vCenter Server 6.5.0 build-17994927
+* VMware vCenter Server 6.5.0 build-18499837
+* VMware vCenter Server 6.5.0 build-18711281
+* VMware vCenter Server 6.5.0 build-19757181
+* VMware vCenter Server 6.5.0 build-22499743
+* VMware vCenter Server 6.5.0 build-7515524
+* VMware vCenter Server 6.5.0 build-9451637
+* VMware vCenter Server 6.7.0 build-16046713
+* VMware vCenter Server 6.7.0 build-18485185
+* VMware vCenter Server 6.7.0 build-19299595
+* VMware vCenter Server 6.7.0 build-19832280
+* VMware vCenter Server 6.7.0 build-20504362
+* VMware vCenter Server 6.7.0 build-22509732
+* VMware vCenter Server 6.7.0 build-22509751
+* VMware vCenter Server 7.0.1 build-17491160
+* VMware vCenter Server 7.0.3 build-19234570
+* VMware vCenter Server 7.0.3 build-19717403
+* VMware vCenter Server 7.0.3 build-20051473
+* VMware vCenter Server 7.0.3 build-20150588
+* VMware vCenter Server 7.0.3 build-20395099
+* VMware vCenter Server 7.0.3 build-20845200
+* VMware vCenter Server 7.0.3 build-20990077
+* VMware vCenter Server 7.0.3 build-21290409
+* VMware vCenter Server 7.0.3 build-21477706
+* VMware vCenter Server 7.0.3 build-21784236
+* VMware vCenter Server 7.0.3 build-22357613
+* VMware vCenter Server 7.0.3 build-22837322
+* VMware vCenter Server 7.0.3 build-23788036
+* VMware vCenter Server 7.0.3 build-24026615
+* VMware vCenter Server 8.0.1 build-22368047
+* VMware vCenter Server 8.0.1 build-22742005
+* VMware vCenter Server 8.0.1 build-23525738
+* VMware vCenter Server 8.0.1 build-24005165
+* VMware vCenter Server 8.0.2 build-22385739
+* VMware vCenter Server 8.0.2 build-22617221
+* VMware vCenter Server 8.0.2 build-23319993
+* VMware vCenter Server 8.0.2 build-23504390
+* VMware vCenter Server 8.0.2 build-23929136
+* VMware vCenter Server 8.0.3 build-24022515
+* VMware vCenter Server 8.0.3 build-24091160
+
 Products supported by this data collector:
 |===
 ^|Product ^|Category ^|Feature/Attribute ^|Status ^|Protocol Used ^|Additional Information 
@@ -5901,5 +5893,5 @@ Management APIs used by this data collector:
 
 |===
 
-<<top,Back to Top>>
+
 
