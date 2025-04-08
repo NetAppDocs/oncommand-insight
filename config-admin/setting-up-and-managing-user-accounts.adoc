@@ -20,6 +20,8 @@ You must have completed the following tasks:
 * Determine what passwords to use.
 * Assign the correct user roles.
 
+NOTE: If you are importing an LDAP certificate and have changed _server.keystore_ and/or _server.trustore_ passwords using link:../config-admin/security-management.html[securityadmin], restart the _sanscreen_ service before importing the LDAP certificate.
+
 [NOTE]
 ====
 Security best practices dictate that administrators configure the host operating system to prevent the interactive login of non-administrator/standard users.

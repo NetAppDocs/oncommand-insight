@@ -18,6 +18,8 @@ You must know the user and group attributes that have been configured for Insigh
 
 For all Secure Active Directory (i.e. LDAPS) users, you must use the AD server name exactly as it is defined in the certificate. You can not use IP address for secure AD login.
 
+NOTE: If you changed _server.keystore_ and/or _server.trustore_ passwords using link:../config-admin/security-management.html[securityadmin], restart the _sanscreen_ service before importing the LDAP certificate.
+
 == About this task
 
 OnCommand Insight supports LDAP and LDAPS via Microsoft Active Directory server. Additional LDAP implementations may work but have not been qualified with Insight. This procedure assumes that you are using Microsoft Active Directory Version 2 or 3 LDAP (Lightweight Directory Access Protocol).
